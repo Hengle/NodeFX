@@ -22,7 +22,7 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	void OnEnable() {
-		StartCoroutine(checkForUpdates());
+		isDirty = true;
 	}
 
 	void Update() {
@@ -45,38 +45,74 @@ public class VOPParser : MonoBehaviour {
 
 	IEnumerator checkForUpdates() {
 		
-		yield return new WaitForSecondsRealtime(pSystem.main.duration);
+		yield return new WaitForSecondsRealtime(5f);
 		isDirty = true;
+	}
+
+	ParticleSystem.MinMaxCurve CurveFromString(string entry) {
+		string parameter = assetAccessor.getParmStringValue(entry, 0);
+		string[] choppedString = parameter.Split(";".ToCharArray());
+		ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve();
+
+		switch (choppedString[0]) {
+			
+			//	Constant
+			case "constant":
+				curve.mode = ParticleSystemCurveMode.Constant;
+				if(choppedString[1] == "float") {
+				curve.constant = Convert.ToSingle(choppedString[2]);
+				} else
+				if (choppedString[1] == "int") {
+					curve.constant = Convert.ToInt32(choppedString[2]);
+				}
+				break;
+
+			//	Random between MinMax
+			case "randomConstant":
+				if(choppedString[1] == "float") {
+				curve.mode = ParticleSystemCurveMode.TwoConstants;
+					curve.constantMin = Convert.ToSingle(choppedString[2]);
+					curve.constantMax = Convert.ToSingle(choppedString[3]);
+				}
+				if (choppedString[1] == "int") {
+					curve.constantMin = Convert.ToInt32(choppedString[2]);
+					curve.constantMax = Convert.ToInt32(choppedString[3]);
+				}
+				break;
+
+			//	Curve
+			case "curve":
+				curve.mode = ParticleSystemCurveMode.Curve;
+				int length = Convert.ToInt32(choppedString[1]);
+				curve.curve = GenerateCurve(choppedString, length);
+				break;
+
+			//	Random between Curve MinMax
+			case "randomCurve":
+				curve.mode = ParticleSystemCurveMode.TwoCurves;
+				break;
+		}
+	
+		return curve;
 	}
 
 	///	<Summary>
 	///	Interprets custom node definitions, such as curves and gradients, and returns them in a format Unity is comfortable with
 	///	</summary>
-	ParticleSystem.MinMaxCurve GenerateCurve(string parameter) {
-		ParticleSystem.MinMaxCurve output = new ParticleSystem.MinMaxCurve();
-		HoudiniApiAssetAccessor.ParmType type = assetAccessor.getParmType(parameter);
-		int size = assetAccessor.getParmSize(parameter);
+	AnimationCurve GenerateCurve(string[] parameter, int length) {
+		AnimationCurve curve = new AnimationCurve();
 
-		switch(type) {
-			case HoudiniApiAssetAccessor.ParmType.FLOAT:
-				if (size == 1 || size == 3) {
-					output.mode = ParticleSystemCurveMode.Constant;
-					output.constant = assetAccessor.getParmFloatValue(parameter, 0);
-				} else 
-				if (size == 2) {
-					output.mode = ParticleSystemCurveMode.TwoConstants;
-					output.constantMin = output.constant = assetAccessor.getParmFloatValue(parameter, 0);
-					output.constantMax = output.constant = assetAccessor.getParmFloatValue(parameter, 1);
-				}
-			break;
-
-			case HoudiniApiAssetAccessor.ParmType.INT:
-			break;
-
-			case HoudiniApiAssetAccessor.ParmType.STRING:
-			break; 
+		for (int i = 2; i < length; i = i+2) {
+			float position = Convert.ToSingle(parameter[i]);
+			float value = Convert.ToSingle(parameter[i+1]);
+			curve.AddKey(position, value);
 		}
-		return output;
+
+		foreach (curve.keys) {
+
+		}
+
+		return curve;
 	}
 
 	/// <summary>
@@ -95,9 +131,9 @@ public class VOPParser : MonoBehaviour {
 
 		mainModule.startDelay = assetAccessor.getParmFloatValue("main_startDelay", 0);
 
-		mainModule.startLifetime = assetAccessor.getParmFloatValue("main_startLifetime", 0);
+		mainModule.startLifetime = CurveFromString("main_startLifetime");
 
-		mainModule.startSpeed = assetAccessor.getParmFloatValue("main_startSpeed", 0);
+		mainModule.startSpeed = CurveFromString("main_startSpeed");
 
 		mainModule.startSize3D = assetAccessor.getParmSize("main_startSize") > 1 ? true : false;
 
