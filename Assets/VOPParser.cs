@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEditor;
 
 [ExecuteInEditMode]
@@ -10,7 +9,6 @@ using UnityEditor;
 public class VOPParser : MonoBehaviour {
 
 	public bool automaticUpdates = true;
-	public float updateInterval = 5.0f;
 
 	private ParticleSystem pSystem;
 	private HoudiniAssetOTL assetOTL;
@@ -21,6 +19,9 @@ public class VOPParser : MonoBehaviour {
 		assetAccessor = HoudiniApiAssetAccessor.getAssetAccessor(gameObject);
 		assetOTL = GetComponent<HoudiniAssetOTL>();
 		pSystem = GetComponent<ParticleSystem>();
+	}
+
+	void OnEnable() {
 		StartCoroutine(checkForUpdates());
 	}
 
@@ -42,28 +43,40 @@ public class VOPParser : MonoBehaviour {
 		pSystem.Play(true);
 	}
 
+	IEnumerator checkForUpdates() {
+		
+		yield return new WaitForSecondsRealtime(pSystem.main.duration);
+		isDirty = true;
+	}
+
 	///	<Summary>
 	///	Interprets custom node definitions, such as curves and gradients, and returns them in a format Unity is comfortable with
 	///	</summary>
-	void InterpretString(string parameter) {
+	ParticleSystem.MinMaxCurve GenerateCurve(string parameter) {
+		ParticleSystem.MinMaxCurve output = new ParticleSystem.MinMaxCurve();
 		HoudiniApiAssetAccessor.ParmType type = assetAccessor.getParmType(parameter);
-		string param = "";
-		if (type == HoudiniApiAssetAccessor.ParmType.FLOAT) {
-			if (assetAccessor.getParmSize(parameter) == 1)
-			param = assetAccessor.getParmStringValue(parameter, 0);
+		int size = assetAccessor.getParmSize(parameter);
 
-			switch (param) {
-				case "unityCurve":
-				break;
+		switch(type) {
+			case HoudiniApiAssetAccessor.ParmType.FLOAT:
+				if (size == 1 || size == 3) {
+					output.mode = ParticleSystemCurveMode.Constant;
+					output.constant = assetAccessor.getParmFloatValue(parameter, 0);
+				} else 
+				if (size == 2) {
+					output.mode = ParticleSystemCurveMode.TwoConstants;
+					output.constantMin = output.constant = assetAccessor.getParmFloatValue(parameter, 0);
+					output.constantMax = output.constant = assetAccessor.getParmFloatValue(parameter, 1);
+				}
+			break;
 
-				case "unityBurst":
-				break;
+			case HoudiniApiAssetAccessor.ParmType.INT:
+			break;
 
-				default:
-				Debug.Log("Unhandled string case");
-				break;
-			}
+			case HoudiniApiAssetAccessor.ParmType.STRING:
+			break; 
 		}
+		return output;
 	}
 
 	/// <summary>
@@ -86,7 +99,7 @@ public class VOPParser : MonoBehaviour {
 
 		mainModule.startSpeed = assetAccessor.getParmFloatValue("main_startSpeed", 0);
 
-		mainModule.startSize3D = Convert.ToBoolean(assetAccessor.getParmIntValue("main_3DStartSize", 0));
+		mainModule.startSize3D = assetAccessor.getParmSize("main_startSize") > 1 ? true : false;
 
 		mainModule.startSize = assetAccessor.getParmFloatValue("main_startSize", 0);
 
@@ -97,9 +110,9 @@ public class VOPParser : MonoBehaviour {
 		mainModule.randomizeRotationDirection = assetAccessor.getParmFloatValue("main_rotationVariance", 0);
 
 		mainModule.startColor = new Color(assetAccessor.getParmFloatValue("main_startColor", 0), 
-										assetAccessor.getParmFloatValue("main_startColor", 1), 
-										assetAccessor.getParmFloatValue("main_startColor", 2), 
-										assetAccessor.getParmFloatValue("main_startColor", 3));
+											assetAccessor.getParmFloatValue("main_startColor", 1), 
+											assetAccessor.getParmFloatValue("main_startColor", 2), 
+											assetAccessor.getParmFloatValue("main_startColor", 3));
 
 		mainModule.gravityModifier = assetAccessor.getParmFloatValue("main_gravityModifier", 0);
 
@@ -140,16 +153,16 @@ public class VOPParser : MonoBehaviour {
 		shapeModule.radiusThickness = assetAccessor.getParmFloatValue("shape_radiusThickness", 0);
 
 		shapeModule.position = new Vector3(assetAccessor.getParmFloatValue("shape_position", 0), 
-										assetAccessor.getParmFloatValue("shape_position", 1),
-										assetAccessor.getParmFloatValue("shape_position", 2));
+											assetAccessor.getParmFloatValue("shape_position", 1),
+											assetAccessor.getParmFloatValue("shape_position", 2));
 
 		shapeModule.rotation = new Vector3(assetAccessor.getParmFloatValue("shape_rotation", 0), 
-										assetAccessor.getParmFloatValue("shape_rotation", 1),
-										assetAccessor.getParmFloatValue("shape_rotation", 2));
+											assetAccessor.getParmFloatValue("shape_rotation", 1),
+											assetAccessor.getParmFloatValue("shape_rotation", 2));
 
 		shapeModule.scale = new Vector3(assetAccessor.getParmFloatValue("shape_scale", 0), 
-										assetAccessor.getParmFloatValue("shape_scale", 1),
-										assetAccessor.getParmFloatValue("shape_scale", 2));
+											assetAccessor.getParmFloatValue("shape_scale", 1),
+											assetAccessor.getParmFloatValue("shape_scale", 2));
 
 		//	Velocity Over Lifetime
 		ParticleSystem.VelocityOverLifetimeModule velocityOverLifetimeModule = pSystem.velocityOverLifetime;
@@ -165,13 +178,31 @@ public class VOPParser : MonoBehaviour {
 
 		limitVelocityOverLifetimeModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("limitVelocityOverLifetime_enabled", 0));
 
-		limitVelocityOverLifetimeModule.dampen = assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampening", 0);
+		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
+
+		limitVelocityOverLifetimeModule.limit = assetAccessor.getParmFloatValue("limitVelocityOverLifetime_limit", 0);
+
+		limitVelocityOverLifetimeModule.dampen = assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
 
 		//	Inherit Velocity
 		ParticleSystem.InheritVelocityModule inheritVelocityModule = pSystem.inheritVelocity;
 
+		inheritVelocityModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("inheritVelocity_enabled", 0));
+
+		inheritVelocityModule.mode = (ParticleSystemInheritVelocityMode) assetAccessor.getParmIntValue("inheritVelocity_mode", 0);
+
+		inheritVelocityModule.curve = assetAccessor.getParmFloatValue("inheritVelocity_multiplier", 0);
+
 		//	Force Over Lifetime
 		ParticleSystem.ForceOverLifetimeModule forceOverLifetimeModule = pSystem.forceOverLifetime;
+
+		forceOverLifetimeModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("forceOverLifetime_enabled", 0));
+
+		forceOverLifetimeModule.x = assetAccessor.getParmFloatValue("forceOverLifetime_force", 0);
+		forceOverLifetimeModule.y = assetAccessor.getParmFloatValue("forceOverLifetime_force", 1);
+		forceOverLifetimeModule.z = assetAccessor.getParmFloatValue("forceOverLifetime_force", 2);
+
+		forceOverLifetimeModule.randomized = Convert.ToBoolean(assetAccessor.getParmIntValue("forceOverLifetime_randomized", 0));
 
 		//	Color Over Lifetime
 		ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = pSystem.colorOverLifetime;
@@ -179,60 +210,113 @@ public class VOPParser : MonoBehaviour {
 		colorOverLifetimeModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("colorOverLifetime_enabled", 0));
 
 		colorOverLifetimeModule.color = new Color(assetAccessor.getParmFloatValue("colorOverLifetime_color", 0),
-												assetAccessor.getParmFloatValue("colorOverLifetime_color", 1),
-												assetAccessor.getParmFloatValue("colorOverLifetime_color", 2),
-												assetAccessor.getParmFloatValue("colorOverLifetime_color", 3));
+													assetAccessor.getParmFloatValue("colorOverLifetime_color", 1),
+													assetAccessor.getParmFloatValue("colorOverLifetime_color", 2),
+													assetAccessor.getParmFloatValue("colorOverLifetime_color", 3));
 
 		//	Color By Speed
 		ParticleSystem.ColorBySpeedModule colorBySpeedModule = pSystem.colorBySpeed;
+
+		colorBySpeedModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("colorBySpeed_enabled", 0));
+
+		colorBySpeedModule.color = new Color(assetAccessor.getParmFloatValue("colorBySpeed_color", 0),
+												assetAccessor.getParmFloatValue("colorBySpeed_color", 1),
+												assetAccessor.getParmFloatValue("colorBySpeed_color", 2),
+												assetAccessor.getParmFloatValue("colorBySpeed_color", 3));
+
+		colorBySpeedModule.range = new Vector2(assetAccessor.getParmFloatValue("colorBySpeed_range", 0),
+												assetAccessor.getParmFloatValue("colorBySpeed_range", 1));
 
 		//	Size Over Lifetime
 		ParticleSystem.SizeOverLifetimeModule sizeOverLifetimeModule = pSystem.sizeOverLifetime;
 
 		sizeOverLifetimeModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("sizeOverLifetimeModule_enabled", 0));
 
+		sizeOverLifetimeModule.separateAxes = Convert.ToBoolean(assetAccessor.getParmIntValue("sizeOverLifetime_separateAxes", 0));
+
+		sizeOverLifetimeModule.size = assetAccessor.getParmFloatValue("sizeOverLifetime_size", 0);
+
 		//	Size By Speed
 		ParticleSystem.SizeBySpeedModule sizeBySpeedModule = pSystem.sizeBySpeed;
+
+		sizeBySpeedModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("sizeBySpeed_enabled", 0));
+
+		sizeBySpeedModule.separateAxes = Convert.ToBoolean(assetAccessor.getParmIntValue("sizeBySpeed_separateAxes", 0));
+
+		sizeBySpeedModule.size = assetAccessor.getParmFloatValue("sizeBySpeed_size", 0);
+
+		sizeBySpeedModule.range = new Vector2(assetAccessor.getParmFloatValue("sizeBySpeed_range", 0),
+												assetAccessor.getParmFloatValue("sizeBySpeed_range", 1));
 
 		//	Rotation Over Lifetime
 		ParticleSystem.RotationOverLifetimeModule rotationOverLifetimeModule = pSystem.rotationOverLifetime;
 
-		// //	Rotation By Speed
+		rotationOverLifetimeModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("rotationOverLifetime_enabled", 0));
+
+		rotationOverLifetimeModule.separateAxes = Convert.ToBoolean(assetAccessor.getParmIntValue("rotationOverLifetime_separateAxes", 0));
+
+		rotationOverLifetimeModule.x = assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 0);
+		rotationOverLifetimeModule.y = assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 1);
+		rotationOverLifetimeModule.z = assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 2);
+
+		// Rotation By Speed
 		ParticleSystem.RotationBySpeedModule rotationBySpeedModule = pSystem.rotationBySpeed;
 
-		// //	External Forces
+		rotationBySpeedModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("rotationBySpeed_enabled", 0));
+
+		rotationBySpeedModule.separateAxes = Convert.ToBoolean(assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0)); 
+
+		rotationBySpeedModule.x = assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 0);
+		rotationBySpeedModule.y = assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 1);
+		rotationBySpeedModule.z = assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 2);
+
+		rotationBySpeedModule.range = new Vector2(assetAccessor.getParmFloatValue("rotationBySpeed_range", 0),
+													assetAccessor.getParmFloatValue("rotationBySpeed_range", 1));
+
+		// External Forces
 		ParticleSystem.ExternalForcesModule externalForcesModule = pSystem.externalForces;
 
-		// //	Noise
+		// Noise
 		ParticleSystem.NoiseModule noiseModule = pSystem.noise;
 
-		// //	Collision
+		// Collision
 		ParticleSystem.CollisionModule collisionModule = pSystem.collision;
 
-		// //	Triggers
+		// Triggers
 		ParticleSystem.TriggerModule triggerModule = pSystem.trigger;
 
-		// //	Sub Emitters
+		// Sub Emitters
 		ParticleSystem.SubEmittersModule subEmittersModule = pSystem.subEmitters;
 
-		// //	Texture Sheet Animation
+		// Texture Sheet Animation
 		ParticleSystem.TextureSheetAnimationModule textureSheetAnimationModule = pSystem.textureSheetAnimation;
 
-		// //	Lights
+		textureSheetAnimationModule.enabled = Convert.ToBoolean(assetAccessor.getParmIntValue("textureSheetAnimation_enabled", 0));
+
+		textureSheetAnimationModule.mode = (ParticleSystemAnimationMode) assetAccessor.getParmIntValue("textureSheetAnimation_mode", 0);
+
+		textureSheetAnimationModule.animation = (ParticleSystemAnimationType) assetAccessor.getParmIntValue("textureSheetAnimation_animation", 0);
+
+		textureSheetAnimationModule.frameOverTime = assetAccessor.getParmFloatValue("textureSheetAnimation_frame", 0);
+
+		textureSheetAnimationModule.startFrame = assetAccessor.getParmIntValue("textureSheetAnimation_startFrame", 0);
+
+		textureSheetAnimationModule.cycleCount = assetAccessor.getParmIntValue("textureSheetAnimation_cycles", 0);
+
+		textureSheetAnimationModule.flipU = assetAccessor.getParmFloatValue("textureSheetAnimation_flipU", 0);
+
+		textureSheetAnimationModule.flipU = assetAccessor.getParmFloatValue("textureSheetAnimation_flipV", 0);
+
+		// Lights
 		ParticleSystem.LightsModule lightsModule = pSystem.lights;
 
-		// //	Trails
+		// Trails
 		ParticleSystem.TrailModule trailModule = pSystem.trails;
 
-		// //	Custom Data
+		// Custom Data
 		ParticleSystem.CustomDataModule customDataModule = pSystem.customData;
 
-		// //	Renderer
+		// Renderer
 		// ParticleSystem
-	}
-
-	IEnumerator checkForUpdates() {
-		yield return new WaitForSecondsRealtime(updateInterval);
-		isDirty = true;
 	}
 }
