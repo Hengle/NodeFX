@@ -5,7 +5,7 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 /Assets/Baked Assets/
-/Assets/VSCode/
+
 Houdini/hip/backup/
 Houdini/hda/backup/
 HoudiniTemp/HoudiniSessionData.txt
