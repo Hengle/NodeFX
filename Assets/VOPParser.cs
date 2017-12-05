@@ -44,7 +44,6 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	IEnumerator checkForUpdates() {
-		
 		yield return new WaitForSecondsRealtime(5f);
 		isDirty = true;
 	}
@@ -64,6 +63,8 @@ public class VOPParser : MonoBehaviour {
 				} else
 				if (choppedString[1] == "int") {
 					curve.constant = Convert.ToInt32(choppedString[2]);
+				} else
+				if (choppedString[1] == "vector") {
 				}
 				break;
 
@@ -83,8 +84,12 @@ public class VOPParser : MonoBehaviour {
 			//	Curve
 			case "curve":
 				curve.mode = ParticleSystemCurveMode.Curve;
-				int length = Convert.ToInt32(choppedString[1]);
-				curve.curve = GenerateCurve(choppedString, length);
+				curve.curveMultiplier = Convert.ToSingle(choppedString[3]);
+				int samples = Convert.ToInt32(choppedString[2]);
+
+				if(choppedString[1] == "float") {
+					curve.curve = GenerateCurve(choppedString, samples);
+				}
 				break;
 
 			//	Random between Curve MinMax
@@ -97,20 +102,41 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	///	<Summary>
-	///	Generates a curve from a string array containing all the keyframe positions
+	///	Interprets custom node definitions, such as curves and gradients, and returns them in a format Unity is comfortable with
 	///	</summary>
-	AnimationCurve GenerateCurve(string[] parameter, int length) {
+	AnimationCurve GenerateCurve(string[] parameter, int samples) {
 		AnimationCurve curve = new AnimationCurve();
 
-		Debug.Log("Generating curve at length " + length);
-		float position;
-		float value;
-
-		for (int i = 2; i < length; i++) {
-			position = i / Convert.ToSingle(length);
-			value = Convert.ToSingle(parameter[i]);
+		for (int i = 0; i < samples; i++) {
+			float position = (float) i / (float) samples;
+			// float position = Convert.ToSingle(parameter[i]);
+			float value = Convert.ToSingle(parameter[i+4]);
 			curve.AddKey(position, value);
-			Debug.Log("Added key at position " +  position + " with value " + parameter[i]);
+		}
+
+		return curve;
+	}
+
+	ParticleSystem.MinMaxGradient GradientFromString(string entry) {
+		string parameter = assetAccessor.getParmStringValue(entry, 0);
+		string[] choppedString = parameter.Split(";".ToCharArray());
+		
+		ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
+		switch(choppedString[0]) {
+			case "constant":
+				curve.mode = ParticleSystemGradientMode.Color;
+
+				string color = choppedString[4];
+				Debug.Log(color);
+				color.Replace("{", "");
+				color.Replace("}", "");
+				string[] colorArray = color.Split(",".ToCharArray());
+				curve.color = new Color(Convert.ToSingle(colorArray[0]), 
+										Convert.ToSingle(colorArray[1]), 
+										Convert.ToSingle(colorArray[2]), 
+										Convert.ToSingle(colorArray[3]));
+				Debug.Log(curve.color);
+				break;
 		}
 
 		return curve;
@@ -138,20 +164,17 @@ public class VOPParser : MonoBehaviour {
 
 		mainModule.startSize3D = assetAccessor.getParmSize("main_startSize") > 1 ? true : false;
 
-		mainModule.startSize = assetAccessor.getParmFloatValue("main_startSize", 0);
+		mainModule.startSize = CurveFromString("main_startSize");
 
 		mainModule.startRotation3D = Convert.ToBoolean(assetAccessor.getParmIntValue("main_3DStartRotation", 0));
 
-		mainModule.startRotation = assetAccessor.getParmFloatValue("main_startRotation", 0);
+		mainModule.startRotation = CurveFromString("main_startRotation");
 
 		mainModule.randomizeRotationDirection = assetAccessor.getParmFloatValue("main_rotationVariance", 0);
 
-		mainModule.startColor = new Color(assetAccessor.getParmFloatValue("main_startColor", 0), 
-											assetAccessor.getParmFloatValue("main_startColor", 1), 
-											assetAccessor.getParmFloatValue("main_startColor", 2), 
-											assetAccessor.getParmFloatValue("main_startColor", 3));
+		mainModule.startColor = GradientFromString("main_startColor");
 
-		mainModule.gravityModifier = assetAccessor.getParmFloatValue("main_gravityModifier", 0);
+		mainModule.gravityModifier = CurveFromString("main_gravityModifier");
 
 		mainModule.simulationSpace = (ParticleSystemSimulationSpace) assetAccessor.getParmIntValue("main_simulationSpace", 0);
 
