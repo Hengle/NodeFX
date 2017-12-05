@@ -109,24 +109,22 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	ParticleSystem.MinMaxGradient GradientFromString(string entry) {
+		ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
 		string parameter = _assetAccessor.getParmStringValue(entry, 0);
 		string[] choppedString = parameter.Split(";".ToCharArray());
-		
-		ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
+
 		switch(choppedString[0]) {
 			case "constant":
 				curve.mode = ParticleSystemGradientMode.Color;
 
-				string color = choppedString[4];
-				Debug.Log(color);
-				color.Replace("{", "");
-				color.Replace("}", "");
+				string color = choppedString[2];
+				color = color.Replace("{", "");
+				color = color.Replace("}", "");
 				string[] colorArray = color.Split(",".ToCharArray());
 				curve.color = new Color(Convert.ToSingle(colorArray[0]), 
 										Convert.ToSingle(colorArray[1]), 
 										Convert.ToSingle(colorArray[2]), 
 										Convert.ToSingle(colorArray[3]));
-				Debug.Log(curve.color);
 				break;
 		}
 		return curve;
