@@ -1,0 +1,56 @@
+# Dialog script for unity_ramptominmaxcurve automatically generated
+
+{
+    name	unity_ramptominmaxcurve
+    script	unity_ramptominmaxcurve
+    label	UnityRampToCurve
+
+    input	int	samples	samples
+    input	float	multiplier	Multiplier
+    output	string	output	output
+    inputflags	samples	2
+    inputflags	multiplier	2
+    outputflags	output	2
+    signature	"Default Inputs"	default	{ int float string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"multiplier"
+	label	"Multiplier"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"samples"
+	label	"Samples"
+	type	integer
+	default	{ "64" }
+	help	"The number of uniform keyframes Unity will recreate. Higher numbers means higher precision, but also higher memory cost."
+	range	{ 2 256 }
+    }
+    parm {
+	name	"ramp"
+	label	"Ramp"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+	parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	parmtag	{ "script_callback" "" }
+	parmtag	{ "script_callback_language" "python" }
+    }
+}

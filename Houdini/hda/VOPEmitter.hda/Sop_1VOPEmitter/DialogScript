@@ -1,0 +1,677 @@
+# Dialog script for VOPEmitter automatically generated
+
+{
+    name	VOPEmitter
+    script	VOPEmitter
+    label	VOPEmitter
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Mesh Particle Geometry"
+    inputlabel	2	"Mesh Emitter Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"isDirty"
+	label	"Is Dirty"
+	type	toggle
+	invisible
+	default	{ "0" }
+    }
+    groupsimple {
+	name	"folder0"
+	label	"Emitter"
+
+	groupcollapsible {
+	    name	"main_folder"
+	    label	"Main"
+
+	    parm {
+		name	"main_duration"
+		label	"Duration"
+		type	float
+		default	{ [ "hou.pwd().geometry().floatAttribValue(\"main_startLifetime\")" python ] }
+		range	{ 0 1 }
+		parmtag	{ "autoscope" "0000000000000000" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"main_looping"
+		label	"Looping"
+		type	toggle
+		default	{ [ "hou.pwd().geometry().intAttribValue(\"main_looping\")" python ] }
+	    }
+	    parm {
+		name	"main_prewarm"
+		label	"Prewarm"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_prewarm\", 0)" hscript-expr ] }
+	    }
+	    parm {
+		name	"main_startDelay"
+		label	"Start Delay"
+		type	float
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_startDelay\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_startLifetime"
+		label	"Start Lifetime"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_startLifetime\")" python ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_startSpeed"
+		label	"Start Speed"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_startSpeed\")" python ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_3DStartSize"
+		label	"3D Start Size"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_3DStartSize\", 0)" hscript-expr ] }
+	    }
+	    parm {
+		name	"main_startSize"
+		label	"Start Size"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_startSize\")" python ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_3DStartRotation"
+		label	"3D Start Rotation"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_3DStartRotation\", 0)" hscript-expr ] }
+	    }
+	    parm {
+		name	"main_startRotation"
+		label	"Start Rotation"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_startRotation\")" python ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_rotationVariance"
+		label	"Randomize Rotation"
+		type	float
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_rotationVariance\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_startColor"
+		label	"Start Color"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_startColor\")" python ] }
+		range	{ 0 1 }
+	    }
+	    parm {
+		name	"main_gravityModifier"
+		label	"Gravity Modifier"
+		type	string
+		default	{ [ "hou.pwd().geometry().stringAttribValue(\"main_gravityModifier\")" python ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_simulationSpace"
+		label	"Simulation Space"
+		type	ordinal
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_simulationSpace\", 0)" hscript-expr ] }
+		menu	{
+		    "0"	"Local"
+		    "1"	"World"
+		    "2"	"Custom"
+		}
+	    }
+	    parm {
+		name	"main_simulationSpeed"
+		label	"Simulation Speed"
+		type	float
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_simulationSpeed\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_deltaTime"
+		label	"Delta Time"
+		type	ordinal
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_deltaTime\", 0)" hscript-expr ] }
+		menu	{
+		    "0"	"Scaled"
+		    "1"	"Unscaled"
+		}
+	    }
+	    parm {
+		name	"main_scalingMode"
+		label	"Scaling Mode"
+		type	ordinal
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_scalingMode\", 0)" hscript-expr ] }
+		menu	{
+		    "0"	"Hierarchy"
+		    "1"	"Local"
+		    "2"	"Shape"
+		}
+	    }
+	    parm {
+		name	"main_playOnAwake"
+		label	"Play On Awake"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_playOnAwake\", 0)" hscript-expr ] }
+	    }
+	    parm {
+		name	"main_emitterVelocity"
+		label	"Emitter Velocity"
+		type	ordinal
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_emitterVelocity\", 0)" hscript-expr ] }
+		menu	{
+		    "0"	"Transform"
+		    "1"	"Rigidbody"
+		}
+	    }
+	    parm {
+		name	"main_maxParticles"
+		label	"Max Particles"
+		type	integer
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_maxParticles\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"main_autoRandomSeed"
+		label	"Auto Random Seed"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"main_autoRandomSeed\", 0)" hscript-expr ] }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_1"
+	    label	"Emission"
+
+	    parm {
+		name	"emission_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"emission_enabled\", 0)" hscript-expr ] }
+	    }
+	    parm {
+		name	"emission_rateOverTime"
+		label	"Rate over Time"
+		type	float
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"emission_rateOverTime\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"emission_rateOverDistance"
+		label	"Rate over Distance"
+		type	float
+		default	{ [ "detail(\"../VOPEmitter1/output1\", \"emission_rateOverDistance\", 0)" hscript-expr ] }
+		range	{ 0 10 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_2"
+	    label	"Shape"
+
+	    parm {
+		name	"shape_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_enabled\", 0)" }
+	    }
+	    parm {
+		name	"shape_shape"
+		label	"Label"
+		type	ordinal
+		nolabel
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_shape\", 0)" }
+		menu	{
+		    "0"	"Sphere"
+		    "1"	"Box"
+		}
+	    }
+	    parm {
+		name	"shape_radius"
+		label	"Radius"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_radius\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"shape_radiusThickness"
+		label	"Radius Thickness"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_radiusThickness\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"shape_position"
+		label	"Position"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_position\", 0)" "detail(\"../VOPEmitter1/output1\", \"shape_position\", 1)" "detail(\"../VOPEmitter1/output1\", \"shape_position\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"shape_rotation"
+		label	"Rotation"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_rotation\", 0)" "detail(\"../VOPEmitter1/output1\", \"shape_rotation\", 1)" "detail(\"../VOPEmitter1/output1\", \"shape_rotation\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"shape_scale"
+		label	"Scale"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"shape_scale\", 0)" "detail(\"../VOPEmitter1/output1\", \"shape_scale\", 1)" "detail(\"../VOPEmitter1/output1\", \"shape_scale\", 2)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_3"
+	    label	"Velocity Over Lifetime"
+
+	    parm {
+		name	"velocityOverLifetime_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"velocityOverLifetime_enabled\", 0)" }
+	    }
+	    parm {
+		name	"velocityOverLifetime_velocity"
+		label	"Velocity"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"velocityOverLifetime_velocity\", 0)" "detail(\"../VOPEmitter1/output1\", \"velocityOverLifetime_velocity\", 1)" "detail(\"../VOPEmitter1/output1\", \"velocityOverLifetime_velocity\", 2)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_4"
+	    label	"Limit Velocity Over Lifetime"
+
+	    parm {
+		name	"limitVelocityOverLifetime_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_enabled\", 0)" }
+	    }
+	    parm {
+		name	"limitVelocityOverLifetime_separateAxes"
+		label	"Separate Axes"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_separateAxes\", 0)" }
+	    }
+	    parm {
+		name	"limitVelocityOverLifetime_limit"
+		label	"Limit"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_limit\", 0)" "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_limit\", 1)" "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_limit\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"limitVelocityOverLifetime_dampen"
+		label	"Dampen"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"limitVelocityOverLifetime_dampen\", 0)" }
+		range	{ 0 10 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_5"
+	    label	"Inherit Velocity"
+
+	    parm {
+		name	"inheritVelocity_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"inheritVelocity_enabled\", 0)" }
+	    }
+	    parm {
+		name	"inheritVelocity_mode"
+		label	"Mode"
+		type	ordinal
+		default	{ "detail(\"../VOPEmitter1/output1\", \"inheritVelocity_mode\", 0)" }
+		menu	{
+		    "0"	"Initial"
+		    "1"	"Current"
+		}
+	    }
+	    parm {
+		name	"inheritVelocity_multiplier"
+		label	"Multiplier"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"inheritVelocity_multiplier\", 0)" }
+		range	{ 0 10 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_6"
+	    label	"Force Over Lifetime"
+
+	    parm {
+		name	"forceOverLifetime_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"forceOverLifetime_enabled\", 0)" }
+	    }
+	    parm {
+		name	"forceOverLifetime_force"
+		label	"Velocity"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"forceOverLifetime_force\", 0)" "detail(\"../VOPEmitter1/output1\", \"forceOverLifetime_force\", 1)" "detail(\"../VOPEmitter1/output1\", \"forceOverLifetime_force\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"forceOverLifetime_randomized"
+		label	"Randomized"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"forceOverLifetime_randomized\", 0)" }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_7"
+	    label	"Color Over Lifetime"
+
+	    parm {
+		name	"colorOverLifetime_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"colorOverLifetime_enabled\", 0)" }
+	    }
+	    parm {
+		name	"colorOverLifetime_color"
+		label	"Color"
+		type	color4
+		size	4
+		default	{ "detail(\"../VOPEmitter1/output1\", \"colorOverLifetime_color\", 0)" "detail(\"../VOPEmitter1/output1\", \"colorOverLifetime_color\", 1)" "detail(\"../VOPEmitter1/output1\", \"colorOverLifetime_color\", 2)" "detail(\"../VOPEmitter1/output1\", \"colorOverLifetime_color\", 3)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_8"
+	    label	"Color By Speed"
+
+	    parm {
+		name	"colorBySpeed_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_enabled\", 0)" }
+	    }
+	    parm {
+		name	"colorBySpeed_color"
+		label	"Color"
+		type	color4
+		size	4
+		default	{ "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_color\", 0)" "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_color\", 1)" "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_color\", 2)" "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_color\", 3)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"colorBySpeed_range"
+		label	"Range"
+		type	vector2
+		size	2
+		default	{ "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_range\", 0)" "detail(\"../VOPEmitter1/output1\", \"colorBySpeed_range\", 1)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"folder1"
+	    label	"Size Over Lifetime"
+
+	    parm {
+		name	"sizeOverLifetimeModule_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetimeModule_enabled\", 0)" }
+	    }
+	    parm {
+		name	"sizeOverLifetime_separateAxes"
+		label	"Separate Axes"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetime_separateAxes\", 0)" }
+	    }
+	    parm {
+		name	"sizeOverLifetime_size"
+		label	"Size"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetime_size\", 0)" "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetime_size\", 1)" "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetime_size\", 2)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"folder2"
+	    label	"Size By Speed"
+
+	    parm {
+		name	"sizeBySpeed_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeOverLifetimeModule_enabled\", 0)" }
+	    }
+	    parm {
+		name	"sizeBySpeed_separateAxes"
+		label	"Separate Axes"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_separateAxes\", 0)" }
+	    }
+	    parm {
+		name	"sizeBySpeed_size"
+		label	"Size"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_size\", 0)" "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_size\", 1)" "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_size\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"sizeBySpeed_range"
+		label	"Range"
+		type	vector2
+		size	2
+		default	{ "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_range\", 0)" "detail(\"../VOPEmitter1/output1\", \"sizeBySpeed_range\", 1)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_9"
+	    label	"Rotation Over Lifetime"
+
+	    parm {
+		name	"rotationOverLifetime_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationOverLifetime_enabled\", 0)" }
+	    }
+	    parm {
+		name	"rotationOverLifetime_separateAxes"
+		label	"Separate Axes"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationOverLifetime_separateAxes\", 0)" }
+	    }
+	    parm {
+		name	"rotationOverLifetime_angularVelocity"
+		label	"Angular Velocity"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationOverLifetime_angularVelocity\", 0)" "detail(\"../VOPEmitter1/output1\", \"rotationOverLifetime_angularVelocity\", 1)" "detail(\"../VOPEmitter1/output1\", \"rotationOverLifetime_angularVelocity\", 2)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_10"
+	    label	"Rotation By Speed"
+
+	    parm {
+		name	"rotationBySpeed_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_enabled\", 0)" }
+	    }
+	    parm {
+		name	"rotationBySpeed_separateAxes"
+		label	"Separate Axes"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_separateAxes\", 0)" }
+	    }
+	    parm {
+		name	"rotationBySpeed_angularVelocity"
+		label	"Angular Velocity"
+		type	vector
+		size	3
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_angularVelocity\", 0)" "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_angularVelocity\", 1)" "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_angularVelocity\", 2)" }
+		range	{ -1 1 }
+	    }
+	    parm {
+		name	"rotationBySpeed_range"
+		label	"Range"
+		type	vector2
+		size	2
+		default	{ "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_range\", 0)" "detail(\"../VOPEmitter1/output1\", \"rotationBySpeed_range\", 1)" }
+		range	{ -1 1 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_11"
+	    label	"External Forces"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_12"
+	    label	"Noise"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_13"
+	    label	"Collision"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_14"
+	    label	"Triggers"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_15"
+	    label	"Sub Emitter"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_16"
+	    label	"Texture Sheet Animation"
+
+	    parm {
+		name	"textureSheetAnimation_enabled"
+		label	"Enabled"
+		type	toggle
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_enabled\", 0)" }
+	    }
+	    parm {
+		name	"textureSheetAnimation_mode"
+		label	"Mode"
+		type	ordinal
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_mode\", 0)" }
+		menu	{
+		    "0"	"Grid"
+		    "1"	"Sprite"
+		}
+	    }
+	    parm {
+		name	"textureSheetAnimation_animation"
+		label	"Animation"
+		type	ordinal
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_animation\", 0)" }
+		menu	{
+		    "0"	"Whole Sheet"
+		    "1"	"Single Row"
+		}
+	    }
+	    parm {
+		name	"textureSheetAnimation_frame"
+		label	"Frame Over Time"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_frame\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"textureSheetAnimation_startFrame"
+		label	"Start Frame"
+		type	integer
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_startFrame\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"textureSheetAnimation_cycles"
+		label	"Cycles"
+		type	integer
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_cycles\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"textureSheetAnimation_flipU"
+		label	"Flip U Probability"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_flipU\", 0)" }
+		range	{ 0 10 }
+	    }
+	    parm {
+		name	"textureSheetAnimation_flipV"
+		label	"Flip V Probability"
+		type	float
+		default	{ "detail(\"../VOPEmitter1/output1\", \"textureSheetAnimation_flipV\", 0)" }
+		range	{ 0 10 }
+	    }
+	}
+
+	groupcollapsible {
+	    name	"main_folder_17"
+	    label	"Lights"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_18"
+	    label	"Trails"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_19"
+	    label	"Custom Data"
+
+	}
+
+	groupcollapsible {
+	    name	"main_folder_20"
+	    label	"Renderer"
+
+	}
+
+    }
+
+}

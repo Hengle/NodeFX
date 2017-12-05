@@ -1,0 +1,30 @@
+# Dialog script for unity_floattoconstant automatically generated
+
+{
+    name	unity_floattoconstant
+    script	unity_floattoconstant
+    label	Unity_FloatToConstant
+
+    input	float	value	value
+    output	string	output	"Output 1"
+    inputflags	value	2
+    signature	"Default Inputs"	default	{ float string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"value"
+	label	"value"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+    }
+}

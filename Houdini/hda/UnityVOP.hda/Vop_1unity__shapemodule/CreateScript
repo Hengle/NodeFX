@@ -1,0 +1,15 @@
+# Automatically generated script
+\set noalias = 1
+#
+#  Creation script for unity_shapemodule operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Vop/unity_shapemodule)
+opspareds '    parm { 	name	"Enabled" 	baseparm 	label	"Enabled" 	export	none     }     parm { 	name	"Shape" 	baseparm 	label	"Shape" 	invisible 	export	none     }     parm { 	name	"Radius" 	baseparm 	label	"Radius" 	export	none     }     parm { 	name	"Radius_Thickness" 	baseparm 	label	"Radius Thickness" 	export	none     }     parm { 	name	"Position" 	baseparm 	label	"Position" 	export	none     }     parm { 	name	"Rotation" 	baseparm 	label	"Rotation" 	export	none     }     parm { 	name	"Scale" 	baseparm 	label	"Scale" 	export	none     }     parm { 	name	"shapeList" 	baseparm 	label	"Shape" 	export	none     } ' $arg1
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

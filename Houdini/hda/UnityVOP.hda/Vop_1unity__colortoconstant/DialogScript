@@ -1,0 +1,33 @@
+# Dialog script for unity_colortoconstant automatically generated
+
+{
+    name	unity_colortoconstant
+    script	unity_colortoconstant
+    label	ColorToConstant
+
+    input	vector4	color	Color
+    output	string	output	output
+    inputflags	color	2
+    outputflags	output	2
+    signature	"Default Inputs"	default	{ vector4 string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"color"
+	label	"Color"
+	type	color4
+	size	4
+	default	{ "1" "1" "1" "1" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

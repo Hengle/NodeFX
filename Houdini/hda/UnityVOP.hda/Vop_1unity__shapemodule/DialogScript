@@ -1,0 +1,110 @@
+# Dialog script for unity_shapemodule automatically generated
+
+{
+    name	unity_shapemodule
+    script	unity_shapemodule
+    label	ShapeModule
+
+    input	int	Enabled	Enabled
+    input	int	Shape	Shape
+    input	float	Radius	Radius
+    input	float	Radius_Thickness	"Radius Thickness"
+    input	vector	Position	Position
+    input	vector	Rotation	Rotation
+    input	vector	Scale	Scale
+    inputflags	Enabled	2
+    inputflags	Shape	2
+    inputflags	Radius	2
+    inputflags	Radius_Thickness	2
+    inputflags	Position	2
+    inputflags	Rotation	2
+    inputflags	Scale	2
+    signature	"Default Inputs"	default	{ int int float float vector vector vector }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"shapeList"
+	label	"Shape"
+	type	ordinal
+	default	{ "0" }
+	disablewhen	"{ hasinput(1) == 1 }"
+	menu	{
+	    "0"	"Sphere"
+	    "1"	"Hemisphere"
+	    "2"	"Cone"
+	    "3"	"Donut"
+	    "4"	"Box"
+	    "5"	"Mesh"
+	    "6"	"Mesh Renderer"
+	    "7"	"Skinned Mesh Renderer"
+	    "8"	"Circle"
+	    "9"	"Edge"
+	}
+    }
+    parm {
+	name	"Shape"
+	label	"Shape"
+	type	integer
+	invisible
+	default	{ "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Radius"
+	label	"Radius"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Radius_Thickness"
+	label	"Radius Thickness"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Position"
+	label	"Position"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Rotation"
+	label	"Rotation"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Scale"
+	label	"Scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

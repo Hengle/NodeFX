@@ -1,0 +1,39 @@
+# Dialog script for unity_inttorandomconstant automatically generated
+
+{
+    name	unity_inttorandomconstant
+    script	unity_inttorandomconstant
+    label	UnityIntToRandomConstant
+
+    input	int	minValue	minValue
+    input	int	maxValue	maxValue
+    output	string	output	"Output 1"
+    inputflags	minValue	2
+    inputflags	maxValue	2
+    signature	"Default Inputs"	default	{ int int string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"minValue"
+	label	"minValue"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+    }
+    parm {
+	name	"maxValue"
+	label	"maxValue"
+	type	integer
+	default	{ "1" }
+	range	{ 0 10 }
+    }
+}

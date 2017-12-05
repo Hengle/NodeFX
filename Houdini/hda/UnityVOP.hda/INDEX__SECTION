@@ -1,0 +1,90 @@
+Operator:     unity_floattoconstant
+Label:        UnityFloatToConstant
+Path:         oplib:/Vop/unity_floattoconstant?Vop/unity_floattoconstant
+Icon:         VOP_unity_floattoconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 1
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 10:36:39 2017
+
+Operator:     unity_ramptominmaxcurve
+Label:        UnityRampToCurve
+Path:         oplib:/Vop/unity_ramptominmaxcurve?Vop/unity_ramptominmaxcurve
+Icon:         VOP_unity_ramptominmaxcurve
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 13:05:45 2017
+
+Operator:     unity_inttorandomconstant
+Label:        UnityIntToRandomConstant
+Path:         oplib:/Vop/unity_inttorandomconstant?Vop/unity_inttorandomconstant
+Icon:         VOP_unity_inttorandomconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 10:34:54 2017
+
+Operator:     unity_floattorandomconstant
+Label:        UnityFloatToRandomConstant
+Path:         oplib:/Vop/unity_floattorandomconstant?Vop/unity_floattorandomconstant
+Icon:         VOP_unity_floattorandomconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 10:35:06 2017
+
+Operator:     unity_colortoconstant
+Label:        ColorToConstant
+Path:         oplib:/Vop/unity_colortoconstant?Vop/unity_colortoconstant
+Icon:         VOP_unity_colortoconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 1
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 18:30:46 2017
+
+Operator:     unity_shapemodule
+Label:        ShapeModule
+Path:         oplib:/Vop/unity_shapemodule?Vop/unity_shapemodule
+Icon:         VOP_unity_shapemodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 7
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Dec  5 16:58:17 2017
+

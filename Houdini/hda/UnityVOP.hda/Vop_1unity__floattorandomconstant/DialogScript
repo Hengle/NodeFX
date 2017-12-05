@@ -1,0 +1,39 @@
+# Dialog script for unity_floattorandomconstant automatically generated
+
+{
+    name	unity_floattorandomconstant
+    script	unity_floattorandomconstant
+    label	UnityFloatToRandomConstant
+
+    input	float	minValue	minValue
+    input	float	maxValue	maxValue
+    output	string	output	"Output 1"
+    inputflags	minValue	2
+    inputflags	maxValue	2
+    signature	"Default Inputs"	default	{ float float string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"minValue"
+	label	"minValue"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+    }
+    parm {
+	name	"maxValue"
+	label	"maxValue"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+    }
+}
