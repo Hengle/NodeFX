@@ -97,19 +97,20 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	///	<Summary>
-	///	Interprets custom node definitions, such as curves and gradients, and returns them in a format Unity is comfortable with
+	///	Generates a curve from a string array containing all the keyframe positions
 	///	</summary>
 	AnimationCurve GenerateCurve(string[] parameter, int length) {
 		AnimationCurve curve = new AnimationCurve();
 
-		for (int i = 2; i < length; i = i+2) {
-			float position = Convert.ToSingle(parameter[i]);
-			float value = Convert.ToSingle(parameter[i+1]);
+		Debug.Log("Generating curve at length " + length);
+		float position;
+		float value;
+
+		for (int i = 2; i < length; i++) {
+			position = i / Convert.ToSingle(length);
+			value = Convert.ToSingle(parameter[i]);
 			curve.AddKey(position, value);
-		}
-
-		foreach (curve.keys) {
-
+			Debug.Log("Added key at position " +  position + " with value " + parameter[i]);
 		}
 
 		return curve;
