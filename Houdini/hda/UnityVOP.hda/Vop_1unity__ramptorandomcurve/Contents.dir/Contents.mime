@@ -39,7 +39,7 @@ inputs
 stat
 {
   create 1512528838
-  modify 1512529913
+  modify 1512597513
   author Chris@Voyager
   access 0777
 }
@@ -2065,7 +2065,7 @@ outlabel31	[ 0	locks=0 ]	(	""	)
 outtype32	[ 0	locks=0 ]	(	undef	)
 outname32	[ 0	locks=0 ]	(	""	)
 outlabel32	[ 0	locks=0 ]	(	""	)
-path	[ 0	locks=0 ]	(	[ path	/obj/geo1/VOPEmitter1/VFX_VOP/RampToRandomCurve ] 	)
+path	[ 0	locks=0 ]	(	[ path	/obj/dive_into_me/VOPEmitter1/VFX_VOP/RampToRandomCurve ] 	)
 stdswitcher9	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
 }
 

@@ -1,0 +1,105 @@
+# Dialog script for unity_texturesheetanimation automatically generated
+
+{
+    name	unity_texturesheetanimation
+    script	unity_texturesheetanimation
+    label	UnityTextureSheetAnimation
+
+    input	int	Mode	Mode
+    input	vector2	Tiles	Tiles
+    input	int	Animation	Animation
+    input	string	Frame	Frame
+    input	string	Start_Frame	"Start Frame"
+    input	int	Cycles	Cycles
+    input	float	Flip_U_Probability	"Flip U Probability"
+    input	float	Flip_V_Probability	"Flip V Probability"
+    inputflags	Mode	2
+    inputflags	Tiles	2
+    inputflags	Animation	2
+    inputflags	Frame	2
+    inputflags	Start_Frame	2
+    inputflags	Cycles	2
+    inputflags	Flip_U_Probability	2
+    inputflags	Flip_V_Probability	2
+    signature	"Default Inputs"	default	{ int vector2 int string string int float float }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Grid"
+	    "1"	"Sprite"
+	}
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Tiles"
+	label	"Tiles"
+	type	float
+	size	2
+	default	{ "1" "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Animation"
+	label	"Animation"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Whole Sheet"
+	    "1"	"Single Row"
+	}
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Frame"
+	label	"Frame"
+	type	string
+	default	{ "curve;float;64;5.000000;0.000000;0.015625;0.031250;0.046875;0.062500;0.078125;0.093750;0.109375;0.125000;0.140625;0.156250;0.171875;0.187500;0.203125;0.218750;0.234375;0.250000;0.265625;0.281250;0.296875;0.312500;0.328125;0.343750;0.359375;0.375000;0.390625;0.406250;0.421875;0.437500;0.453125;0.468750;0.484375;0.500000;0.515625;0.531250;0.546875;0.562500;0.578125;0.593750;0.609375;0.625000;0.640625;0.656250;0.671875;0.687500;0.703125;0.718750;0.734375;0.750000;0.765625;0.781250;0.796875;0.812500;0.828125;0.843750;0.859375;0.875000;0.890625;0.906250;0.921875;0.937500;0.953125;0.968750;0.984375" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Start_Frame"
+	label	"Start Frame"
+	type	string
+	default	{ "constant;int;0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Cycles"
+	label	"Cycles"
+	type	integer
+	default	{ "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Flip_U_Probability"
+	label	"Flip U Probability"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Flip_V_Probability"
+	label	"Flip V Probability"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

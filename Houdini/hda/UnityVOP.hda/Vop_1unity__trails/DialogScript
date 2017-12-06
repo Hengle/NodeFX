@@ -1,0 +1,144 @@
+# Dialog script for unity_trails automatically generated
+
+{
+    name	unity_trails
+    script	unity_trails
+    label	UnityTrails
+
+    input	float	Ratio	Ratio
+    input	string	Lifetime	Lifetime
+    input	float	MinimumVertexDistance	"Minimum Vertex Distance"
+    input	int	TextureMode	"Texture Mode"
+    input	int	WorldSpace	"World Space"
+    input	int	DieWithParticles	"Die With Particles"
+    input	int	SizeAffectsWidth	"Size Affects Width"
+    input	int	SizeAffectsLifetime	"Size Affects Lifetime"
+    input	int	InheritParticleColor	"Inherit Particle Color"
+    input	string	ColorOverLifetime	"Color Over Lifetime"
+    input	string	WidthOverTrail	"Width Over Trail"
+    input	string	ColorOverTrail	"Color Over Trail"
+    input	int	GenerateLightingData	"Generate Lighting Data"
+    inputflags	Ratio	2
+    inputflags	Lifetime	2
+    inputflags	MinimumVertexDistance	2
+    inputflags	TextureMode	2
+    inputflags	WorldSpace	2
+    inputflags	DieWithParticles	2
+    inputflags	SizeAffectsWidth	2
+    inputflags	SizeAffectsLifetime	2
+    inputflags	InheritParticleColor	2
+    inputflags	ColorOverLifetime	2
+    inputflags	WidthOverTrail	2
+    inputflags	ColorOverTrail	2
+    inputflags	GenerateLightingData	2
+    signature	"Default Inputs"	default	{ float string float int int int int int int string string string int }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Ratio"
+	label	"Ratio"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Lifetime"
+	label	"Lifetime"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"MinimumVertexDistance"
+	label	"Minimum Vertex Distance"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"TextureMode"
+	label	"Texture Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Stretch"
+	    "1"	"Tile"
+	    "2"	"Distribute Per Segment"
+	    "3"	"Repeat Per Segment"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"WorldSpace"
+	label	"World Space"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"DieWithParticles"
+	label	"Die With Particles"
+	type	toggle
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"SizeAffectsWidth"
+	label	"Size Affects Width"
+	type	toggle
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"SizeAffectsLifetime"
+	label	"Size Affects Lifetime"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"InheritParticleColor"
+	label	"Inherit Particle Color"
+	type	toggle
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ColorOverLifetime"
+	label	"Color Over Lifetime"
+	type	string
+	default	{ "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"WidthOverTrail"
+	label	"Width Over Trail"
+	type	string
+	default	{ "curve;float;64;5.000000;0.000000;0.015625;0.031250;0.046875;0.062500;0.078125;0.093750;0.109375;0.125000;0.140625;0.156250;0.171875;0.187500;0.203125;0.218750;0.234375;0.250000;0.265625;0.281250;0.296875;0.312500;0.328125;0.343750;0.359375;0.375000;0.390625;0.406250;0.421875;0.437500;0.453125;0.468750;0.484375;0.500000;0.515625;0.531250;0.546875;0.562500;0.578125;0.593750;0.609375;0.625000;0.640625;0.656250;0.671875;0.687500;0.703125;0.718750;0.734375;0.750000;0.765625;0.781250;0.796875;0.812500;0.828125;0.843750;0.859375;0.875000;0.890625;0.906250;0.921875;0.937500;0.953125;0.968750;0.984375" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ColorOverTrail"
+	label	"Color Over Trail"
+	type	string
+	default	{ "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"GenerateLightingData"
+	label	"Generate Lighting Data"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+}

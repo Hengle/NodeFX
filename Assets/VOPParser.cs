@@ -13,7 +13,6 @@ public class VOPParser : MonoBehaviour {
 	/// </summary>
 	public bool timedUpdates = false;
 	public float updateInterval = 5f;
-	public Material material;
 
 	private ParticleSystem _pSystem;
 	private HoudiniAssetOTL _assetOTL;
@@ -437,6 +436,6 @@ public class VOPParser : MonoBehaviour {
 		// Renderer
 		ParticleSystemRenderer renderer = GetComponent<ParticleSystemRenderer>();
 
-		renderer.material = material;
+		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));;
 	}
 }

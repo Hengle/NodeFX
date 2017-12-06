@@ -1,0 +1,55 @@
+# Dialog script for unity_emissionmodule automatically generated
+
+{
+    name	unity_emissionmodule
+    script	unity_emissionmodule
+    label	UnityEmissionModule
+
+    input	int	Enabled	Enabled
+    input	string	Rate_Over_Time	"Rate Over TIme"
+    input	string	Rate_Over_Distance	"Rate Over Distance"
+    input	struct	Bursts	Bursts
+    inputflags	Enabled	2
+    inputflags	Rate_Over_Time	2
+    inputflags	Rate_Over_Distance	2
+    inputflags	Bursts	2
+    signature	"Default Inputs"	default	{ int string string struct }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Rate_Over_Time"
+	label	"Rate Over TIme"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Rate_Over_Distance"
+	label	"Rate Over Distance"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Bursts"
+	label	"Bursts"
+	type	float
+	invisible
+	default	{ "0" }
+	range	{ 0 10 }
+    }
+}

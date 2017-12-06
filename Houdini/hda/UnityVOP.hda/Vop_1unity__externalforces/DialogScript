@@ -1,0 +1,28 @@
+# Dialog script for unity_externalforces automatically generated
+
+{
+    name	unity_externalforces
+    script	unity_externalforces
+    label	UnityExternalForces
+
+    input	float	Multiplier	Multiplier
+    inputflags	Multiplier	2
+    signature	"Default Inputs"	default	{ float }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Multiplier"
+	label	"Multiplier"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

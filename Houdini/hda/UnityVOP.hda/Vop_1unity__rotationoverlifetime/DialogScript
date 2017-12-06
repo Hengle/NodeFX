@@ -1,0 +1,76 @@
+# Dialog script for unity_rotationoverlifetime automatically generated
+
+{
+    name	unity_rotationoverlifetime
+    script	unity_rotationoverlifetime
+    label	UnityRotationOverLifetime
+
+    input	int	Enabled	Enabled
+    input	int	Separate_Axes	"Separate Axes"
+    input	string	Angular_Velocity	"Angular Velocity"
+    input	string	X	X
+    input	string	Y	Y
+    input	string	Z	Z
+    inputflags	Enabled	2
+    inputflags	Separate_Axes	2
+    inputflags	Angular_Velocity	2
+    inputflags	X	2
+    inputflags	Y	2
+    inputflags	Z	2
+    signature	"Default Inputs"	default	{ int int string string string string }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Separate_Axes"
+	label	"Separate Axes"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Angular_Velocity"
+	label	"Angular Velocity"
+	type	string
+	default	{ "constant;float;1.0" }
+	hidewhen	"{ Separate_Axes == 1 }"
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"X"
+	label	"X"
+	type	string
+	default	{ "constant;float;1.0" }
+	hidewhen	"{ Separate_Axes == 0 }"
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Y"
+	label	"Y"
+	type	string
+	default	{ "constant;float;1.0" }
+	hidewhen	"{ Separate_Axes == 0 }"
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Z"
+	label	"Z"
+	type	string
+	default	{ "constant;float;1.0" }
+	hidewhen	"{ Separate_Axes == 0 }"
+	parmtag	{ "parmvop" "1" }
+    }
+}

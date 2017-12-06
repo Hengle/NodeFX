@@ -1,0 +1,68 @@
+# Dialog script for unityvelocityoverlifetimemodule automatically generated
+
+{
+    name	unityvelocityoverlifetimemodule
+    script	unityvelocityoverlifetimemodule
+    label	UnityVelocityOverLifetimeModule
+
+    input	int	Enabled	Enabled
+    input	int	Space	Space
+    input	string	X	X
+    input	string	Y	Y
+    input	string	Z	Z
+    inputflags	Enabled	2
+    inputflags	Space	2
+    inputflags	X	2
+    inputflags	Y	2
+    inputflags	Z	2
+    signature	"Default Inputs"	default	{ int int string string string }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Space"
+	label	"Space"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Local"
+	    "1"	"World"
+	}
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"X"
+	label	"X"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Y"
+	label	"Y"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Z"
+	label	"Z"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+}

@@ -22,7 +22,7 @@
 
     parm {
 	name	"value"
-	label	"value"
+	label	"Value"
 	type	float
 	default	{ "0" }
 	range	{ 0 10 }

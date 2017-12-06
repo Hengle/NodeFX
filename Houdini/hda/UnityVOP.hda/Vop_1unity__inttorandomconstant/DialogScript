@@ -24,14 +24,14 @@
 
     parm {
 	name	"minValue"
-	label	"minValue"
+	label	"Min"
 	type	integer
 	default	{ "0" }
 	range	{ 0 10 }
     }
     parm {
 	name	"maxValue"
-	label	"maxValue"
+	label	"Max"
 	type	integer
 	default	{ "1" }
 	range	{ 0 10 }

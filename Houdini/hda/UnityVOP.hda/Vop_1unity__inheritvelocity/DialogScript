@@ -1,0 +1,50 @@
+# Dialog script for unity_inheritvelocity automatically generated
+
+{
+    name	unity_inheritvelocity
+    script	unity_inheritvelocity
+    label	UnityInheritVelocity
+
+    input	int	Enabled	Enabled
+    input	int	Mode	Mode
+    input	string	Multiplier	Multiplier
+    inputflags	Enabled	2
+    inputflags	Mode	2
+    inputflags	Multiplier	2
+    signature	"Default Inputs"	default	{ int int string }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Initial"
+	    "1"	"Current"
+	}
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Multiplier"
+	label	"Multiplier"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+}
