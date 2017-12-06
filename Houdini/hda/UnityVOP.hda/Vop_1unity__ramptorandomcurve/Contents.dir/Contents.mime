@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_ramptominmaxcurve
+type = unity_ramptorandomcurve
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -1.13343 7.70345
+position -1.13343 5.99478
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -28,8 +28,8 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	"" "" 1 "samples"
-1 	"" "" 1 "multiplier"
+0 	"" "" 1 "multiplier"
+1 	"" "" 1 "samples"
 }
 inputs
 {
@@ -38,9 +38,9 @@ inputs
 }
 stat
 {
-  create 1512479056
-  modify 1512551381
-  author chris@Defiant
+  create 1512528838
+  modify 1512529913
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -65,7 +65,7 @@ Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
 TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBvdXRwdXQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSA=
-MApCeXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
+MApCeXBhc3NNb2RlIDIKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/subnetoutput.init"
@@ -79,7 +79,7 @@ Content-Disposition: attachment; filename="hdaroot/subnetoutput.def"
 Content-Type: text/plain
 
 comment ""
-position 10.7233 1.21177
+position 4.73551 -0.464884
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -96,7 +96,7 @@ inputs
 stat
 {
   create 1512404524
-  modify 1512529825
+  modify 1512528799
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -180,8 +180,8 @@ Content-Disposition: attachment; filename="hdaroot/inline1.def"
 Content-Type: text/plain
 
 comment ""
-position 8.37867 1.21177
-connectornextid 1
+position 2.35983 -0.464884
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -189,18 +189,18 @@ outputsNamed3
 }
 inputsNamed3
 {
-4 	subnetinput 0 1 "_samples"
-0 	next 0 1 "_multiplier"
+1 	Samples 0 1 "_samples"
+0 	Multiplier 0 1 "_multiplier"
 }
 inputs
 {
-0 	subnetinput 0 1
-1 	next 0 1
+0 	Samples 0 1
+1 	Multiplier 0 1
 }
 stat
 {
   create 1512478750
-  modify 1512529825
+  modify 1512528799
   author chris@Defiant
   access 0777
 }
@@ -1816,8 +1816,9 @@ Content-Type: text/plain
 
 {
 version 0.8
-code	[ 0	locks=0 ]	(	"string $rampPath = $path + \"/ramp\";
-string $outputArray[] = { \"curve\", \"float\" };
+code	[ 0	locks=0 ]	(	"string $minRamp = $path + \"/minRamp\";
+string $maxRamp = $path + \"/maxRamp\";
+string $outputArray[] = { \"randomCurve\", \"float\" };
 append($outputArray, itoa($_samples));
 
 string $multiplier = sprintf(\"%f\", $_multiplier);
@@ -1825,10 +1826,16 @@ append($outputArray, $multiplier);
 
 for (int $i = 0; $i < $_samples; $i++) {
     float $position = (float) $i / (float) $_samples;
-    float $value = chramp($rampPath, $position);
-    append($outputArray, sprintf(\"%f\", $value));
+    float $minValue = chramp($minRamp, $position);
+    append($outputArray, sprintf(\"%p\", $minValue));
 }
 
+for (int $i = 0; $i < $_samples; $i++) {
+    float $position = (float) $i / (float) $_samples;
+    float $maxValue = chramp($maxRamp, $position);
+    append($outputArray, sprintf(\"%p\", $maxValue));
+}
+    
 $output = join($outputArray, \";\");"	)
 includes	[ 0	locks=0 ]	(	""	)
 outercode	[ 0	locks=0 ]	(	""	)
@@ -2058,7 +2065,7 @@ outlabel31	[ 0	locks=0 ]	(	""	)
 outtype32	[ 0	locks=0 ]	(	undef	)
 outname32	[ 0	locks=0 ]	(	""	)
 outlabel32	[ 0	locks=0 ]	(	""	)
-path	[ 8	locks=0 ]	(	[ path	/obj/geo1/VOPEmitter1/VFX_VOP/RampToCurve ] 	)
+path	[ 0	locks=0 ]	(	[ path	/obj/geo1/VOPEmitter1/VFX_VOP/RampToRandomCurve ] 	)
 stdswitcher9	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
 }
 
@@ -2074,120 +2081,20 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/subnetinput.init"
-Content-Type: text/plain
-
-type = subnetconnector
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/subnetinput.def"
-Content-Type: text/plain
-
-comment ""
-position 5.83661 1.21177
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-0 "_samples"
-}
-inputsNamed3
-{
-}
-inputs
-{
-}
-stat
-{
-  create 1512478836
-  modify 1512480547
-  author chris@Defiant
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/subnetinput.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-connectorkind	[ 0	locks=0 ]	(	"input"	)
-parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	samples	)
-parmlabel	[ 0	locks=0 ]	(	Samples	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
-floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	64	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
-angledef	[ 0	locks=0 ]	(	0	)
-logfloatdef	[ 0	locks=0 ]	(	0	)
-float2def	[ 0	locks=0 ]	(	0	0	)
-float3def	[ 0	locks=0 ]	(	0	0	0	)
-vectordef	[ 0	locks=0 ]	(	0	0	0	)
-normaldef	[ 0	locks=0 ]	(	0	0	0	)
-pointdef	[ 0	locks=0 ]	(	0	0	0	)
-directiondef	[ 0	locks=0 ]	(	1	0	0	)
-float4def	[ 0	locks=0 ]	(	0	0	0	0	)
-floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
-float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
-float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
-filedef	[ 0	locks=0 ]	(	""	)
-imagedef	[ 0	locks=0 ]	(	""	)
-geometrydef	[ 0	locks=0 ]	(	""	)
-colordef	[ 0	locks=0 ]	(	0	0	0	)
-color4def	[ 0	locks=0 ]	(	0	0	0	0	)
-bsdfdef	[ 0	locks=0 ]	(	""	)
-coshaderdef	[ 0	locks=0 ]	(	""	)
-floatadef	[ 0	locks=0 ]	(	)
-intadef	[ 0	locks=0 ]	(	)
-vector2adef	[ 0	locks=0 ]	(	)
-vectoradef	[ 0	locks=0 ]	(	)
-pointadef	[ 0	locks=0 ]	(	)
-normaladef	[ 0	locks=0 ]	(	)
-coloradef	[ 0	locks=0 ]	(	)
-float4adef	[ 0	locks=0 ]	(	)
-floatm2adef	[ 0	locks=0 ]	(	)
-float9adef	[ 0	locks=0 ]	(	)
-float16adef	[ 0	locks=0 ]	(	)
-stringadef	[ 0	locks=0 ]	(	)
-coshaderadef	[ 0	locks=0 ]	(	""	)
-structdef	[ 0	locks=0 ]	(	""	)
-useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
-parmuniform	[ 0	locks=0 ]	(	"on"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/subnetinput.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.0.736"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next.init"
+Content-Disposition: attachment; filename="hdaroot/Multiplier.init"
 Content-Type: text/plain
 
 type = parameter
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next.def"
+Content-Disposition: attachment; filename="hdaroot/Multiplier.def"
 Content-Type: text/plain
 
 comment ""
-position 5.83661 -0.331992
+position -0.190404 -2.30865
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_multiplier"
@@ -2201,7 +2108,7 @@ inputs
 stat
 {
   create 1512492565
-  modify 1512492695
+  modify 1512494138
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -2211,7 +2118,7 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next.parm"
+Content-Disposition: attachment; filename="hdaroot/Multiplier.parm"
 Content-Type: text/plain
 
 {
@@ -2290,7 +2197,134 @@ help	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next.userdata"
+Content-Disposition: attachment; filename="hdaroot/Multiplier.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.736"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/Samples.init"
+Content-Type: text/plain
+
+type = parameter
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/Samples.def"
+Content-Type: text/plain
+
+comment ""
+position -0.190404 -0.495276
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+0 "_samples"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1512493997
+  modify 1512494484
+  author chju@CHJU-PC.avalanchestudios.se
+  access 0777
+}
+color UT_Color RGB 1 1 0.4 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/Samples.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parmscope	[ 0	locks=0 ]	(	subnet	)
+parmaccess	[ 0	locks=0 ]	(	""	)
+parmname	[ 0	locks=0 ]	(	samples	)
+parmprefix	[ 0	locks=0 ]	(	""	)
+parmpostfix	[ 0	locks=0 ]	(	""	)
+parmlabel	[ 0	locks=0 ]	(	Samples	)
+showlabel	[ 0	locks=0 ]	(	"on"	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtypename	[ 0	locks=0 ]	(	""	)
+floatdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	64	)
+toggledef	[ 0	locks=0 ]	(	"off"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	0	0	0	0	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+rangeflt	[ 0	locks=0 ]	(	0	1	)
+rangeint	[ 0	locks=0 ]	(	2	256	)
+stringtype	[ 0	locks=0 ]	(	off	)
+opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
+parmcomment	[ 0	locks=0 ]	(	""	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+useownexportcontext	[ 0	locks=0 ]	(	"off"	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+usebound	[ 0	locks=0 ]	(	"off"	)
+hasconnector	[ 0	locks=0 ]	(	"on"	)
+exportparm	[ 0	locks=0 ]	(	"off"	)
+exportcontext	[ 0	locks=0 ]	(	cvex	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
+menuscript	[ 0	locks=0 ]	(	""	)
+menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
+separator2	[ 0	locks=0 ]	(	)
+invisible	[ 0	locks=0 ]	(	"off"	)
+joinnext	[ 0	locks=0 ]	(	"off"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+tags	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/Samples.userdata"
 Content-Type: text/plain
 
 {
@@ -2307,8 +2341,8 @@ Content-Type: text/plain
 4
 subnetoutput
 inline1
-subnetinput
-next
+Multiplier
+Samples
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

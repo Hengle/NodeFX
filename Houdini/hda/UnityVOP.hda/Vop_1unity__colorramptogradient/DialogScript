@@ -1,0 +1,40 @@
+# Dialog script for unity_colorramptogradient automatically generated
+
+{
+    name	unity_colorramptogradient
+    script	unity_colorramptogradient
+    label	UnityColorRampToGradient
+
+    output	string	output	output
+    outputflags	output	2
+    signature	"Default Inputs"	default	{ string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"colorRamp"
+	label	"Color"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+	parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0.89999997615814209 0.44999998807907104 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2c ( 0.25 0 0.5 ) 2interp ( catmull-rom )" }
+    }
+    parm {
+	name	"alphaRamp"
+	label	"Alpha"
+	type	ramp_flt
+	default	{ "3" }
+	range	{ 1! 10 }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+	parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 0.5 ) 2value ( 1 ) 2interp ( catmull-rom ) 3pos ( 1 ) 3value ( 0 ) 3interp ( catmull-rom )" }
+    }
+}

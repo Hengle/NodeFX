@@ -1,0 +1,60 @@
+# Dialog script for unity_ramptorandomcurve automatically generated
+
+{
+    name	unity_ramptorandomcurve
+    script	unity_ramptorandomcurve
+    label	UnityRampToRandomCurve
+
+    input	float	multiplier	Multiplier
+    input	int	samples	Samples
+    output	string	output	output
+    inputflags	multiplier	2
+    inputflags	samples	2
+    outputflags	output	2
+    signature	"Default Inputs"	default	{ float int string }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			("")
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"multiplier"
+	label	"Multiplier"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"samples"
+	label	"Samples"
+	type	integer
+	default	{ "64" }
+	range	{ 2 256 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"minRamp"
+	label	"Min"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+	parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 0 ) 2interp ( catmull-rom )" }
+    }
+    parm {
+	name	"maxRamp"
+	label	"Max"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+	parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+    }
+}

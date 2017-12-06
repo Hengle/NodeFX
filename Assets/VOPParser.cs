@@ -13,6 +13,7 @@ public class VOPParser : MonoBehaviour {
 	/// </summary>
 	public bool automaticUpdates = true;
 	public float updateInterval = 5f;
+	public Material material;
 
 	private ParticleSystem _pSystem;
 	private HoudiniAssetOTL _assetOTL;
@@ -38,6 +39,7 @@ public class VOPParser : MonoBehaviour {
 			_assetOTL.buildAll();
 			InstantiateParticleSystem();
 			_isDirty = false;
+			updateInterval = _assetAccessor.getParmFloatValue("main_duration", 0);
 			StartCoroutine(checkForUpdates());
 		}
 	}
@@ -94,15 +96,20 @@ public class VOPParser : MonoBehaviour {
 			case "curve":
 				curve.mode = ParticleSystemCurveMode.Curve;
 				curve.curveMultiplier = Convert.ToSingle(choppedString[3]);
-				int samples = Convert.ToInt32(choppedString[2]);
 
 				if(choppedString[1] == "float") {
-					curve.curve = GenerateCurve(choppedString, samples);
+					curve.curve = GenerateCurve(choppedString);
 				}
 				break;
 
 			case "randomCurve":
 				curve.mode = ParticleSystemCurveMode.TwoCurves;
+				curve.curveMultiplier = Convert.ToSingle(choppedString[3]);
+
+				if(choppedString[1] == "float") {
+					curve.curveMin = GenerateCurve(choppedString);
+					curve.curveMax = GenerateCurve(choppedString, 68);
+				}
 				break;
 		}
 		return curve;
@@ -112,36 +119,80 @@ public class VOPParser : MonoBehaviour {
 		ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
 		string parameter = _assetAccessor.getParmStringValue(entry, 0);
 		string[] choppedString = parameter.Split(";".ToCharArray());
+		string color;
+		string[] colorArray;
 
 		switch(choppedString[0]) {
 			case "constant":
 				curve.mode = ParticleSystemGradientMode.Color;
 
-				string color = choppedString[2];
+				color = choppedString[2];
 				color = color.Replace("{", "");
 				color = color.Replace("}", "");
-				string[] colorArray = color.Split(",".ToCharArray());
+				colorArray = color.Split(",".ToCharArray());
+
 				curve.color = new Color(Convert.ToSingle(colorArray[0]), 
 										Convert.ToSingle(colorArray[1]), 
 										Convert.ToSingle(colorArray[2]), 
 										Convert.ToSingle(colorArray[3]));
 				break;
+			
+			case "randomConstant":
+				break;
+
+			case "gradient":
+				curve.mode = ParticleSystemGradientMode.Gradient;
+				curve.gradient = GenerateGradient(choppedString);
+				break;
+
+			case "randomGradient":
+				break; 
 		}
 		return curve;
 	}
 
 	///	<Summary>
-	///	Reads a list of values and returns a float curve. The number of samples decide the resolution of the resulting curve
+	///	Reads a list of values and returns a float curve. The number of samples decide the resolution of the resulting curve. We need the offset to be able to handle curve pairs (such as the "random between curves" mode).
 	///	</summary>
-	AnimationCurve GenerateCurve(string[] parameter, int samples) {
+	AnimationCurve GenerateCurve(string[] parameter, int offset = 4) {
 		AnimationCurve curve = new AnimationCurve();
+		int samples = Convert.ToInt32(parameter[2]);
 
 		for (int i = 0; i < samples; i++) {
 			float position = (float) i / (float) samples;
-			float value = Convert.ToSingle(parameter[i+4]);
+			float value = Convert.ToSingle(parameter[i+offset]);
 			curve.AddKey(position, value);
 		}
 		return curve;
+	}
+
+	Gradient GenerateGradient(string[] parameter, int offset = 4) {
+		Gradient gradient = new Gradient();
+		int samples = Convert.ToInt32(parameter[2]);
+		GradientColorKey[] colorKeys = new GradientColorKey[samples];
+		GradientAlphaKey[] alphaKeys = new GradientAlphaKey[samples];
+		
+		for (int i = 0; i < 8; i++) {
+			float position = (float) i / 7.0f;
+			string color = parameter[i+offset];
+
+			color = color.Replace("{", "");
+			color = color.Replace("}", "");
+			string[] colorArray = color.Split(",".ToCharArray());
+
+			Color currentColor = new Color(Convert.ToSingle(colorArray[0]), 
+											Convert.ToSingle(colorArray[1]), 
+											Convert.ToSingle(colorArray[2]), 
+											Convert.ToSingle(colorArray[3]));
+
+			GradientColorKey colorKey = new GradientColorKey(currentColor, position);
+			GradientAlphaKey alphaKey = new GradientAlphaKey(currentColor.a, position);
+			colorKeys[i] = colorKey;
+			alphaKeys[i] = alphaKey;
+		}
+
+		gradient.SetKeys(colorKeys,alphaKeys);
+		return gradient;
 	}
 
 	/// <summary>
@@ -199,9 +250,9 @@ public class VOPParser : MonoBehaviour {
 		
 		emissionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("emission_enabled", 0));
 
-		emissionModule.rateOverTime = _assetAccessor.getParmFloatValue("emission_rateOverTime", 0);
+		emissionModule.rateOverTime = CurveFromString("emission_rateOverTime");
 
-		emissionModule.rateOverDistance = _assetAccessor.getParmFloatValue("emission_rateOverDistance", 0);
+		emissionModule.rateOverDistance = CurveFromString("emission_rateOverDistance");
 
 		//	Shape
 		ParticleSystem.ShapeModule shapeModule = _pSystem.shape;
@@ -231,9 +282,10 @@ public class VOPParser : MonoBehaviour {
 
 		velocityOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("velocityOverLifetime_enabled", 0));
 
-		velocityOverLifetimeModule.x = _assetAccessor.getParmFloatValue("velocityOverLifetime_velocity", 0);
-		velocityOverLifetimeModule.y = _assetAccessor.getParmFloatValue("velocityOverLifetime_velocity", 1);
-		velocityOverLifetimeModule.z = _assetAccessor.getParmFloatValue("velocityOverLifetime_velocity", 2);
+
+		velocityOverLifetimeModule.x = CurveFromString("velocityOverLifetime_velocity_x");
+		velocityOverLifetimeModule.y = CurveFromString("velocityOverLifetime_velocity_y");
+		velocityOverLifetimeModule.z = CurveFromString("velocityOverLifetime_velocity_z");
 
 		//	Limit Velocity Over Lifetime
 		ParticleSystem.LimitVelocityOverLifetimeModule limitVelocityOverLifetimeModule = _pSystem.limitVelocityOverLifetime;
@@ -242,7 +294,7 @@ public class VOPParser : MonoBehaviour {
 
 		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
 
-		limitVelocityOverLifetimeModule.limit = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_limit", 0);
+		limitVelocityOverLifetimeModule.limit = CurveFromString("limitVelocityOverLifetime_limit");
 
 		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
 
@@ -260,9 +312,9 @@ public class VOPParser : MonoBehaviour {
 
 		forceOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_enabled", 0));
 
-		forceOverLifetimeModule.x = _assetAccessor.getParmFloatValue("forceOverLifetime_force", 0);
-		forceOverLifetimeModule.y = _assetAccessor.getParmFloatValue("forceOverLifetime_force", 1);
-		forceOverLifetimeModule.z = _assetAccessor.getParmFloatValue("forceOverLifetime_force", 2);
+		forceOverLifetimeModule.x = CurveFromString("forceOverLifetime_force_x");
+		forceOverLifetimeModule.y = CurveFromString("forceOverLifetime_force_y");
+		forceOverLifetimeModule.z = CurveFromString("forceOverLifetime_force_z");
 
 		forceOverLifetimeModule.randomized = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_randomized", 0));
 
@@ -271,20 +323,14 @@ public class VOPParser : MonoBehaviour {
 
 		colorOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorOverLifetime_enabled", 0));
 
-		colorOverLifetimeModule.color = new Color(_assetAccessor.getParmFloatValue("colorOverLifetime_color", 0),
-													_assetAccessor.getParmFloatValue("colorOverLifetime_color", 1),
-													_assetAccessor.getParmFloatValue("colorOverLifetime_color", 2),
-													_assetAccessor.getParmFloatValue("colorOverLifetime_color", 3));
+		colorOverLifetimeModule.color = GradientFromString("colorOverLifetime_color");
 
 		//	Color By Speed
 		ParticleSystem.ColorBySpeedModule colorBySpeedModule = _pSystem.colorBySpeed;
 
 		colorBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorBySpeed_enabled", 0));
 
-		colorBySpeedModule.color = new Color(_assetAccessor.getParmFloatValue("colorBySpeed_color", 0),
-												_assetAccessor.getParmFloatValue("colorBySpeed_color", 1),
-												_assetAccessor.getParmFloatValue("colorBySpeed_color", 2),
-												_assetAccessor.getParmFloatValue("colorBySpeed_color", 3));
+		colorBySpeedModule.color = GradientFromString("colorBySpeed_color");
 
 		colorBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("colorBySpeed_range", 0),
 												_assetAccessor.getParmFloatValue("colorBySpeed_range", 1));
@@ -292,11 +338,11 @@ public class VOPParser : MonoBehaviour {
 		//	Size Over Lifetime
 		ParticleSystem.SizeOverLifetimeModule sizeOverLifetimeModule = _pSystem.sizeOverLifetime;
 
-		sizeOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetimeModule_enabled", 0));
+		sizeOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_enabled", 0));
 
 		sizeOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_separateAxes", 0));
 
-		sizeOverLifetimeModule.size = _assetAccessor.getParmFloatValue("sizeOverLifetime_size", 0);
+		sizeOverLifetimeModule.size = CurveFromString("sizeOverLifetime_size");
 
 		//	Size By Speed
 		ParticleSystem.SizeBySpeedModule sizeBySpeedModule = _pSystem.sizeBySpeed;
@@ -317,9 +363,9 @@ public class VOPParser : MonoBehaviour {
 
 		rotationOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationOverLifetime_separateAxes", 0));
 
-		rotationOverLifetimeModule.x = _assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 0);
-		rotationOverLifetimeModule.y = _assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 1);
-		rotationOverLifetimeModule.z = _assetAccessor.getParmFloatValue("rotationOverLifetime_angularVelocity", 2);
+		rotationOverLifetimeModule.x = CurveFromString("rotationOverLifetime_angularVelocity_x");
+		rotationOverLifetimeModule.y = CurveFromString("rotationOverLifetime_angularVelocity_y");
+		rotationOverLifetimeModule.z = CurveFromString("rotationOverLifetime_angularVelocity_z");
 
 		// Rotation By Speed
 		ParticleSystem.RotationBySpeedModule rotationBySpeedModule = _pSystem.rotationBySpeed;
@@ -328,9 +374,9 @@ public class VOPParser : MonoBehaviour {
 
 		rotationBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0)); 
 
-		rotationBySpeedModule.x = _assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 0);
-		rotationBySpeedModule.y = _assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 1);
-		rotationBySpeedModule.z = _assetAccessor.getParmFloatValue("rotationBySpeed_angularVelocity", 2);
+		rotationBySpeedModule.x = CurveFromString("rotationBySpeed_angularVelocity_x");
+		rotationBySpeedModule.y = CurveFromString("rotationBySpeed_angularVelocity_y");
+		rotationBySpeedModule.z = CurveFromString("rotationBySpeed_angularVelocity_y");
 
 		rotationBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("rotationBySpeed_range", 0),
 													_assetAccessor.getParmFloatValue("rotationBySpeed_range", 1));
@@ -359,9 +405,9 @@ public class VOPParser : MonoBehaviour {
 
 		textureSheetAnimationModule.animation = (ParticleSystemAnimationType) _assetAccessor.getParmIntValue("textureSheetAnimation_animation", 0);
 
-		textureSheetAnimationModule.frameOverTime = _assetAccessor.getParmFloatValue("textureSheetAnimation_frame", 0);
+		textureSheetAnimationModule.frameOverTime = CurveFromString("textureSheetAnimation_frame");
 
-		textureSheetAnimationModule.startFrame = _assetAccessor.getParmIntValue("textureSheetAnimation_startFrame", 0);
+		textureSheetAnimationModule.startFrame = CurveFromString("textureSheetAnimation_startFrame");
 
 		textureSheetAnimationModule.cycleCount = _assetAccessor.getParmIntValue("textureSheetAnimation_cycles", 0);
 
@@ -379,6 +425,8 @@ public class VOPParser : MonoBehaviour {
 		ParticleSystem.CustomDataModule customDataModule = _pSystem.customData;
 
 		// Renderer
-		// ParticleSystem
+		ParticleSystemRenderer renderer = GetComponent<ParticleSystemRenderer>();
+
+		renderer.material = material;
 	}
 }

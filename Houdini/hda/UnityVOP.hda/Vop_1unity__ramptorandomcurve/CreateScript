@@ -1,7 +1,7 @@
 # Automatically generated script
 \set noalias = 1
 #
-#  Creation script for VOPEmitter operator
+#  Creation script for unity_ramptorandomcurve operator
 #
 
 if ( "$arg1" == "" ) then
@@ -9,7 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Sop/VOPEmitter)
-opspareds "" $arg1
-opexprlanguage -s python $arg1
+# Node $arg1 (Vop/unity_ramptorandomcurve)
+opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1
