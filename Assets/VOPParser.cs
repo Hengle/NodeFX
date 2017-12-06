@@ -11,7 +11,7 @@ public class VOPParser : MonoBehaviour {
 	/// <summary>
 	/// Enabling this will make Unity automatically update the asset definition at regular intervals. This will (hopefully) deprecated in favor of a more dynamic solution
 	/// </summary>
-	public bool automaticUpdates = true;
+	public bool timedUpdates = false;
 	public float updateInterval = 5f;
 	public Material material;
 
@@ -34,13 +34,22 @@ public class VOPParser : MonoBehaviour {
 		_isDirty = true;
 	}
 
+	void OnApplicationFocus(bool hasFocus) {		
+		if (timedUpdates == false) {
+		_isDirty = !hasFocus;
+		}
+	}
+
 	void Update() {
+		if (timedUpdates == true) {
+			StartCoroutine(checkForUpdates());
+		}
+
 		if (_isDirty) {
 			_assetOTL.buildAll();
 			InstantiateParticleSystem();
 			_isDirty = false;
 			updateInterval = _assetAccessor.getParmFloatValue("main_duration", 0);
-			StartCoroutine(checkForUpdates());
 		}
 	}
 
