@@ -37,30 +37,14 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"shapeList"
-	label	"Shape"
-	type	ordinal
-	default	{ "0" }
-	disablewhen	"{ hasinput(1) == 1 }"
-	menu	{
-	    "0"	"Sphere"
-	    "1"	"Hemisphere"
-	    "2"	"Cone"
-	    "3"	"Donut"
-	    "4"	"Box"
-	    "5"	"Mesh"
-	    "6"	"Mesh Renderer"
-	    "7"	"Skinned Mesh Renderer"
-	    "8"	"Circle"
-	    "9"	"Edge"
-	}
-    }
-    parm {
 	name	"Shape"
 	label	"Shape"
 	type	integer
-	invisible
 	default	{ "0" }
+	menu	{
+	    "0"	"Sphere"
+	    "1"	"Hemisphere"
+	}
 	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }

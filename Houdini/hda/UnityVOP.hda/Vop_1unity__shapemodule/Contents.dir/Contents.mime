@@ -48,7 +48,7 @@ inputs
 stat
 {
   create 1512509358
-  modify 1512511099
+  modify 1512562186
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -56,60 +56,6 @@ color UT_Color RGB 0.8 0.8 0.8
 delscript ""
 exprlanguage hscript
 end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot.spareparmdef"
-Content-Type: text/plain
-
-    parm {
-	name	"Enabled"
-	baseparm
-	label	"Enabled"
-	export	none
-    }
-    parm {
-	name	"Shape"
-	baseparm
-	label	"Shape"
-	invisible
-	export	none
-    }
-    parm {
-	name	"Radius"
-	baseparm
-	label	"Radius"
-	export	none
-    }
-    parm {
-	name	"Radius_Thickness"
-	baseparm
-	label	"Radius Thickness"
-	export	none
-    }
-    parm {
-	name	"Position"
-	baseparm
-	label	"Position"
-	export	none
-    }
-    parm {
-	name	"Rotation"
-	baseparm
-	label	"Rotation"
-	export	none
-    }
-    parm {
-	name	"Scale"
-	baseparm
-	label	"Scale"
-	export	none
-    }
-    parm {
-	name	"shapeList"
-	baseparm
-	label	"Shape"
-	export	none
-    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -151,7 +97,7 @@ inputs
 stat
 {
   create 1512171368
-  modify 1512511096
+  modify 1512562182
   author Chris@Voyager
   access 0777
 }
@@ -238,9 +184,9 @@ Content-Disposition: attachment; filename="hdaroot/input.def"
 Content-Type: text/plain
 
 comment ""
-position 0.7 -0.15
+position 0.0170572 -0.15
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Shape"
@@ -254,7 +200,7 @@ inputs
 stat
 {
   create 1512171384
-  modify 1512511096
+  modify 1512562182
   author Chris@Voyager
   access 0777
 }
@@ -328,12 +274,12 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"off"	)
-menuchoices	[ 0	locks=0 ]	(	""	)
+providemenu	[ 0	locks=0 ]	(	"on"	)
+menuchoices	[ 0	locks=0 ]	(	"0 Sphere 1 Hemisphere"	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
-invisible	[ 0	locks=0 ]	(	"on"	)
+invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)

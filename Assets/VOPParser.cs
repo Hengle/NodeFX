@@ -169,11 +169,12 @@ public class VOPParser : MonoBehaviour {
 	Gradient GenerateGradient(string[] parameter, int offset = 4) {
 		Gradient gradient = new Gradient();
 		int samples = Convert.ToInt32(parameter[2]);
+		gradient.mode = (GradientMode) Convert.ToInt32(parameter[3]);
 		GradientColorKey[] colorKeys = new GradientColorKey[samples];
 		GradientAlphaKey[] alphaKeys = new GradientAlphaKey[samples];
 		
-		for (int i = 0; i < 8; i++) {
-			float position = (float) i / 7.0f;
+		for (int i = 0; i < samples; i++) {
+			float position = (float) i / (samples - 1.0f);
 			string color = parameter[i+offset];
 
 			color = color.Replace("{", "");
