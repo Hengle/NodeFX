@@ -5,6 +5,7 @@
     script	unity_rendermodule
     label	UnityRenderModule
 
+    input	int	Enabled	Enabled
     input	int	Mode	Mode
     input	float	NormalRenderDirection	"Normal Render Direction"
     input	string	Material	Material
@@ -23,6 +24,7 @@
     input	int	OrderInLayer	"Order In Layer"
     input	int	LightProbes	"Light Probes"
     input	int	ReflectionProbes	"Reflection Probes"
+    inputflags	Enabled	2
     inputflags	Mode	2
     inputflags	NormalRenderDirection	2
     inputflags	Material	2
@@ -41,7 +43,7 @@
     inputflags	OrderInLayer	2
     inputflags	LightProbes	2
     inputflags	ReflectionProbes	2
-    signature	"Default Inputs"	default	{ int float string string int float float float int vector int int int int int int int int }
+    signature	"Default Inputs"	default	{ int int float string string int float float float int vector int int int int int int int int }
 
     outputoverrides	default
     {
@@ -51,6 +53,13 @@
 	""
     }
 
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
     parm {
 	name	"Mode"
 	label	"Mode"

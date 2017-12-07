@@ -3838,10 +3838,10 @@ ParticleSystem:
     separateAxes: 0
     frequency: 0.5
     damping: 1
-    octaves: 1
-    octaveMultiplier: 0.5
+    octaves: 4
+    octaveMultiplier: 0.47
     octaveScale: 2
-    quality: 2
+    quality: 1
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
@@ -4451,9 +4451,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -11157,8 +11157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08152646033bb3438079100f8f848ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 65
-  myNodeId: 65
+  myAssetId: -1
+  myNodeId: -1
   myObjectNodeId: 66
   myAsset: {fileID: 661456475}
   myObjectId: 66

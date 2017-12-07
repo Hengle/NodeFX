@@ -5,6 +5,7 @@
     script	unity_trails
     label	UnityTrails
 
+    input	int	Enabled	Enabled
     input	float	Ratio	Ratio
     input	string	Lifetime	Lifetime
     input	float	MinimumVertexDistance	"Minimum Vertex Distance"
@@ -18,6 +19,7 @@
     input	string	WidthOverTrail	"Width Over Trail"
     input	string	ColorOverTrail	"Color Over Trail"
     input	int	GenerateLightingData	"Generate Lighting Data"
+    inputflags	Enabled	2
     inputflags	Ratio	2
     inputflags	Lifetime	2
     inputflags	MinimumVertexDistance	2
@@ -31,7 +33,7 @@
     inputflags	WidthOverTrail	2
     inputflags	ColorOverTrail	2
     inputflags	GenerateLightingData	2
-    signature	"Default Inputs"	default	{ float string float int int int int int int string string string int }
+    signature	"Default Inputs"	default	{ int float string float int int int int int int string string string int }
 
     outputoverrides	default
     {
@@ -41,6 +43,13 @@
 	""
     }
 
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
     parm {
 	name	"Ratio"
 	label	"Ratio"

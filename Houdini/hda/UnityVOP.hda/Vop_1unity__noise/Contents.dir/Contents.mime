@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_rendermodule
+type = unity_noise
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,27 +19,59 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 16.6025 2.66847
-connectornextid 2
+position 6.08536 11.9793
+connectornextid 18
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 }
 inputsNamed3
 {
-0 	"" "" 1 "Mode"
-1 	"" "" 1 "NormalRenderDirection"
+0 	"" "" 1 "Enabled"
+1 	"" "" 1 "SeparateAxes"
+2 	"" "" 1 "Strength"
+3 	"" "" 1 "X"
+4 	"" "" 1 "Y"
+5 	"" "" 1 "Z"
+6 	"" "" 1 "Frequency"
+7 	"" "" 1 "ScrollSpeed"
+8 	"" "" 1 "Damping"
+9 	"" "" 1 "Octaves"
+10 	"" "" 1 "OctaveMultiplier"
+11 	"" "" 1 "OctaveScale"
+12 	"" "" 1 "Quality"
+13 	"" "" 1 "Remap"
+14 	"" "" 1 "RemapCurve"
+15 	"" "" 1 "PositionAmount"
+16 	"" "" 1 "RotationAmount"
+17 	"" "" 1 "ScaleAmount"
 }
 inputs
 {
 0 	"" 0 1
 1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+4 	"" 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	"" 0 1
+11 	"" 0 1
+12 	"" 0 1
+13 	"" 0 1
+14 	"" 0 1
+15 	"" 0 1
+16 	"" 0 1
+17 	"" 0 1
 }
 stat
 {
-  create 1512584660
-  modify 1512604130
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512605531
+  modify 1512605552
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -70,7 +102,7 @@ Content-Disposition: attachment; filename="hdaroot/bind1.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 2.98561
+position -0.0294118 1.35706
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -86,9 +118,9 @@ inputs
 }
 stat
 {
-  create 1512584458
-  modify 1512604050
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604560
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -102,8 +134,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_material	)
-parmtype	[ 0	locks=0 ]	(	"string"	)
+parmname	[ 0	locks=0 ]	(	noise_enabled	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -121,7 +153,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	Assets/Materials/ParticleMaterial.mat	)
+stringdef	[ 0	locks=0 ]	(	""	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -174,12 +206,12 @@ Content-Disposition: attachment; filename="hdaroot/input.def"
 Content-Type: text/plain
 
 comment ""
-position 0.0425532 -0.604566
+position -2.02941 1.35706
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Material"
+0 "_Enabled"
 }
 inputsNamed3
 {
@@ -189,9 +221,9 @@ inputs
 }
 stat
 {
-  create 1512584481
-  modify 1512586293
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604457
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -207,12 +239,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Material	)
+parmname	[ 0	locks=0 ]	(	Enabled	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Material	)
+parmlabel	[ 0	locks=0 ]	(	Enabled	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"string"	)
+parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -229,7 +261,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	Assets/Materials/ParticleMaterial.mat	)
+stringdef	[ 0	locks=0 ]	(	""	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -301,7 +333,7 @@ Content-Disposition: attachment; filename="hdaroot/bind2.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 1.61165
+position -0.0294118 -0.0111656
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -317,9 +349,9 @@ inputs
 }
 stat
 {
-  create 1512584503
-  modify 1512604044
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604558
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -333,8 +365,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_pivot	)
-parmtype	[ 0	locks=0 ]	(	"float3"	)
+parmname	[ 0	locks=0 ]	(	noise_separateAxes	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -405,12 +437,12 @@ Content-Disposition: attachment; filename="hdaroot/input1.def"
 Content-Type: text/plain
 
 comment ""
-position 0.0425532 -2.1967
+position -1.8853 -0.415
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Pivot"
+0 "_SeparateAxes"
 }
 inputsNamed3
 {
@@ -420,9 +452,9 @@ inputs
 }
 stat
 {
-  create 1512584522
-  modify 1512584532
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604479
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -438,12 +470,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Pivot	)
+parmname	[ 0	locks=0 ]	(	SeparateAxes	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Pivot	)
+parmlabel	[ 0	locks=0 ]	(	"Separate Axes"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"float3"	)
+parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -532,7 +564,7 @@ Content-Disposition: attachment; filename="hdaroot/bind3.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 0.209167
+position -0.0294118 -1.42048
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -548,9 +580,9 @@ inputs
 }
 stat
 {
-  create 1512584554
-  modify 1512604054
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604556
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -564,8 +596,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_mode	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_strength	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -583,7 +615,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -636,12 +668,12 @@ Content-Disposition: attachment; filename="hdaroot/input2.def"
 Content-Type: text/plain
 
 comment ""
-position 0.04255 -3.89539
+position -1.8853 -0.415
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Mode"
+0 "_Strength"
 }
 inputsNamed3
 {
@@ -651,9 +683,9 @@ inputs
 }
 stat
 {
-  create 1512584730
-  modify 1512584785
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604540
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -669,12 +701,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Mode	)
+parmname	[ 0	locks=0 ]	(	Strength	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Mode	)
+parmlabel	[ 0	locks=0 ]	(	Strength	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -691,7 +723,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -714,7 +746,7 @@ stringadef	[ 0	locks=0 ]	(	)
 coshaderadef	[ 0	locks=0 ]	(	""	)
 structdef	[ 0	locks=0 ]	(	""	)
 rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	5	)
+rangeint	[ 0	locks=0 ]	(	0	10	)
 stringtype	[ 0	locks=0 ]	(	off	)
 opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
 parmcomment	[ 0	locks=0 ]	(	""	)
@@ -726,8 +758,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 Billboard 1 Streched 2 Horizontal 3 Vertical 4 Mesh 5 None"	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -763,7 +795,7 @@ Content-Disposition: attachment; filename="hdaroot/bind4.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -1.22251
+position -0.0294118 -2.81618
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -779,9 +811,9 @@ inputs
 }
 stat
 {
-  create 1512585312
-  modify 1512604056
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604597
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -795,8 +827,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_Alignment	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_strength_x	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -814,7 +846,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -867,12 +899,12 @@ Content-Disposition: attachment; filename="hdaroot/input3.def"
 Content-Type: text/plain
 
 comment ""
-position 0.04255 -5.24298
+position -1.81324 0.08774
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Alignment"
+0 "_X"
 }
 inputsNamed3
 {
@@ -882,9 +914,9 @@ inputs
 }
 stat
 {
-  create 1512585331
-  modify 1512585388
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604597
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -900,12 +932,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Alignment	)
+parmname	[ 0	locks=0 ]	(	X	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Alignment	)
+parmlabel	[ 0	locks=0 ]	(	X	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -922,7 +954,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -945,7 +977,7 @@ stringadef	[ 0	locks=0 ]	(	)
 coshaderadef	[ 0	locks=0 ]	(	""	)
 structdef	[ 0	locks=0 ]	(	""	)
 rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	4	)
+rangeint	[ 0	locks=0 ]	(	0	10	)
 stringtype	[ 0	locks=0 ]	(	off	)
 opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
 parmcomment	[ 0	locks=0 ]	(	""	)
@@ -957,8 +989,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 View 1 World 2 Local 3 Facing 4 Velocity"	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -994,7 +1026,7 @@ Content-Disposition: attachment; filename="hdaroot/bind5.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -2.735
+position -0.0294118 -4.30719
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1010,9 +1042,9 @@ inputs
 }
 stat
 {
-  create 1512594282
-  modify 1512604062
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604609
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -1026,11 +1058,11 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_normalDirection	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmname	[ 0	locks=0 ]	(	noise_strength_y	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
-floatdef	[ 0	locks=0 ]	(	1	)
+floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -1045,7 +1077,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1098,12 +1130,12 @@ Content-Disposition: attachment; filename="hdaroot/input4.def"
 Content-Type: text/plain
 
 comment ""
-position 2.84986 -3.91692
+position -1.77721 1.03696
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_NormalRenderDirection"
+0 "_Y"
 }
 inputsNamed3
 {
@@ -1113,9 +1145,9 @@ inputs
 }
 stat
 {
-  create 1512594304
-  modify 1512594372
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604609
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -1131,14 +1163,14 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	NormalRenderDirection	)
+parmname	[ 0	locks=0 ]	(	Y	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Normal Render Direction"	)
+parmlabel	[ 0	locks=0 ]	(	Y	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	1	)
+floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -1153,7 +1185,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1225,7 +1257,7 @@ Content-Disposition: attachment; filename="hdaroot/bind6.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -4.30782
+position -0.0294118 -5.85267
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1241,9 +1273,9 @@ inputs
 }
 stat
 {
-  create 1512584458
-  modify 1512604066
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604628
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -1257,7 +1289,7 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_trailMaterial	)
+parmname	[ 0	locks=0 ]	(	noise_strength_z	)
 parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
@@ -1276,7 +1308,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	Assets/Materials/ParticleMaterial.mat	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1329,12 +1361,12 @@ Content-Disposition: attachment; filename="hdaroot/input5.def"
 Content-Type: text/plain
 
 comment ""
-position -1.8853 -0.329071
+position -1.77721 1.03696
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Trail_Material"
+0 "_Z"
 }
 inputsNamed3
 {
@@ -1344,9 +1376,9 @@ inputs
 }
 stat
 {
-  create 1512584481
-  modify 1512594362
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604619
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -1362,10 +1394,10 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	"Trail Material"	)
+parmname	[ 0	locks=0 ]	(	Z	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Trail Material"	)
+parmlabel	[ 0	locks=0 ]	(	Z	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
@@ -1384,7 +1416,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	Assets/Materials/ParticleMaterial.mat	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1456,7 +1488,7 @@ Content-Disposition: attachment; filename="hdaroot/bind7.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -5.8309
+position -0.0294118 -7.49566
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1472,9 +1504,9 @@ inputs
 }
 stat
 {
-  create 1512594700
-  modify 1512604070
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604646
+  modify 1512604825
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -1488,11 +1520,11 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_sortMode	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_frequency	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	0.5	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -1560,12 +1592,12 @@ Content-Disposition: attachment; filename="hdaroot/input6.def"
 Content-Type: text/plain
 
 comment ""
-position 3.87033 -5.13088
+position -2.02941 -7.49566
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_SortMode"
+0 "_Frequency"
 }
 inputsNamed3
 {
@@ -1575,9 +1607,9 @@ inputs
 }
 stat
 {
-  create 1512594722
-  modify 1512595011
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604686
+  modify 1512604825
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -1593,14 +1625,14 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	SortMode	)
+parmname	[ 0	locks=0 ]	(	Frequency	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Sort Mode"	)
+parmlabel	[ 0	locks=0 ]	(	Frequency	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	0.5	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -1650,8 +1682,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 None 1 \"By Distance\" 2 \"Oldest in front\" 3 \"Youngest in front\""	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -1687,7 +1719,7 @@ Content-Disposition: attachment; filename="hdaroot/bind8.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -7.28638
+position -0.0294118 -8.94733
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1703,9 +1735,9 @@ inputs
 }
 stat
 {
-  create 1512594795
-  modify 1512604071
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604758
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -1719,8 +1751,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_sortingFudge	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmname	[ 0	locks=0 ]	(	noise_scrollSpeed	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -1738,7 +1770,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1791,12 +1823,12 @@ Content-Disposition: attachment; filename="hdaroot/input7.def"
 Content-Type: text/plain
 
 comment ""
-position 3.383 -7.20949
+position -1.81324 0.08774
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_SortingFudge"
+0 "_ScrollSpeed"
 }
 inputsNamed3
 {
@@ -1806,9 +1838,9 @@ inputs
 }
 stat
 {
-  create 1512594819
-  modify 1512595011
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604758
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -1824,12 +1856,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	SortingFudge	)
+parmname	[ 0	locks=0 ]	(	ScrollSpeed	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Sorting Fudge"	)
+parmlabel	[ 0	locks=0 ]	(	"Scroll Speed"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -1846,7 +1878,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -1918,7 +1950,7 @@ Content-Disposition: attachment; filename="hdaroot/bind9.def"
 Content-Type: text/plain
 
 comment ""
-position 1.21016 -8.74212
+position 2.25839 1.35706
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1934,9 +1966,9 @@ inputs
 }
 stat
 {
-  create 1512594880
-  modify 1512604074
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604824
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -1950,12 +1982,12 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_minParticleSize	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmname	[ 0	locks=0 ]	(	noise_damping	)
+parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	1	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
@@ -2022,12 +2054,12 @@ Content-Disposition: attachment; filename="hdaroot/input8.def"
 Content-Type: text/plain
 
 comment ""
-position 6.10807 -7.20949
+position -1.8853 -0.415
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_MinParticleSize"
+0 "_Damping"
 }
 inputsNamed3
 {
@@ -2037,9 +2069,9 @@ inputs
 }
 stat
 {
-  create 1512594898
-  modify 1512594915
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604824
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -2055,16 +2087,16 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	MinParticleSize	)
+parmname	[ 0	locks=0 ]	(	Damping	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Min Particle Size"	)
+parmlabel	[ 0	locks=0 ]	(	Damping	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
+toggledef	[ 0	locks=0 ]	(	"on"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
 float2def	[ 0	locks=0 ]	(	0	0	)
@@ -2149,7 +2181,7 @@ Content-Disposition: attachment; filename="hdaroot/bind10.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 2.98561
+position 2.25839 -0.0111656
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2165,9 +2197,9 @@ inputs
 }
 stat
 {
-  create 1512594880
-  modify 1512604077
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512604883
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -2181,12 +2213,12 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_maxParticleSize	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmname	[ 0	locks=0 ]	(	noise_octaves	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	1	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
@@ -2253,12 +2285,12 @@ Content-Disposition: attachment; filename="hdaroot/input9.def"
 Content-Type: text/plain
 
 comment ""
-position -1.8853 -0.415
+position -2.95715 -1.30103
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_MaxParticleSize"
+0 "_Octaves"
 }
 inputsNamed3
 {
@@ -2268,9 +2300,9 @@ inputs
 }
 stat
 {
-  create 1512594898
-  modify 1512594926
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512604883
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -2286,16 +2318,16 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	MaxParticleSize	)
+parmname	[ 0	locks=0 ]	(	Octaves	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Max Particle Size"	)
+parmlabel	[ 0	locks=0 ]	(	Octaves	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"float"	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
+intdef	[ 0	locks=0 ]	(	1	)
+toggledef	[ 0	locks=0 ]	(	"on"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
 float2def	[ 0	locks=0 ]	(	0	0	)
@@ -2331,7 +2363,7 @@ stringadef	[ 0	locks=0 ]	(	)
 coshaderadef	[ 0	locks=0 ]	(	""	)
 structdef	[ 0	locks=0 ]	(	""	)
 rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	10	)
+rangeint	[ 0	locks=0 ]	(	1	4	)
 stringtype	[ 0	locks=0 ]	(	off	)
 opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
 parmcomment	[ 0	locks=0 ]	(	""	)
@@ -2380,7 +2412,7 @@ Content-Disposition: attachment; filename="hdaroot/bind11.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 1.61165
+position 2.25839 -1.42048
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2396,9 +2428,9 @@ inputs
 }
 stat
 {
-  create 1512595241
-  modify 1512604080
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604928
+  modify 1512605024
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -2412,11 +2444,11 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_visualizePivot	)
-parmtype	[ 0	locks=0 ]	(	"toggle"	)
+parmname	[ 0	locks=0 ]	(	noise_octaveMultiplier	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	0.5	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -2484,12 +2516,12 @@ Content-Disposition: attachment; filename="hdaroot/input10.def"
 Content-Type: text/plain
 
 comment ""
-position -0.158046 -3.78632
+position 0.258388 -1.42048
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_VisualizePivot"
+0 "_OctaveMultiplier"
 }
 inputsNamed3
 {
@@ -2499,9 +2531,9 @@ inputs
 }
 stat
 {
-  create 1512595271
-  modify 1512595307
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512605005
+  modify 1512605024
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -2517,14 +2549,14 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	VisualizePivot	)
+parmname	[ 0	locks=0 ]	(	OctaveMultiplier	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Visualize Pivot"	)
+parmlabel	[ 0	locks=0 ]	(	"Octave Multiplier"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"toggle"	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	0.5	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -2611,7 +2643,7 @@ Content-Disposition: attachment; filename="hdaroot/bind12.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 0.209167
+position 2.25839 -2.81618
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2627,9 +2659,9 @@ inputs
 }
 stat
 {
-  create 1512595312
-  modify 1512604082
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604928
+  modify 1512605125
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -2643,11 +2675,11 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_masking	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_octaveScale	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	2	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -2715,12 +2747,12 @@ Content-Disposition: attachment; filename="hdaroot/input11.def"
 Content-Type: text/plain
 
 comment ""
-position 2.49785 -4.04282
+position -1.8853 -0.415
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Masking"
+0 "_OctaveScale"
 }
 inputsNamed3
 {
@@ -2730,9 +2762,9 @@ inputs
 }
 stat
 {
-  create 1512595329
-  modify 1512595371
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512605005
+  modify 1512605125
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -2748,14 +2780,14 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Masking	)
+parmname	[ 0	locks=0 ]	(	OctaveScale	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Masking	)
+parmlabel	[ 0	locks=0 ]	(	"Octave Scale"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	2	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -2792,7 +2824,7 @@ float16adef	[ 0	locks=0 ]	(	)
 stringadef	[ 0	locks=0 ]	(	)
 coshaderadef	[ 0	locks=0 ]	(	""	)
 structdef	[ 0	locks=0 ]	(	""	)
-rangeflt	[ 0	locks=0 ]	(	0	1	)
+rangeflt	[ 0	locks=0 ]	(	0	4	)
 rangeint	[ 0	locks=0 ]	(	0	10	)
 stringtype	[ 0	locks=0 ]	(	off	)
 opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
@@ -2805,8 +2837,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 None 1 \"Visible Inside Mask\" 2 \"Visible Outside Mask\""	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -2842,7 +2874,7 @@ Content-Disposition: attachment; filename="hdaroot/bind13.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -1.22251
+position 2.25839 -4.30719
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2858,9 +2890,9 @@ inputs
 }
 stat
 {
-  create 1512595388
-  modify 1512604084
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605194
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -2874,12 +2906,12 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_castShadows	)
+parmname	[ 0	locks=0 ]	(	noise_quality	)
 parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	1	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
@@ -2946,12 +2978,12 @@ Content-Disposition: attachment; filename="hdaroot/input12.def"
 Content-Type: text/plain
 
 comment ""
-position 5.15375 -4.30782
+position -2.95715 -1.30103
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_CastShadows"
+0 "_Quality"
 }
 inputsNamed3
 {
@@ -2961,9 +2993,9 @@ inputs
 }
 stat
 {
-  create 1512595405
-  modify 1512595603
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605194
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -2979,16 +3011,16 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	CastShadows	)
+parmname	[ 0	locks=0 ]	(	Quality	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Cast Shadows"	)
+parmlabel	[ 0	locks=0 ]	(	Quality	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"int"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
+intdef	[ 0	locks=0 ]	(	1	)
+toggledef	[ 0	locks=0 ]	(	"on"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
 float2def	[ 0	locks=0 ]	(	0	0	)
@@ -3024,7 +3056,7 @@ stringadef	[ 0	locks=0 ]	(	)
 coshaderadef	[ 0	locks=0 ]	(	""	)
 structdef	[ 0	locks=0 ]	(	""	)
 rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	10	)
+rangeint	[ 0	locks=0 ]	(	0	2	)
 stringtype	[ 0	locks=0 ]	(	off	)
 opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
 parmcomment	[ 0	locks=0 ]	(	""	)
@@ -3037,7 +3069,7 @@ hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
 providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 Off 1 On 2 Double-sided 3 \"Shadows Only\""	)
+menuchoices	[ 0	locks=0 ]	(	"0 Low 1 Medium 2 High"	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -3073,7 +3105,7 @@ Content-Disposition: attachment; filename="hdaroot/bind14.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -2.735
+position 2.25839 -5.85267
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -3089,9 +3121,9 @@ inputs
 }
 stat
 {
-  create 1512595462
-  modify 1512604086
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605232
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -3105,7 +3137,7 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_receiveShadows	)
+parmname	[ 0	locks=0 ]	(	noise_remap	)
 parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
@@ -3177,12 +3209,12 @@ Content-Disposition: attachment; filename="hdaroot/input13.def"
 Content-Type: text/plain
 
 comment ""
-position 4.48597 -2.47
+position -2.95715 -1.30103
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_ReceiveShadows"
+0 "_Remap"
 }
 inputsNamed3
 {
@@ -3192,9 +3224,9 @@ inputs
 }
 stat
 {
-  create 1512595478
-  modify 1512595603
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605232
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -3210,10 +3242,10 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	ReceiveShadows	)
+parmname	[ 0	locks=0 ]	(	Remap	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Receive Shadows"	)
+parmlabel	[ 0	locks=0 ]	(	Remap	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"toggle"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
@@ -3304,7 +3336,7 @@ Content-Disposition: attachment; filename="hdaroot/bind15.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -4.30782
+position 2.25839 -7.49566
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -3320,9 +3352,9 @@ inputs
 }
 stat
 {
-  create 1512595542
-  modify 1512604088
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605302
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -3336,8 +3368,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_motionVectors	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_remapCurve	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -3355,7 +3387,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	curve;float;64;5.000000;0.000000;0.015625;0.031250;0.046875;0.062500;0.078125;0.093750;0.109375;0.125000;0.140625;0.156250;0.171875;0.187500;0.203125;0.218750;0.234375;0.250000;0.265625;0.281250;0.296875;0.312500;0.328125;0.343750;0.359375;0.375000;0.390625;0.406250;0.421875;0.437500;0.453125;0.468750;0.484375;0.500000;0.515625;0.531250;0.546875;0.562500;0.578125;0.593750;0.609375;0.625000;0.640625;0.656250;0.671875;0.687500;0.703125;0.718750;0.734375;0.750000;0.765625;0.781250;0.796875;0.812500;0.828125;0.843750;0.859375;0.875000;0.890625;0.906250;0.921875;0.937500;0.953125;0.968750;0.984375	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3408,12 +3440,12 @@ Content-Disposition: attachment; filename="hdaroot/input14.def"
 Content-Type: text/plain
 
 comment ""
-position 7.35912 -2.735
+position -1.81324 0.08774
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_MotionVectors"
+0 "_RemapCurve"
 }
 inputsNamed3
 {
@@ -3423,9 +3455,9 @@ inputs
 }
 stat
 {
-  create 1512595555
-  modify 1512595604
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605302
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -3441,15 +3473,15 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	MotionVectors	)
+parmname	[ 0	locks=0 ]	(	RemapCurve	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Motion Vectors"	)
+parmlabel	[ 0	locks=0 ]	(	"Remap Curve"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	1	)
+intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
 logfloatdef	[ 0	locks=0 ]	(	0	)
@@ -3463,7 +3495,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	curve;float;64;5.000000;0.000000;0.015625;0.031250;0.046875;0.062500;0.078125;0.093750;0.109375;0.125000;0.140625;0.156250;0.171875;0.187500;0.203125;0.218750;0.234375;0.250000;0.265625;0.281250;0.296875;0.312500;0.328125;0.343750;0.359375;0.375000;0.390625;0.406250;0.421875;0.437500;0.453125;0.468750;0.484375;0.500000;0.515625;0.531250;0.546875;0.562500;0.578125;0.593750;0.609375;0.625000;0.640625;0.656250;0.671875;0.687500;0.703125;0.718750;0.734375;0.750000;0.765625;0.781250;0.796875;0.812500;0.828125;0.843750;0.859375;0.875000;0.890625;0.906250;0.921875;0.937500;0.953125;0.968750;0.984375	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3498,8 +3530,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 \"Camera Motion Only\" 1 \"Per Object Motion\" 2 \"Force No Motion\""	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -3535,7 +3567,7 @@ Content-Disposition: attachment; filename="hdaroot/bind16.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -5.8309
+position 2.25839 -8.94733
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -3551,9 +3583,9 @@ inputs
 }
 stat
 {
-  create 1512595619
-  modify 1512604090
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605341
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -3567,8 +3599,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_orderInLayer	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_positionAmount	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -3586,7 +3618,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3639,12 +3671,12 @@ Content-Disposition: attachment; filename="hdaroot/input15.def"
 Content-Type: text/plain
 
 comment ""
-position 8.93366 -4.12879
+position -2.92112 3.3767
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_OrderInLayer"
+0 "_PositionAmount"
 }
 inputsNamed3
 {
@@ -3654,9 +3686,9 @@ inputs
 }
 stat
 {
-  create 1512595633
-  modify 1512595647
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605341
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -3672,12 +3704,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	OrderInLayer	)
+parmname	[ 0	locks=0 ]	(	PositionAmount	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Order In Layer"	)
+parmlabel	[ 0	locks=0 ]	(	"Position Amount"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -3694,7 +3726,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3766,7 +3798,7 @@ Content-Disposition: attachment; filename="hdaroot/bind17.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -7.28638
+position 4.75626 -8.94733
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -3782,9 +3814,9 @@ inputs
 }
 stat
 {
-  create 1512595656
-  modify 1512604093
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605495
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -3798,8 +3830,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_lightProbes	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_rotationAmount	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -3817,7 +3849,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;0.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3870,12 +3902,12 @@ Content-Disposition: attachment; filename="hdaroot/input16.def"
 Content-Type: text/plain
 
 comment ""
-position 9.217 -4.885
+position -3.47506 5.74701
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_LightProbes"
+0 "_RotationAmount"
 }
 inputsNamed3
 {
@@ -3885,9 +3917,9 @@ inputs
 }
 stat
 {
-  create 1512595672
-  modify 1512595714
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605363
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -3903,12 +3935,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	LightProbes	)
+parmname	[ 0	locks=0 ]	(	RotationAmount	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Light Probes"	)
+parmlabel	[ 0	locks=0 ]	(	"Rotation Amount"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -3925,7 +3957,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;0.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -3960,8 +3992,8 @@ usebound	[ 0	locks=0 ]	(	"off"	)
 hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 Off 1 \"Blend Probes\" 2 \"Use Proxy Volume\""	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -3997,7 +4029,7 @@ Content-Disposition: attachment; filename="hdaroot/bind18.def"
 Content-Type: text/plain
 
 comment ""
-position 3.43467 -8.74212
+position 7.11901 -8.94733
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -4013,9 +4045,9 @@ inputs
 }
 stat
 {
-  create 1512595656
-  modify 1512604096
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512603868
+  modify 1512605495
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.6 0.6 1 
@@ -4029,8 +4061,8 @@ Content-Type: text/plain
 
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_reflectionProbes	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmname	[ 0	locks=0 ]	(	noise_scaleAmount	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 overridetype	[ 0	locks=0 ]	(	"on"	)
 floatdef	[ 0	locks=0 ]	(	0	)
@@ -4048,7 +4080,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;0.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -4101,12 +4133,12 @@ Content-Disposition: attachment; filename="hdaroot/input17.def"
 Content-Type: text/plain
 
 comment ""
-position -1.8853 -0.415
+position -4.92253 6.20634
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_ReflectionProbes"
+0 "_ScaleAmount"
 }
 inputsNamed3
 {
@@ -4116,9 +4148,9 @@ inputs
 }
 stat
 {
-  create 1512595672
-  modify 1512595780
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1512604436
+  modify 1512605416
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 1 1 0.4 
@@ -4134,12 +4166,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	ReflectionProbes	)
+parmname	[ 0	locks=0 ]	(	ScaleAmount	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Reflection Probes"	)
+parmlabel	[ 0	locks=0 ]	(	"Scale Amount"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -4156,238 +4188,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
-filedef	[ 0	locks=0 ]	(	""	)
-imagedef	[ 0	locks=0 ]	(	""	)
-geometrydef	[ 0	locks=0 ]	(	""	)
-colordef	[ 0	locks=0 ]	(	0	0	0	)
-color4def	[ 0	locks=0 ]	(	0	0	0	0	)
-bsdfdef	[ 0	locks=0 ]	(	""	)
-coshaderdef	[ 0	locks=0 ]	(	""	)
-floatadef	[ 0	locks=0 ]	(	)
-intadef	[ 0	locks=0 ]	(	)
-vector2adef	[ 0	locks=0 ]	(	)
-vectoradef	[ 0	locks=0 ]	(	)
-pointadef	[ 0	locks=0 ]	(	)
-normaladef	[ 0	locks=0 ]	(	)
-coloradef	[ 0	locks=0 ]	(	)
-float4adef	[ 0	locks=0 ]	(	)
-floatm2adef	[ 0	locks=0 ]	(	)
-float9adef	[ 0	locks=0 ]	(	)
-float16adef	[ 0	locks=0 ]	(	)
-stringadef	[ 0	locks=0 ]	(	)
-coshaderadef	[ 0	locks=0 ]	(	""	)
-structdef	[ 0	locks=0 ]	(	""	)
-rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	10	)
-stringtype	[ 0	locks=0 ]	(	off	)
-opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
-parmcomment	[ 0	locks=0 ]	(	""	)
-separator1	[ 0	locks=0 ]	(	)
-useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
-useownexportcontext	[ 0	locks=0 ]	(	"off"	)
-parmuniform	[ 0	locks=0 ]	(	"on"	)
-usebound	[ 0	locks=0 ]	(	"off"	)
-hasconnector	[ 0	locks=0 ]	(	"on"	)
-exportparm	[ 0	locks=0 ]	(	"off"	)
-exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 Off 1 \"Blend Probes\" 2 \"Blend Probes and Skybox\" 3 \"Simple\""	)
-menuscript	[ 0	locks=0 ]	(	""	)
-menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
-separator2	[ 0	locks=0 ]	(	)
-invisible	[ 0	locks=0 ]	(	"off"	)
-joinnext	[ 0	locks=0 ]	(	"off"	)
-disablewhen	[ 0	locks=0 ]	(	""	)
-hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
-tags	[ 0	locks=0 ]	(	""	)
-help	[ 0	locks=0 ]	(	""	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/input17.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.0.736"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/bind19.init"
-Content-Type: text/plain
-
-type = bind
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/bind19.def"
-Content-Type: text/plain
-
-comment ""
-position 7.121 -0.542141
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-}
-inputsNamed3
-{
-0 	input18 0 1 "input"
-}
-inputs
-{
-0 	input18 0 1
-}
-stat
-{
-  create 1512603904
-  modify 1512604114
-  author Chris@Voyager
-  access 0777
-}
-color UT_Color RGB 0.6 0.6 1 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/bind19.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-parmname	[ 0	locks=0 ]	(	renderer_enabled	)
-parmtype	[ 0	locks=0 ]	(	"toggle"	)
-parmtypename	[ 0	locks=0 ]	(	""	)
-overridetype	[ 0	locks=0 ]	(	"off"	)
-floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
-angledef	[ 0	locks=0 ]	(	0	)
-logfloatdef	[ 0	locks=0 ]	(	0	)
-float2def	[ 0	locks=0 ]	(	0	0	)
-float3def	[ 0	locks=0 ]	(	0	0	0	)
-vectordef	[ 0	locks=0 ]	(	0	0	0	)
-normaldef	[ 0	locks=0 ]	(	0	0	0	)
-pointdef	[ 0	locks=0 ]	(	0	0	0	)
-directiondef	[ 0	locks=0 ]	(	1	0	0	)
-float4def	[ 0	locks=0 ]	(	0	0	0	0	)
-floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
-float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
-float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
-filedef	[ 0	locks=0 ]	(	""	)
-imagedef	[ 0	locks=0 ]	(	""	)
-geometrydef	[ 0	locks=0 ]	(	""	)
-colordef	[ 0	locks=0 ]	(	0	0	0	)
-color4def	[ 0	locks=0 ]	(	0	0	0	0	)
-bsdfdef	[ 0	locks=0 ]	(	""	)
-coshaderdef	[ 0	locks=0 ]	(	""	)
-floatadef	[ 0	locks=0 ]	(	)
-intadef	[ 0	locks=0 ]	(	)
-vector2adef	[ 0	locks=0 ]	(	)
-vectoradef	[ 0	locks=0 ]	(	)
-pointadef	[ 0	locks=0 ]	(	)
-normaladef	[ 0	locks=0 ]	(	)
-coloradef	[ 0	locks=0 ]	(	)
-float4adef	[ 0	locks=0 ]	(	)
-floatm2adef	[ 0	locks=0 ]	(	)
-float9adef	[ 0	locks=0 ]	(	)
-float16adef	[ 0	locks=0 ]	(	)
-stringadef	[ 0	locks=0 ]	(	)
-coshaderadef	[ 0	locks=0 ]	(	""	)
-structdef	[ 0	locks=0 ]	(	""	)
-useasparmdefiner	[ 0	locks=0 ]	(	"on"	)
-useownexportcontext	[ 0	locks=0 ]	(	"off"	)
-parmuniform	[ 0	locks=0 ]	(	"on"	)
-usebound	[ 0	locks=0 ]	(	"off"	)
-exportparm	[ 0	locks=0 ]	(	"on"	)
-exportcontext	[ 0	locks=0 ]	(	cvex	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/bind19.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.0.736"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/input18.init"
-Content-Type: text/plain
-
-type = parameter
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/input18.def"
-Content-Type: text/plain
-
-comment ""
-position -1.8853 -0.415
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-0 "_Enabled"
-}
-inputsNamed3
-{
-}
-inputs
-{
-}
-stat
-{
-  create 1512603928
-  modify 1512604105
-  author Chris@Voyager
-  access 0777
-}
-color UT_Color RGB 1 1 0.4 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/input18.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-parmscope	[ 0	locks=0 ]	(	subnet	)
-parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	Enabled	)
-parmprefix	[ 0	locks=0 ]	(	""	)
-parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Enabled	)
-showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"toggle"	)
-parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	0	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
-angledef	[ 0	locks=0 ]	(	0	)
-logfloatdef	[ 0	locks=0 ]	(	0	)
-float2def	[ 0	locks=0 ]	(	0	0	)
-float3def	[ 0	locks=0 ]	(	0	0	0	)
-vectordef	[ 0	locks=0 ]	(	0	0	0	)
-normaldef	[ 0	locks=0 ]	(	0	0	0	)
-pointdef	[ 0	locks=0 ]	(	0	0	0	)
-directiondef	[ 0	locks=0 ]	(	1	0	0	)
-float4def	[ 0	locks=0 ]	(	0	0	0	0	)
-floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
-float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
-float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;0.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -4437,7 +4238,7 @@ help	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/input18.userdata"
+Content-Disposition: attachment; filename="hdaroot/input17.userdata"
 Content-Type: text/plain
 
 {
@@ -4451,7 +4252,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-38
+36
 bind1
 input
 bind2
@@ -4488,8 +4289,6 @@ bind17
 input16
 bind18
 input17
-bind19
-input18
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

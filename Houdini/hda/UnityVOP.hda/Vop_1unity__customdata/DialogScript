@@ -1,0 +1,49 @@
+# Dialog script for unity_customdata automatically generated
+
+{
+    name	unity_customdata
+    script	unity_customdata
+    label	UnityCustomData
+
+    input	int	Enabled	Enabled
+    input	vector4	_1	"Custom Data 1"
+    input	vector4	_2	"Custom Data 2"
+    inputflags	Enabled	2
+    inputflags	_1	2
+    inputflags	_2	2
+    signature	"Default Inputs"	default	{ int vector4 vector4 }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_1"
+	label	"Custom Data 1"
+	type	float
+	size	4
+	default	{ "0" "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_2"
+	label	"Custom Data 2"
+	type	float
+	size	4
+	default	{ "0" "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

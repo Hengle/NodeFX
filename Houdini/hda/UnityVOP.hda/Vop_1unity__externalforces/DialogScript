@@ -5,9 +5,11 @@
     script	unity_externalforces
     label	UnityExternalForces
 
+    input	int	Enabled	Enabled
     input	float	Multiplier	Multiplier
+    inputflags	Enabled	2
     inputflags	Multiplier	2
-    signature	"Default Inputs"	default	{ float }
+    signature	"Default Inputs"	default	{ int float }
 
     outputoverrides	default
     {
@@ -17,6 +19,13 @@
 	""
     }
 
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
     parm {
 	name	"Multiplier"
 	label	"Multiplier"

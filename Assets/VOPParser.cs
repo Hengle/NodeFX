@@ -303,7 +303,7 @@ public class VOPParser : MonoBehaviour {
 
 		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
 
-		limitVelocityOverLifetimeModule.limit = CurveFromString("limitVelocityOverLifetime_limit");
+		limitVelocityOverLifetimeModule.limit = CurveFromString("limitVelocityOverLifetime_speed");
 
 		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
 
