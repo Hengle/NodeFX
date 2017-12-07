@@ -27,19 +27,19 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	"" "" 1 "Ratio"
-1 	"" "" 1 "Lifetime"
-2 	"" "" 1 "MinimumVertexDistance"
-3 	"" "" 1 "TextureMode"
-4 	"" "" 1 "WorldSpace"
-5 	"" "" 1 "DieWithParticles"
-6 	"" "" 1 "SizeAffectsWidth"
-7 	"" "" 1 "SizeAffectsLifetime"
-8 	"" "" 1 "InheritParticleColor"
-9 	"" "" 1 "ColorOverLifetime"
-10 	"" "" 1 "WidthOverTrail"
-11 	"" "" 1 "ColorOverTrail"
-12 	"" "" 1 "GenerateLightingData"
+0 	"" "" 1 "Enabled"
+1 	"" "" 1 "Ratio"
+2 	"" "" 1 "Lifetime"
+3 	"" "" 1 "MinimumVertexDistance"
+4 	"" "" 1 "TextureMode"
+5 	"" "" 1 "WorldSpace"
+6 	"" "" 1 "DieWithParticles"
+7 	"" "" 1 "SizeAffectsWidth"
+8 	"" "" 1 "SizeAffectsLifetime"
+9 	"" "" 1 "InheritParticleColor"
+10 	"" "" 1 "ColorOverLifetime"
+11 	"" "" 1 "WidthOverTrail"
+12 	"" "" 1 "ColorOverTrail"
 }
 inputs
 {
@@ -60,7 +60,7 @@ inputs
 stat
 {
   create 1512597470
-  modify 1512604327
+  modify 1512666831
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }

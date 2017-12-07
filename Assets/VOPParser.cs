@@ -360,7 +360,7 @@ public class VOPParser : MonoBehaviour {
 
 		sizeBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_separateAxes", 0));
 
-		sizeBySpeedModule.size = _assetAccessor.getParmFloatValue("sizeBySpeed_size", 0);
+		sizeBySpeedModule.size = CurveFromString("sizeBySpeed_size");
 
 		sizeBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("sizeBySpeed_range", 0),
 												_assetAccessor.getParmFloatValue("sizeBySpeed_range", 1));

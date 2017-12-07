@@ -12,6 +12,10 @@
     input	vector	Position	Position
     input	vector	Rotation	Rotation
     input	vector	Scale	Scale
+    input	int	AlignToDirection	"Align To Direction"
+    input	float	RandomizeDirection	"Randomize Direction"
+    input	float	Spherize_Direction	"Spherize Direction"
+    input	float	Randomize_Position	"Spherize Direction"
     inputflags	Enabled	2
     inputflags	Shape	2
     inputflags	Radius	2
@@ -19,7 +23,11 @@
     inputflags	Position	2
     inputflags	Rotation	2
     inputflags	Scale	2
-    signature	"Default Inputs"	default	{ int int float float vector vector vector }
+    inputflags	AlignToDirection	2
+    inputflags	RandomizeDirection	2
+    inputflags	Spherize_Direction	2
+    inputflags	Randomize_Position	2
+    signature	"Default Inputs"	default	{ int int float float vector vector vector int float float float }
 
     outputoverrides	default
     {
@@ -44,6 +52,14 @@
 	menu	{
 	    "0"	"Sphere"
 	    "1"	"Hemisphere"
+	    "2"	"Cone"
+	    "3"	"Donut"
+	    "4"	"Box"
+	    "5"	"Mesh"
+	    "6"	"Mesh Renderer"
+	    "7"	"Skinned Mesh Renderer"
+	    "8"	"Circle"
+	    "9"	"Edge"
 	}
 	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
@@ -89,6 +105,37 @@
 	size	3
 	default	{ "1" "1" "1" }
 	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"AlignToDirection"
+	label	"Align To Direction"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"RandomizeDirection"
+	label	"Randomize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Spherize_Direction"
+	label	"Spherize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Randomize_Position"
+	label	"Spherize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
 	parmtag	{ "parmvop" "1" }
     }
 }
