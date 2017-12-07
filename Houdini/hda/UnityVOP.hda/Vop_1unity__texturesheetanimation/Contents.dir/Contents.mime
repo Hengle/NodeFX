@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 8.63478 5.22207
+position 8.63478 5.14707
 connectornextid 8
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -27,14 +27,14 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	"" "" 1 "Mode"
-1 	"" "" 1 "Tiles"
-2 	"" "" 1 "Animation"
-3 	"" "" 1 "Frame"
-4 	"" "" 1 "Start_Frame"
-5 	"" "" 1 "Cycles"
-6 	"" "" 1 "Flip_U_Probability"
-7 	"" "" 1 "Flip_V_Probability"
+0 	"" "" 1 "Enabled"
+1 	"" "" 1 "Mode"
+2 	"" "" 1 "Tiles"
+3 	"" "" 1 "Animation"
+4 	"" "" 1 "Frame"
+5 	"" "" 1 "Start_Frame"
+6 	"" "" 1 "Cycles"
+7 	"" "" 1 "Flip_U_Probability"
 }
 inputs
 {
@@ -50,7 +50,7 @@ inputs
 stat
 {
   create 1512593497
-  modify 1512604206
+  modify 1512613035
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }

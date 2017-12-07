@@ -27,3 +27,4 @@ Vop_1unity__externalforces	Vop/unity_externalforces
 Vop_1unity__trails	Vop/unity_trails
 Vop_1unity__customdata	Vop/unity_customdata
 Vop_1unity__noise	Vop/unity_noise
+Vop_1unity__collision	Vop/unity_collision
