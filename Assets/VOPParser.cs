@@ -65,6 +65,21 @@ public class VOPParser : MonoBehaviour {
 		_pSystem.Play(true);
 	}
 
+	/// <summary>
+	/// Not used, since it doesn't seem like Unity supports "GetAttributeFloatData". Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first,
+	/// </summary>
+	void GetDetailAttributes() {
+		HoudiniGeoAttribute attribute = new HoudiniGeoAttribute();
+		HAPI_AttributeInfo attributeInfo = new HAPI_AttributeInfo();
+		attributeInfo.storage = HAPI_StorageType.HAPI_STORAGETYPE_FLOAT;
+		attributeInfo.count = 1;
+		attributeInfo.tupleSize = 1;
+		attributeInfo.owner = HAPI_AttributeOwner.HAPI_ATTROWNER_DETAIL;
+		//	HAPI_GetAttributeIntData();
+		//	HAPI_GetAttributeFloatData();
+		//	HAPI_GetAttributeStringData();
+	}
+
 	IEnumerator checkForUpdates() {
 		yield return new WaitForSecondsRealtime(updateInterval);
 		_isDirty = true;
@@ -272,7 +287,7 @@ public class VOPParser : MonoBehaviour {
 
 		shapeModule.radius = _assetAccessor.getParmFloatValue("shape_radius", 0);
 
-		shapeModule.radiusThickness = _assetAccessor.getParmFloatValue("shape_radiusThickness", 0);
+		shapeModule.radiusThickness = _assetAccessor.getParmFloatValue("shape_radius_thickness", 0);
 
 		shapeModule.position = new Vector3(_assetAccessor.getParmFloatValue("shape_position", 0), 
 											_assetAccessor.getParmFloatValue("shape_position", 1),
@@ -314,7 +329,7 @@ public class VOPParser : MonoBehaviour {
 
 		inheritVelocityModule.mode = (ParticleSystemInheritVelocityMode) _assetAccessor.getParmIntValue("inheritVelocity_mode", 0);
 
-		inheritVelocityModule.curve = _assetAccessor.getParmFloatValue("inheritVelocity_multiplier", 0);
+		inheritVelocityModule.curve = CurveFromString("inheritVelocity_multiplier");
 
 		//	Force Over Lifetime
 		ParticleSystem.ForceOverLifetimeModule forceOverLifetimeModule = _pSystem.forceOverLifetime;
@@ -393,11 +408,46 @@ public class VOPParser : MonoBehaviour {
 		// External Forces
 		ParticleSystem.ExternalForcesModule externalForcesModule = _pSystem.externalForces;
 
+		externalForcesModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("externalForces_enabled", 0));
+
 		// Noise
 		ParticleSystem.NoiseModule noiseModule = _pSystem.noise;
 
+		noiseModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_enabled", 0));
+
 		// Collision
 		ParticleSystem.CollisionModule collisionModule = _pSystem.collision;
+		collisionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_enabled", 0));
+
+		collisionModule.bounce = CurveFromString("collision_bounce");
+
+		collisionModule.colliderForce = _assetAccessor.getParmFloatValue("collision_colliderForce", 0);
+
+		collisionModule.dampen = CurveFromString("collision_dampen");
+
+		collisionModule.enableDynamicColliders = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_enableDynamicColliders", 0));
+
+		collisionModule.lifetimeLoss = CurveFromString("collision_lifetimeLoss");
+
+		collisionModule.maxKillSpeed = _assetAccessor.getParmFloatValue("collision_maxKillSpeed", 0);
+
+		collisionModule.minKillSpeed = _assetAccessor.getParmFloatValue("collision_minKillSpeed", 0);
+
+		collisionModule.mode = (ParticleSystemCollisionMode) _assetAccessor.getParmIntValue("collision_mode", 0);
+
+		collisionModule.multiplyColliderForceByCollisionAngle = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_multiplyByCollisionAngle", 0));
+
+		collisionModule.multiplyColliderForceByParticleSpeed = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_multiplyByParticleSpeed", 0));
+
+		collisionModule.multiplyColliderForceByParticleSpeed = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_multiplyByParticleSize", 0));
+
+		collisionModule.quality = (ParticleSystemCollisionQuality) _assetAccessor.getParmIntValue("collision_quality", 0);
+
+		collisionModule.radiusScale = _assetAccessor.getParmFloatValue("collision_radiusScale", 0);
+
+		collisionModule.sendCollisionMessages = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_sendCollisionMessages", 0));
+
+		collisionModule.type = (ParticleSystemCollisionType) _assetAccessor.getParmIntValue("collision_type", 0);
 
 		// Triggers
 		ParticleSystem.TriggerModule triggerModule = _pSystem.trigger;
@@ -430,12 +480,60 @@ public class VOPParser : MonoBehaviour {
 		// Trails
 		ParticleSystem.TrailModule trailModule = _pSystem.trails;
 
+		trailModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_enabled", 0));
+
 		// Custom Data
 		ParticleSystem.CustomDataModule customDataModule = _pSystem.customData;
+
+		customDataModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("customData_enabled", 0));
+
+		customDataModule.SetMode(ParticleSystemCustomData.Custom1,ParticleSystemCustomDataMode.Vector);
+
+		customDataModule.SetMode(ParticleSystemCustomData.Custom2,ParticleSystemCustomDataMode.Vector);
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, _assetAccessor.getParmFloatValue("customData_1", 0));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 1, _assetAccessor.getParmFloatValue("customData_1", 1));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 2, _assetAccessor.getParmFloatValue("customData_1", 2));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 3, _assetAccessor.getParmFloatValue("customData_1", 3));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, _assetAccessor.getParmFloatValue("customData_2", 0));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 1, _assetAccessor.getParmFloatValue("customData_2", 1));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 2, _assetAccessor.getParmFloatValue("customData_2", 2));
+
+		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 3, _assetAccessor.getParmFloatValue("customData_2", 3));
 
 		// Renderer
 		ParticleSystemRenderer renderer = GetComponent<ParticleSystemRenderer>();
 
-		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));;
+		renderer.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_enabled", 0));
+
+		renderer.alignment = (ParticleSystemRenderSpace) _assetAccessor.getParmIntValue("renderer_Alignment", 0);
+
+		renderer.shadowCastingMode = (UnityEngine.Rendering.ShadowCastingMode) _assetAccessor.getParmIntValue("renderer_castShadows", 0);
+
+		renderer.renderMode = (ParticleSystemRenderMode) _assetAccessor.getParmIntValue("renderer_mode", 0);
+
+		renderer.lightProbeUsage = (UnityEngine.Rendering.LightProbeUsage)_assetAccessor.getParmIntValue("renderer_lightProbes", 0);
+
+		renderer.maskInteraction = (SpriteMaskInteraction) _assetAccessor.getParmIntValue("renderer_masking", 0);
+
+		renderer.maxParticleSize = _assetAccessor.getParmFloatValue("renderer_maxParticleSize", 0);
+
+		renderer.minParticleSize = _assetAccessor.getParmFloatValue("renderer_minParticleSize", 0);
+
+		renderer.motionVectorGenerationMode = (MotionVectorGenerationMode) _assetAccessor.getParmIntValue("renderer_motionVectors", 0);
+
+		renderer.reflectionProbeUsage = (UnityEngine.Rendering.ReflectionProbeUsage)_assetAccessor.getParmIntValue("renderer_reflectionProbes", 0);
+
+		renderer.receiveShadows = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_receiveShadows", 0));
+
+		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));
+
+		renderer.trailMaterial = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_trailMaterial", 0));
 	}
 }
