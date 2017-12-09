@@ -118,7 +118,7 @@ public class VOPParser : MonoBehaviour {
 			case "constant":
 				curve.mode = ParticleSystemCurveMode.Constant;
 				if(choppedString[1] == "float") {
-				curve.constant = Convert.ToSingle(choppedString[2]);
+					curve.constant = Convert.ToSingle(choppedString[2]);
 				} else
 				if (choppedString[1] == "int") {
 					curve.constant = Convert.ToInt32(choppedString[2]);
