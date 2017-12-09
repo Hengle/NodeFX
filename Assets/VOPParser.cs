@@ -14,7 +14,7 @@ public class VOPParser : MonoBehaviour {
 	public bool timedUpdates = false;
 	public float updateInterval = 5f;
 
-	private ParticleSystem _pSystem;
+	private ParticleSystem _particleSystem;
 	private HoudiniAssetOTL _assetOTL;
 	private HoudiniApiAssetAccessor _assetAccessor;
 
@@ -26,7 +26,7 @@ public class VOPParser : MonoBehaviour {
     void Start () {
 		_assetAccessor = HoudiniApiAssetAccessor.getAssetAccessor(gameObject);
 		_assetOTL = GetComponent<HoudiniAssetOTL>();
-		_pSystem = GetComponent<ParticleSystem>();
+		_particleSystem = GetComponent<ParticleSystem>();
 	}
 
 	void OnEnable() {
@@ -45,47 +45,70 @@ public class VOPParser : MonoBehaviour {
 		}
 
 		if (_isDirty) {
-			_assetOTL.buildAll();
-			InstantiateParticleSystem();
+			_assetOTL.buildAll();			//	Load asset definition from disk
+			InstantiateParticleSystem();	//	Construct particle system from said definition
 			_isDirty = false;
-			updateInterval = _assetAccessor.getParmFloatValue("main_duration", 0);
+			//updateInterval = _assetAccessor.getParmFloatValue("main_duration", 0);
 		}
 	}
 
+	IEnumerator checkForUpdates() {
+		yield return new WaitForSeconds(updateInterval);
+		_isDirty = true;
+	}
+
 	void InstantiateParticleSystem() {
-		if (_pSystem == null) {
-			_pSystem = gameObject.AddComponent<ParticleSystem>();
+		if (_particleSystem == null) {
+			_particleSystem = gameObject.AddComponent<ParticleSystem>();
 		}
+		
+		_particleSystem.gameObject.SetActive(false);	//	Having the game object disabled while mapping the parameters greatly speeds up the process
 
-		_pSystem.gameObject.SetActive(false);
+		//	Here we go
+		MapMainParameters();
+		MapEmissionParameters();
+		MapShapeParameters();
+		MapVelocityOverLifetimeParameters();
+		MapLimitVelocityOverLifetimeParameters();
+		MapInheritVelocityOverLifetimeParameters();
+		MapForceOverLifetimeParameters();
+		MapColorOverLifetimeParameters();
+		MapColorBySpeedParameters();
+		MapSizeOverLifetimeParameters();
+		MapSizeBySpeedParameters();
+		MapRotationOverLifetimeParameters();
+		MapRotationBySpeedParameters();
+		MapExternalForcesParameters();
+		MapNoiseParameters();
+		MapCollisionParameters();
+		MapTriggerParameters();
+		MapSubEmitterParameters();
+		MapTextureSheetAnimationParameters();
+		MapLightParamters();
+		MapTrailParameters();
+		MapCustomDataParameters();
+		MapRendererParameters();
 
-		MapParameters();
-
-		_pSystem.gameObject.SetActive(true);
-		_pSystem.Play(true);
+		_particleSystem.gameObject.SetActive(true);
+		_particleSystem.Play(true);
 	}
 
 	/// <summary>
 	/// Not used, since I can't figure out how to get it working. Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first.
 	/// </summary>
 	void GetDetailAttributes() {
-		HoudiniGeoAttribute attribute = new HoudiniGeoAttribute();
 		HAPI_AttributeInfo attributeInfo = new HAPI_AttributeInfo();
 		attributeInfo.storage = HAPI_StorageType.HAPI_STORAGETYPE_FLOAT;
 		attributeInfo.count = 1;
 		attributeInfo.tupleSize = 1;
 		attributeInfo.owner = HAPI_AttributeOwner.HAPI_ATTROWNER_DETAIL;
+		// HoudiniGeoAttribute attribute = new HoudiniGeoAttribute();
 		//	HAPI_GetAttributeIntData();
 		//	HAPI_GetAttributeFloatData();
 		//	HAPI_GetAttributeStringData();
 	}
 
-	IEnumerator checkForUpdates() {
-		yield return new WaitForSecondsRealtime(updateInterval);
-		_isDirty = true;
-	}
-
-	ParticleSystem.MinMaxCurve CurveFromString(string entry) {
+	ParticleSystem.MinMaxCurve InterpretStringToCurve(string entry) {
 		ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve();
 
 		string parameter = _assetAccessor.getParmStringValue(entry, 0);
@@ -105,8 +128,8 @@ public class VOPParser : MonoBehaviour {
 				break;
 
 			case "randomConstant":
-				if(choppedString[1] == "float") {
 				curve.mode = ParticleSystemCurveMode.TwoConstants;
+				if(choppedString[1] == "float") {
 					curve.constantMin = Convert.ToSingle(choppedString[2]);
 					curve.constantMax = Convert.ToSingle(choppedString[3]);
 				}
@@ -138,8 +161,9 @@ public class VOPParser : MonoBehaviour {
 		return curve;
 	}
 
-	ParticleSystem.MinMaxGradient GradientFromString(string entry) {
+	ParticleSystem.MinMaxGradient InterpretStringToGradient(string entry) {
 		ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
+
 		string parameter = _assetAccessor.getParmStringValue(entry, 0);
 		string[] choppedString = parameter.Split(";".ToCharArray());
 		string color;
@@ -177,7 +201,7 @@ public class VOPParser : MonoBehaviour {
 	///	<Summary>
 	///	Reads a list of values and returns a float curve. The number of samples decide the resolution of the resulting curve. We need the offset to be able to handle curve pairs (such as the "random between curves" mode).
 	///	</summary>
-	AnimationCurve GenerateCurve(string[] parameter, int offset = 4) {
+	private AnimationCurve GenerateCurve(string[] parameter, int offset = 4) {
 		AnimationCurve curve = new AnimationCurve();
 		int samples = Convert.ToInt32(parameter[2]);
 
@@ -189,7 +213,10 @@ public class VOPParser : MonoBehaviour {
 		return curve;
 	}
 
-	Gradient GenerateGradient(string[] parameter, int offset = 4) {
+	///	<Summary>
+	///	Reads a list of values and returns a gradient. The number of samples decide the resolution of the resulting gradient (although this should in most cases be kept at 8). We need the offset to be able to handle gradient pairs (such as the "random between gradients" mode).
+	///	</summary>
+	private Gradient GenerateGradient(string[] parameter, int offset = 4) {
 		Gradient gradient = new Gradient();
 		int samples = Convert.ToInt32(parameter[2]);
 		gradient.mode = (GradientMode) Convert.ToInt32(parameter[3]);
@@ -219,15 +246,16 @@ public class VOPParser : MonoBehaviour {
 		return gradient;
 	}
 
-	/// <summary>
-	/// Reads parameters from a HoudiniAssetOTL and assigns them to a Unity ParticleSystem instance
-	/// </summary>
-	void MapParameters() {
+    private void MapMainParameters() {
+		ParticleSystem.MainModule mainModule = _particleSystem.main;
 
-		//	Emitter
-		ParticleSystem.MainModule mainModule = _pSystem.main;
-
-		mainModule.duration = _assetAccessor.getParmFloatValue("main_duration", 0);
+		try {
+			mainModule.duration = _assetAccessor.getParmFloatValue("main_duration", 0);
+		}
+		catch (HoudiniErrorNotFound e) {
+			Debug.LogException(e);
+			return;
+		}
 
 		mainModule.loop = Convert.ToBoolean(_assetAccessor.getParmIntValue("main_looping", 0));
 
@@ -235,23 +263,35 @@ public class VOPParser : MonoBehaviour {
 
 		mainModule.startDelay = _assetAccessor.getParmFloatValue("main_startDelay", 0);
 
-		mainModule.startLifetime = CurveFromString("main_startLifetime");
+		mainModule.startLifetime = InterpretStringToCurve("main_startLifetime");
 
-		mainModule.startSpeed = CurveFromString("main_startSpeed");
+		mainModule.startSpeed = InterpretStringToCurve("main_startSpeed");
 
-		mainModule.startSize3D = _assetAccessor.getParmSize("main_startSize") > 1 ? true : false;
+		mainModule.startSize3D = Convert.ToBoolean(_assetAccessor.getParmIntValue("main_3DStartSize", 0));
 
-		mainModule.startSize = CurveFromString("main_startSize");
+		mainModule.startSize = InterpretStringToCurve("main_startSize");
+
+		mainModule.startSizeX = InterpretStringToCurve("main_startSize_x");
+
+		mainModule.startSizeY = InterpretStringToCurve("main_startSize_y");
+
+		mainModule.startSizeZ = InterpretStringToCurve("main_startSize_z");
 
 		mainModule.startRotation3D = Convert.ToBoolean(_assetAccessor.getParmIntValue("main_3DStartRotation", 0));
 
-		mainModule.startRotation = CurveFromString("main_startRotation");
+		mainModule.startRotation = InterpretStringToCurve("main_startRotation");
+
+		mainModule.startRotationX = InterpretStringToCurve("main_startRotation_x");
+
+		mainModule.startRotationY = InterpretStringToCurve("main_startRotation_y");
+
+		mainModule.startRotationZ = InterpretStringToCurve("main_startRotation_z");
 
 		mainModule.randomizeRotationDirection = _assetAccessor.getParmFloatValue("main_rotationVariance", 0);
 
-		mainModule.startColor = GradientFromString("main_startColor");
+		mainModule.startColor = InterpretStringToGradient("main_startColor");
 
-		mainModule.gravityModifier = CurveFromString("main_gravityModifier");
+		mainModule.gravityModifier = InterpretStringToCurve("main_gravityModifier");
 
 		mainModule.simulationSpace = (ParticleSystemSimulationSpace) _assetAccessor.getParmIntValue("main_simulationSpace", 0);
 
@@ -269,212 +309,243 @@ public class VOPParser : MonoBehaviour {
 
 		mainModule.maxParticles = _assetAccessor.getParmIntValue("main_maxParticles", 0);
 
-		// Emission
-		ParticleSystem.EmissionModule emissionModule = _pSystem.emission;
+		_particleSystem.useAutoRandomSeed = Convert.ToBoolean(_assetAccessor.getParmIntValue("main_autoRandomSeed",0));
+	}
+
+	private void MapEmissionParameters() {
+
+		ParticleSystem.EmissionModule emissionModule = _particleSystem.emission;
 		
-		emissionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("emission_enabled", 0));
+		try {
+			emissionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("emission_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) {
+			Debug.LogWarning("EmissionModule not found in VOP");
+			emissionModule.enabled = false;
+			return;
+		}
 
-		emissionModule.rateOverTime = CurveFromString("emission_rateOverTime");
+		emissionModule.rateOverTime = InterpretStringToCurve("emission_rateOverTime");
 
-		emissionModule.rateOverDistance = CurveFromString("emission_rateOverDistance");
+		emissionModule.rateOverDistance = InterpretStringToCurve("emission_rateOverDistance");
+	}
 
-		//	Shape
-		ParticleSystem.ShapeModule shapeModule = _pSystem.shape;
+	private void MapShapeParameters() {
+		ParticleSystem.ShapeModule shapeModule = _particleSystem.shape;
 
-		shapeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_enabled", 0));
+		try {
+			shapeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) {
+			Debug.LogWarning("ShapeModule not found in VOP");
+			shapeModule.enabled = false;
+			return;
+		}
 
 		shapeModule.shapeType = (ParticleSystemShapeType) _assetAccessor.getParmIntValue("shape_shape", 0);
 
 		shapeModule.radius = _assetAccessor.getParmFloatValue("shape_radius", 0);
-
+		
 		shapeModule.radiusThickness = _assetAccessor.getParmFloatValue("shape_radius_thickness", 0);
-
+		
 		shapeModule.position = new Vector3(_assetAccessor.getParmFloatValue("shape_position", 0), 
 											_assetAccessor.getParmFloatValue("shape_position", 1),
 											_assetAccessor.getParmFloatValue("shape_position", 2));
-
+		
 		shapeModule.rotation = new Vector3(_assetAccessor.getParmFloatValue("shape_rotation", 0), 
 											_assetAccessor.getParmFloatValue("shape_rotation", 1),
 											_assetAccessor.getParmFloatValue("shape_rotation", 2));
-
+		
 		shapeModule.scale = new Vector3(_assetAccessor.getParmFloatValue("shape_scale", 0), 
 											_assetAccessor.getParmFloatValue("shape_scale", 1),
 											_assetAccessor.getParmFloatValue("shape_scale", 2));
-
+		
 		shapeModule.alignToDirection = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_alignToDirection", 0));
-
-		//	Velocity Over Lifetime
-		ParticleSystem.VelocityOverLifetimeModule velocityOverLifetimeModule = _pSystem.velocityOverLifetime;
-
-		velocityOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("velocityOverLifetime_enabled", 0));
-
-
-		velocityOverLifetimeModule.x = CurveFromString("velocityOverLifetime_velocity_x");
-		velocityOverLifetimeModule.y = CurveFromString("velocityOverLifetime_velocity_y");
-		velocityOverLifetimeModule.z = CurveFromString("velocityOverLifetime_velocity_z");
-
-		//	Limit Velocity Over Lifetime
-		ParticleSystem.LimitVelocityOverLifetimeModule limitVelocityOverLifetimeModule = _pSystem.limitVelocityOverLifetime;
-
-		limitVelocityOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_enabled", 0));
-
-		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
-
-		limitVelocityOverLifetimeModule.limit = CurveFromString("limitVelocityOverLifetime_speed");
-
-		limitVelocityOverLifetimeModule.limitX = CurveFromString("limitVelocityOverLifetime_speed_x");
-		limitVelocityOverLifetimeModule.limitY = CurveFromString("limitVelocityOverLifetime_speed_y");
-		limitVelocityOverLifetimeModule.limitZ = CurveFromString("limitVelocityOverLifetime_speed_z");
-
-		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
-
-		//	Inherit Velocity
-		ParticleSystem.InheritVelocityModule inheritVelocityModule = _pSystem.inheritVelocity;
-
-		inheritVelocityModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("inheritVelocity_enabled", 0));
-
-		inheritVelocityModule.mode = (ParticleSystemInheritVelocityMode) _assetAccessor.getParmIntValue("inheritVelocity_mode", 0);
-
-		inheritVelocityModule.curve = CurveFromString("inheritVelocity_multiplier");
-
-		//	Force Over Lifetime
-		ParticleSystem.ForceOverLifetimeModule forceOverLifetimeModule = _pSystem.forceOverLifetime;
-
-		forceOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_enabled", 0));
-
-		forceOverLifetimeModule.x = CurveFromString("forceOverLifetime_force_x");
-		forceOverLifetimeModule.y = CurveFromString("forceOverLifetime_force_y");
-		forceOverLifetimeModule.z = CurveFromString("forceOverLifetime_force_z");
-
-		forceOverLifetimeModule.randomized = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_randomized", 0));
-
-		//	Color Over Lifetime
-		ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = _pSystem.colorOverLifetime;
-
-		colorOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorOverLifetime_enabled", 0));
-
-		colorOverLifetimeModule.color = GradientFromString("colorOverLifetime_color");
-
-		//	Color By Speed
-		ParticleSystem.ColorBySpeedModule colorBySpeedModule = _pSystem.colorBySpeed;
-
-		colorBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorBySpeed_enabled", 0));
-
-		colorBySpeedModule.color = GradientFromString("colorBySpeed_color");
-
-		colorBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("colorBySpeed_range", 0),
-												_assetAccessor.getParmFloatValue("colorBySpeed_range", 1));
-
-		//	Size Over Lifetime
-		ParticleSystem.SizeOverLifetimeModule sizeOverLifetimeModule = _pSystem.sizeOverLifetime;
-
-		sizeOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_enabled", 0));
-
-		sizeOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_separateAxes", 0));
-
-		sizeOverLifetimeModule.size = CurveFromString("sizeOverLifetime_size");
-
-		sizeOverLifetimeModule.x = CurveFromString("sizeOverLifetime_size_x");
-		sizeOverLifetimeModule.y = CurveFromString("sizeOverLifetime_size_y");
-		sizeOverLifetimeModule.z = CurveFromString("sizeOverLifetime_size_z");
-
-		//	Size By Speed
-		ParticleSystem.SizeBySpeedModule sizeBySpeedModule = _pSystem.sizeBySpeed;
-
-		sizeBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_enabled", 0));
-
-		sizeBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_separateAxes", 0));
-
-		sizeBySpeedModule.size = CurveFromString("sizeBySpeed_size");
-
-		sizeBySpeedModule.x = CurveFromString("sizeBySpeed_size_x");
-		sizeBySpeedModule.y = CurveFromString("sizeBySpeed_size_y");
-		sizeBySpeedModule.z = CurveFromString("sizeBySpeed_size_z");
-
-		sizeBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("sizeBySpeed_range", 0),
-												_assetAccessor.getParmFloatValue("sizeBySpeed_range", 1));
-
-		//	Rotation Over Lifetime
-		ParticleSystem.RotationOverLifetimeModule rotationOverLifetimeModule = _pSystem.rotationOverLifetime;
-
-		rotationOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationOverLifetime_enabled", 0));
-
-		rotationOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationOverLifetime_separateAxes", 0));
-
-		rotationOverLifetimeModule.x = CurveFromString("rotationOverLifetime_angularVelocity_x");
-		rotationOverLifetimeModule.y = CurveFromString("rotationOverLifetime_angularVelocity_y");
-		rotationOverLifetimeModule.z = CurveFromString("rotationOverLifetime_angularVelocity_z");
-
-		// Rotation By Speed
-		ParticleSystem.RotationBySpeedModule rotationBySpeedModule = _pSystem.rotationBySpeed;
-
-		rotationBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_enabled", 0));
-
-		rotationBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0)); 
-
-		rotationBySpeedModule.x = CurveFromString("rotationBySpeed_angularVelocity_x");
-		rotationBySpeedModule.y = CurveFromString("rotationBySpeed_angularVelocity_y");
-		rotationBySpeedModule.z = CurveFromString("rotationBySpeed_angularVelocity_z");
-
-		rotationBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("rotationBySpeed_range", 0),
-													_assetAccessor.getParmFloatValue("rotationBySpeed_range", 1));
-
-		// External Forces
-		ParticleSystem.ExternalForcesModule externalForcesModule = _pSystem.externalForces;
-
-		externalForcesModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("externalForces_enabled", 0));
-
-		externalForcesModule.multiplier = _assetAccessor.getParmFloatValue("externalForces_multiplier",0);
-
-		// Noise
-		ParticleSystem.NoiseModule noiseModule = _pSystem.noise;
-
-		noiseModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_enabled", 0));
-
-		noiseModule.frequency = _assetAccessor.getParmFloatValue("noise_frequency", 0);
-
-		noiseModule.octaveMultiplier = _assetAccessor.getParmFloatValue("noise_octaveMultiplier",0);
-
-		noiseModule.octaveCount = _assetAccessor.getParmIntValue("noise_octaves",0);
-
-		noiseModule.octaveScale = _assetAccessor.getParmFloatValue("noise_octaveScale",0);
-
-		noiseModule.quality = (ParticleSystemNoiseQuality) _assetAccessor.getParmIntValue("noise_quality",0);
-
-		noiseModule.remapEnabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_remap",0));
-
-		noiseModule.remap = CurveFromString("noise_remapCurve");
 		
-		noiseModule.positionAmount = CurveFromString("noise_positionAmount");
+		shapeModule.randomDirectionAmount = _assetAccessor.getParmFloatValue("shape_randomizeDirection",0);
+    }
+
+    private void MapRendererParameters() {
+		ParticleSystemRenderer renderer = GetComponent<ParticleSystemRenderer>();
+
+		try {
+			renderer.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) {
+			Debug.LogWarning("RendererModule not found in VOP");
+			renderer.enabled = false;
+			return;
+		}
+
+		renderer.alignment = (ParticleSystemRenderSpace) _assetAccessor.getParmIntValue("renderer_Alignment", 0);
 		
-		noiseModule.rotationAmount = CurveFromString("noise_rotationAmount");
+		renderer.shadowCastingMode = (UnityEngine.Rendering.ShadowCastingMode) _assetAccessor.getParmIntValue("renderer_castShadows", 0);
+		
+		renderer.renderMode = (ParticleSystemRenderMode) _assetAccessor.getParmIntValue("renderer_mode", 0);
+		
+		renderer.lightProbeUsage = (UnityEngine.Rendering.LightProbeUsage)_assetAccessor.getParmIntValue("renderer_lightProbes", 0);
+		
+		renderer.maskInteraction = (SpriteMaskInteraction) _assetAccessor.getParmIntValue("renderer_masking", 0);
+		
+		renderer.maxParticleSize = _assetAccessor.getParmFloatValue("renderer_maxParticleSize", 0);
+		
+		renderer.minParticleSize = _assetAccessor.getParmFloatValue("renderer_minParticleSize", 0);
+		
+		renderer.motionVectorGenerationMode = (MotionVectorGenerationMode) _assetAccessor.getParmIntValue("renderer_motionVectors", 0);
+		
+		renderer.reflectionProbeUsage = (UnityEngine.Rendering.ReflectionProbeUsage)_assetAccessor.getParmIntValue("renderer_reflectionProbes", 0);
+		
+		renderer.receiveShadows = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_receiveShadows", 0));
+		
+		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));
+		
+		renderer.trailMaterial = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_trailMaterial", 0));
+		
+		renderer.pivot = new Vector3(_assetAccessor.getParmFloatValue("renderer_pivot", 0),
+										_assetAccessor.getParmFloatValue("renderer_pivot", 1),
+										_assetAccessor.getParmFloatValue("renderer_pivot", 2));
+		
+		renderer.sortMode = (ParticleSystemSortMode) _assetAccessor.getParmIntValue("renderer_sortMode", 0);
+		
+		renderer.sortingFudge = _assetAccessor.getParmFloatValue("renderer_sortingFudge", 0);
+		
+		renderer.sortingOrder = _assetAccessor.getParmIntValue("renderer_orderInLayer", 0);
+		
+		renderer.normalDirection = _assetAccessor.getParmFloatValue("renderer_normalDirection", 0);
+    }
 
-		noiseModule.sizeAmount = CurveFromString("noise_scaleAmount");
+    private void MapCustomDataParameters() {
+		ParticleSystem.CustomDataModule customDataModule = _particleSystem.customData;
 
-		noiseModule.scrollSpeed = CurveFromString("noise_scrollSpeed");
+		try {
+			customDataModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("customData_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) {
+			Debug.LogWarning("customDataModule not found in VOP");
+			customDataModule.enabled = false;
+			return;
+		}
 
-		noiseModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_separateAxes", 0));
-		noiseModule.strength = CurveFromString("noise_strength");
+		customDataModule.SetMode(ParticleSystemCustomData.Custom1,ParticleSystemCustomDataMode.Vector);
+		
+		customDataModule.SetMode(ParticleSystemCustomData.Custom2,ParticleSystemCustomDataMode.Vector);
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, _assetAccessor.getParmFloatValue("customData_1", 0));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom1, 1, _assetAccessor.getParmFloatValue("customData_1", 1));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom1, 2, _assetAccessor.getParmFloatValue("customData_1", 2));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom1, 3, _assetAccessor.getParmFloatValue("customData_1", 3));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, _assetAccessor.getParmFloatValue("customData_2", 0));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom2, 1, _assetAccessor.getParmFloatValue("customData_2", 1));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom2, 2, _assetAccessor.getParmFloatValue("customData_2", 2));
+		
+		customDataModule.SetVector (ParticleSystemCustomData.Custom2, 3, _assetAccessor.getParmFloatValue("customData_2", 3));
+    }
 
-		noiseModule.strengthX = CurveFromString("noise_strength_x");
+    private void MapTrailParameters() {
+		ParticleSystem.TrailModule trailModule = _particleSystem.trails;
 
-		noiseModule.strengthY = CurveFromString("noise_strength_y");
+		try {
+			trailModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) {
+			Debug.LogWarning("Trail not found in VOP");
+			trailModule.enabled = false;
+			return;
+		}
 
-		noiseModule.strengthZ = CurveFromString("noise_strength_z");
+		trailModule.colorOverTrail = InterpretStringToGradient("trails_colorOverTrail");
 
-		// Collision
-		ParticleSystem.CollisionModule collisionModule = _pSystem.collision;
-		collisionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_enabled", 0));
+		trailModule.colorOverLifetime = InterpretStringToGradient("trails_colorOverLifetime");
 
-		collisionModule.bounce = CurveFromString("collision_bounce");
+		trailModule.dieWithParticles = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_dieWithParticles", 0));
+
+		trailModule.generateLightingData = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_generateLightingData", 0));
+
+		trailModule.inheritParticleColor = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_inheritParticleColor", 0));
+
+		trailModule.lifetime = InterpretStringToCurve("trails_lifetime");
+
+		trailModule.minVertexDistance = _assetAccessor.getParmFloatValue("trails_minimumVertexDistance", 0);
+
+		trailModule.ratio = _assetAccessor.getParmFloatValue("trails_ratio", 0);
+
+		trailModule.sizeAffectsLifetime = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsLifetime", 0));
+
+		trailModule.sizeAffectsWidth = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsWidth", 0));
+
+		trailModule.textureMode = (ParticleSystemTrailTextureMode) _assetAccessor.getParmIntValue("trails_textureMode", 0);
+
+		trailModule.widthOverTrail = InterpretStringToCurve("trails_widthOverTrail");
+
+		trailModule.worldSpace = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_worldSpace", 0));
+    }
+
+    private void MapLightParamters() {
+		ParticleSystem.LightsModule lightsModule = _particleSystem.lights;
+    }
+
+    private void MapTextureSheetAnimationParameters() {
+		ParticleSystem.TextureSheetAnimationModule textureSheetAnimationModule = _particleSystem.textureSheetAnimation;
+
+		try {
+			textureSheetAnimationModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("textureSheetAnimation_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("TextureSheetAnimationModule not found in VOP");
+			textureSheetAnimationModule.enabled = false;
+			return;
+		}
+
+		textureSheetAnimationModule.mode = (ParticleSystemAnimationMode) _assetAccessor.getParmIntValue("textureSheetAnimation_mode", 0);
+
+		textureSheetAnimationModule.animation = (ParticleSystemAnimationType) _assetAccessor.getParmIntValue("textureSheetAnimation_animation", 0);
+
+		textureSheetAnimationModule.frameOverTime = InterpretStringToCurve("textureSheetAnimation_frame");
+
+		textureSheetAnimationModule.startFrame = InterpretStringToCurve("textureSheetAnimation_startFrame");
+
+		textureSheetAnimationModule.cycleCount = _assetAccessor.getParmIntValue("textureSheetAnimation_cycles", 0);
+
+		textureSheetAnimationModule.flipU = _assetAccessor.getParmFloatValue("textureSheetAnimation_flipU", 0);
+
+		textureSheetAnimationModule.flipU = _assetAccessor.getParmFloatValue("textureSheetAnimation_flipV", 0);
+    }
+
+    private void MapSubEmitterParameters() {
+		ParticleSystem.SubEmittersModule subEmittersModule = _particleSystem.subEmitters;
+    }
+
+    private void MapTriggerParameters() {
+		ParticleSystem.TriggerModule triggerModule = _particleSystem.trigger;
+    }
+
+    private void MapCollisionParameters() {    
+		ParticleSystem.CollisionModule collisionModule = _particleSystem.collision;
+
+		try {
+			collisionModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("CollisionModule not found in VOP");
+			collisionModule.enabled = false;
+			return;
+		}
+
+		collisionModule.bounce = InterpretStringToCurve("collision_bounce");
 
 		collisionModule.colliderForce = _assetAccessor.getParmFloatValue("collision_colliderForce", 0);
 
-		collisionModule.dampen = CurveFromString("collision_dampen");
+		collisionModule.dampen = InterpretStringToCurve("collision_dampen");
 
 		collisionModule.enableDynamicColliders = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_enableDynamicColliders", 0));
 
-		collisionModule.lifetimeLoss = CurveFromString("collision_lifetimeLoss");
+		collisionModule.lifetimeLoss = InterpretStringToCurve("collision_lifetimeLoss");
 
 		collisionModule.maxKillSpeed = _assetAccessor.getParmFloatValue("collision_maxKillSpeed", 0);
 
@@ -495,131 +566,260 @@ public class VOPParser : MonoBehaviour {
 		collisionModule.sendCollisionMessages = Convert.ToBoolean(_assetAccessor.getParmIntValue("collision_sendCollisionMessages", 0));
 
 		collisionModule.type = (ParticleSystemCollisionType) _assetAccessor.getParmIntValue("collision_type", 0);
+    }
 
-		// Triggers
-		ParticleSystem.TriggerModule triggerModule = _pSystem.trigger;
+    private void MapNoiseParameters() {
+		ParticleSystem.NoiseModule noiseModule = _particleSystem.noise;
 
-		// Sub Emitters
-		ParticleSystem.SubEmittersModule subEmittersModule = _pSystem.subEmitters;
+		try {
+			noiseModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_enabled", 0));
+		}
+		catch (HoudiniErrorNotFound) { 
+			Debug.LogWarning("NoiseModule not found in VOP");
+			noiseModule.enabled = false;
+			return;
+		}
 
-		// Texture Sheet Animation
-		ParticleSystem.TextureSheetAnimationModule textureSheetAnimationModule = _pSystem.textureSheetAnimation;
+		noiseModule.frequency = _assetAccessor.getParmFloatValue("noise_frequency", 0);
 
-		textureSheetAnimationModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("textureSheetAnimation_enabled", 0));
+		noiseModule.octaveMultiplier = _assetAccessor.getParmFloatValue("noise_octaveMultiplier",0);
 
-		textureSheetAnimationModule.mode = (ParticleSystemAnimationMode) _assetAccessor.getParmIntValue("textureSheetAnimation_mode", 0);
+		noiseModule.octaveCount = _assetAccessor.getParmIntValue("noise_octaves",0);
 
-		textureSheetAnimationModule.animation = (ParticleSystemAnimationType) _assetAccessor.getParmIntValue("textureSheetAnimation_animation", 0);
+		noiseModule.octaveScale = _assetAccessor.getParmFloatValue("noise_octaveScale",0);
 
-		textureSheetAnimationModule.frameOverTime = CurveFromString("textureSheetAnimation_frame");
+		noiseModule.quality = (ParticleSystemNoiseQuality) _assetAccessor.getParmIntValue("noise_quality",0);
 
-		textureSheetAnimationModule.startFrame = CurveFromString("textureSheetAnimation_startFrame");
+		noiseModule.remapEnabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_remap",0));
 
-		textureSheetAnimationModule.cycleCount = _assetAccessor.getParmIntValue("textureSheetAnimation_cycles", 0);
+		noiseModule.remap = InterpretStringToCurve("noise_remapCurve");
+		
+		noiseModule.positionAmount = InterpretStringToCurve("noise_positionAmount");
+		
+		noiseModule.rotationAmount = InterpretStringToCurve("noise_rotationAmount");
 
-		textureSheetAnimationModule.flipU = _assetAccessor.getParmFloatValue("textureSheetAnimation_flipU", 0);
+		noiseModule.sizeAmount = InterpretStringToCurve("noise_scaleAmount");
 
-		textureSheetAnimationModule.flipU = _assetAccessor.getParmFloatValue("textureSheetAnimation_flipV", 0);
+		noiseModule.scrollSpeed = InterpretStringToCurve("noise_scrollSpeed");
 
-		// Lights
-		ParticleSystem.LightsModule lightsModule = _pSystem.lights;
+		noiseModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_separateAxes", 0));
+		noiseModule.strength = InterpretStringToCurve("noise_strength");
 
-		// Trails
-		ParticleSystem.TrailModule trailModule = _pSystem.trails;
+		noiseModule.strengthX = InterpretStringToCurve("noise_strength_x");
 
-		trailModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_enabled", 0));
+		noiseModule.strengthY = InterpretStringToCurve("noise_strength_y");
 
-		trailModule.colorOverTrail = GradientFromString("trails_colorOverTrail");
+		noiseModule.strengthZ = InterpretStringToCurve("noise_strength_z");
+    }
 
-		trailModule.colorOverLifetime = GradientFromString("trails_colorOverLifetime");
+    private void MapExternalForcesParameters() {
 
-		trailModule.dieWithParticles = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_dieWithParticles", 0));
+		ParticleSystem.ExternalForcesModule externalForcesModule = _particleSystem.externalForces;
 
-		trailModule.generateLightingData = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_generateLightingData", 0));
+		try {
+			externalForcesModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("externalForces_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("ExternalForcesModule not found in VOP");
+			externalForcesModule.enabled = false;
+			return;
+		}
 
-		trailModule.inheritParticleColor = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_inheritParticleColor", 0));
+		externalForcesModule.multiplier = _assetAccessor.getParmFloatValue("externalForces_multiplier",0);
+    }
 
-		trailModule.lifetime = CurveFromString("trails_lifetime");
+    private void MapRotationBySpeedParameters() {
+		ParticleSystem.RotationBySpeedModule rotationBySpeedModule = _particleSystem.rotationBySpeed;
 
-		trailModule.minVertexDistance = _assetAccessor.getParmFloatValue("trails_minimumVertexDistance", 0);
+		try {
+			rotationBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("RotationBySpeedModule not found in VOP");
+			rotationBySpeedModule.enabled = false;
+			return;
+		}
 
-		trailModule.ratio = _assetAccessor.getParmFloatValue("trails_ratio", 0);
+		rotationBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0)); 
 
-		trailModule.sizeAffectsLifetime = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsLifetime", 0));
+		rotationBySpeedModule.x = InterpretStringToCurve("rotationBySpeed_angularVelocity_x");
+		rotationBySpeedModule.y = InterpretStringToCurve("rotationBySpeed_angularVelocity_y");
+		rotationBySpeedModule.z = InterpretStringToCurve("rotationBySpeed_angularVelocity_z");
 
-		trailModule.sizeAffectsWidth = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsWidth", 0));
+		rotationBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("rotationBySpeed_range", 0),
+													_assetAccessor.getParmFloatValue("rotationBySpeed_range", 1));
+    }
 
-		trailModule.textureMode = (ParticleSystemTrailTextureMode) _assetAccessor.getParmIntValue("trails_textureMode", 0);
+    private void MapRotationOverLifetimeParameters() {
+		ParticleSystem.RotationOverLifetimeModule rotationOverLifetimeModule = _particleSystem.rotationOverLifetime;
 
-		trailModule.widthOverTrail = CurveFromString("trails_widthOverTrail");
+		try {
+			rotationOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("RotationOverLifetimeModule not found in VOP");
+			rotationOverLifetimeModule.enabled = false;
+			return;
+		}
 
-		trailModule.worldSpace = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_worldSpace", 0));
+		rotationOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationOverLifetime_separateAxes", 0));
 
+		rotationOverLifetimeModule.x = InterpretStringToCurve("rotationOverLifetime_angularVelocity_x");
+		rotationOverLifetimeModule.y = InterpretStringToCurve("rotationOverLifetime_angularVelocity_y");
+		rotationOverLifetimeModule.z = InterpretStringToCurve("rotationOverLifetime_angularVelocity_z");
+    }
 
-		// Custom Data
-		ParticleSystem.CustomDataModule customDataModule = _pSystem.customData;
+    private void MapSizeBySpeedParameters() {
+		ParticleSystem.SizeBySpeedModule sizeBySpeedModule = _particleSystem.sizeBySpeed;
 
-		customDataModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("customData_enabled", 0));
+		try {
+			sizeBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("SizeBySpeedModule not found in VOP");
+			sizeBySpeedModule.enabled = false;
+			return;
+		}
 
-		customDataModule.SetMode(ParticleSystemCustomData.Custom1,ParticleSystemCustomDataMode.Vector);
+		sizeBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_separateAxes", 0));
 
-		customDataModule.SetMode(ParticleSystemCustomData.Custom2,ParticleSystemCustomDataMode.Vector);
+		sizeBySpeedModule.size = InterpretStringToCurve("sizeBySpeed_size");
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, _assetAccessor.getParmFloatValue("customData_1", 0));
+		sizeBySpeedModule.x = InterpretStringToCurve("sizeBySpeed_size_x");
+		sizeBySpeedModule.y = InterpretStringToCurve("sizeBySpeed_size_y");
+		sizeBySpeedModule.z = InterpretStringToCurve("sizeBySpeed_size_z");
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 1, _assetAccessor.getParmFloatValue("customData_1", 1));
+		sizeBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("sizeBySpeed_range", 0),
+												_assetAccessor.getParmFloatValue("sizeBySpeed_range", 1));
+    }
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 2, _assetAccessor.getParmFloatValue("customData_1", 2));
+    private void MapSizeOverLifetimeParameters() {
+		ParticleSystem.SizeOverLifetimeModule sizeOverLifetimeModule = _particleSystem.sizeOverLifetime;
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom1, 3, _assetAccessor.getParmFloatValue("customData_1", 3));
+		try {
+			sizeOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("SizeOverLifetimeModule not found in VOP");
+			sizeOverLifetimeModule.enabled = false;
+			return;
+		}
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, _assetAccessor.getParmFloatValue("customData_2", 0));
+		sizeOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeOverLifetime_separateAxes", 0));
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 1, _assetAccessor.getParmFloatValue("customData_2", 1));
+		sizeOverLifetimeModule.size = InterpretStringToCurve("sizeOverLifetime_size");
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 2, _assetAccessor.getParmFloatValue("customData_2", 2));
+		sizeOverLifetimeModule.x = InterpretStringToCurve("sizeOverLifetime_size_x");
+		sizeOverLifetimeModule.y = InterpretStringToCurve("sizeOverLifetime_size_y");
+		sizeOverLifetimeModule.z = InterpretStringToCurve("sizeOverLifetime_size_z");
+    }
 
-		// customDataModule.SetVector (ParticleSystemCustomData.Custom2, 3, _assetAccessor.getParmFloatValue("customData_2", 3));
+    private void MapColorBySpeedParameters() {
+		ParticleSystem.ColorBySpeedModule colorBySpeedModule = _particleSystem.colorBySpeed;
 
-		// Renderer
-		ParticleSystemRenderer renderer = GetComponent<ParticleSystemRenderer>();
+		try {
+			colorBySpeedModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorBySpeed_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("ColorBySpeedModule not found in VOP");
+			colorBySpeedModule.enabled = false;
+			return;
+		}
 
-		renderer.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_enabled", 0));
+		colorBySpeedModule.color = InterpretStringToGradient("colorBySpeed_color");
 
-		renderer.alignment = (ParticleSystemRenderSpace) _assetAccessor.getParmIntValue("renderer_Alignment", 0);
+		colorBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("colorBySpeed_range", 0),
+												_assetAccessor.getParmFloatValue("colorBySpeed_range", 1));
+    }
 
-		renderer.shadowCastingMode = (UnityEngine.Rendering.ShadowCastingMode) _assetAccessor.getParmIntValue("renderer_castShadows", 0);
+    private void MapColorOverLifetimeParameters() {
+		ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = _particleSystem.colorOverLifetime;
 
-		renderer.renderMode = (ParticleSystemRenderMode) _assetAccessor.getParmIntValue("renderer_mode", 0);
+		try {
+			colorOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("colorOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("ColorOverLifetimeModule not found in VOP");
+			colorOverLifetimeModule.enabled = false;
+			return;
+		}
 
-		renderer.lightProbeUsage = (UnityEngine.Rendering.LightProbeUsage)_assetAccessor.getParmIntValue("renderer_lightProbes", 0);
+		colorOverLifetimeModule.color = InterpretStringToGradient("colorOverLifetime_color");
+    }
 
-		renderer.maskInteraction = (SpriteMaskInteraction) _assetAccessor.getParmIntValue("renderer_masking", 0);
+    private void MapForceOverLifetimeParameters() {
+		ParticleSystem.ForceOverLifetimeModule forceOverLifetimeModule = _particleSystem.forceOverLifetime;
 
-		renderer.maxParticleSize = _assetAccessor.getParmFloatValue("renderer_maxParticleSize", 0);
+		try {
+			forceOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("ForceOverLifetimeModule not found in VOP");
+			forceOverLifetimeModule.enabled = false;
+			return;
+		}
 
-		renderer.minParticleSize = _assetAccessor.getParmFloatValue("renderer_minParticleSize", 0);
+		forceOverLifetimeModule.x = InterpretStringToCurve("forceOverLifetime_force_x");
+		forceOverLifetimeModule.y = InterpretStringToCurve("forceOverLifetime_force_y");
+		forceOverLifetimeModule.z = InterpretStringToCurve("forceOverLifetime_force_z");
 
-		renderer.motionVectorGenerationMode = (MotionVectorGenerationMode) _assetAccessor.getParmIntValue("renderer_motionVectors", 0);
+		forceOverLifetimeModule.randomized = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_randomized", 0));
+    }
 
-		renderer.reflectionProbeUsage = (UnityEngine.Rendering.ReflectionProbeUsage)_assetAccessor.getParmIntValue("renderer_reflectionProbes", 0);
+    private void MapInheritVelocityOverLifetimeParameters() {
+		ParticleSystem.InheritVelocityModule inheritVelocityModule = _particleSystem.inheritVelocity;
 
-		renderer.receiveShadows = Convert.ToBoolean(_assetAccessor.getParmIntValue("renderer_receiveShadows", 0));
+		try {
+			inheritVelocityModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("inheritVelocity_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("InheritVelocityOverLifetimeModule not found in VOP");
+			inheritVelocityModule.enabled = false;
+			return;
+		}
 
-		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));
+		inheritVelocityModule.mode = (ParticleSystemInheritVelocityMode) _assetAccessor.getParmIntValue("inheritVelocity_mode", 0);
 
-		renderer.trailMaterial = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_trailMaterial", 0));
+		inheritVelocityModule.curve = InterpretStringToCurve("inheritVelocity_multiplier");
+    }
 
-		renderer.pivot = new Vector3(_assetAccessor.getParmFloatValue("renderer_pivot", 0),
-										_assetAccessor.getParmFloatValue("renderer_pivot", 1),
-										_assetAccessor.getParmFloatValue("renderer_pivot", 2));
+    private void MapLimitVelocityOverLifetimeParameters() {
+		ParticleSystem.LimitVelocityOverLifetimeModule limitVelocityOverLifetimeModule = _particleSystem.limitVelocityOverLifetime;
 
-		renderer.sortMode = (ParticleSystemSortMode) _assetAccessor.getParmIntValue("renderer_sortMode", 0);
+		try {
+			limitVelocityOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("LimitVelocityOverLifetime not found in VOP");
+			limitVelocityOverLifetimeModule.enabled = false;
+			return;
+		}
 
-		renderer.sortingFudge = _assetAccessor.getParmFloatValue("renderer_sortingFudge", 0);
+		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
 
-		renderer.sortingOrder = _assetAccessor.getParmIntValue("renderer_orderInLayer", 0);
+		limitVelocityOverLifetimeModule.limit = InterpretStringToCurve("limitVelocityOverLifetime_speed");
 
-		renderer.normalDirection = _assetAccessor.getParmFloatValue("renderer_normalDirection", 0);
-	}
+		limitVelocityOverLifetimeModule.limitX = InterpretStringToCurve("limitVelocityOverLifetime_speed_x");
+		limitVelocityOverLifetimeModule.limitY = InterpretStringToCurve("limitVelocityOverLifetime_speed_y");
+		limitVelocityOverLifetimeModule.limitZ = InterpretStringToCurve("limitVelocityOverLifetime_speed_z");
+
+		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
+    }
+
+    private void MapVelocityOverLifetimeParameters() {
+		ParticleSystem.VelocityOverLifetimeModule velocityOverLifetimeModule = _particleSystem.velocityOverLifetime;
+
+		try {
+			velocityOverLifetimeModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("velocityOverLifetime_enabled", 0));
+		}
+		catch (HoudiniError) {
+			Debug.LogWarning("VelocityOverLifetimeModule not found in VOP");
+			velocityOverLifetimeModule.enabled = false;
+			return;
+		}
+
+		velocityOverLifetimeModule.x = InterpretStringToCurve("velocityOverLifetime_velocity_x");
+		velocityOverLifetimeModule.y = InterpretStringToCurve("velocityOverLifetime_velocity_y");
+		velocityOverLifetimeModule.z = InterpretStringToCurve("velocityOverLifetime_velocity_z");
+    }
 }
