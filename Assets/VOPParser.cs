@@ -23,7 +23,7 @@ public class VOPParser : MonoBehaviour {
 	/// </summary>
 	private bool _isDirty = false;
 
-	void Start () {
+    void Start () {
 		_assetAccessor = HoudiniApiAssetAccessor.getAssetAccessor(gameObject);
 		_assetOTL = GetComponent<HoudiniAssetOTL>();
 		_pSystem = GetComponent<ParticleSystem>();
@@ -66,7 +66,7 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Not used, since it doesn't seem like Unity supports "GetAttributeFloatData". Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first,
+	/// Not used, since I can't figure out how to get it working. Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first.
 	/// </summary>
 	void GetDetailAttributes() {
 		HoudiniGeoAttribute attribute = new HoudiniGeoAttribute();
@@ -301,6 +301,8 @@ public class VOPParser : MonoBehaviour {
 											_assetAccessor.getParmFloatValue("shape_scale", 1),
 											_assetAccessor.getParmFloatValue("shape_scale", 2));
 
+		shapeModule.alignToDirection = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_alignToDirection", 0));
+
 		//	Velocity Over Lifetime
 		ParticleSystem.VelocityOverLifetimeModule velocityOverLifetimeModule = _pSystem.velocityOverLifetime;
 
@@ -319,6 +321,10 @@ public class VOPParser : MonoBehaviour {
 		limitVelocityOverLifetimeModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("limitVelocityOverLifetime_separateAxes", 0));
 
 		limitVelocityOverLifetimeModule.limit = CurveFromString("limitVelocityOverLifetime_speed");
+
+		limitVelocityOverLifetimeModule.limitX = CurveFromString("limitVelocityOverLifetime_speed_x");
+		limitVelocityOverLifetimeModule.limitY = CurveFromString("limitVelocityOverLifetime_speed_y");
+		limitVelocityOverLifetimeModule.limitZ = CurveFromString("limitVelocityOverLifetime_speed_z");
 
 		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
 
@@ -368,6 +374,10 @@ public class VOPParser : MonoBehaviour {
 
 		sizeOverLifetimeModule.size = CurveFromString("sizeOverLifetime_size");
 
+		sizeOverLifetimeModule.x = CurveFromString("sizeOverLifetime_size_x");
+		sizeOverLifetimeModule.y = CurveFromString("sizeOverLifetime_size_y");
+		sizeOverLifetimeModule.z = CurveFromString("sizeOverLifetime_size_z");
+
 		//	Size By Speed
 		ParticleSystem.SizeBySpeedModule sizeBySpeedModule = _pSystem.sizeBySpeed;
 
@@ -376,6 +386,10 @@ public class VOPParser : MonoBehaviour {
 		sizeBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("sizeBySpeed_separateAxes", 0));
 
 		sizeBySpeedModule.size = CurveFromString("sizeBySpeed_size");
+
+		sizeBySpeedModule.x = CurveFromString("sizeBySpeed_size_x");
+		sizeBySpeedModule.y = CurveFromString("sizeBySpeed_size_y");
+		sizeBySpeedModule.z = CurveFromString("sizeBySpeed_size_z");
 
 		sizeBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("sizeBySpeed_range", 0),
 												_assetAccessor.getParmFloatValue("sizeBySpeed_range", 1));
@@ -400,7 +414,7 @@ public class VOPParser : MonoBehaviour {
 
 		rotationBySpeedModule.x = CurveFromString("rotationBySpeed_angularVelocity_x");
 		rotationBySpeedModule.y = CurveFromString("rotationBySpeed_angularVelocity_y");
-		rotationBySpeedModule.z = CurveFromString("rotationBySpeed_angularVelocity_y");
+		rotationBySpeedModule.z = CurveFromString("rotationBySpeed_angularVelocity_z");
 
 		rotationBySpeedModule.range = new Vector2(_assetAccessor.getParmFloatValue("rotationBySpeed_range", 0),
 													_assetAccessor.getParmFloatValue("rotationBySpeed_range", 1));
@@ -410,10 +424,43 @@ public class VOPParser : MonoBehaviour {
 
 		externalForcesModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("externalForces_enabled", 0));
 
+		externalForcesModule.multiplier = _assetAccessor.getParmFloatValue("externalForces_multiplier",0);
+
 		// Noise
 		ParticleSystem.NoiseModule noiseModule = _pSystem.noise;
 
 		noiseModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_enabled", 0));
+
+		noiseModule.frequency = _assetAccessor.getParmFloatValue("noise_frequency", 0);
+
+		noiseModule.octaveMultiplier = _assetAccessor.getParmFloatValue("noise_octaveMultiplier",0);
+
+		noiseModule.octaveCount = _assetAccessor.getParmIntValue("noise_octaves",0);
+
+		noiseModule.octaveScale = _assetAccessor.getParmFloatValue("noise_octaveScale",0);
+
+		noiseModule.quality = (ParticleSystemNoiseQuality) _assetAccessor.getParmIntValue("noise_quality",0);
+
+		noiseModule.remapEnabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_remap",0));
+
+		noiseModule.remap = CurveFromString("noise_remapCurve");
+		
+		noiseModule.positionAmount = CurveFromString("noise_positionAmount");
+		
+		noiseModule.rotationAmount = CurveFromString("noise_rotationAmount");
+
+		noiseModule.sizeAmount = CurveFromString("noise_scaleAmount");
+
+		noiseModule.scrollSpeed = CurveFromString("noise_scrollSpeed");
+
+		noiseModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_separateAxes", 0));
+		noiseModule.strength = CurveFromString("noise_strength");
+
+		noiseModule.strengthX = CurveFromString("noise_strength_x");
+
+		noiseModule.strengthY = CurveFromString("noise_strength_y");
+
+		noiseModule.strengthZ = CurveFromString("noise_strength_z");
 
 		// Collision
 		ParticleSystem.CollisionModule collisionModule = _pSystem.collision;
@@ -482,6 +529,33 @@ public class VOPParser : MonoBehaviour {
 
 		trailModule.enabled = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_enabled", 0));
 
+		trailModule.colorOverTrail = GradientFromString("trails_colorOverTrail");
+
+		trailModule.colorOverLifetime = GradientFromString("trails_colorOverLifetime");
+
+		trailModule.dieWithParticles = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_dieWithParticles", 0));
+
+		trailModule.generateLightingData = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_generateLightingData", 0));
+
+		trailModule.inheritParticleColor = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_inheritParticleColor", 0));
+
+		trailModule.lifetime = CurveFromString("trails_lifetime");
+
+		trailModule.minVertexDistance = _assetAccessor.getParmFloatValue("trails_minimumVertexDistance", 0);
+
+		trailModule.ratio = _assetAccessor.getParmFloatValue("trails_ratio", 0);
+
+		trailModule.sizeAffectsLifetime = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsLifetime", 0));
+
+		trailModule.sizeAffectsWidth = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_sizeAffectsWidth", 0));
+
+		trailModule.textureMode = (ParticleSystemTrailTextureMode) _assetAccessor.getParmIntValue("trails_textureMode", 0);
+
+		trailModule.widthOverTrail = CurveFromString("trails_widthOverTrail");
+
+		trailModule.worldSpace = Convert.ToBoolean(_assetAccessor.getParmIntValue("trails_worldSpace", 0));
+
+
 		// Custom Data
 		ParticleSystem.CustomDataModule customDataModule = _pSystem.customData;
 
@@ -535,5 +609,17 @@ public class VOPParser : MonoBehaviour {
 		renderer.material = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_material", 0));
 
 		renderer.trailMaterial = AssetDatabase.LoadAssetAtPath<Material>(_assetAccessor.getParmStringValue("renderer_trailMaterial", 0));
+
+		renderer.pivot = new Vector3(_assetAccessor.getParmFloatValue("renderer_pivot", 0),
+										_assetAccessor.getParmFloatValue("renderer_pivot", 1),
+										_assetAccessor.getParmFloatValue("renderer_pivot", 2));
+
+		renderer.sortMode = (ParticleSystemSortMode) _assetAccessor.getParmIntValue("renderer_sortMode", 0);
+
+		renderer.sortingFudge = _assetAccessor.getParmFloatValue("renderer_sortingFudge", 0);
+
+		renderer.sortingOrder = _assetAccessor.getParmIntValue("renderer_orderInLayer", 0);
+
+		renderer.normalDirection = _assetAccessor.getParmFloatValue("renderer_normalDirection", 0);
 	}
 }
