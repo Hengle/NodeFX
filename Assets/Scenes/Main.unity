@@ -108,39 +108,47 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &265391078
+--- !u!1 &275252200
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 265391080}
-  - component: {fileID: 265391079}
+  - component: {fileID: 275252203}
+  - component: {fileID: 275252202}
+  - component: {fileID: 275252201}
   m_Layer: 0
-  m_Name: add_params
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &265391079
+--- !u!33 &275252201
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275252200}
+  m_Mesh: {fileID: 1301984262}
+--- !u!114 &275252202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 265391078}
+  m_GameObject: {fileID: 275252200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 25
-  myObjectNodeId: 18
+  myAssetId: 0
+  myNodeId: -1
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -152,95 +160,58 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 25
-  myGeoName: add_params
+  myGeoId: 6
+  myGeoName: update_definition
   myGeoType: 0
   myIsEditable: 1
   myIsDisplay: 0
   myObjectControl: {fileID: 1314113674}
   myGeoAttributeManager: {fileID: 0}
-  myParts:
-  - {fileID: 734835962}
---- !u!4 &265391080
+  myParts: []
+  myPartId: 0
+  myPartName: 
+  myPartType: -1
+  myMaterialId: -1
+  myVertexList: 00000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 0
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1057842892}
+--- !u!4 &275252203
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 265391078}
+  m_GameObject: {fileID: 275252200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 734835965}
-  m_Father: {fileID: 1314113675}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &460464396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 460464398}
-  - component: {fileID: 460464397}
-  m_Layer: 0
-  m_Name: VFX_VOP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &460464397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 460464396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 21
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 21
-  myGeoName: VFX_VOP
-  myGeoType: 0
-  myIsEditable: 1
-  myIsDisplay: 0
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts:
-  - {fileID: 728438575}
---- !u!4 &460464398
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 460464396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 728438578}
-  m_Father: {fileID: 1314113675}
-  m_RootOrder: 2
+  m_Children: []
+  m_Father: {fileID: 1057842893}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474232606
 GameObject:
@@ -307,16 +278,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &531301560
+--- !u!1 &532169449
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 531301563}
-  - component: {fileID: 531301562}
-  - component: {fileID: 531301561}
+  - component: {fileID: 532169452}
+  - component: {fileID: 532169451}
+  - component: {fileID: 532169450}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -324,30 +295,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &531301561
+--- !u!33 &532169450
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 531301560}
-  m_Mesh: {fileID: 719145209}
---- !u!114 &531301562
+  m_GameObject: {fileID: 532169449}
+  m_Mesh: {fileID: 1800072542}
+--- !u!114 &532169451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 531301560}
+  m_GameObject: {fileID: 532169449}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
+  myAssetId: 0
   myNodeId: -1
-  myObjectNodeId: 18
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -359,240 +330,7 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 22
-  myGeoName: update_definition
-  myGeoType: 0
-  myIsEditable: 1
-  myIsDisplay: 0
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts: []
-  myPartId: 0
-  myPartName: 
-  myPartType: -1
-  myMaterialId: -1
-  myVertexList: 00000000
-  myLastLocalToWorld:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  myTransformChanged: 0
-  myShowDisplayOptions: 1
-  myShowPointNumbers: 0
-  myShowPointGroup: 0
-  mySelectedPointGroup: 
-  myShowPrimitiveGroup: 0
-  mySelectedPrimitiveGroup: 
-  myShowIntermediateResultControls: 0
-  myShowInfo: 0
-  myGeoControl: {fileID: 1284474050}
---- !u!4 &531301563
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 531301560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1284474051}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &549006466
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 0
-    topology: 0
-    firstVertex: 0
-    vertexCount: 0
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexBuffer: 
-  m_Skin: []
-  m_VertexData:
-    m_CurrentChannels: 0
-    m_VertexCount: 0
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 0
-    _typelessdata: 
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
---- !u!1 &589487144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 589487147}
-  - component: {fileID: 589487146}
-  - component: {fileID: 589487145}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!33 &589487145
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 589487144}
-  m_Mesh: {fileID: 1971884764}
---- !u!114 &589487146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 589487144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: -1
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 23
+  myGeoId: 7
   myGeoName: assign_script
   myGeoType: 0
   myIsEditable: 1
@@ -631,126 +369,21 @@ MonoBehaviour:
   mySelectedPrimitiveGroup: 
   myShowIntermediateResultControls: 0
   myShowInfo: 0
-  myGeoControl: {fileID: 1837620743}
---- !u!4 &589487147
+  myGeoControl: {fileID: 1611266155}
+--- !u!4 &532169452
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 589487144}
+  m_GameObject: {fileID: 532169449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1837620744}
+  m_Father: {fileID: 1611266156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &638083329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 638083332}
-  - component: {fileID: 638083331}
-  - component: {fileID: 638083330}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!33 &638083330
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 638083329}
-  m_Mesh: {fileID: 1437194368}
---- !u!114 &638083331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 638083329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: -1
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 20
-  myGeoName: output1
-  myGeoType: 0
-  myIsEditable: 1
-  myIsDisplay: 1
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts: []
-  myPartId: 0
-  myPartName: 
-  myPartType: -1
-  myMaterialId: -1
-  myVertexList: 00000000
-  myLastLocalToWorld:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  myTransformChanged: 0
-  myShowDisplayOptions: 1
-  myShowPointNumbers: 0
-  myShowPointGroup: 0
-  mySelectedPointGroup: 
-  myShowPrimitiveGroup: 0
-  mySelectedPrimitiveGroup: 
-  myShowIntermediateResultControls: 0
-  myShowInfo: 0
-  myGeoControl: {fileID: 746086340}
---- !u!4 &638083332
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 638083329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 746086341}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &719145209
+--- !u!43 &564219744
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -878,16 +511,16 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &728438575
+--- !u!1 &627677987
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 728438578}
-  - component: {fileID: 728438577}
-  - component: {fileID: 728438576}
+  - component: {fileID: 627677990}
+  - component: {fileID: 627677989}
+  - component: {fileID: 627677988}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -895,30 +528,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &728438576
+--- !u!33 &627677988
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 728438575}
-  m_Mesh: {fileID: 1814190142}
---- !u!114 &728438577
+  m_GameObject: {fileID: 627677987}
+  m_Mesh: {fileID: 1976478501}
+--- !u!114 &627677989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 728438575}
+  m_GameObject: {fileID: 627677987}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
+  myAssetId: 0
   myNodeId: -1
-  myObjectNodeId: 18
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -930,7 +563,7 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 21
+  myGeoId: 5
   myGeoName: VFX_VOP
   myGeoType: 0
   myIsEditable: 1
@@ -969,97 +602,30 @@ MonoBehaviour:
   mySelectedPrimitiveGroup: 
   myShowIntermediateResultControls: 0
   myShowInfo: 0
-  myGeoControl: {fileID: 460464397}
---- !u!4 &728438578
+  myGeoControl: {fileID: 1896255735}
+--- !u!4 &627677990
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 728438575}
+  m_GameObject: {fileID: 627677987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 460464398}
+  m_Father: {fileID: 1896255736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &733256099
+--- !u!1 &673757045
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 733256101}
-  - component: {fileID: 733256100}
-  m_Layer: 0
-  m_Name: VOPEmitter1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &733256100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 733256099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 18
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 18
-  myGeoName: VOPEmitter1
-  myGeoType: 0
-  myIsEditable: 1
-  myIsDisplay: 1
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts:
-  - {fileID: 1172065617}
---- !u!4 &733256101
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 733256099}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1172065620}
-  m_Father: {fileID: 1314113675}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &734835962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 734835965}
-  - component: {fileID: 734835964}
-  - component: {fileID: 734835963}
+  - component: {fileID: 673757048}
+  - component: {fileID: 673757047}
+  - component: {fileID: 673757046}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -1067,30 +633,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &734835963
+--- !u!33 &673757046
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734835962}
-  m_Mesh: {fileID: 1045239350}
---- !u!114 &734835964
+  m_GameObject: {fileID: 673757045}
+  m_Mesh: {fileID: 1106350544}
+--- !u!114 &673757047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734835962}
+  m_GameObject: {fileID: 673757045}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
+  myAssetId: 0
   myNodeId: -1
-  myObjectNodeId: 18
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -1102,7 +668,209 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 25
+  myGeoId: 4
+  myGeoName: output1
+  myGeoType: 0
+  myIsEditable: 1
+  myIsDisplay: 1
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+  myPartId: 0
+  myPartName: 
+  myPartType: -1
+  myMaterialId: -1
+  myVertexList: 00000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 0
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1844185887}
+--- !u!4 &673757048
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673757045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1844185888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &855428601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 855428603}
+  - component: {fileID: 855428602}
+  m_Layer: 0
+  m_Name: uninitialized_geo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &855428602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855428601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 0
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 8
+  myGeoName: geo_name
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+--- !u!4 &855428603
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855428601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1314113675}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884564630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b548c5e655726a546b683d0843da0f61, type: 3}
+  m_Name: VOPEmitter2_UndoInfo
+  m_EditorClassIdentifier: 
+  isGeoVisible: 1
+  showPinnedInstances: 1
+  showOnlyVertexColours: 0
+  generateUVs: 0
+  generateLightmapUV2s: 0
+  generateTangents: 1
+  enableCooking: 1
+  cookingTriggersDownCooks: 1
+  playmodePerFrameCooking: 0
+  pushUnityTransformToHoudini: 1
+  transformChangeTriggersCooks: 0
+  importTemplatedGeos: 0
+  splitGeosByGroupOverride: 0
+  splitGeosByGroup: 1
+  splitPointsGeosByGroupOverride: 0
+  splitPointsByVertexAttribute: 1
+  splitPointsByVertexAttributeOverride: 0
+  omitPartNameEnumeration: 0
+  bakeStartTime: 0
+  bakeEndTime: 1
+  bakeSamplesPerSecond: 30
+--- !u!1 &906574058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 906574061}
+  - component: {fileID: 906574060}
+  - component: {fileID: 906574059}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &906574059
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906574058}
+  m_Mesh: {fileID: 1540745850}
+--- !u!114 &906574060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906574058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: -1
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 9
   myGeoName: add_params
   myGeoType: 0
   myIsEditable: 1
@@ -1141,53 +909,53 @@ MonoBehaviour:
   mySelectedPrimitiveGroup: 
   myShowIntermediateResultControls: 0
   myShowInfo: 0
-  myGeoControl: {fileID: 265391079}
---- !u!4 &734835965
+  myGeoControl: {fileID: 1552012505}
+--- !u!4 &906574061
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734835962}
+  m_GameObject: {fileID: 906574058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 265391080}
+  m_Father: {fileID: 1552012506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &746086339
+--- !u!1 &1057842891
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 746086341}
-  - component: {fileID: 746086340}
+  - component: {fileID: 1057842893}
+  - component: {fileID: 1057842892}
   m_Layer: 0
-  m_Name: output1
+  m_Name: update_definition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &746086340
+--- !u!114 &1057842892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 746086339}
+  m_GameObject: {fileID: 1057842891}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 20
-  myObjectNodeId: 18
+  myAssetId: 0
+  myNodeId: 6
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -1199,123 +967,97 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 20
-  myGeoName: output1
+  myGeoId: 6
+  myGeoName: update_definition
+  myGeoType: 0
+  myIsEditable: 1
+  myIsDisplay: 0
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 275252200}
+--- !u!4 &1057842893
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057842891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 275252203}
+  m_Father: {fileID: 1314113675}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1105632584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1105632586}
+  - component: {fileID: 1105632585}
+  m_Layer: 0
+  m_Name: VOPEmitter1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1105632585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1105632584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 0
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 0
+  myGeoName: VOPEmitter1
   myGeoType: 0
   myIsEditable: 1
   myIsDisplay: 1
   myObjectControl: {fileID: 1314113674}
   myGeoAttributeManager: {fileID: 0}
   myParts:
-  - {fileID: 638083329}
---- !u!4 &746086341
+  - {fileID: 1289738897}
+--- !u!4 &1105632586
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 746086339}
+  m_GameObject: {fileID: 1105632584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 638083332}
+  - {fileID: 1289738900}
   m_Father: {fileID: 1314113675}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &884564630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b548c5e655726a546b683d0843da0f61, type: 3}
-  m_Name: VOPEmitter2_UndoInfo
-  m_EditorClassIdentifier: 
-  isGeoVisible: 1
-  showPinnedInstances: 1
-  showOnlyVertexColours: 0
-  generateUVs: 0
-  generateLightmapUV2s: 0
-  generateTangents: 1
-  enableCooking: 1
-  cookingTriggersDownCooks: 1
-  playmodePerFrameCooking: 0
-  pushUnityTransformToHoudini: 1
-  transformChangeTriggersCooks: 0
-  importTemplatedGeos: 0
-  splitGeosByGroupOverride: 0
-  splitGeosByGroup: 1
-  splitPointsGeosByGroupOverride: 0
-  splitPointsByVertexAttribute: 1
-  splitPointsByVertexAttributeOverride: 0
-  omitPartNameEnumeration: 0
-  bakeStartTime: 0
-  bakeEndTime: 1
-  bakeSamplesPerSecond: 30
---- !u!114 &1003462093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6a2b6b2be300d4b8019f770b1db8ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parmNames:
-  - main_deltaTime
-  - main_autoRandomSeed
-  - main_3DStartSize
-  - main_gravityModifier
-  - main_emitterVelocity
-  - main_startColor
-  - main_prewarm
-  - main_startLifetime
-  - main_3DStartRotation
-  - main_startRotation
-  - main_startSize
-  - main_looping
-  - main_startSize_x
-  - Unity_Script
-  - main_startSize_y
-  - main_startSize_z
-  - main_simulationSpace
-  - main_scalingMode
-  - main_simulationSpeed
-  - main_startDelay
-  - main_maxParticles
-  - main_startRotation_x
-  - main_startRotation_y
-  - main_startRotation_z
-  - main_rotationVariance
-  - main_startSpeed
-  - main_playOnAwake
-  - main_duration
-  parmIndices: 000000000100000002000000000000000300000001000000040000000200000005000000030000000400000006000000050000000600000007000000080000000700000008000000000000000100000009000000090000000a0000000b000000020000000c0000000a00000003000000
-  parmIntValues: 000000000100000000000000010000000100000000000000010000000000000001000000e803000000000000
-  parmFloatValues:
-  - 1
-  - 0
-  - 0
-  - 10
-  parmStringValues:
-  - randomCurve;float;64;5.000000;1;0.982468;0.961304;0.936783;0.90918;0.878769;0.845825;0.810623;0.773438;0.734543;0.694214;0.652725;0.610352;0.567368;0.524048;0.480667;0.4375;0.394821;0.352905;0.312027;0.272461;0.234482;0.198364;0.164383;0.132813;0.103928;0.0780029;0.0553131;0.0361328;0.0207367;0.00939941;0.00239563;0;0.00239563;0.00939941;0.0207367;0.0361328;0.0553131;0.0780029;0.103928;0.132813;0.164383;0.198364;0.234482;0.272461;0.312027;0.352905;0.394821;0.4375;0.480667;0.524048;0.567368;0.610352;0.652725;0.694214;0.734543;0.773438;0.810623;0.845825;0.878769;0.90918;0.936783;0.961304;0.982468;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1
-  - gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}
-  - constant;float;5.0
-  - constant;float;0.0
-  - constant;float;1.0
-  - constant;float;1.0
-  - '{ "script":"VOPParser" }'
-  - constant;float;1.0
-  - constant;float;1.0
-  - constant;float;0.0
-  - constant;float;0.0
-  - constant;float;0.0
-  - constant;float;1.0
---- !u!43 &1045239350
+--- !u!43 &1106350544
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1443,16 +1185,16 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1172065617
+--- !u!1 &1289738897
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1172065620}
-  - component: {fileID: 1172065619}
-  - component: {fileID: 1172065618}
+  - component: {fileID: 1289738900}
+  - component: {fileID: 1289738899}
+  - component: {fileID: 1289738898}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -1460,30 +1202,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &1172065618
+--- !u!33 &1289738898
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1172065617}
-  m_Mesh: {fileID: 549006466}
---- !u!114 &1172065619
+  m_GameObject: {fileID: 1289738897}
+  m_Mesh: {fileID: 564219744}
+--- !u!114 &1289738899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1172065617}
+  m_GameObject: {fileID: 1289738897}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a19d74b350b2a3409280a982afa4fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
+  myAssetId: 0
   myNodeId: -1
-  myObjectNodeId: 18
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -1495,7 +1237,7 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 18
+  myGeoId: 0
   myGeoName: VOPEmitter1
   myGeoType: 0
   myIsEditable: 1
@@ -1534,87 +1276,148 @@ MonoBehaviour:
   mySelectedPrimitiveGroup: 
   myShowIntermediateResultControls: 0
   myShowInfo: 0
-  myGeoControl: {fileID: 733256100}
---- !u!4 &1172065620
+  myGeoControl: {fileID: 1105632585}
+--- !u!4 &1289738900
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1172065617}
+  m_GameObject: {fileID: 1289738897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 733256101}
+  m_Father: {fileID: 1105632586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1284474049
-GameObject:
+--- !u!43 &1301984262
+Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1284474051}
-  - component: {fileID: 1284474050}
-  m_Layer: 0
-  m_Name: update_definition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1284474050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284474049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 22
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 22
-  myGeoName: update_definition
-  myGeoType: 0
-  myIsEditable: 1
-  myIsDisplay: 0
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts:
-  - {fileID: 531301560}
---- !u!4 &1284474051
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284474049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 531301563}
-  m_Father: {fileID: 1314113675}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 0
+    topology: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexBuffer: 
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 0
+    m_VertexCount: 0
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 0
+    _typelessdata: 
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
 --- !u!1 &1314113669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1562,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2131383796
+  randomSeed: 867578179
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2945,30 +2748,30 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 5
-    enabled: 0
-    type: 4
-    angle: 25
-    length: 5
-    boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
-    donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    enabled: 1
+    type: 1
+    angle: 0.592
+    length: 0.392
+    boxThickness: {x: 0.7, y: 0.7, z: 0.7}
+    radiusThickness: 0.648
+    donutRadius: 0.688
+    m_Position: {x: 0.1, y: 0.4, z: 12.3}
+    m_Rotation: {x: 0.04, y: 43, z: 7}
+    m_Scale: {x: 8, y: 90, z: 0.12}
     placementMode: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
-    m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
-    m_UseMeshMaterialIndex: 0
+    m_MeshMaterialIndex: 3
+    m_MeshNormalOffset: 0.616
+    m_UseMeshMaterialIndex: 1
     m_UseMeshColors: 1
     alignToDirection: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.28
       mode: 0
       spread: 0
       speed:
@@ -3013,9 +2816,9 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 53
       mode: 0
-      spread: 0
+      spread: 0.448
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -3058,12 +2861,12 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3104,7 +2907,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5719,10 +5522,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myControl: {fileID: 1314113674}
   myEditable: 1
-  myParmCount: 30
-  myParmIntValueCount: 11
-  myParmFloatValueCount: 4
-  myprParmStringValueCoun: 13
+  myParmCount: 61
+  myParmIntValueCount: 20
+  myParmFloatValueCount: 27
+  myprParmStringValueCoun: 20
   myprParmChoiceCount: 0
   myParms:
   - id: 0
@@ -5764,7 +5567,7 @@ MonoBehaviour:
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
-    size: 28
+    size: 59
     choiceCount: 0
     hasMin: 0
     hasMax: 0
@@ -5792,7 +5595,7 @@ MonoBehaviour:
   - id: 2
     parentId: 1
     childIndex: 0
-    type: 0
+    type: 6
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -5800,8 +5603,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 1
-    hasUIMax: 1
+    hasUIMin: 0
+    hasUIMax: 0
     min: 0
     max: 10
     UIMin: 0
@@ -5811,9 +5614,9 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 0
+    intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: -1
+    stringValuesIndex: 0
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -5824,7 +5627,7 @@ MonoBehaviour:
   - id: 3
     parentId: 1
     childIndex: 1
-    type: 0
+    type: 6
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -5832,8 +5635,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 1
-    hasUIMax: 1
+    hasUIMin: 0
+    hasUIMax: 0
     min: 0
     max: 10
     UIMin: 0
@@ -5843,9 +5646,9 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 1
+    intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: -1
+    stringValuesIndex: 1
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -5856,7 +5659,7 @@ MonoBehaviour:
   - id: 4
     parentId: 1
     childIndex: 2
-    type: 0
+    type: 4
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -5875,8 +5678,8 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 2
-    floatValuesIndex: -1
+    intValuesIndex: -1
+    floatValuesIndex: 0
     stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
@@ -5909,7 +5712,7 @@ MonoBehaviour:
     labelNone: 0
     intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: 0
+    stringValuesIndex: 2
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -5920,38 +5723,6 @@ MonoBehaviour:
   - id: 6
     parentId: 1
     childIndex: 4
-    type: 0
-    typeInfoSH: 0
-    permissions: 0
-    tagCount: 0
-    size: 1
-    choiceCount: 0
-    hasMin: 0
-    hasMax: 0
-    hasUIMin: 1
-    hasUIMax: 1
-    min: 0
-    max: 10
-    UIMin: 0
-    UIMax: 10
-    invisible: 0
-    disabled: 0
-    spare: 0
-    joinNext: 0
-    labelNone: 0
-    intValuesIndex: 3
-    floatValuesIndex: -1
-    stringValuesIndex: -1
-    choiceIndex: 0
-    isChildOfMultiParm: 0
-    instanceNum: -1
-    instanceLength: 0
-    instanceCount: 0
-    instanceStartOffset: -1
-    rampType: -1
-  - id: 7
-    parentId: 1
-    childIndex: 5
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -5973,7 +5744,7 @@ MonoBehaviour:
     labelNone: 0
     intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: 1
+    stringValuesIndex: 3
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -5981,9 +5752,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 8
+  - id: 7
     parentId: 1
-    childIndex: 6
+    childIndex: 5
     type: 0
     typeInfoSH: 0
     permissions: 0
@@ -6003,8 +5774,40 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 4
+    intValuesIndex: 0
     floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 8
+    parentId: 1
+    childIndex: 6
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 1
     stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
@@ -6016,7 +5819,7 @@ MonoBehaviour:
   - id: 9
     parentId: 1
     childIndex: 7
-    type: 6
+    type: 0
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -6024,8 +5827,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 0
-    hasUIMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
     min: 0
     max: 10
     UIMin: 0
@@ -6035,9 +5838,9 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: -1
+    intValuesIndex: 1
     floatValuesIndex: -1
-    stringValuesIndex: 2
+    stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6067,7 +5870,7 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 5
+    intValuesIndex: 2
     floatValuesIndex: -1
     stringValuesIndex: -1
     choiceIndex: 0
@@ -6101,7 +5904,7 @@ MonoBehaviour:
     labelNone: 0
     intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: 3
+    stringValuesIndex: 4
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6112,38 +5915,6 @@ MonoBehaviour:
   - id: 12
     parentId: 1
     childIndex: 10
-    type: 6
-    typeInfoSH: 0
-    permissions: 0
-    tagCount: 0
-    size: 1
-    choiceCount: 0
-    hasMin: 0
-    hasMax: 0
-    hasUIMin: 0
-    hasUIMax: 0
-    min: 0
-    max: 10
-    UIMin: 0
-    UIMax: 10
-    invisible: 0
-    disabled: 0
-    spare: 0
-    joinNext: 0
-    labelNone: 0
-    intValuesIndex: -1
-    floatValuesIndex: -1
-    stringValuesIndex: 4
-    choiceIndex: 0
-    isChildOfMultiParm: 0
-    instanceNum: -1
-    instanceLength: 0
-    instanceCount: 0
-    instanceStartOffset: -1
-    rampType: -1
-  - id: 13
-    parentId: 1
-    childIndex: 11
     type: 0
     typeInfoSH: 0
     permissions: 0
@@ -6163,7 +5934,7 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 6
+    intValuesIndex: 3
     floatValuesIndex: -1
     stringValuesIndex: -1
     choiceIndex: 0
@@ -6173,9 +5944,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 14
+  - id: 13
     parentId: 1
-    childIndex: 12
+    childIndex: 11
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -6205,10 +5976,10 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 15
+  - id: 14
     parentId: 1
-    childIndex: 13
-    type: 6
+    childIndex: 12
+    type: 4
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -6216,8 +5987,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 0
-    hasUIMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
     min: 0
     max: 10
     UIMin: 0
@@ -6228,8 +5999,40 @@ MonoBehaviour:
     joinNext: 0
     labelNone: 0
     intValuesIndex: -1
-    floatValuesIndex: -1
-    stringValuesIndex: 6
+    floatValuesIndex: 2
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 15
+    parentId: 1
+    childIndex: 13
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 3
+    stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6240,7 +6043,7 @@ MonoBehaviour:
   - id: 16
     parentId: 1
     childIndex: 14
-    type: 6
+    type: 0
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -6248,8 +6051,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 0
-    hasUIMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
     min: 0
     max: 10
     UIMin: 0
@@ -6259,9 +6062,9 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: -1
+    intValuesIndex: 4
     floatValuesIndex: -1
-    stringValuesIndex: 7
+    stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6272,7 +6075,7 @@ MonoBehaviour:
   - id: 17
     parentId: 1
     childIndex: 15
-    type: 6
+    type: 4
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -6280,8 +6083,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 0
-    hasUIMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
     min: 0
     max: 10
     UIMin: 0
@@ -6292,8 +6095,8 @@ MonoBehaviour:
     joinNext: 0
     labelNone: 0
     intValuesIndex: -1
-    floatValuesIndex: -1
-    stringValuesIndex: 8
+    floatValuesIndex: 4
+    stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6323,7 +6126,7 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 7
+    intValuesIndex: 5
     floatValuesIndex: -1
     stringValuesIndex: -1
     choiceIndex: 0
@@ -6336,7 +6139,7 @@ MonoBehaviour:
   - id: 19
     parentId: 1
     childIndex: 17
-    type: 0
+    type: 6
     typeInfoSH: 0
     permissions: 0
     tagCount: 0
@@ -6344,8 +6147,8 @@ MonoBehaviour:
     choiceCount: 0
     hasMin: 0
     hasMax: 0
-    hasUIMin: 1
-    hasUIMax: 1
+    hasUIMin: 0
+    hasUIMax: 0
     min: 0
     max: 10
     UIMin: 0
@@ -6355,9 +6158,9 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 8
+    intValuesIndex: -1
     floatValuesIndex: -1
-    stringValuesIndex: -1
+    stringValuesIndex: 6
     choiceIndex: 0
     isChildOfMultiParm: 0
     instanceNum: -1
@@ -6388,7 +6191,7 @@ MonoBehaviour:
     joinNext: 0
     labelNone: 0
     intValuesIndex: -1
-    floatValuesIndex: 0
+    floatValuesIndex: 5
     stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
@@ -6400,6 +6203,102 @@ MonoBehaviour:
   - id: 21
     parentId: 1
     childIndex: 19
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 7
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 22
+    parentId: 1
+    childIndex: 20
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 8
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 23
+    parentId: 1
+    childIndex: 21
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 24
+    parentId: 1
+    childIndex: 22
     type: 4
     typeInfoSH: 0
     permissions: 0
@@ -6420,7 +6319,7 @@ MonoBehaviour:
     joinNext: 0
     labelNone: 0
     intValuesIndex: -1
-    floatValuesIndex: 1
+    floatValuesIndex: 6
     stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
@@ -6429,9 +6328,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 22
+  - id: 25
     parentId: 1
-    childIndex: 20
+    childIndex: 23
     type: 0
     typeInfoSH: 0
     permissions: 0
@@ -6451,7 +6350,7 @@ MonoBehaviour:
     spare: 0
     joinNext: 0
     labelNone: 0
-    intValuesIndex: 9
+    intValuesIndex: 7
     floatValuesIndex: -1
     stringValuesIndex: -1
     choiceIndex: 0
@@ -6461,9 +6360,169 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 23
+  - id: 26
     parentId: 1
-    childIndex: 21
+    childIndex: 24
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 7
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 27
+    parentId: 1
+    childIndex: 25
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 10
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 28
+    parentId: 1
+    childIndex: 26
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 13
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 29
+    parentId: 1
+    childIndex: 27
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 30
+    parentId: 1
+    childIndex: 28
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 14
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 31
+    parentId: 1
+    childIndex: 29
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -6493,9 +6552,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 24
+  - id: 32
     parentId: 1
-    childIndex: 22
+    childIndex: 30
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -6525,9 +6584,73 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 25
+  - id: 33
     parentId: 1
-    childIndex: 23
+    childIndex: 31
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 17
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 34
+    parentId: 1
+    childIndex: 32
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 9
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 35
+    parentId: 1
+    childIndex: 33
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -6557,41 +6680,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 26
+  - id: 36
     parentId: 1
-    childIndex: 24
-    type: 4
-    typeInfoSH: 0
-    permissions: 0
-    tagCount: 0
-    size: 1
-    choiceCount: 0
-    hasMin: 0
-    hasMax: 0
-    hasUIMin: 1
-    hasUIMax: 1
-    min: 0
-    max: 10
-    UIMin: 0
-    UIMax: 10
-    invisible: 0
-    disabled: 0
-    spare: 0
-    joinNext: 0
-    labelNone: 0
-    intValuesIndex: -1
-    floatValuesIndex: 2
-    stringValuesIndex: -1
-    choiceIndex: 0
-    isChildOfMultiParm: 0
-    instanceNum: -1
-    instanceLength: 0
-    instanceCount: 0
-    instanceStartOffset: -1
-    rampType: -1
-  - id: 27
-    parentId: 1
-    childIndex: 25
+    childIndex: 34
     type: 6
     typeInfoSH: 0
     permissions: 0
@@ -6621,9 +6712,9 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 28
+  - id: 37
     parentId: 1
-    childIndex: 26
+    childIndex: 35
     type: 0
     typeInfoSH: 0
     permissions: 0
@@ -6653,9 +6744,137 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  - id: 29
+  - id: 38
     parentId: 1
-    childIndex: 27
+    childIndex: 36
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 13
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 39
+    parentId: 1
+    childIndex: 37
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 14
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 40
+    parentId: 1
+    childIndex: 38
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 18
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 41
+    parentId: 1
+    childIndex: 39
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 15
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 42
+    parentId: 1
+    childIndex: 40
     type: 4
     typeInfoSH: 0
     permissions: 0
@@ -6676,7 +6895,7 @@ MonoBehaviour:
     joinNext: 0
     labelNone: 0
     intValuesIndex: -1
-    floatValuesIndex: 3
+    floatValuesIndex: 21
     stringValuesIndex: -1
     choiceIndex: 0
     isChildOfMultiParm: 0
@@ -6685,13 +6904,612 @@ MonoBehaviour:
     instanceCount: 0
     instanceStartOffset: -1
     rampType: -1
-  myParmIntValues: 000000000100000000000000010000000100000000000000010000000000000001000000e803000000000000
+  - id: 43
+    parentId: 1
+    childIndex: 41
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 16
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 44
+    parentId: 1
+    childIndex: 42
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 22
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 45
+    parentId: 1
+    childIndex: 43
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 23
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 46
+    parentId: 1
+    childIndex: 44
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 24
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 47
+    parentId: 1
+    childIndex: 45
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 17
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 48
+    parentId: 1
+    childIndex: 46
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 11
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 49
+    parentId: 1
+    childIndex: 47
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 12
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 50
+    parentId: 1
+    childIndex: 48
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 13
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 51
+    parentId: 1
+    childIndex: 49
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 52
+    parentId: 1
+    childIndex: 50
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 18
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 53
+    parentId: 1
+    childIndex: 51
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 25
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 54
+    parentId: 1
+    childIndex: 52
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 15
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 55
+    parentId: 1
+    childIndex: 53
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 16
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 56
+    parentId: 1
+    childIndex: 54
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 17
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 57
+    parentId: 1
+    childIndex: 55
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: -1
+    stringValuesIndex: 19
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 58
+    parentId: 1
+    childIndex: 56
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 18
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 59
+    parentId: 1
+    childIndex: 57
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: -1
+    floatValuesIndex: 26
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 60
+    parentId: 1
+    childIndex: 58
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 19
+    floatValuesIndex: -1
+    stringValuesIndex: -1
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  myParmIntValues: 0000000001000000e80300000100000001000000010000000000000001000000000000000000000000000000030000000100000001000000010000000100000000000000010000000000000000000000
   myParmFloatValues:
-  - 1
-  - 0
-  - 0
+  - 0.592
   - 10
-  myParmStringHandles: 491100006f100000701000003e0d0000380e000008100000c6110000c3110000c4110000430a0000f50f0000ee0f0000f90f0000
+  - 0
+  - 0
+  - 0.616
+  - 0.392
+  - 1
+  - 8
+  - 90
+  - 0.12
+  - 0.1
+  - 0.4
+  - 12.3
+  - 0
+  - 0.04
+  - 43
+  - 7
+  - 0.648
+  - 0.7
+  - 0.7
+  - 0.7
+  - 53
+  - 0.448
+  - 0.28
+  - 0.688
+  - 0
+  - 0
+  myParmStringHandles: b1020000d2010000b7010000ee000000510100001a01000076010000420200004302000044020000dc01000037010000e8010000e901000040020000410200006a02000020010000100100000d010000
   myParmChoiceLists: []
   myParmInfoStrings:
   - typeInfo: 
@@ -6705,104 +7523,44 @@ MonoBehaviour:
     templateName: folder_0
     help: 
   - typeInfo: 
-    name: main_deltaTime
-    label: main_deltaTime
-    templateName: main_deltaTime
-    help: 
-  - typeInfo: 
-    name: main_autoRandomSeed
-    label: main_autoRandomSeed
-    templateName: main_autoRandomSeed
-    help: 
-  - typeInfo: 
-    name: main_3DStartSize
-    label: main_3DStartSize
-    templateName: main_3DStartSize
-    help: 
-  - typeInfo: 
-    name: main_gravityModifier
-    label: main_gravityModifier
-    templateName: main_gravityModifier
-    help: 
-  - typeInfo: 
-    name: main_emitterVelocity
-    label: main_emitterVelocity
-    templateName: main_emitterVelocity
-    help: 
-  - typeInfo: 
-    name: main_startColor
-    label: main_startColor
-    templateName: main_startColor
-    help: 
-  - typeInfo: 
-    name: main_prewarm
-    label: main_prewarm
-    templateName: main_prewarm
-    help: 
-  - typeInfo: 
-    name: main_startLifetime
-    label: main_startLifetime
-    templateName: main_startLifetime
-    help: 
-  - typeInfo: 
-    name: main_3DStartRotation
-    label: main_3DStartRotation
-    templateName: main_3DStartRotation
-    help: 
-  - typeInfo: 
-    name: main_startRotation
-    label: main_startRotation
-    templateName: main_startRotation
-    help: 
-  - typeInfo: 
-    name: main_startSize
-    label: main_startSize
-    templateName: main_startSize
-    help: 
-  - typeInfo: 
-    name: main_looping
-    label: main_looping
-    templateName: main_looping
-    help: 
-  - typeInfo: 
-    name: main_startSize_x
-    label: main_startSize_x
-    templateName: main_startSize_x
-    help: 
-  - typeInfo: 
     name: Unity_Script
     label: Unity_Script
     templateName: Unity_Script
     help: 
   - typeInfo: 
-    name: main_startSize_y
-    label: main_startSize_y
-    templateName: main_startSize_y
+    name: emission_bursts
+    label: emission_bursts
+    templateName: emission_bursts
     help: 
   - typeInfo: 
-    name: main_startSize_z
-    label: main_startSize_z
-    templateName: main_startSize_z
+    name: shape_angle
+    label: shape_angle
+    templateName: shape_angle
     help: 
   - typeInfo: 
-    name: main_simulationSpace
-    label: main_simulationSpace
-    templateName: main_simulationSpace
+    name: shape_meshRenderer
+    label: shape_meshRenderer
+    templateName: shape_meshRenderer
     help: 
   - typeInfo: 
-    name: main_scalingMode
-    label: main_scalingMode
-    templateName: main_scalingMode
+    name: shape_skinnedMeshRenderer
+    label: shape_skinnedMeshRenderer
+    templateName: shape_skinnedMeshRenderer
     help: 
   - typeInfo: 
-    name: main_simulationSpeed
-    label: main_simulationSpeed
-    templateName: main_simulationSpeed
+    name: shape_meshShapeType
+    label: shape_meshShapeType
+    templateName: shape_meshShapeType
     help: 
   - typeInfo: 
-    name: main_startDelay
-    label: main_startDelay
-    templateName: main_startDelay
+    name: main_duration
+    label: main_duration
+    templateName: main_duration
+    help: 
+  - typeInfo: 
+    name: emission_enabled
+    label: emission_enabled
+    templateName: emission_enabled
     help: 
   - typeInfo: 
     name: main_maxParticles
@@ -6810,9 +7568,54 @@ MonoBehaviour:
     templateName: main_maxParticles
     help: 
   - typeInfo: 
+    name: main_startColor
+    label: main_startColor
+    templateName: main_startColor
+    help: 
+  - typeInfo: 
+    name: shape_useMeshColors
+    label: shape_useMeshColors
+    templateName: shape_useMeshColors
+    help: 
+  - typeInfo: 
+    name: main_startSize
+    label: main_startSize
+    templateName: main_startSize
+    help: 
+  - typeInfo: 
+    name: shape_spherizeDirection
+    label: shape_spherizeDirection
+    templateName: shape_spherizeDirection
+    help: 
+  - typeInfo: 
+    name: main_startDelay
+    label: main_startDelay
+    templateName: main_startDelay
+    help: 
+  - typeInfo: 
+    name: shape_enabled
+    label: shape_enabled
+    templateName: shape_enabled
+    help: 
+  - typeInfo: 
+    name: shape_normalOffset
+    label: shape_normalOffset
+    templateName: shape_normalOffset
+    help: 
+  - typeInfo: 
+    name: main_autoRandomSeed
+    label: main_autoRandomSeed
+    templateName: main_autoRandomSeed
+    help: 
+  - typeInfo: 
     name: main_startRotation_x
     label: main_startRotation_x
     templateName: main_startRotation_x
+    help: 
+  - typeInfo: 
+    name: shape_length
+    label: shape_length
+    templateName: shape_length
     help: 
   - typeInfo: 
     name: main_startRotation_y
@@ -6825,14 +7628,59 @@ MonoBehaviour:
     templateName: main_startRotation_z
     help: 
   - typeInfo: 
-    name: main_rotationVariance
-    label: main_rotationVariance
-    templateName: main_rotationVariance
+    name: main_deltaTime
+    label: main_deltaTime
+    templateName: main_deltaTime
     help: 
   - typeInfo: 
-    name: main_startSpeed
-    label: main_startSpeed
-    templateName: main_startSpeed
+    name: main_simulationSpeed
+    label: main_simulationSpeed
+    templateName: main_simulationSpeed
+    help: 
+  - typeInfo: 
+    name: main_looping
+    label: main_looping
+    templateName: main_looping
+    help: 
+  - typeInfo: 
+    name: shape_scale
+    label: shape_scale
+    templateName: shape_scale
+    help: 
+  - typeInfo: 
+    name: shape_position
+    label: shape_position
+    templateName: shape_position
+    help: 
+  - typeInfo: 
+    name: shape_randomizeDirection
+    label: shape_randomizeDirection
+    templateName: shape_randomizeDirection
+    help: 
+  - typeInfo: 
+    name: shape_alignToDirection
+    label: shape_alignToDirection
+    templateName: shape_alignToDirection
+    help: 
+  - typeInfo: 
+    name: shape_rotation
+    label: shape_rotation
+    templateName: shape_rotation
+    help: 
+  - typeInfo: 
+    name: emission_rateOverTime
+    label: emission_rateOverTime
+    templateName: emission_rateOverTime
+    help: 
+  - typeInfo: 
+    name: shape_arcSpeed
+    label: shape_arcSpeed
+    templateName: shape_arcSpeed
+    help: 
+  - typeInfo: 
+    name: shape_radius_thickness
+    label: shape_radius_thickness
+    templateName: shape_radius_thickness
     help: 
   - typeInfo: 
     name: main_playOnAwake
@@ -6840,9 +7688,134 @@ MonoBehaviour:
     templateName: main_playOnAwake
     help: 
   - typeInfo: 
-    name: main_duration
-    label: main_duration
-    templateName: main_duration
+    name: emission_rateOverDistance
+    label: emission_rateOverDistance
+    templateName: emission_rateOverDistance
+    help: 
+  - typeInfo: 
+    name: main_startSize_x
+    label: main_startSize_x
+    templateName: main_startSize_x
+    help: 
+  - typeInfo: 
+    name: main_3DStartSize
+    label: main_3DStartSize
+    templateName: main_3DStartSize
+    help: 
+  - typeInfo: 
+    name: main_startSize_y
+    label: main_startSize_y
+    templateName: main_startSize_y
+    help: 
+  - typeInfo: 
+    name: main_startSize_z
+    label: main_startSize_z
+    templateName: main_startSize_z
+    help: 
+  - typeInfo: 
+    name: shape_boxThickness
+    label: shape_boxThickness
+    templateName: shape_boxThickness
+    help: 
+  - typeInfo: 
+    name: main_startRotation
+    label: main_startRotation
+    templateName: main_startRotation
+    help: 
+  - typeInfo: 
+    name: shape_arc
+    label: shape_arc
+    templateName: shape_arc
+    help: 
+  - typeInfo: 
+    name: main_startLifetime
+    label: main_startLifetime
+    templateName: main_startLifetime
+    help: 
+  - typeInfo: 
+    name: shape_arcSpread
+    label: shape_arcSpread
+    templateName: shape_arcSpread
+    help: 
+  - typeInfo: 
+    name: shape_radius
+    label: shape_radius
+    templateName: shape_radius
+    help: 
+  - typeInfo: 
+    name: shape_donutRadius
+    label: shape_donutRadius
+    templateName: shape_donutRadius
+    help: 
+  - typeInfo: 
+    name: main_gravityModifier
+    label: main_gravityModifier
+    templateName: main_gravityModifier
+    help: 
+  - typeInfo: 
+    name: shape_meshMaterialIndex
+    label: shape_meshMaterialIndex
+    templateName: shape_meshMaterialIndex
+    help: 
+  - typeInfo: 
+    name: shape_shape
+    label: shape_shape
+    templateName: shape_shape
+    help: 
+  - typeInfo: 
+    name: main_prewarm
+    label: main_prewarm
+    templateName: main_prewarm
+    help: 
+  - typeInfo: 
+    name: shape_singleMaterial
+    label: shape_singleMaterial
+    templateName: shape_singleMaterial
+    help: 
+  - typeInfo: 
+    name: shape_mesh
+    label: shape_mesh
+    templateName: shape_mesh
+    help: 
+  - typeInfo: 
+    name: main_rotationVariance
+    label: main_rotationVariance
+    templateName: main_rotationVariance
+    help: 
+  - typeInfo: 
+    name: main_emitterVelocity
+    label: main_emitterVelocity
+    templateName: main_emitterVelocity
+    help: 
+  - typeInfo: 
+    name: main_3DStartRotation
+    label: main_3DStartRotation
+    templateName: main_3DStartRotation
+    help: 
+  - typeInfo: 
+    name: main_scalingMode
+    label: main_scalingMode
+    templateName: main_scalingMode
+    help: 
+  - typeInfo: 
+    name: main_startSpeed
+    label: main_startSpeed
+    templateName: main_startSpeed
+    help: 
+  - typeInfo: 
+    name: shape_arcMode
+    label: shape_arcMode
+    templateName: shape_arcMode
+    help: 
+  - typeInfo: 
+    name: shape_randomizePosition
+    label: shape_randomizePosition
+    templateName: shape_randomizePosition
+    help: 
+  - typeInfo: 
+    name: main_simulationSpace
+    label: main_simulationSpace
+    templateName: main_simulationSpace
     help: 
   myParmInputs:
   - isAsset: 0
@@ -6997,21 +7970,28 @@ MonoBehaviour:
     inputNodeUniqueId: 0
   myParmChoiceInfoStrings: []
   myParmStringValues:
-  - randomCurve;float;64;5.000000;1;0.982468;0.961304;0.936783;0.90918;0.878769;0.845825;0.810623;0.773438;0.734543;0.694214;0.652725;0.610352;0.567368;0.524048;0.480667;0.4375;0.394821;0.352905;0.312027;0.272461;0.234482;0.198364;0.164383;0.132813;0.103928;0.0780029;0.0553131;0.0361328;0.0207367;0.00939941;0.00239563;0;0.00239563;0.00939941;0.0207367;0.0361328;0.0553131;0.0780029;0.103928;0.132813;0.164383;0.198364;0.234482;0.272461;0.312027;0.352905;0.394821;0.4375;0.480667;0.524048;0.567368;0.610352;0.652725;0.694214;0.734543;0.773438;0.810623;0.845825;0.878769;0.90918;0.936783;0.961304;0.982468;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1
-  - gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}
-  - constant;float;5.0
-  - constant;float;0.0
-  - constant;float;1.0
-  - constant;float;1.0
   - '{ "script":"VOPParser" }'
+  - 
+  - 
+  - 
+  - gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}
+  - constant;float;1.0
+  - constant;float;0.0
+  - constant;float;0.0
+  - constant;float;0.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
   - constant;float;1.0
   - constant;float;1.0
   - constant;float;0.0
-  - constant;float;0.0
-  - constant;float;0.0
+  - constant;float;5.0
+  - randomCurve;float;64;5.000000;1;0.982468;0.961304;0.936783;0.90918;0.878769;0.845825;0.810623;0.773438;0.734543;0.694214;0.652725;0.610352;0.567368;0.524048;0.480667;0.4375;0.394821;0.352905;0.312027;0.272461;0.234482;0.198364;0.164383;0.132813;0.103928;0.0780029;0.0553131;0.0361328;0.0207367;0.00939941;0.00239563;0;0.00239563;0.00939941;0.0207367;0.0361328;0.0553131;0.0780029;0.103928;0.132813;0.164383;0.198364;0.234482;0.272461;0.312027;0.352905;0.394821;0.4375;0.480667;0.524048;0.567368;0.610352;0.652725;0.694214;0.734543;0.773438;0.810623;0.845825;0.878769;0.90918;0.936783;0.961304;0.982468;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1
+  - 
   - constant;float;1.0
   myLastChangedParmId: -1
-  myParmsUndoInfo: {fileID: 1003462093}
+  myParmsUndoInfo: {fileID: 1821582741}
   myFolderListSelections: 00000000
   myFolderListSelectionIds: ffffffff
 --- !u!114 &1314113674
@@ -7025,12 +8005,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08152646033bb3438079100f8f848ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 18
-  myObjectNodeId: 19
+  myAssetId: 0
+  myNodeId: 0
+  myObjectNodeId: 3
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -7039,35 +8019,35 @@ MonoBehaviour:
     isInstancer: 0
     isInstanced: 0
     geoCount: 0
-    nodeId: 19
+    nodeId: 3
     objectToInstanceId: -1
   myGeos:
-  - {fileID: 733256099}
-  - {fileID: 746086339}
-  - {fileID: 460464396}
-  - {fileID: 1284474049}
-  - {fileID: 1837620742}
-  - {fileID: 1846208154}
-  - {fileID: 265391078}
+  - {fileID: 1105632584}
+  - {fileID: 1844185886}
+  - {fileID: 1896255734}
+  - {fileID: 1057842891}
+  - {fileID: 1611266154}
+  - {fileID: 855428601}
+  - {fileID: 1552012504}
   myNodeInfo:
-    id: 18
-    parentId: 19
-    nameSH: 4395
+    id: 0
+    parentId: 3
+    nameSH: 565
     type: 2
     isValid: 1
     totalCookCount: 1
-    uniqueHoudiniNodeId: 2236
-    parmCount: 30
-    parmIntValueCount: 11
-    parmFloatValueCount: 4
-    parmStringValueCount: 13
+    uniqueHoudiniNodeId: 449
+    parmCount: 61
+    parmIntValueCount: 20
+    parmFloatValueCount: 27
+    parmStringValueCount: 20
     parmChoiceCount: 0
     childNodeCount: 6
     inputCount: 2
     createdPostAssetLoad: 1
   myPreset: 235053495f5052455345540a76657273696f6e20322e30610a6f706368616e6e656c730a7b0a202020206368616e6e656c206d61696e5f64656c746154696d65207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f64656c746154696d655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f6175746f52616e646f6d53656564207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f6175746f52616e646f6d536565645c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f3344537461727453697a65207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f3344537461727453697a655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f677261766974794d6f646966696572207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f677261766974794d6f6469666965725c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f656d697474657256656c6f63697479207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f656d697474657256656c6f636974795c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7374617274436f6c6f72207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f7374617274436f6c6f725c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7072657761726d207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f7072657761726d5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f73746172744c69666574696d65207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f73746172744c69666574696d655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f33445374617274526f746174696f6e207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f33445374617274526f746174696f6e5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7374617274526f746174696f6e207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f7374617274526f746174696f6e5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f737461727453697a65207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f737461727453697a655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f6c6f6f70696e67207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f6c6f6f70696e675c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f737461727453697a655f78207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f737461727453697a655f785c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c20556e6974795f536372697074207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c22556e6974795f5363726970745c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f737461727453697a655f79207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f737461727453697a655f795c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f737461727453697a655f7a207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f737461727453697a655f7a5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f73696d756c6174696f6e5370616365207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f73696d756c6174696f6e53706163655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7363616c696e674d6f6465207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f7363616c696e674d6f64655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f73696d756c6174696f6e5370656564207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e666c6f617441747472696256616c7565285c226d61696e5f73696d756c6174696f6e53706565645c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f737461727444656c6179207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e666c6f617441747472696256616c7565285c226d61696e5f737461727444656c61795c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f6d61785061727469636c6573207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f6d61785061727469636c65735c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7374617274526f746174696f6e5f78207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f7374617274526f746174696f6e5f785c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7374617274526f746174696f6e5f79207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f7374617274526f746174696f6e5f795c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f7374617274526f746174696f6e5f7a207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f7374617274526f746174696f6e5f7a5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f726f746174696f6e56617269616e6365207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e666c6f617441747472696256616c7565285c226d61696e5f726f746174696f6e56617269616e63655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f73746172745370656564207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a20202020202064656661756c74537472696e67203d205c225c220a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e737472696e6741747472696256616c7565285c226d61696e5f737461727453706565645c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f706c61794f6e4177616b65207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e696e7441747472696256616c7565285c226d61696e5f706c61794f6e4177616b655c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a202020206368616e6e656c206d61696e5f6475726174696f6e207b0a2020202020206c65667474797065203d20657874656e640a202020202020726967687474797065203d20657874656e640a202020202020666c616773203d20300a2020202020207365676d656e74207b206c656e677468203d20302065787072203d20686f752e70776428292e67656f6d6574727928292e666c6f617441747472696256616c7565285c226d61696e5f6475726174696f6e5c2229206c616e6775616765203d20707974686f6e207d0a202020207d0a20207d0a6f7076616c7565730a7b0a76657273696f6e20302e380a666f6c646572095b2030096c6f636b733d30205d0928093009290a6d61696e5f64656c746154696d65095b2030096c6f636b733d30205d0928095b206d61696e5f64656c746154696d650930205d2009290a6d61696e5f6175746f52616e646f6d53656564095b2030096c6f636b733d30205d0928095b206d61696e5f6175746f52616e646f6d536565640931205d2009290a6d61696e5f3344537461727453697a65095b2030096c6f636b733d30205d0928095b206d61696e5f3344537461727453697a650930205d2009290a6d61696e5f677261766974794d6f646966696572095b2030096c6f636b733d30205d0928095b206d61696e5f677261766974794d6f6469666965720972616e646f6d43757276653b666c6f61743b36343b352e3030303030303b313b302e3938323436383b302e3936313330343b302e3933363738333b302e39303931383b302e3837383736393b302e3834353832353b302e3831303632333b302e3737333433383b302e3733343534333b302e3639343231343b302e3635323732353b302e3631303335323b302e3536373336383b302e3532343034383b302e3438303636373b302e343337353b302e3339343832313b302e3335323930353b302e3331323032373b302e3237323436313b302e3233343438323b302e3139383336343b302e3136343338333b302e3133323831333b302e3130333932383b302e303738303032393b302e303535333133313b302e303336313332383b302e303230373336373b302e30303933393934313b302e30303233393536333b303b302e30303233393536333b302e30303933393934313b302e303230373336373b302e303336313332383b302e303535333133313b302e303738303032393b302e3130333932383b302e3133323831333b302e3136343338333b302e3139383336343b302e3233343438323b302e3237323436313b302e3331323032373b302e3335323930353b302e3339343832313b302e343337353b302e3438303636373b302e3532343034383b302e3536373336383b302e3631303335323b302e3635323732353b302e3639343231343b302e3733343534333b302e3737333433383b302e3831303632333b302e3834353832353b302e3837383736393b302e39303931383b302e3933363738333b302e3936313330343b302e3938323436383b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b313b31205d2009290a6d61696e5f656d697474657256656c6f63697479095b2030096c6f636b733d30205d0928095b206d61696e5f656d697474657256656c6f636974790931205d2009290a6d61696e5f7374617274436f6c6f72095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274436f6c6f72096772616469656e743b766563746f723b383b303b7b302e3030303030302c302e3930303030302c302e3435303030302c302e3030303030307d3b7b302e3033353731342c302e3737313432392c302e3435373134332c302e3935353737357d3b7b302e3037313432392c302e3634323835372c302e3436343238362c312e3038313339337d3b7b302e3130373134332c302e3531343238362c302e3437313432392c312e3132323332387d3b7b302e3134323835372c302e3338353731342c302e3437383537312c312e3131333838317d3b7b302e3137383537312c302e3235373134332c302e3438353731342c312e3035363035317d3b7b302e3231343238362c302e3132383537312c302e3439323835372c302e3734363137377d3b7b302e3235303030302c302e3030303030302c302e3530303030302c302e3030303030307d205d2009290a6d61696e5f7072657761726d095b2030096c6f636b733d30205d0928095b206d61696e5f7072657761726d0930205d2009290a6d61696e5f73746172744c69666574696d65095b2030096c6f636b733d30205d0928095b206d61696e5f73746172744c69666574696d6509636f6e7374616e743b666c6f61743b352e30205d2009290a6d61696e5f33445374617274526f746174696f6e095b2030096c6f636b733d30205d0928095b206d61696e5f33445374617274526f746174696f6e0930205d2009290a6d61696e5f7374617274526f746174696f6e095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274526f746174696f6e09636f6e7374616e743b666c6f61743b3134382e393639303430205d2009290a6d61696e5f737461727453697a65095b2030096c6f636b733d30205d0928095b206d61696e5f737461727453697a6509636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f6c6f6f70696e67095b2030096c6f636b733d30205d0928095b206d61696e5f6c6f6f70696e670930205d2009290a6d61696e5f737461727453697a655f78095b2030096c6f636b733d30205d0928095b206d61696e5f737461727453697a655f7809636f6e7374616e743b666c6f61743b312e30205d2009290a556e6974795f536372697074095b2030096c6f636b733d30205d0928095b20556e6974795f53637269707409227b205c227363726970745c223a5c22564f505061727365725c22207d22205d2009290a6d61696e5f737461727453697a655f79095b2030096c6f636b733d30205d0928095b206d61696e5f737461727453697a655f7909636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f737461727453697a655f7a095b2030096c6f636b733d30205d0928095b206d61696e5f737461727453697a655f7a09636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f73696d756c6174696f6e5370616365095b2030096c6f636b733d30205d0928095b206d61696e5f73696d756c6174696f6e53706163650930205d2009290a6d61696e5f7363616c696e674d6f6465095b2030096c6f636b733d30205d0928095b206d61696e5f7363616c696e674d6f64650931205d2009290a6d61696e5f73696d756c6174696f6e5370656564095b2030096c6f636b733d30205d0928095b206d61696e5f73696d756c6174696f6e53706565640931205d2009290a6d61696e5f737461727444656c6179095b2030096c6f636b733d30205d0928095b206d61696e5f737461727444656c617909302e3835303030303032333834313835373931205d2009290a6d61696e5f6d61785061727469636c6573095b2030096c6f636b733d30205d0928095b206d61696e5f6d61785061727469636c65730931303030205d2009290a6d61696e5f7374617274526f746174696f6e5f78095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274526f746174696f6e5f7809636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f7374617274526f746174696f6e5f79095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274526f746174696f6e5f7909636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f7374617274526f746174696f6e5f7a095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274526f746174696f6e5f7a09636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f726f746174696f6e56617269616e6365095b2030096c6f636b733d30205d0928095b206d61696e5f726f746174696f6e56617269616e63650930205d2009290a6d61696e5f73746172745370656564095b2030096c6f636b733d30205d0928095b206d61696e5f7374617274537065656409636f6e7374616e743b666c6f61743b312e30205d2009290a6d61696e5f706c61794f6e4177616b65095b2030096c6f636b733d30205d0928095b206d61696e5f706c61794f6e4177616b650930205d2009290a6d61696e5f6475726174696f6e095b2030096c6f636b733d30205d0928095b206d61696e5f6475726174696f6e093130205d2009290a7d0a
-  myAssetValidationId: 2236
-  myAssetName: VOPEmitter2
+  myAssetValidationId: 449
+  myAssetName: VOPEmitter
   myAssetOpName: Sop/VOPEmitter
   myAssetHelp: 
   myAssetType: 0
@@ -7128,6 +8108,96 @@ MonoBehaviour:
   - Mesh Emitter Geometry
   - Mesh Particle Geometry
   - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
+  - Mesh Particle Geometry
+  - Mesh Emitter Geometry
   myLastLocalToWorld:
     e00: 1
     e01: 0
@@ -7160,17 +8230,17 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 733256101}
-  - {fileID: 746086341}
-  - {fileID: 460464398}
-  - {fileID: 1284474051}
-  - {fileID: 1837620744}
-  - {fileID: 1846208156}
-  - {fileID: 265391080}
+  - {fileID: 1105632586}
+  - {fileID: 1844185888}
+  - {fileID: 1896255736}
+  - {fileID: 1057842893}
+  - {fileID: 1611266156}
+  - {fileID: 855428603}
+  - {fileID: 1552012506}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1437194368
+--- !u!43 &1540745850
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -7298,6 +8368,140 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1552012504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1552012506}
+  - component: {fileID: 1552012505}
+  m_Layer: 0
+  m_Name: add_params
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552012505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552012504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 9
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 9
+  myGeoName: add_params
+  myGeoType: 0
+  myIsEditable: 1
+  myIsDisplay: 0
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 906574058}
+--- !u!4 &1552012506
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552012504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 906574061}
+  m_Father: {fileID: 1314113675}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1611266154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1611266156}
+  - component: {fileID: 1611266155}
+  m_Layer: 0
+  m_Name: assign_script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1611266155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611266154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 7
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 7
+  myGeoName: assign_script
+  myGeoType: 0
+  myIsEditable: 1
+  myIsDisplay: 0
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 532169449}
+--- !u!4 &1611266156
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611266154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 532169452}
+  m_Father: {fileID: 1314113675}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673047968
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,7 +8591,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1814190142
+--- !u!43 &1800072542
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -7515,39 +8719,161 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1837620742
+--- !u!114 &1821582741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6a2b6b2be300d4b8019f770b1db8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parmNames:
+  - Unity_Script
+  - emission_bursts
+  - shape_angle
+  - shape_meshRenderer
+  - shape_skinnedMeshRenderer
+  - shape_meshShapeType
+  - main_duration
+  - emission_enabled
+  - main_maxParticles
+  - main_startColor
+  - shape_useMeshColors
+  - main_startSize
+  - shape_spherizeDirection
+  - main_startDelay
+  - shape_enabled
+  - shape_normalOffset
+  - main_autoRandomSeed
+  - main_startRotation_x
+  - shape_length
+  - main_startRotation_y
+  - main_startRotation_z
+  - main_deltaTime
+  - main_simulationSpeed
+  - main_looping
+  - shape_scale
+  - shape_position
+  - shape_randomizeDirection
+  - shape_alignToDirection
+  - shape_rotation
+  - emission_rateOverTime
+  - shape_arcSpeed
+  - shape_radius_thickness
+  - main_playOnAwake
+  - emission_rateOverDistance
+  - main_startSize_x
+  - main_3DStartSize
+  - main_startSize_y
+  - main_startSize_z
+  - shape_boxThickness
+  - main_startRotation
+  - shape_arc
+  - main_startLifetime
+  - shape_arcSpread
+  - shape_radius
+  - shape_donutRadius
+  - main_gravityModifier
+  - shape_meshMaterialIndex
+  - shape_shape
+  - main_prewarm
+  - shape_singleMaterial
+  - shape_mesh
+  - main_rotationVariance
+  - main_emitterVelocity
+  - main_3DStartRotation
+  - main_scalingMode
+  - main_startSpeed
+  - shape_arcMode
+  - shape_randomizePosition
+  - main_simulationSpace
+  parmIndices: 000000000100000000000000020000000300000000000000010000000100000002000000040000000300000005000000020000000300000004000000040000000500000006000000050000000700000008000000060000000600000007000000070000000a0000000d000000080000000e000000090000000a00000011000000090000000b0000000c0000000a0000000d0000000e000000120000000f0000001500000010000000160000001700000018000000110000000b0000000c0000000d0000000e00000012000000190000000f000000100000001100000013000000120000001a00000013000000
+  parmIntValues: 0000000001000000e80300000100000001000000010000000000000001000000000000000000000000000000030000000100000001000000010000000100000000000000010000000000000000000000
+  parmFloatValues:
+  - 0.592
+  - 10
+  - 0
+  - 0
+  - 0.616
+  - 0.392
+  - 1
+  - 8
+  - 90
+  - 0.12
+  - 0.1
+  - 0.4
+  - 12.3
+  - 0
+  - 0.04
+  - 43
+  - 7
+  - 0.648
+  - 0.7
+  - 0.7
+  - 0.7
+  - 53
+  - 0.448
+  - 0.28
+  - 0.688
+  - 0
+  - 0
+  parmStringValues:
+  - '{ "script":"VOPParser" }'
+  - 
+  - 
+  - 
+  - gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}
+  - constant;float;1.0
+  - constant;float;0.0
+  - constant;float;0.0
+  - constant;float;0.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;1.0
+  - constant;float;0.0
+  - constant;float;5.0
+  - randomCurve;float;64;5.000000;1;0.982468;0.961304;0.936783;0.90918;0.878769;0.845825;0.810623;0.773438;0.734543;0.694214;0.652725;0.610352;0.567368;0.524048;0.480667;0.4375;0.394821;0.352905;0.312027;0.272461;0.234482;0.198364;0.164383;0.132813;0.103928;0.0780029;0.0553131;0.0361328;0.0207367;0.00939941;0.00239563;0;0.00239563;0.00939941;0.0207367;0.0361328;0.0553131;0.0780029;0.103928;0.132813;0.164383;0.198364;0.234482;0.272461;0.312027;0.352905;0.394821;0.4375;0.480667;0.524048;0.567368;0.610352;0.652725;0.694214;0.734543;0.773438;0.810623;0.845825;0.878769;0.90918;0.936783;0.961304;0.982468;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1
+  - 
+  - constant;float;1.0
+--- !u!1 &1844185886
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1837620744}
-  - component: {fileID: 1837620743}
+  - component: {fileID: 1844185888}
+  - component: {fileID: 1844185887}
   m_Layer: 0
-  m_Name: assign_script
+  m_Name: output1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1837620743
+--- !u!114 &1844185887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1837620742}
+  m_GameObject: {fileID: 1844185886}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 23
-  myObjectNodeId: 18
+  myAssetId: 0
+  myNodeId: 4
+  myObjectNodeId: 0
   myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
+  myObjectId: 3
+  myObjectName: VOPEmitter
   myObjectVisible: 1
   myObjectInfo:
     hasTransformChanged: 0
@@ -7559,95 +8885,97 @@ MonoBehaviour:
     nodeId: -1
     objectToInstanceId: 0
   myGeos: []
-  myGeoId: 23
-  myGeoName: assign_script
+  myGeoId: 4
+  myGeoName: output1
+  myGeoType: 0
+  myIsEditable: 1
+  myIsDisplay: 1
+  myObjectControl: {fileID: 1314113674}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 673757045}
+--- !u!4 &1844185888
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844185886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 673757048}
+  m_Father: {fileID: 1314113675}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1896255734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1896255736}
+  - component: {fileID: 1896255735}
+  m_Layer: 0
+  m_Name: VFX_VOP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1896255735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1896255734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 5
+  myObjectNodeId: 0
+  myAsset: {fileID: 1314113674}
+  myObjectId: 3
+  myObjectName: VOPEmitter
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 5
+  myGeoName: VFX_VOP
   myGeoType: 0
   myIsEditable: 1
   myIsDisplay: 0
   myObjectControl: {fileID: 1314113674}
   myGeoAttributeManager: {fileID: 0}
   myParts:
-  - {fileID: 589487144}
---- !u!4 &1837620744
+  - {fileID: 627677987}
+--- !u!4 &1896255736
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1837620742}
+  m_GameObject: {fileID: 1896255734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 589487147}
+  - {fileID: 627677990}
   m_Father: {fileID: 1314113675}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1846208154
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1846208156}
-  - component: {fileID: 1846208155}
-  m_Layer: 0
-  m_Name: uninitialized_geo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1846208155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846208154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc6c11761c4fb489d216f4397a2776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAssetId: 18
-  myNodeId: 18
-  myObjectNodeId: 18
-  myAsset: {fileID: 1314113674}
-  myObjectId: 19
-  myObjectName: VOPEmitter2
-  myObjectVisible: 1
-  myObjectInfo:
-    hasTransformChanged: 0
-    haveGeosChanged: 0
-    isVisible: 0
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: -1
-    objectToInstanceId: 0
-  myGeos: []
-  myGeoId: 24
-  myGeoName: geo_name
-  myGeoType: 0
-  myIsEditable: 0
-  myIsDisplay: 1
-  myObjectControl: {fileID: 1314113674}
-  myGeoAttributeManager: {fileID: 0}
-  myParts: []
---- !u!4 &1846208156
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846208154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1314113675}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1971884764
+--- !u!43 &1976478501
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

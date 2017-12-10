@@ -347,11 +347,56 @@ public class VOPParser : MonoBehaviour {
 		shapeModule.radius = _assetAccessor.getParmFloatValue("shape_radius", 0);
 		
 		shapeModule.radiusThickness = _assetAccessor.getParmFloatValue("shape_radius_thickness", 0);
+	
 		
+		shapeModule.alignToDirection = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_alignToDirection", 0));
+		
+		shapeModule.randomDirectionAmount = _assetAccessor.getParmFloatValue("shape_randomizeDirection",0);
+
+		shapeModule.sphericalDirectionAmount = _assetAccessor.getParmFloatValue("shape_spherizeDirection", 0);
+
+		shapeModule.randomPositionAmount = _assetAccessor.getParmFloatValue("shape_randomizePosition", 0);
+
+		shapeModule.angle = _assetAccessor.getParmFloatValue("shape_angle", 0);
+
+		shapeModule.arc = _assetAccessor.getParmFloatValue("shape_arc", 0);
+
+		shapeModule.arcMode = (ParticleSystemShapeMultiModeValue) _assetAccessor.getParmIntValue("shape_arcMode", 0);
+
+		shapeModule.arcSpread = _assetAccessor.getParmFloatValue("shape_arcSpread", 0);
+
+		shapeModule.arcSpeed = InterpretStringToCurve("shape_arcSpeed");
+
+		shapeModule.length = _assetAccessor.getParmFloatValue("shape_length", 0);
+
+		shapeModule.donutRadius = _assetAccessor.getParmFloatValue("shape_donutRadius", 0);
+
+		shapeModule.boxThickness = new Vector3(_assetAccessor.getParmFloatValue("shape_boxThickness", 0),
+												_assetAccessor.getParmFloatValue("shape_boxThickness", 1),
+												_assetAccessor.getParmFloatValue("shape_boxThickness", 2));
+
+		shapeModule.mesh = AssetDatabase.LoadAssetAtPath<Mesh>(_assetAccessor.getParmStringValue("shape_mesh", 0));
+
+		shapeModule.meshRenderer = AssetDatabase.LoadAssetAtPath<MeshRenderer>(_assetAccessor.getParmStringValue("shape_meshRenderer", 0));
+
+		shapeModule.skinnedMeshRenderer = AssetDatabase.LoadAssetAtPath<SkinnedMeshRenderer>(_assetAccessor.getParmStringValue("shape_skinnedMeshRenderer", 0));
+
+		shapeModule.meshShapeType = (ParticleSystemMeshShapeType) _assetAccessor.getParmIntValue("shape_meshShapeType", 0);
+
+		shapeModule.useMeshMaterialIndex = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_singleMaterial", 0));
+
+		shapeModule.meshMaterialIndex = _assetAccessor.getParmIntValue("shape_meshMaterialIndex",0);
+
+		shapeModule.normalOffset = _assetAccessor.getParmFloatValue("shape_normalOffset", 0);
+
+		shapeModule.useMeshColors = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_useMeshColors",0));
+
 		shapeModule.position = new Vector3(_assetAccessor.getParmFloatValue("shape_position", 0), 
 											_assetAccessor.getParmFloatValue("shape_position", 1),
 											_assetAccessor.getParmFloatValue("shape_position", 2));
-		
+		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 0));
+		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 1));
+		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 2));
 		shapeModule.rotation = new Vector3(_assetAccessor.getParmFloatValue("shape_rotation", 0), 
 											_assetAccessor.getParmFloatValue("shape_rotation", 1),
 											_assetAccessor.getParmFloatValue("shape_rotation", 2));
@@ -359,10 +404,6 @@ public class VOPParser : MonoBehaviour {
 		shapeModule.scale = new Vector3(_assetAccessor.getParmFloatValue("shape_scale", 0), 
 											_assetAccessor.getParmFloatValue("shape_scale", 1),
 											_assetAccessor.getParmFloatValue("shape_scale", 2));
-		
-		shapeModule.alignToDirection = Convert.ToBoolean(_assetAccessor.getParmIntValue("shape_alignToDirection", 0));
-		
-		shapeModule.randomDirectionAmount = _assetAccessor.getParmFloatValue("shape_randomizeDirection",0);
     }
 
     private void MapRendererParameters() {

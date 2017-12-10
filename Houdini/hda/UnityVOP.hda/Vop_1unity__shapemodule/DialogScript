@@ -16,6 +16,22 @@
     input	float	RandomizeDirection	"Randomize Direction"
     input	float	Spherize_Direction	"Spherize Direction"
     input	float	Randomize_Position	"Spherize Direction"
+    input	float	Angle	Angle
+    input	float	Arc	Arc
+    input	int	ArcMode	"Arc Mode"
+    input	float	ArcSpread	"Arc Spread"
+    input	string	ArcSpeed	"Arc Speed"
+    input	float	ConeLength	"Cone Length"
+    input	float	DonutRadius	"Donut Radius"
+    input	vector	BoxThickness	"Box Thickness"
+    input	string	MeshPath	"Mesh Path"
+    input	int	MeshShapeType	"Mesh Shape Type"
+    input	string	MeshRendererPath	"MeshRenderer Path"
+    input	string	SkinnedMeshRendererPath	"SkinnedMeshRenderer Path"
+    input	int	SingleMaterial	"Single Material"
+    input	int	UseMeshColors	"Use Mesh Colors"
+    input	float	shape_normalOffset	"Normal Offset"
+    input	int	MeshMaterialIndex	"Mesh Material Index"
     inputflags	Enabled	2
     inputflags	Shape	2
     inputflags	Radius	2
@@ -27,7 +43,23 @@
     inputflags	RandomizeDirection	2
     inputflags	Spherize_Direction	2
     inputflags	Randomize_Position	2
-    signature	"Default Inputs"	default	{ int int float float vector vector vector int float float float }
+    inputflags	Angle	2
+    inputflags	Arc	2
+    inputflags	ArcMode	2
+    inputflags	ArcSpread	2
+    inputflags	ArcSpeed	2
+    inputflags	ConeLength	2
+    inputflags	DonutRadius	2
+    inputflags	BoxThickness	2
+    inputflags	MeshPath	2
+    inputflags	MeshShapeType	2
+    inputflags	MeshRendererPath	2
+    inputflags	SkinnedMeshRendererPath	2
+    inputflags	SingleMaterial	2
+    inputflags	UseMeshColors	2
+    inputflags	shape_normalOffset	2
+    inputflags	MeshMaterialIndex	2
+    signature	"Default Inputs"	default	{ int int float float vector vector vector int float float float float float int float string float float vector string int string string int int float int }
 
     outputoverrides	default
     {
@@ -51,15 +83,26 @@
 	default	{ "0" }
 	menu	{
 	    "0"	"Sphere"
-	    "1"	"Hemisphere"
-	    "2"	"Cone"
-	    "3"	"Donut"
-	    "4"	"Box"
-	    "5"	"Mesh"
-	    "6"	"Mesh Renderer"
-	    "7"	"Skinned Mesh Renderer"
-	    "8"	"Circle"
-	    "9"	"Edge"
+	    "1"	"SphereShell"
+	    "2"	"Hemisphere"
+	    "3"	"HemisphereShell"
+	    "4"	"Cone"
+	    "7"	"ConeShell"
+	    "8"	"ConeVolume"
+	    "9"	"ConeVolumeShell"
+	    "5"	"Box"
+	    "15"	"BoxShell"
+	    "16"	"BoxEdge"
+	    "17"	"Donut"
+	    "6"	"Mesh"
+	    "10"	"Circle"
+	    "11"	"CircleEdge"
+	    "12"	"SingleSidedEdge"
+	    "13"	"MeshRenderer"
+	    "14"	"Skinned Mesh Renderer"
+	    "15"	"BoxShell"
+	    "16"	"BoxEdge"
+	    "17"	"Donut"
 	}
 	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
@@ -136,6 +179,140 @@
 	type	float
 	default	{ "0" }
 	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Angle"
+	label	"Angle"
+	type	float
+	default	{ "25" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Arc"
+	label	"Arc"
+	type	float
+	default	{ "360" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ArcMode"
+	label	"Arc Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Random"
+	    "1"	"Loop"
+	    "2"	"Ping-Pong"
+	    "3"	"Burst Spread"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ArcSpread"
+	label	"Arc Spread"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ArcSpeed"
+	label	"Arc Speed"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ConeLength"
+	label	"Cone Length"
+	type	float
+	default	{ "5" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"DonutRadius"
+	label	"Donut Radius"
+	type	float
+	default	{ "0.2" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"BoxThickness"
+	label	"Box Thickness"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"MeshPath"
+	label	"Mesh Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"MeshShapeType"
+	label	"Mesh Shape Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Vertex"
+	    "1"	"Edge"
+	    "2"	"Triangle"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"MeshRendererPath"
+	label	"MeshRenderer Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"SkinnedMeshRendererPath"
+	label	"SkinnedMeshRenderer Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"SingleMaterial"
+	label	"Single Material"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"UseMeshColors"
+	label	"Use Mesh Colors"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"shape_normalOffset"
+	label	"Normal Offset"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"MeshMaterialIndex"
+	label	"Mesh Material Index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
 }

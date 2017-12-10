@@ -81,12 +81,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 7
+Inputs:       0 to 27
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Dec  7 09:41:57 2017
+Modified:     Sat Dec  9 22:57:57 2017
 
 Operator:     unity_ramptorandomcurve
 Label:        UnityRampToRandomCurve
