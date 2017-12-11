@@ -57,7 +57,7 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	default	{ "on" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {

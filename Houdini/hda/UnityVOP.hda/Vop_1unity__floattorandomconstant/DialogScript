@@ -5,8 +5,8 @@
     script	unity_floattorandomconstant
     label	UnityFloatToRandomConstant
 
-    input	float	minValue	minValue
-    input	float	maxValue	maxValue
+    input	float	minValue	Min
+    input	float	maxValue	Max
     output	string	output	"Output 1"
     inputflags	minValue	2
     inputflags	maxValue	2
@@ -23,17 +23,19 @@
     }
 
     parm {
-	name	"min"
+	name	"minValue"
 	label	"Min"
 	type	float
 	default	{ "0" }
-	range	{ 0 10 }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"max"
+	name	"maxValue"
 	label	"Max"
 	type	float
 	default	{ "1" }
-	range	{ 0 10 }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
 }
