@@ -6,7 +6,7 @@
     label	UnityEmissionModule
 
     input	int	Enabled	Enabled
-    input	string	Rate_Over_Time	"Rate Over TIme"
+    input	string	Rate_Over_Time	"Rate Over Time"
     input	string	Rate_Over_Distance	"Rate Over Distance"
     input	struct_UnityBurst	Burst1	"Burst 1"
     input	struct_UnityBurst	Burst2	"Burst 2"
@@ -46,7 +46,7 @@
     }
     parm {
 	name	"Rate_Over_Time"
-	label	"Rate Over TIme"
+	label	"Rate Over Time"
 	type	string
 	default	{ "constant;float;1.0" }
 	parmtag	{ "parmvop" "1" }

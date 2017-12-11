@@ -198,6 +198,26 @@ public class VOPParser : MonoBehaviour {
 		return curve;
 	}
 
+	ParticleSystem.Burst[] InterpretStringToBurst(string parameter)
+    {
+		string[] choppedString = _assetAccessor.getParmStringValue(parameter, 0).Split(";".ToCharArray());
+
+		int numBursts = choppedString.Length / 5;
+		ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[numBursts];
+
+		for (int i = 0; i < numBursts; i++) {
+			ParticleSystem.Burst currentBurst = new ParticleSystem.Burst();
+			currentBurst.time = Convert.ToSingle(choppedString[5 * i]);
+			currentBurst.minCount = Convert.ToInt16(choppedString[5 * i + 1]);
+			currentBurst.maxCount = Convert.ToInt16(choppedString[5 * i + 2]);
+			currentBurst.cycleCount = Convert.ToInt16(choppedString[5 * i + 3]);
+			currentBurst.repeatInterval = Convert.ToSingle(choppedString[5 * i + 4]);
+			bursts[i] = currentBurst;
+		}
+
+		return bursts;
+    }
+
 	///	<Summary>
 	///	Reads a list of values and returns a float curve. The number of samples decide the resolution of the resulting curve. We need the offset to be able to handle curve pairs (such as the "random between curves" mode).
 	///	</summary>
@@ -329,23 +349,10 @@ public class VOPParser : MonoBehaviour {
 
 		emissionModule.rateOverDistance = InterpretStringToCurve("emission_rateOverDistance");
 
-		int numBursts = _assetAccessor.getParmSize("emission_bursts") / 5;
-		ParticleSystem.Burst[] bursts = {};
-
-		for (int i = 0; i < numBursts; i++) {
-			ParticleSystem.Burst burst = new ParticleSystem.Burst();
-			burst.time = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i));
-			burst.minCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 1));
-			burst.maxCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 2));
-			burst.cycleCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 3));
-			burst.repeatInterval = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 4));
-			bursts[i] = burst;
-		}
-
-		emissionModule.SetBursts(bursts);
+		emissionModule.SetBursts(InterpretStringToBurst("emission_bursts"));
 	}
 
-	private void MapShapeParameters() {
+    private void MapShapeParameters() {
 		ParticleSystem.ShapeModule shapeModule = _particleSystem.shape;
 
 		try {
