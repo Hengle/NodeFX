@@ -8,12 +8,26 @@
     input	int	Enabled	Enabled
     input	string	Rate_Over_Time	"Rate Over TIme"
     input	string	Rate_Over_Distance	"Rate Over Distance"
-    input	struct	Bursts	Bursts
+    input	struct_UnityBurst	Burst1	"Burst 1"
+    input	struct_UnityBurst	Burst2	"Burst 2"
+    input	struct_UnityBurst	Burst3	"Burst 3"
+    input	struct_UnityBurst	Burst4	"Burst 4"
+    input	struct_UnityBurst	Burst5	"Burst 5"
+    input	struct_UnityBurst	Burst6	"Burst 6"
+    input	struct_UnityBurst	Burst7	"Burst 7"
+    input	struct_UnityBurst	Burst8	"Burst 8"
     inputflags	Enabled	2
     inputflags	Rate_Over_Time	2
     inputflags	Rate_Over_Distance	2
-    inputflags	Bursts	2
-    signature	"Default Inputs"	default	{ int string string struct }
+    inputflags	Burst1	2
+    inputflags	Burst2	2
+    inputflags	Burst3	2
+    inputflags	Burst4	2
+    inputflags	Burst5	2
+    inputflags	Burst6	2
+    inputflags	Burst7	2
+    inputflags	Burst8	2
+    signature	"Default Inputs"	default	{ int string string struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst }
 
     outputoverrides	default
     {
@@ -51,5 +65,61 @@
 	invisible
 	default	{ "0" }
 	range	{ 0 10 }
+    }
+    parm {
+	name	"Burst2"
+	label	"Burst 2"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst3"
+	label	"Burst 3"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst4"
+	label	"Burst 4"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst5"
+	label	"Burst 5"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst6"
+	label	"Burst 6"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst7"
+	label	"Burst 7"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst8"
+	label	"Burst 8"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Burst1"
+	label	"Burst 1"
+	type	label
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
     }
 }

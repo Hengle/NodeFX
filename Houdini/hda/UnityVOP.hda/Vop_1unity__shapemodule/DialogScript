@@ -16,7 +16,7 @@
     input	float	RandomizeDirection	"Randomize Direction"
     input	float	Spherize_Direction	"Spherize Direction"
     input	float	Randomize_Position	"Spherize Direction"
-    input	float	Angle	Angle
+    input	float	RandomizePosition	"Randomize Position"
     input	float	Arc	Arc
     input	int	ArcMode	"Arc Mode"
     input	float	ArcSpread	"Arc Spread"
@@ -32,6 +32,7 @@
     input	int	UseMeshColors	"Use Mesh Colors"
     input	float	shape_normalOffset	"Normal Offset"
     input	int	MeshMaterialIndex	"Mesh Material Index"
+    input	float	Angle	Angle
     inputflags	Enabled	2
     inputflags	Shape	2
     inputflags	Radius	2
@@ -42,8 +43,8 @@
     inputflags	AlignToDirection	2
     inputflags	RandomizeDirection	2
     inputflags	Spherize_Direction	2
-    inputflags	Randomize_Position	2
-    inputflags	Angle	2
+    inputflags	Randomize_Position	0
+    inputflags	RandomizePosition	2
     inputflags	Arc	2
     inputflags	ArcMode	2
     inputflags	ArcSpread	2
@@ -59,7 +60,8 @@
     inputflags	UseMeshColors	2
     inputflags	shape_normalOffset	2
     inputflags	MeshMaterialIndex	2
-    signature	"Default Inputs"	default	{ int int float float vector vector vector int float float float float float int float string float float vector string int string string int int float int }
+    inputflags	Angle	2
+    signature	"Default Inputs"	default	{ int int float float vector vector vector int float float float float float int float string float float vector string int string string int int float int float }
 
     outputoverrides	default
     {
@@ -168,6 +170,14 @@
     parm {
 	name	"Spherize_Direction"
 	label	"Spherize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"RandomizePosition"
+	label	"Randomize Position"
 	type	float
 	default	{ "0" }
 	range	{ 0 1 }

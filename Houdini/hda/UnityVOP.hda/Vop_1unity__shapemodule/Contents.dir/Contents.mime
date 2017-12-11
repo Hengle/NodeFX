@@ -20,7 +20,7 @@ Content-Type: text/plain
 
 comment ""
 position 5.5 10.3802
-connectornextid 11
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -38,6 +38,7 @@ inputsNamed3
 8 	"" "" 1 "RandomizeDirection"
 9 	"" "" 1 "Spherize_Direction"
 10 	"" "" 1 "Randomize_Position"
+11 	"" "" 1 "RandomizePosition"
 }
 inputs
 {
@@ -52,11 +53,12 @@ inputs
 8 	"" 0 1
 9 	"" 0 1
 10 	"" 0 1
+11 	"" 0 1
 }
 stat
 {
   create 1512858847
-  modify 1512878228
+  modify 1512954364
   author Chris@Voyager
   access 0777
 }
@@ -64,6 +66,181 @@ color UT_Color RGB 0.8 0.8 0.8
 delscript ""
 exprlanguage hscript
 end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+	name	"Enabled"
+	baseparm
+	label	"Enabled"
+	export	none
+    }
+    parm {
+	name	"Shape"
+	baseparm
+	label	"Shape"
+	export	none
+    }
+    parm {
+	name	"Radius"
+	baseparm
+	label	"Radius"
+	export	none
+    }
+    parm {
+	name	"Radius_Thickness"
+	baseparm
+	label	"Radius Thickness"
+	export	none
+    }
+    parm {
+	name	"Position"
+	baseparm
+	label	"Position"
+	export	none
+    }
+    parm {
+	name	"Rotation"
+	baseparm
+	label	"Rotation"
+	export	none
+    }
+    parm {
+	name	"Scale"
+	baseparm
+	label	"Scale"
+	export	none
+    }
+    parm {
+	name	"AlignToDirection"
+	baseparm
+	label	"Align To Direction"
+	export	none
+    }
+    parm {
+	name	"RandomizeDirection"
+	baseparm
+	label	"Randomize Direction"
+	export	none
+    }
+    parm {
+	name	"Spherize_Direction"
+	baseparm
+	label	"Spherize Direction"
+	export	none
+    }
+    parm {
+	name	"RandomizePosition"
+	label	"Randomize Position"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Randomize_Position"
+	baseparm
+	label	"Spherize Direction"
+	export	none
+    }
+    parm {
+	name	"Angle"
+	baseparm
+	label	"Angle"
+	export	none
+    }
+    parm {
+	name	"Arc"
+	baseparm
+	label	"Arc"
+	export	none
+    }
+    parm {
+	name	"ArcMode"
+	baseparm
+	label	"Arc Mode"
+	export	none
+    }
+    parm {
+	name	"ArcSpread"
+	baseparm
+	label	"Arc Spread"
+	export	none
+    }
+    parm {
+	name	"ArcSpeed"
+	baseparm
+	label	"Arc Speed"
+	export	none
+    }
+    parm {
+	name	"ConeLength"
+	baseparm
+	label	"Cone Length"
+	export	none
+    }
+    parm {
+	name	"DonutRadius"
+	baseparm
+	label	"Donut Radius"
+	export	none
+    }
+    parm {
+	name	"BoxThickness"
+	baseparm
+	label	"Box Thickness"
+	export	none
+    }
+    parm {
+	name	"MeshPath"
+	baseparm
+	label	"Mesh Path"
+	export	none
+    }
+    parm {
+	name	"MeshShapeType"
+	baseparm
+	label	"Mesh Shape Type"
+	export	none
+    }
+    parm {
+	name	"MeshRendererPath"
+	baseparm
+	label	"MeshRenderer Path"
+	export	none
+    }
+    parm {
+	name	"SkinnedMeshRendererPath"
+	baseparm
+	label	"SkinnedMeshRenderer Path"
+	export	none
+    }
+    parm {
+	name	"SingleMaterial"
+	baseparm
+	label	"Single Material"
+	export	none
+    }
+    parm {
+	name	"UseMeshColors"
+	baseparm
+	label	"Use Mesh Colors"
+	export	none
+    }
+    parm {
+	name	"shape_normalOffset"
+	baseparm
+	label	"Normal Offset"
+	export	none
+    }
+    parm {
+	name	"MeshMaterialIndex"
+	baseparm
+	label	"Mesh Material Index"
+	export	none
+    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -2415,7 +2592,7 @@ inputs
 stat
 {
   create 1512657488
-  modify 1512859085
+  modify 1512878500
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -2507,7 +2684,7 @@ connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed off lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Randomize_Position"
+0 "_RandomizePosition"
 }
 inputsNamed3
 {
@@ -2518,7 +2695,7 @@ inputs
 stat
 {
   create 1512657500
-  modify 1512657570
+  modify 1512878500
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -2535,10 +2712,10 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	"Randomize Position"	)
+parmname	[ 0	locks=0 ]	(	RandomizePosition	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Spherize Direction"	)
+parmlabel	[ 0	locks=0 ]	(	"Randomize Position"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float"	)
 parmtypename	[ 0	locks=0 ]	(	""	)

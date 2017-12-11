@@ -1,0 +1,41 @@
+{
+	"typeDefinitions":[
+		{
+			"type":"struct",
+			"typeName":"UnityBurst",
+			"typeLabel":"UnityBurst",
+			"connectorColor":{
+				"type":"RGB",
+				"data":[0.649415493011474609,0.546575546264648438,0.856999993324279785
+				]
+			},
+			"variables":[
+				{
+					"typeName":"float",
+					"name":"time",
+					"label":"Time"
+				},
+				{
+					"typeName":"int",
+					"name":"minParticles",
+					"label":"Min Particles"
+				},
+				{
+					"typeName":"int",
+					"name":"maxParticles",
+					"label":"Max Particles"
+				},
+				{
+					"typeName":"int",
+					"name":"cycles",
+					"label":"Cycles"
+				},
+				{
+					"typeName":"float",
+					"name":"interval",
+					"label":"Interval"
+				}
+			]
+		}
+	]
+}

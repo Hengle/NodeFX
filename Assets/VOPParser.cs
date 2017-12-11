@@ -328,6 +328,18 @@ public class VOPParser : MonoBehaviour {
 		emissionModule.rateOverTime = InterpretStringToCurve("emission_rateOverTime");
 
 		emissionModule.rateOverDistance = InterpretStringToCurve("emission_rateOverDistance");
+
+		int numBursts = _assetAccessor.getParmSize("emission_bursts");
+
+		for (int i = 0; i < numBursts; i++) {
+			ParticleSystem.Burst burst = new ParticleSystem.Burst();
+			burst.time = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 1 * i));
+			burst.minCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 2 * i));
+			burst.maxCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 3 * i));
+			burst.cycleCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 4 * i));
+			burst.repeatInterval = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i));
+
+		}
 	}
 
 	private void MapShapeParameters() {
@@ -394,9 +406,7 @@ public class VOPParser : MonoBehaviour {
 		shapeModule.position = new Vector3(_assetAccessor.getParmFloatValue("shape_position", 0), 
 											_assetAccessor.getParmFloatValue("shape_position", 1),
 											_assetAccessor.getParmFloatValue("shape_position", 2));
-		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 0));
-		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 1));
-		Debug.Log(_assetAccessor.getParmFloatValue("shape_position", 2));
+
 		shapeModule.rotation = new Vector3(_assetAccessor.getParmFloatValue("shape_rotation", 0), 
 											_assetAccessor.getParmFloatValue("shape_rotation", 1),
 											_assetAccessor.getParmFloatValue("shape_rotation", 2));
