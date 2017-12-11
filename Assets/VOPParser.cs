@@ -329,17 +329,20 @@ public class VOPParser : MonoBehaviour {
 
 		emissionModule.rateOverDistance = InterpretStringToCurve("emission_rateOverDistance");
 
-		int numBursts = _assetAccessor.getParmSize("emission_bursts");
+		int numBursts = _assetAccessor.getParmSize("emission_bursts") / 5;
+		ParticleSystem.Burst[] bursts = {};
 
 		for (int i = 0; i < numBursts; i++) {
 			ParticleSystem.Burst burst = new ParticleSystem.Burst();
-			burst.time = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 1 * i));
-			burst.minCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 2 * i));
-			burst.maxCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 3 * i));
-			burst.cycleCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 4 * i));
-			burst.repeatInterval = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i));
-
+			burst.time = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i));
+			burst.minCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 1));
+			burst.maxCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 2));
+			burst.cycleCount = Convert.ToInt16(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 3));
+			burst.repeatInterval = Convert.ToSingle(_assetAccessor.getParmStringValue("emission_bursts", 5 * i + 4));
+			bursts[i] = burst;
 		}
+
+		emissionModule.SetBursts(bursts);
 	}
 
 	private void MapShapeParameters() {
