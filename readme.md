@@ -60,7 +60,7 @@ After downloading from the link above, extract the contents into a folder of you
 
 This tool was created using the following software versions, and compatibility is not guaranteed with newer or older versions:
 * `Unity 2017.2.1f1`
-* `Houdini 16.6.268`
+* `Houdini 16.5.268`
 * `Houdini Engine 3.1.11`
 
 To explore the Houdini side of the setup, open `Houdini/hip/Main.hip`. I've added notes to the network that will hopefully help explain how it works. To create a working copy of the VOP network, use the **Save As New Effect** button in the asset interface.
