@@ -29,7 +29,8 @@ public class VOPParser : MonoBehaviour {
 	}
 
 	void OnEnable() {
-		//_isDirty = true;
+		_isDirty = true;
+		//	GetDetailAttributes();
 	}
 
 	void OnApplicationFocus(bool hasFocus) {		
@@ -47,14 +48,12 @@ public class VOPParser : MonoBehaviour {
 			_isDirty = false;
 			_assetOTL.buildAll();			//	Load asset definition from disk
 			InstantiateParticleSystem();	//	Construct particle system from said definition
-			
-			//updateInterval = _assetAccessor.getParmFloatValue("main_duration", 0);
 		}
 	}
 
 	IEnumerator checkForUpdates() {
 		yield return new WaitForSeconds(updateInterval);
-		//_isDirty = true;
+		_isDirty = true;
 	}
 
 	void InstantiateParticleSystem() {
@@ -66,7 +65,7 @@ public class VOPParser : MonoBehaviour {
 
 		for (int i = 0; i < numEmitters; i++) {
 
-			GameObject Emitter = new GameObject("Effect" + i);
+			GameObject Emitter = new GameObject("Emitter" + i);
 			Emitter.transform.parent = parent;
 			ParticleSystem pSystem = Emitter.AddComponent<ParticleSystem>();
 			pSystem.Stop();
@@ -104,31 +103,6 @@ public class VOPParser : MonoBehaviour {
 		
 		// _particleSystem.gameObject.SetActive(false);	//	Having the game object disabled while mapping the parameters greatly speeds up the process
 
-		// //	Here we go
-		// // MapMainParameters();
-		// // MapEmissionParameters();
-		// // MapShapeParameters();
-		// // MapVelocityOverLifetimeParameters();
-		// // MapLimitVelocityOverLifetimeParameters();
-		// // MapInheritVelocityOverLifetimeParameters();
-		// // MapForceOverLifetimeParameters();
-		// // MapColorOverLifetimeParameters();
-		// // MapColorBySpeedParameters();
-		// // MapSizeOverLifetimeParameters();
-		// // MapSizeBySpeedParameters();
-		// // MapRotationOverLifetimeParameters();
-		// // MapRotationBySpeedParameters();
-		// // MapExternalForcesParameters();
-		// // MapNoiseParameters();
-		// // MapCollisionParameters();
-		// // MapTriggerParameters();
-		// // MapSubEmitterParameters();
-		// // MapTextureSheetAnimationParameters();
-		// // MapLightParamters();
-		// // MapTrailParameters();
-		// // MapCustomDataParameters();
-		// // MapRendererParameters();
-
 		// _particleSystem.gameObject.SetActive(true);
 		// _particleSystem.Play(true);
 	}
@@ -137,12 +111,23 @@ public class VOPParser : MonoBehaviour {
 	/// Not used, since I can't figure out how to get it working. Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first.
 	/// </summary>
 	void GetDetailAttributes() {
-		HAPI_AttributeInfo attributeInfo = new HAPI_AttributeInfo();
-		attributeInfo.storage = HAPI_StorageType.HAPI_STORAGETYPE_FLOAT;
-		attributeInfo.count = 1;
-		attributeInfo.tupleSize = 1;
-		attributeInfo.owner = HAPI_AttributeOwner.HAPI_ATTROWNER_DETAIL;
-		// HoudiniGeoAttribute attribute = new HoudiniGeoAttribute();
+
+		HoudiniGeoControl output = new HoudiniGeoControl();
+		
+		foreach(HoudiniGeoControl geo in GameObject.FindObjectsOfType<HoudiniGeoControl>()) {
+			
+			if (geo.prGeoName == "output1") {
+				output = geo;
+				HAPI_AttributeInfo test;
+			}
+		}
+		
+		foreach(HoudiniGeoAttribute attribute in output.prGeoAttributeManager.prAttributes) {
+			Debug.Log(attribute.prName);
+		}
+
+		//Debug.Log("main duration is " + output.prGeoAttributeManager.getAttribute("emitter0_main_duration"));
+
 		//	HAPI_GetAttributeIntData();
 		//	HAPI_GetAttributeFloatData();
 		//	HAPI_GetAttributeStringData();
