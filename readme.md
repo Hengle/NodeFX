@@ -59,9 +59,9 @@ Getting Started
 After downloading from the link above, extract the contents into a folder of your choosing. The [Houdini Engine for Unity](https://www.sidefx.com/products/houdini-engine/unity-plug-in/) plugin is included in the repository for the sake of simplicity, but please note that it requires a Houdini Engine license on your computer to load.
 
 This tool was created using the following software versions, and compatibility is not guaranteed with newer or older versions:
-* `Unity 2017.1.1f1`
-* `Houdini 16.0.736`
-* `Houdini Engine 3.0.60`
+* `Unity 2017.2.1f1`
+* `Houdini 16.6.268`
+* `Houdini Engine 3.1.11`
 
 To explore the Houdini side of the setup, open `Houdini/hip/Main.hip`. I've added notes to the network that will hopefully help explain how it works. To create a working copy of the VOP network, use the **Save As New Effect** button in the asset interface.
 
