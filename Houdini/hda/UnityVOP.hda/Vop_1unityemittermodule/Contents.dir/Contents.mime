@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 4.18897 11.7755
+position 3.59556 12.08
 connectornextid 22
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault off exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -77,7 +77,7 @@ inputs
 stat
 {
   create 1512587500
-  modify 1513224491
+  modify 1513263309
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3744,7 +3744,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513214915
+  modify 1513273661
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3770,7 +3770,7 @@ setpointattrib(0, \"main_looping\", $_id, $_Looping);
 setpointattrib(0, \"main_prewarm\", $_id, $_Prewarm);
 setpointattrib(0, \"main_startDelay\", $_id, $_Start_Delay);
 
-setpointattrib(0, \"main_lifetime\", $_id, $_Start_Lifetime);
+setpointattrib(0, \"main_startLifetime\", $_id, $_Start_Lifetime);
 setpointattrib(0, \"main_startSpeed\", $_id, $_Start_Speed);
 
 setpointattrib(0, \"main_3DStartSize\", $_id, $_Nonuniform_Start_Size);
@@ -3781,9 +3781,9 @@ setpointattrib(0, \"main_startSize_z\", $_id, $_Start_Size_Z);
 
 setpointattrib(0, \"main_3DStartRotation\", $_id, $_Nonuniform_Start_Rotation);
 setpointattrib(0, \"main_startRotation\", $_id, $_Start_Rotation);
-setpointattrib(0, \"main_startRotationX\", $_id, $_Start_Rotation_X);
-setpointattrib(0, \"main_startRotationY\", $_id, $_Start_Rotation_Y);
-setpointattrib(0, \"main_startRotationZ\", $_id, $_Start_Rotation_Z);
+setpointattrib(0, \"main_startRotation_x\", $_id, $_Start_Rotation_X);
+setpointattrib(0, \"main_startRotation_y\", $_id, $_Start_Rotation_Y);
+setpointattrib(0, \"main_startRotation_z\", $_id, $_Start_Rotation_Z);
 setpointattrib(0, \"main_rotationVariance\", $_id, $_Rotation_Direction_Variance);
 
 setpointattrib(0, \"main_startColor\", $_id, $_Start_Color);

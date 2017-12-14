@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 6.84487 10.5754
+position 6.25146 10.88
 connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -57,7 +57,7 @@ inputs
 stat
 {
   create 1513214256
-  modify 1513224524
+  modify 1513224715
   author Chris@Voyager
   access 0777
 }

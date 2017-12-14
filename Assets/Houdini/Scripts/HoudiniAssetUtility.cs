@@ -2482,6 +2482,10 @@ public class HoudiniAssetUtility
 		Houdini.JSONObject json_object = new Houdini.JSONObject( attach_script );
 		Dictionary< string, string > dictionary = json_object.ToDictionary();
 		
+		foreach (KeyValuePair<string,string> pair in dictionary) {
+			Debug.Log(pair.Key + " " + pair.Value);
+		}
+		
 		if ( !dictionary.ContainsKey( "script" ) )
 		{
 			Debug.LogError( "Script key not found in scripts attribute!" );
