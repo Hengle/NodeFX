@@ -5,16 +5,22 @@
     script	unitycolorbyspeed
     label	UnityColorBySpeed
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	string	Color	Color
     input	vector2	Range	Range
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	Color	2
     inputflags	Range	2
-    signature	"Default Inputs"	default	{ int string vector2 }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int string vector2 int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -25,7 +31,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {

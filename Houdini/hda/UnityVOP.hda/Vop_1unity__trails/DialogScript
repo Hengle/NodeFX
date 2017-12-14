@@ -5,8 +5,8 @@
     script	unity_trails
     label	UnityTrails
 
+    input	int	id	ID
     input	int	Enabled	Enabled
-    input	float	Ratio	Ratio
     input	string	Lifetime	Lifetime
     input	float	MinimumVertexDistance	"Minimum Vertex Distance"
     input	int	TextureMode	"Texture Mode"
@@ -19,8 +19,10 @@
     input	string	WidthOverTrail	"Width Over Trail"
     input	string	ColorOverTrail	"Color Over Trail"
     input	int	GenerateLightingData	"Generate Lighting Data"
+    input	float	Ratio	Ratio
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
-    inputflags	Ratio	2
     inputflags	Lifetime	2
     inputflags	MinimumVertexDistance	2
     inputflags	TextureMode	2
@@ -33,10 +35,14 @@
     inputflags	WidthOverTrail	2
     inputflags	ColorOverTrail	2
     inputflags	GenerateLightingData	2
-    signature	"Default Inputs"	default	{ int float string float int int int int int int string string string int }
+    inputflags	Ratio	2
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int string float int int int int int int string string string int float int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -47,15 +53,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"Ratio"
-	label	"Ratio"
-	type	float
+	name	"id"
+	label	"ID"
+	type	integer
 	default	{ "0" }
-	range	{ 0 1 }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -133,7 +140,7 @@
 	name	"WidthOverTrail"
 	label	"Width Over Trail"
 	type	string
-	default	{ "curve;float;64;5.000000;0.000000;0.015625;0.031250;0.046875;0.062500;0.078125;0.093750;0.109375;0.125000;0.140625;0.156250;0.171875;0.187500;0.203125;0.218750;0.234375;0.250000;0.265625;0.281250;0.296875;0.312500;0.328125;0.343750;0.359375;0.375000;0.390625;0.406250;0.421875;0.437500;0.453125;0.468750;0.484375;0.500000;0.515625;0.531250;0.546875;0.562500;0.578125;0.593750;0.609375;0.625000;0.640625;0.656250;0.671875;0.687500;0.703125;0.718750;0.734375;0.750000;0.765625;0.781250;0.796875;0.812500;0.828125;0.843750;0.859375;0.875000;0.890625;0.906250;0.921875;0.937500;0.953125;0.968750;0.984375" }
+	default	{ "constant;float;1.0" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -148,6 +155,14 @@
 	label	"Generate Lighting Data"
 	type	toggle
 	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Ratio"
+	label	"Ratio"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
 	parmtag	{ "parmvop" "1" }
     }
 }

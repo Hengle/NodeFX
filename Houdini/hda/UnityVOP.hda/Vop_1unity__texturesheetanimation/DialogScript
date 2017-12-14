@@ -5,6 +5,7 @@
     script	unity_texturesheetanimation
     label	UnityTextureSheetAnimation
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	int	Mode	Mode
     input	vector2	Tiles	Tiles
@@ -14,6 +15,8 @@
     input	int	Cycles	Cycles
     input	float	Flip_U_Probability	"Flip U Probability"
     input	float	Flip_V_Probability	"Flip V Probability"
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	Mode	2
     inputflags	Tiles	2
@@ -23,10 +26,13 @@
     inputflags	Cycles	2
     inputflags	Flip_U_Probability	2
     inputflags	Flip_V_Probability	2
-    signature	"Default Inputs"	default	{ int int vector2 int string string int float float }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int int vector2 int string string int float float int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -37,7 +43,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {

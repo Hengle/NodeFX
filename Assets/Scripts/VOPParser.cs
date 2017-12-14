@@ -438,7 +438,7 @@ public class VOPParser : MonoBehaviour {
 			return;
 		}
 
-		renderer.alignment = (ParticleSystemRenderSpace) _assetAccessor.getParmIntValue("renderer_Alignment", 0);
+		renderer.alignment = (ParticleSystemRenderSpace) _assetAccessor.getParmIntValue("renderer_alignment", 0);
 		
 		renderer.shadowCastingMode = (UnityEngine.Rendering.ShadowCastingMode) _assetAccessor.getParmIntValue("renderer_castShadows", 0);
 		
@@ -671,6 +671,8 @@ public class VOPParser : MonoBehaviour {
 		noiseModule.strengthY = InterpretStringToCurve("noise_strength_y");
 
 		noiseModule.strengthZ = InterpretStringToCurve("noise_strength_z");
+
+		noiseModule.damping = Convert.ToBoolean(_assetAccessor.getParmIntValue("noise_damping", 0));
     }
 
     private void MapExternalForcesParameters() {
@@ -701,7 +703,7 @@ public class VOPParser : MonoBehaviour {
 			return;
 		}
 
-		rotationBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0)); 
+		rotationBySpeedModule.separateAxes = Convert.ToBoolean(_assetAccessor.getParmIntValue("rotationBySpeed_separateAxes", 0));
 
 		rotationBySpeedModule.x = InterpretStringToCurve("rotationBySpeed_angularVelocity_x");
 		rotationBySpeedModule.y = InterpretStringToCurve("rotationBySpeed_angularVelocity_y");
@@ -825,6 +827,8 @@ public class VOPParser : MonoBehaviour {
 		forceOverLifetimeModule.z = InterpretStringToCurve("forceOverLifetime_force_z");
 
 		forceOverLifetimeModule.randomized = Convert.ToBoolean(_assetAccessor.getParmIntValue("forceOverLifetime_randomized", 0));
+
+		forceOverLifetimeModule.space = (ParticleSystemSimulationSpace) _assetAccessor.getParmIntValue("forceOverLifetime_space", 0);
     }
 
     private void MapInheritVelocityOverLifetimeParameters() {
@@ -865,6 +869,8 @@ public class VOPParser : MonoBehaviour {
 		limitVelocityOverLifetimeModule.limitZ = InterpretStringToCurve("limitVelocityOverLifetime_speed_z");
 
 		limitVelocityOverLifetimeModule.dampen = _assetAccessor.getParmFloatValue("limitVelocityOverLifetime_dampen", 0);
+
+		limitVelocityOverLifetimeModule.space = (ParticleSystemSimulationSpace) _assetAccessor.getParmIntValue("limitVelocityOverLifetime_space", 0);
     }
 
     private void MapVelocityOverLifetimeParameters() {
@@ -882,5 +888,7 @@ public class VOPParser : MonoBehaviour {
 		velocityOverLifetimeModule.x = InterpretStringToCurve("velocityOverLifetime_velocity_x");
 		velocityOverLifetimeModule.y = InterpretStringToCurve("velocityOverLifetime_velocity_y");
 		velocityOverLifetimeModule.z = InterpretStringToCurve("velocityOverLifetime_velocity_z");
+
+		velocityOverLifetimeModule.space = (ParticleSystemSimulationSpace) _assetAccessor.getParmIntValue("velocityOverLifetime_space", 0);
     }
 }

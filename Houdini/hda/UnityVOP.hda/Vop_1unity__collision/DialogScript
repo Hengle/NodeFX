@@ -5,6 +5,7 @@
     script	unity_collision
     label	UnityCollision
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	int	Type	Type
     input	int	Mode	Mode
@@ -12,7 +13,7 @@
     input	string	Bounce	Bounce
     input	string	LifetimeLoss	"Lifetime Loss"
     input	float	MinKillSpeed	"Min Kill Speed"
-    input	float	maxKillSpeed	"Max Kill Speed"
+    input	float	MaxKillSpeed	"Max Kill Speed"
     input	float	RadiusScale	RadiusScale
     input	int	Quality	Quality
     input	int	EnableDynamicColliders	"Enable Dynamic Colliders"
@@ -22,6 +23,8 @@
     input	int	MultiplyByParticleSize	"Multiply By Particle Size"
     input	int	SendCollisionMessages	"Send Collision Messages"
     input	int	VisualizeBounds	"Visualize Bounds"
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	Type	2
     inputflags	Mode	2
@@ -29,7 +32,7 @@
     inputflags	Bounce	2
     inputflags	LifetimeLoss	2
     inputflags	MinKillSpeed	2
-    inputflags	maxKillSpeed	2
+    inputflags	MaxKillSpeed	2
     inputflags	RadiusScale	2
     inputflags	Quality	2
     inputflags	EnableDynamicColliders	2
@@ -39,10 +42,13 @@
     inputflags	MultiplyByParticleSize	2
     inputflags	SendCollisionMessages	2
     inputflags	VisualizeBounds	2
-    signature	"Default Inputs"	default	{ int int int string string string float float float int int float int int int int int }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int int int string string string float float float int int float int int int int int int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -53,7 +59,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -110,7 +125,7 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"maxKillSpeed"
+	name	"MaxKillSpeed"
 	label	"Max Kill Speed"
 	type	float
 	default	{ "10000" }

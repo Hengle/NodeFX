@@ -5,16 +5,22 @@
     script	unity_customdata
     label	UnityCustomData
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	vector4	_1	"Custom Data 1"
     input	vector4	_2	"Custom Data 2"
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	_1	2
     inputflags	_2	2
-    signature	"Default Inputs"	default	{ int vector4 vector4 }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int vector4 vector4 int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -25,7 +31,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {

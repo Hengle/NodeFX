@@ -5,6 +5,7 @@
     script	unity_noise
     label	UnityNoise
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	int	SeparateAxes	"Separate Axes"
     input	string	Strength	Strength
@@ -23,6 +24,8 @@
     input	string	PositionAmount	"Position Amount"
     input	string	RotationAmount	"Rotation Amount"
     input	string	ScaleAmount	"Scale Amount"
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	SeparateAxes	2
     inputflags	Strength	2
@@ -41,10 +44,13 @@
     inputflags	PositionAmount	2
     inputflags	RotationAmount	2
     inputflags	ScaleAmount	2
-    signature	"Default Inputs"	default	{ int int string string string string float string int int float float int int string string string string }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int int string string string string float string int int float float int int string string string string int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -55,7 +61,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
-	default	{ "off" }
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {

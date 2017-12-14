@@ -5,6 +5,7 @@
     script	unity_emissionmodule
     label	UnityEmissionModule
 
+    input	int	id	ID
     input	int	Enabled	Enabled
     input	string	Rate_Over_Time	"Rate Over Time"
     input	string	Rate_Over_Distance	"Rate Over Distance"
@@ -16,6 +17,8 @@
     input	struct_UnityBurst	Burst6	"Burst 6"
     input	struct_UnityBurst	Burst7	"Burst 7"
     input	struct_UnityBurst	Burst8	"Burst 8"
+    output	int	_id	ID
+    inputflags	id	2
     inputflags	Enabled	2
     inputflags	Rate_Over_Time	2
     inputflags	Rate_Over_Distance	2
@@ -27,10 +30,13 @@
     inputflags	Burst6	2
     inputflags	Burst7	2
     inputflags	Burst8	2
-    signature	"Default Inputs"	default	{ int string string struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst }
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int string string struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst int }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -41,7 +47,16 @@
 	name	"Enabled"
 	label	"Enabled"
 	type	toggle
+	joinnext
 	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
