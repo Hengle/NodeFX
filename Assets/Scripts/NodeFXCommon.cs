@@ -2,12 +2,10 @@
 using UnityEngine;
 
 namespace NodeFX {
-	public static class NodeFX {
+	public static class NodeFXUtilities {
 
-		public static ParticleSystem.MinMaxCurve InterpretStringToCurve(string entry) {
+		public static ParticleSystem.MinMaxCurve InterpretStringToCurve(string parameter) {
 			ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve();
-			Debug.Log("attemping to find parameter " + entry);
-			string parameter = _assetAccessor.getParmStringValue(entry, 0);
 			
 			string[] choppedString = parameter.Split(";".ToCharArray());
 
@@ -58,10 +56,9 @@ namespace NodeFX {
 			return curve;
 		}
 
-		public static ParticleSystem.MinMaxGradient InterpretStringToGradient(string entry) {
+		public static ParticleSystem.MinMaxGradient InterpretStringToGradient(string parameter) {
 			ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
 
-			string parameter = _assetAccessor.getParmStringValue(entry, 0);
 			string[] choppedString = parameter.Split(";".ToCharArray());
 			string color;
 			string[] colorArray;
@@ -97,7 +94,7 @@ namespace NodeFX {
 
 		public static ParticleSystem.Burst[] InterpretStringToBurst(string parameter)
 		{
-			string[] choppedString = _assetAccessor.getParmStringValue(parameter, 0).Split(";".ToCharArray());
+			string[] choppedString = parameter.Split(";".ToCharArray());
 
 			int numBursts = choppedString.Length / 5;
 			ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[numBursts];

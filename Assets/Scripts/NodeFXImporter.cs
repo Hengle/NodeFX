@@ -1,62 +1,56 @@
 ﻿using System;
 using System.Xml;
 using UnityEngine;
-using UnityEditor;
 
 namespace NodeFX {
 	[ExecuteInEditMode]
 	public class XMLImporter : MonoBehaviour {
 
-		public TextAsset emitterDefinition;
-
-		public bool UpdateOnInterval;
-		public bool UpdateOnFileChanged;
-		public bool UpdateOnFocus;
-
 		private XmlDocument doc;
-		private string path;
 		private ParticleSystem _particleSystem;
 		private string xpath = "root/emitter[{emitterIndex}]/attribute[text() = \'{parameter}\']/value[{parameterIndex}]";
 
-		void OnEnabled() {
-			LoadXML();
-		}
-
-		void OnApplicationFocus() {
-			if ( !String.IsNullOrEmpty(path) && UpdateOnFocus ) {
-				LoadXML();
-				InstantiateParticleSystem();
-			}
-		}
-
-		void LoadXML() {
+		public void LoadXML(string path) {
 			doc = new XmlDocument();
-			path = AssetDatabase.GetAssetOrScenePath(emitterDefinition);
 			doc.Load(path);
 		}
 
-		private int GetIntParam(int emitterIndex, string parameter, int parameterIndex = 0) {
-			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex, parameter, parameterIndex));
+		public int GetIntParam(int emitterIndex, string parameter, int parameterIndex = 0) {
+			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex + 1, parameter, parameterIndex + 1));
 			
 			return Convert.ToInt32(node.InnerText);
 		}
 
-		private float GetFloatParam(int emitterIndex, string parameter, int parameterIndex = 0) {
-			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex, parameter, parameterIndex));
+		public float GetFloatParam(int emitterIndex, string parameter, int parameterIndex = 0) {
+			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex + 1, parameter, parameterIndex + 1));
 			
 			return Convert.ToSingle(node.InnerText);
 		}
 
-		private string GetStringParam(int emitterIndex, string parameter, int parameterIndex = 0) {
-			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex, parameter, parameterIndex));
+		public string GetStringParam(int emitterIndex, string parameter, int parameterIndex = 0) {
+			XmlNode node = doc.SelectSingleNode(String.Format(xpath, emitterIndex + 1, parameter, parameterIndex + 1));
 			return node.InnerText;
 		}
 
-		private Vector4 GetVectorParam(int emitterIndex, string parameter, int parameterIndex = 0) {
-			return new Vector4(0,0,0,0);
+		public Vector4 GetVectorParam(int emitterIndex, string parameter, int parameterIndex = 0) {
+			XmlNodeList nodes = doc.SelectNodes(String.Format(xpath, emitterIndex + 1, parameter, parameterIndex + 1));
+
+            Vector4 vector = new Vector4();
+
+            int i = 0;
+            foreach (XmlNode node in nodes) {
+                if (! String.IsNullOrEmpty(node.InnerText)) {
+                    vector[i] = Convert.ToSingle(node.InnerText);
+                } else {
+                    vector[i] = 0;
+                }
+                i++;
+            }
+
+            return vector;
 		}
 
-		private int GetEmitterCount() {
+		public int GetEmitterCount() {
 			string numEmitters = doc.SelectSingleNode("root").Attributes[0].Value;
 			return Convert.ToInt32(numEmitters);
 		}

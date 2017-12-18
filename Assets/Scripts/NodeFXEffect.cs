@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using NodeFX;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(ParticleSystem))]
 public class NodeFXEffect : MonoBehaviour {
 
 	public TextAsset emitterDefinition;
@@ -18,13 +20,18 @@ public class NodeFXEffect : MonoBehaviour {
 	private XmlDocument doc;
 	private string path;
 	private ParticleSystem _particleSystem;
+	private XMLImporter _importer;
 
 	void OnEnabled() {
-
+		_importer = new XMLImporter();
 	}
 
 	void OnApplicationFocus() {
+		path = AssetDatabase.GetAssetOrScenePath(emitterDefinition);
 
+		if(!string.IsNullOrEmpty(path) && updateOnFocus) {
+			_importer.LoadXML(path);
+		}
 	}
 
 	IEnumerator checkForUpdates() {
