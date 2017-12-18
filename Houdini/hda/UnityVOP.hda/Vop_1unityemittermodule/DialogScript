@@ -76,229 +76,229 @@
     }
 
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "1" }
-	help	"Setting the ID is necessary in order for the various modules to know which emitter they belong to. Be sure not to set this higher than the current amount of emitters"
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "1" }
+        help    "Setting the ID is necessary in order for the various modules to know which emitter they belong to. Be sure not to set this higher than the current amount of emitters"
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Duration"
-	label	"Duration"
-	type	float
-	default	{ "5" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Duration"
+        label   "Duration"
+        type    float
+        default { "5" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Looping"
-	label	"Looping"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Looping"
+        label   "Looping"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Prewarm"
-	label	"Prewarm"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "Prewarm"
+        label   "Prewarm"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Delay"
-	label	"Start Delay"
-	type	float
-	default	{ "0" }
-	disablewhen	"{ Prewarm == 1 }"
-	range	{ 0 5 }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Delay"
+        label   "Start Delay"
+        type    float
+        default { "0" }
+        disablewhen "{ Prewarm == 1 }"
+        range   { 0 5 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Lifetime"
-	label	"Start Lifetime"
-	type	string
-	default	{ "constant;float;5.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Lifetime"
+        label   "Start Lifetime"
+        type    string
+        default { "constant;float;5.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Speed"
-	label	"Start Speed"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Speed"
+        label   "Start Speed"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Nonuniform_Start_Size"
-	label	"Nonuniform Start Size"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "Nonuniform_Start_Size"
+        label   "Nonuniform Start Size"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Size"
-	label	"Start Size"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Size"
+        label   "Start Size"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Size_X"
-	label	"Start Size X"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Size_X"
+        label   "Start Size X"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Size_Y"
-	label	"Start Size Y"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Size_Y"
+        label   "Start Size Y"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Size_Z"
-	label	"Start Size Z"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Size_Z"
+        label   "Start Size Z"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Nonuniform_Start_Rotation"
-	label	"Nonuniform Start Rotation"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "Nonuniform_Start_Rotation"
+        label   "Nonuniform Start Rotation"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Rotation"
-	label	"Start Rotation"
-	type	string
-	default	{ "constant;float;0.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Rotation"
+        label   "Start Rotation"
+        type    string
+        default { "constant;float;0.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Rotation_X"
-	label	"Start Rotation X"
-	type	string
-	default	{ "constant;float;0.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Rotation_X"
+        label   "Start Rotation X"
+        type    string
+        default { "constant;float;0.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Rotation_Y"
-	label	"Start Rotation Y"
-	type	string
-	default	{ "constant;float;0.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Rotation_Y"
+        label   "Start Rotation Y"
+        type    string
+        default { "constant;float;0.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Rotation_Z"
-	label	"Start Rotation Z"
-	type	string
-	default	{ "constant;float;0.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Rotation_Z"
+        label   "Start Rotation Z"
+        type    string
+        default { "constant;float;0.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Rotation_Direction_Variance"
-	label	"Rotation Direction Variance"
-	type	float
-	default	{ "0" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Rotation_Direction_Variance"
+        label   "Rotation Direction Variance"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Start_Color"
-	label	"Start Color"
-	type	string
-	default	{ "constant;vector;{1,1,1,1}" }
-	parmtag	{ "parmvop" "1" }
+        name    "Start_Color"
+        label   "Start Color"
+        type    string
+        default { "constant;vector;{1,1,1,1}" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Gravity_Modifier"
-	label	"Gravity Modifier"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Gravity_Modifier"
+        label   "Gravity Modifier"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Simulation_Space"
-	label	"Simulation Space"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"Local"
-	    "1"	"World"
-	    "2"	"Custom"
-	}
-	range	{ 0 2 }
-	parmtag	{ "parmvop" "1" }
+        name    "Simulation_Space"
+        label   "Simulation Space"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Local"
+            "1" "World"
+            "2" "Custom"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Simulation_Speed"
-	label	"Simulation Speed"
-	type	float
-	default	{ "1" }
-	range	{ 0 2 }
-	parmtag	{ "parmvop" "1" }
+        name    "Simulation_Speed"
+        label   "Simulation Speed"
+        type    float
+        default { "1" }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Delta_Time"
-	label	"Delta Time"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"Scaled"
-	    "1"	"Unscaled"
-	}
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Delta_Time"
+        label   "Delta Time"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Scaled"
+            "1" "Unscaled"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Scaling_Mode"
-	label	"Scaling Mode"
-	type	integer
-	default	{ "1" }
-	menu	{
-	    "0"	"Hierarchy"
-	    "1"	"Local"
-	    "2"	"Shape"
-	}
-	range	{ 0 2 }
-	parmtag	{ "parmvop" "1" }
+        name    "Scaling_Mode"
+        label   "Scaling Mode"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Hierarchy"
+            "1" "Local"
+            "2" "Shape"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Play_On_Awake"
-	label	"Play On Awake"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Play_On_Awake"
+        label   "Play On Awake"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Emitter_Velocity"
-	label	"Emitter Velocity"
-	type	integer
-	default	{ "1" }
-	menu	{
-	    "0"	"Transform"
-	    "1"	"Rigidbody"
-	}
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Emitter_Velocity"
+        label   "Emitter Velocity"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Transform"
+            "1" "Rigidbody"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Max_Particles"
-	label	"Max Particles"
-	type	integer
-	default	{ "1000" }
-	range	{ 0 5000 }
-	parmtag	{ "parmvop" "1" }
+        name    "Max_Particles"
+        label   "Max Particles"
+        type    integer
+        default { "1000" }
+        range   { 0 5000 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Auto_Random_Seed"
-	label	"Auto Random Seed"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Auto_Random_Seed"
+        label   "Auto Random Seed"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
 }
