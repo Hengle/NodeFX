@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
 public class VOPParser : MonoBehaviour {
 
 	/// <summary>
@@ -14,8 +13,6 @@ public class VOPParser : MonoBehaviour {
 	public float updateInterval = 5f;
 
 	// private ParticleSystem _particleSystem;
-	private HoudiniAssetOTL _assetOTL;
-	private HoudiniApiAssetAccessor _assetAccessor;
 
 	/// <summary>
 	/// If the particle system is marked as dirty, it should be updated 
@@ -110,28 +107,6 @@ public class VOPParser : MonoBehaviour {
 	/// <summary>
 	/// Not used, since I can't figure out how to get it working. Kept for future reference when I'll want to fetch attributes directly, without having to go through parameters first.
 	/// </summary>
-	void GetDetailAttributes() {
-
-		HoudiniGeoControl output = new HoudiniGeoControl();
-		
-		foreach(HoudiniGeoControl geo in GameObject.FindObjectsOfType<HoudiniGeoControl>()) {
-			
-			if (geo.prGeoName == "output1") {
-				output = geo;
-				HAPI_AttributeInfo test;
-			}
-		}
-		
-		foreach(HoudiniGeoAttribute attribute in output.prGeoAttributeManager.prAttributes) {
-			Debug.Log(attribute.prName);
-		}
-
-		//Debug.Log("main duration is " + output.prGeoAttributeManager.getAttribute("emitter0_main_duration"));
-
-		//	HAPI_GetAttributeIntData();
-		//	HAPI_GetAttributeFloatData();
-		//	HAPI_GetAttributeStringData();
-	}
 
 	ParticleSystem.MinMaxCurve InterpretStringToCurve(string entry) {
 		ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve();
