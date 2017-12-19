@@ -17,7 +17,6 @@ public class NodeFXEditor : Editor {
 	void OnEnable() {
 		targetEffect = (NodeFXEffect)target;
 		GenerateStyles();
-        targetEffect._isDirty = true;
 	}
 
 	public override void OnInspectorGUI()
@@ -48,21 +47,13 @@ public class NodeFXEditor : Editor {
 		
 		GUILayout.BeginHorizontal();
 		GUILayout.BeginVertical();
-        targetEffect.enableRefresh = EditorGUILayout.BeginToggleGroup("Automatic Refresh", targetEffect.enableRefresh);
 
         targetEffect.refreshOnFocus = EditorGUILayout.Toggle("Refresh On Window Focus", targetEffect.refreshOnFocus);
         targetEffect.refreshOnFileChange = EditorGUILayout.Toggle("Refresh On File Change", targetEffect.refreshOnFileChange);
-		targetEffect.refreshAtInterval = EditorGUILayout.Toggle("Refresh At Time Interval", targetEffect.refreshAtInterval);
 
-        if (targetEffect.refreshAtInterval)
-        {
-            targetEffect.refreshInterval = EditorGUILayout.FloatField("Interval (in seconds)", targetEffect.refreshInterval);
-        }
-		
-        EditorGUILayout.EndToggleGroup();
 		GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
-		
+        
     }
 
     private void GUIDrawTopShelfButtons()
@@ -92,17 +83,6 @@ public class NodeFXEditor : Editor {
 
     private void CheckForUpdates()
     {
-        Debug.Log("Editor: Checking for updates");
-        Debug.Log(targetEffect._isDirty);
-        if (targetEffect.refreshAtInterval == true) {
-			if (targetEffect._isDirty) {
-                Debug.Log("Editor: Effect is dirty");
-				targetEffect._isDirty = false;
-				targetEffect.Refresh();
-				UpdateOnInterval();
-			}
-		}
-
 		if (_fileSystemWatcher == null) {
 			CreateFileWatcher();
 		}
@@ -118,7 +98,10 @@ public class NodeFXEditor : Editor {
     {
 		_fileSystemWatcher = new FileSystemWatcher();
 		targetEffect.Refresh();
-		_fileSystemWatcher.Path = targetEffect.path;
+        string folder = targetEffect.path.Replace(targetEffect.effectDefinition.name + ".xml", "");
+        string folderPath = Application.dataPath + folder.Substring(6);
+        Debug.Log(folderPath);
+		_fileSystemWatcher.Path = folderPath;
 
 		/* Watch for changes in LastAccess and LastWrite times, and 
 		the renaming of files or directories. */
@@ -144,12 +127,6 @@ public class NodeFXEditor : Editor {
     {
         targetEffect.Refresh();
     }
-
-    IEnumerator UpdateOnInterval() {
-        Debug.Log("Editor: Refreshing in " + targetEffect.refreshInterval + " seconds");
-		yield return new WaitForSeconds(targetEffect.refreshInterval);
-		targetEffect._isDirty = true;
-	}
 
 	private void OnApplicationFocus() {
 		if (targetEffect.refreshOnFocus) {

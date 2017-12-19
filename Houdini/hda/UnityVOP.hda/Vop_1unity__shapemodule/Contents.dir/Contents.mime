@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 9.50077 11.8505
+position 8.90736 12.155
 connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -91,7 +91,7 @@ inputs
 stat
 {
   create 1513215289
-  modify 1513224542
+  modify 1513656244
   author Chris@Voyager
   access 0777
 }
@@ -99,6 +99,193 @@ color UT_Color RGB 0.8 0.8 0.8
 delscript ""
 exprlanguage hscript
 end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+        name    "Enabled"
+        baseparm
+        label   "Enabled"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "id"
+        baseparm
+        label   "ID"
+        export  none
+    }
+    parm {
+        name    "Shape"
+        baseparm
+        label   "Shape"
+        export  none
+    }
+    parm {
+        name    "Radius"
+        baseparm
+        label   "Radius"
+        export  none
+    }
+    parm {
+        name    "Radius_Thickness"
+        baseparm
+        label   "Radius Thickness"
+        export  none
+    }
+    parm {
+        name    "Position"
+        baseparm
+        label   "Position"
+        export  none
+    }
+    parm {
+        name    "Rotation"
+        baseparm
+        label   "Rotation"
+        export  none
+    }
+    parm {
+        name    "Scale"
+        baseparm
+        label   "Scale"
+        export  none
+    }
+    parm {
+        name    "AlignToDirection"
+        baseparm
+        label   "Align To Direction"
+        export  none
+    }
+    parm {
+        name    "RandomizeDirection"
+        baseparm
+        label   "Randomize Direction"
+        export  none
+    }
+    parm {
+        name    "Spherize_Direction"
+        baseparm
+        label   "Spherize Direction"
+        export  none
+    }
+    parm {
+        name    "RandomizePosition"
+        baseparm
+        label   "Randomize Position"
+        export  none
+    }
+    parm {
+        name    "Randomize_Position"
+        baseparm
+        label   "Spherize Direction"
+        export  none
+    }
+    parm {
+        name    "Angle"
+        baseparm
+        label   "Angle"
+        export  none
+    }
+    parm {
+        name    "Arc"
+        baseparm
+        label   "Arc"
+        export  none
+    }
+    parm {
+        name    "ArcMode"
+        baseparm
+        label   "Arc Mode"
+        export  none
+    }
+    parm {
+        name    "ArcSpread"
+        baseparm
+        label   "Arc Spread"
+        export  none
+    }
+    parm {
+        name    "ArcSpeed"
+        baseparm
+        label   "Arc Speed"
+        export  none
+    }
+    parm {
+        name    "ConeLength"
+        baseparm
+        label   "Cone Length"
+        export  none
+    }
+    parm {
+        name    "DonutRadius"
+        baseparm
+        label   "Donut Radius"
+        export  none
+    }
+    parm {
+        name    "BoxThickness"
+        baseparm
+        label   "Box Thickness"
+        export  none
+    }
+    parm {
+        name    "MeshPath"
+        baseparm
+        label   "Mesh Path"
+        export  none
+    }
+    parm {
+        name    "MeshShapeType"
+        baseparm
+        label   "Mesh Shape Type"
+        export  none
+    }
+    parm {
+        name    "MeshRendererPath"
+        baseparm
+        label   "MeshRenderer Path"
+        export  none
+    }
+    parm {
+        name    "SkinnedMeshRendererPath"
+        baseparm
+        label   "SkinnedMeshRenderer Path"
+        export  none
+    }
+    parm {
+        name    "SingleMaterial"
+        baseparm
+        label   "Single Material"
+        export  none
+    }
+    parm {
+        name    "UseMeshColors"
+        baseparm
+        label   "Use Mesh Colors"
+        export  none
+    }
+    parm {
+        name    "shape_normalOffset"
+        baseparm
+        label   "Normal Offset"
+        export  none
+    }
+    parm {
+        name    "MeshMaterialIndex"
+        baseparm
+        label   "Mesh Material Index"
+        export  none
+    }
+    parm {
+        name    "UseMeshMaterialIndex"
+        label   "Mesh Material Index"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -242,7 +429,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -369,7 +556,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -496,7 +683,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -623,7 +810,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -750,7 +937,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -877,7 +1064,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1004,7 +1191,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1131,7 +1318,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1258,7 +1445,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1385,7 +1572,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1512,7 +1699,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1639,7 +1826,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1766,7 +1953,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1893,7 +2080,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2020,7 +2207,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2147,7 +2334,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2274,7 +2461,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2401,7 +2588,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2528,7 +2715,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2655,7 +2842,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2782,7 +2969,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2909,7 +3096,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3036,7 +3223,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3163,7 +3350,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3290,7 +3477,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3417,7 +3604,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3544,7 +3731,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -3561,7 +3748,7 @@ Content-Type: text/plain
 
 comment ""
 position 2.7 -17.1414
-connectornextid 28
+connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -3596,6 +3783,7 @@ inputsNamed3
 24 	input24 0 1 "_UseMeshColors"
 25 	input25 0 1 "_shape_normalOffset"
 26 	input26 0 1 "_MeshMaterialIndex"
+28 	input28 0 1 "_UseMeshMaterialIndex"
 }
 inputs
 {
@@ -3627,11 +3815,12 @@ inputs
 25 	input24 0 1
 26 	input25 0 1
 27 	input26 0 1
+28 	input28 0 1
 }
 stat
 {
   create 1513185602
-  modify 1513221011
+  modify 1513656468
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3650,10 +3839,10 @@ code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"shape_enabled\", $_id, $_Enabled);
 setpointattrib(0, \"shape_shape\", $_id, $_Shape);
 setpointattrib(0, \"shape_radius\", $_id, $_Radius);
-setpointattrib(0, \"shape_radius_thickness\", $_id, $_Radius_Thickness);
+setpointattrib(0, \"shape_radiusThickness\", $_id, $_Radius_Thickness);
 setpointattrib(0, \"shape_alignToDirection\", $_id, $_AlignToDirection);
-setpointattrib(0, \"shape_randomizeDirection\", $_id, $_RandomizeDirection);
-setpointattrib(0, \"shape_spherizeDirection\", $_id, $_Spherize_Direction);
+setpointattrib(0, \"shape_randomizeDirectionAmount\", $_id, $_RandomizeDirection);
+setpointattrib(0, \"shape_spherizeDirectionAmount\", $_id, $_Spherize_Direction);
 setpointattrib(0, \"shape_randomPositionAmount\", $_id, $_RandomizePosition);
 setpointattrib(0, \"shape_angle\", $_id, $_Angle);
 setpointattrib(0, \"shape_arc\", $_id, $_Arc);
@@ -3667,13 +3856,14 @@ setpointattrib(0, \"shape_mesh\", $_id, $_MeshPath);
 setpointattrib(0, \"shape_meshRenderer\", $_id, $_MeshRendererPath);
 setpointattrib(0, \"shape_skinnedMeshRenderer\", $_id, $_SkinnedMeshRendererPath);
 setpointattrib(0, \"shape_meshShapeType\", $_id, $_MeshShapeType);
-setpointattrib(0, \"shape_singleMaterial\", $_id, $_SingleMaterial);
+setpointattrib(0, \"shape_useMeshMaterialIndex\", $_id, $_UseMeshMaterialIndex);
 setpointattrib(0, \"shape_meshMaterialIndex\", $_id, $_MeshMaterialIndex);
 setpointattrib(0, \"shape_normalOffset\", $_id, $_shape_normalOffset);
 setpointattrib(0, \"shape_useMeshColors\", $_id, $_UseMeshColors);
 setpointattrib(0, \"shape_position\", $_id, $_Position);
 setpointattrib(0, \"shape_rotation\", $_id, $_Rotation);
-setpointattrib(0, \"shape_scale\", $_id, $_Scale);"	)
+setpointattrib(0, \"shape_scale\", $_id, $_Scale);
+"	)
 includes	[ 0	locks=0 ]	(	""	)
 outercode	[ 0	locks=0 ]	(	""	)
 expandcode	[ 0	locks=0 ]	(	"off"	)
@@ -3911,7 +4101,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -4038,7 +4228,134 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.init"
+Content-Type: text/plain
+
+type = parameter
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.def"
+Content-Type: text/plain
+
+comment ""
+position 0.0441 -43.0858
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+0 "_UseMeshMaterialIndex"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1512859256
+  modify 1513656234
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 1 1 0.4 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parmscope	[ 0	locks=0 ]	(	subnet	)
+parmaccess	[ 0	locks=0 ]	(	""	)
+parmname	[ 0	locks=0 ]	(	UseMeshMaterialIndex	)
+parmprefix	[ 0	locks=0 ]	(	""	)
+parmpostfix	[ 0	locks=0 ]	(	""	)
+parmlabel	[ 0	locks=0 ]	(	"Mesh Material Index"	)
+showlabel	[ 0	locks=0 ]	(	"on"	)
+parmtype	[ 0	locks=0 ]	(	"toggle"	)
+parmtypename	[ 0	locks=0 ]	(	""	)
+floatdef	[ 0	locks=0 ]	(	0.20000000000000001	)
+intdef	[ 0	locks=0 ]	(	0	)
+toggledef	[ 0	locks=0 ]	(	"off"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	0	0	0	0	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+rangeflt	[ 0	locks=0 ]	(	0	1	)
+rangeint	[ 0	locks=0 ]	(	0	10	)
+stringtype	[ 0	locks=0 ]	(	off	)
+opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
+parmcomment	[ 0	locks=0 ]	(	""	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+useownexportcontext	[ 0	locks=0 ]	(	"off"	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+usebound	[ 0	locks=0 ]	(	"off"	)
+hasconnector	[ 0	locks=0 ]	(	"on"	)
+exportparm	[ 0	locks=0 ]	(	"off"	)
+exportcontext	[ 0	locks=0 ]	(	cvex	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	"0 Vertex 1 Edge 2 Triangle"	)
+menuscript	[ 0	locks=0 ]	(	""	)
+menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
+separator2	[ 0	locks=0 ]	(	)
+invisible	[ 0	locks=0 ]	(	"off"	)
+joinnext	[ 0	locks=0 ]	(	"off"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+tags	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
 	}
 }
 
@@ -4046,7 +4363,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-29
+30
 input
 input1
 input2
@@ -4076,6 +4393,7 @@ input25
 input26
 inline2
 input27
+input28
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
