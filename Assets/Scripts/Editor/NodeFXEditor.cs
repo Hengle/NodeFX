@@ -19,19 +19,20 @@ public class NodeFXEditor : Editor {
 		GenerateStyles();
 	}
 
-	public override void OnInspectorGUI()
-    {
+	public override void OnInspectorGUI() {
 		GUIDrawHeader();
 
         targetEffect.effectDefinition = (TextAsset)EditorGUILayout.ObjectField("Effect Definition", targetEffect.effectDefinition, typeof(TextAsset),false);
 		
-        GUIDrawTopShelfButtons();
+        if (targetEffect.effectDefinition != null) {
+            GUIDrawTopShelfButtons();
 
-        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
-        GUIDrawRefreshToggles();
+            GUIDrawRefreshToggles();
 
-        CheckForUpdates();
+            //CheckForUpdates();
+        }
     }
 
     private void GUIDrawHeader()
@@ -96,6 +97,7 @@ public class NodeFXEditor : Editor {
 
     private void CreateFileWatcher()
     {
+        Debug.Log("CreateFileWatcher");
 		_fileSystemWatcher = new FileSystemWatcher();
 		targetEffect.Refresh();
         string folder = targetEffect.path.Replace(targetEffect.effectDefinition.name + ".xml", "");
@@ -136,7 +138,12 @@ public class NodeFXEditor : Editor {
 
     private void OnButtonOpenEditor()
     {
-        throw new NotImplementedException();
+        if (targetEffect.effectDefinition != null) {
+            System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo();
+            //start.FileName = "C:/Program Files/Side Effects Software/Houdini 16.5.323/bin/houdinifx.exe";
+            start.FileName = targetEffect.source;
+            System.Diagnostics.Process.Start(start);
+        }
     }
 
     private void OnButtonRefresh() {

@@ -10,6 +10,7 @@ namespace NodeFX {
 
 		public TextAsset effectDefinition;
 		public string path;
+        public string source;
 
 		public bool enableRefresh;
 		public bool refreshOnFocus;
@@ -31,30 +32,26 @@ namespace NodeFX {
 			Debug.Log("Effect: Loading XML at path " + path);
 			doc = new XmlDocument();
 			doc.Load(path);
+            source = GetSource();
             InstantiateParticleSystem();
 		}
 
         private void InstantiateParticleSystem() {
 
-			Transform parent = transform;
-            gameObject.name = effectDefinition.name;
+			DeleteOldParticleSystems();
             
-            DeleteOldParticleSystems();
-
 			for (int i = 0; i < GetEmitterCount(); i++) {
                 
                 ParticleSystem pSystem;
+                string emitterName = effectDefinition.name + "_" + GetStringParam(i, "main_emitterName");
 
                 //  For the first emitter we want to add the particlesystem component to our root gameobject. For all subsequent emitters we want to create child gameobjects.
                 if (i == 0) {
-                    if (gameObject.GetComponent<ParticleSystem>() == null) {
-                        pSystem = gameObject.AddComponent<ParticleSystem>();
-                    } else {
-                        pSystem = GetComponent<ParticleSystem>();
-                    }
+                    pSystem = gameObject.AddComponent<ParticleSystem>();
+                    gameObject.name = emitterName;
                 } else {
-                    GameObject Emitter = new GameObject("Emitter" + i);
-                    Emitter.transform.parent = parent;
+                    GameObject Emitter = new GameObject(emitterName);
+                    Emitter.transform.parent = transform;
 				    pSystem = Emitter.AddComponent<ParticleSystem>();
                 }
 
@@ -90,6 +87,8 @@ namespace NodeFX {
 		}
 
         private void DeleteOldParticleSystems() {
+            DestroyImmediate(GetComponent<ParticleSystem>());
+
             foreach (ParticleSystem ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
                 if (ps.gameObject != gameObject) {
                     DestroyImmediate(ps.gameObject);
@@ -594,5 +593,11 @@ namespace NodeFX {
 			string numEmitters = doc.SelectSingleNode("root").Attributes[0].Value;
 			return Convert.ToInt32(numEmitters);
 		}
+
+        private string GetSource()
+        {
+            string source = doc.SelectSingleNode("root").Attributes[1].Value;
+			return source;
+        }
     }
 }

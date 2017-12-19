@@ -78,6 +78,13 @@
     }
 
     parm {
+        name    "name"
+        label   "Emitter Name"
+        type    string
+        invisible
+        default { [ "$OS" hscript-expr ] }
+    }
+    parm {
         name    "id"
         label   "ID"
         type    integer
