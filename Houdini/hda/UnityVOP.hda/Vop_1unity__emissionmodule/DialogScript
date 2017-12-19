@@ -44,97 +44,97 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Rate_Over_Time"
-	label	"Rate Over Time"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Rate_Over_Time"
+        label   "Rate Over Time"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Rate_Over_Distance"
-	label	"Rate Over Distance"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Rate_Over_Distance"
+        label   "Rate Over Distance"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Bursts"
-	label	"Bursts"
-	type	float
-	invisible
-	default	{ "0" }
-	range	{ 0 10 }
+        name    "Bursts"
+        label   "Bursts"
+        type    float
+        invisible
+        default { "0" }
+        range   { 0 10 }
     }
     parm {
-	name	"Burst2"
-	label	"Burst 2"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst2"
+        label   "Burst 2"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst3"
-	label	"Burst 3"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst3"
+        label   "Burst 3"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst4"
-	label	"Burst 4"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst4"
+        label   "Burst 4"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst5"
-	label	"Burst 5"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst5"
+        label   "Burst 5"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst6"
-	label	"Burst 6"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst6"
+        label   "Burst 6"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst7"
-	label	"Burst 7"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst7"
+        label   "Burst 7"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst8"
-	label	"Burst 8"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst8"
+        label   "Burst 8"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Burst1"
-	label	"Burst 1"
-	type	label
-	default	{ "" }
-	parmtag	{ "parmvop" "1" }
+        name    "Burst1"
+        label   "Burst 1"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
 }

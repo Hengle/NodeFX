@@ -56,151 +56,151 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Type"
-	label	"Type"
-	type	integer
-	default	{ "1" }
-	menu	{
-	    "0"	"Planes"
-	    "1"	"World"
-	}
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Type"
+        label   "Type"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Planes"
+            "1" "World"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Mode"
-	label	"Mode"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"3D"
-	    "1"	"2D"
-	}
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Mode"
+        label   "Mode"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "3D"
+            "1" "2D"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Dampen"
-	label	"Dampen"
-	type	string
-	default	{ "randomConstant;float;0.000000;1.000000" }
-	parmtag	{ "parmvop" "1" }
+        name    "Dampen"
+        label   "Dampen"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Bounce"
-	label	"Bounce"
-	type	string
-	default	{ "randomConstant;float;0.000000;1.000000" }
-	parmtag	{ "parmvop" "1" }
+        name    "Bounce"
+        label   "Bounce"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"LifetimeLoss"
-	label	"Lifetime Loss"
-	type	string
-	default	{ "randomConstant;float;0.000000;1.000000" }
-	parmtag	{ "parmvop" "1" }
+        name    "LifetimeLoss"
+        label   "Lifetime Loss"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MinKillSpeed"
-	label	"Min Kill Speed"
-	type	float
-	default	{ "0" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "MinKillSpeed"
+        label   "Min Kill Speed"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MaxKillSpeed"
-	label	"Max Kill Speed"
-	type	float
-	default	{ "10000" }
-	range	{ 0 10000 }
-	parmtag	{ "parmvop" "1" }
+        name    "MaxKillSpeed"
+        label   "Max Kill Speed"
+        type    float
+        default { "10000" }
+        range   { 0 10000 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"RadiusScale"
-	label	"RadiusScale"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "RadiusScale"
+        label   "RadiusScale"
+        type    float
+        default { "1" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Quality"
-	label	"Quality"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"High"
-	    "1"	"Medium"
-	    "2"	"Low"
-	}
-	range	{ 0 2 }
-	parmtag	{ "parmvop" "1" }
+        name    "Quality"
+        label   "Quality"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "High"
+            "1" "Medium"
+            "2" "Low"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"EnableDynamicColliders"
-	label	"Enable Dynamic Colliders"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "EnableDynamicColliders"
+        label   "Enable Dynamic Colliders"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"ColliderForce"
-	label	"Collider Force"
-	type	float
-	default	{ "0" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "ColliderForce"
+        label   "Collider Force"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MultiplyByCollisionAngle"
-	label	"Multiply By Collision Angle"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "MultiplyByCollisionAngle"
+        label   "Multiply By Collision Angle"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MultiplyByParticleSpeed"
-	label	"Multiply By Particle Speed"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "MultiplyByParticleSpeed"
+        label   "Multiply By Particle Speed"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MultiplyByParticleSize"
-	label	"Multiply By Particle Size"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "MultiplyByParticleSize"
+        label   "Multiply By Particle Size"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"SendCollisionMessages"
-	label	"Send Collision Messages"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "SendCollisionMessages"
+        label   "Send Collision Messages"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"VisualizeBounds"
-	label	"Visualize Bounds"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "VisualizeBounds"
+        label   "Visualize Bounds"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
 }

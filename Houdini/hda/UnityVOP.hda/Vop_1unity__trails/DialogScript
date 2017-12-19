@@ -50,119 +50,119 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Lifetime"
-	label	"Lifetime"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Lifetime"
+        label   "Lifetime"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"MinimumVertexDistance"
-	label	"Minimum Vertex Distance"
-	type	float
-	default	{ "0" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "MinimumVertexDistance"
+        label   "Minimum Vertex Distance"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"TextureMode"
-	label	"Texture Mode"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"Stretch"
-	    "1"	"Tile"
-	    "2"	"Distribute Per Segment"
-	    "3"	"Repeat Per Segment"
-	}
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "TextureMode"
+        label   "Texture Mode"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Stretch"
+            "1" "Tile"
+            "2" "Distribute Per Segment"
+            "3" "Repeat Per Segment"
+        }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"WorldSpace"
-	label	"World Space"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "WorldSpace"
+        label   "World Space"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"DieWithParticles"
-	label	"Die With Particles"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "DieWithParticles"
+        label   "Die With Particles"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"SizeAffectsWidth"
-	label	"Size Affects Width"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "SizeAffectsWidth"
+        label   "Size Affects Width"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"SizeAffectsLifetime"
-	label	"Size Affects Lifetime"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "SizeAffectsLifetime"
+        label   "Size Affects Lifetime"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"InheritParticleColor"
-	label	"Inherit Particle Color"
-	type	toggle
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "InheritParticleColor"
+        label   "Inherit Particle Color"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"ColorOverLifetime"
-	label	"Color Over Lifetime"
-	type	string
-	default	{ "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
-	parmtag	{ "parmvop" "1" }
+        name    "ColorOverLifetime"
+        label   "Color Over Lifetime"
+        type    string
+        default { "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"WidthOverTrail"
-	label	"Width Over Trail"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "WidthOverTrail"
+        label   "Width Over Trail"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"ColorOverTrail"
-	label	"Color Over Trail"
-	type	string
-	default	{ "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
-	parmtag	{ "parmvop" "1" }
+        name    "ColorOverTrail"
+        label   "Color Over Trail"
+        type    string
+        default { "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"GenerateLightingData"
-	label	"Generate Lighting Data"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "GenerateLightingData"
+        label   "Generate Lighting Data"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Ratio"
-	label	"Ratio"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Ratio"
+        label   "Ratio"
+        type    float
+        default { "1" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
 }

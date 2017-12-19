@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 8.90736 12.155
+position 8.90736 12.9063
 connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -91,7 +91,7 @@ inputs
 stat
 {
   create 1513215289
-  modify 1513656244
+  modify 1513699152
   author Chris@Voyager
   access 0777
 }
@@ -99,193 +99,6 @@ color UT_Color RGB 0.8 0.8 0.8
 delscript ""
 exprlanguage hscript
 end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot.spareparmdef"
-Content-Type: text/plain
-
-    parm {
-        name    "Enabled"
-        baseparm
-        label   "Enabled"
-        joinnext
-        export  none
-    }
-    parm {
-        name    "id"
-        baseparm
-        label   "ID"
-        export  none
-    }
-    parm {
-        name    "Shape"
-        baseparm
-        label   "Shape"
-        export  none
-    }
-    parm {
-        name    "Radius"
-        baseparm
-        label   "Radius"
-        export  none
-    }
-    parm {
-        name    "Radius_Thickness"
-        baseparm
-        label   "Radius Thickness"
-        export  none
-    }
-    parm {
-        name    "Position"
-        baseparm
-        label   "Position"
-        export  none
-    }
-    parm {
-        name    "Rotation"
-        baseparm
-        label   "Rotation"
-        export  none
-    }
-    parm {
-        name    "Scale"
-        baseparm
-        label   "Scale"
-        export  none
-    }
-    parm {
-        name    "AlignToDirection"
-        baseparm
-        label   "Align To Direction"
-        export  none
-    }
-    parm {
-        name    "RandomizeDirection"
-        baseparm
-        label   "Randomize Direction"
-        export  none
-    }
-    parm {
-        name    "Spherize_Direction"
-        baseparm
-        label   "Spherize Direction"
-        export  none
-    }
-    parm {
-        name    "RandomizePosition"
-        baseparm
-        label   "Randomize Position"
-        export  none
-    }
-    parm {
-        name    "Randomize_Position"
-        baseparm
-        label   "Spherize Direction"
-        export  none
-    }
-    parm {
-        name    "Angle"
-        baseparm
-        label   "Angle"
-        export  none
-    }
-    parm {
-        name    "Arc"
-        baseparm
-        label   "Arc"
-        export  none
-    }
-    parm {
-        name    "ArcMode"
-        baseparm
-        label   "Arc Mode"
-        export  none
-    }
-    parm {
-        name    "ArcSpread"
-        baseparm
-        label   "Arc Spread"
-        export  none
-    }
-    parm {
-        name    "ArcSpeed"
-        baseparm
-        label   "Arc Speed"
-        export  none
-    }
-    parm {
-        name    "ConeLength"
-        baseparm
-        label   "Cone Length"
-        export  none
-    }
-    parm {
-        name    "DonutRadius"
-        baseparm
-        label   "Donut Radius"
-        export  none
-    }
-    parm {
-        name    "BoxThickness"
-        baseparm
-        label   "Box Thickness"
-        export  none
-    }
-    parm {
-        name    "MeshPath"
-        baseparm
-        label   "Mesh Path"
-        export  none
-    }
-    parm {
-        name    "MeshShapeType"
-        baseparm
-        label   "Mesh Shape Type"
-        export  none
-    }
-    parm {
-        name    "MeshRendererPath"
-        baseparm
-        label   "MeshRenderer Path"
-        export  none
-    }
-    parm {
-        name    "SkinnedMeshRendererPath"
-        baseparm
-        label   "SkinnedMeshRenderer Path"
-        export  none
-    }
-    parm {
-        name    "SingleMaterial"
-        baseparm
-        label   "Single Material"
-        export  none
-    }
-    parm {
-        name    "UseMeshColors"
-        baseparm
-        label   "Use Mesh Colors"
-        export  none
-    }
-    parm {
-        name    "shape_normalOffset"
-        baseparm
-        label   "Normal Offset"
-        export  none
-    }
-    parm {
-        name    "MeshMaterialIndex"
-        baseparm
-        label   "Mesh Material Index"
-        export  none
-    }
-    parm {
-        name    "UseMeshMaterialIndex"
-        label   "Mesh Material Index"
-        type    toggle
-        default { "off" }
-        parmtag { "parmvop" "1" }
-    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -3820,7 +3633,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513656468
+  modify 1513657527
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3843,7 +3656,7 @@ setpointattrib(0, \"shape_radiusThickness\", $_id, $_Radius_Thickness);
 setpointattrib(0, \"shape_alignToDirection\", $_id, $_AlignToDirection);
 setpointattrib(0, \"shape_randomizeDirectionAmount\", $_id, $_RandomizeDirection);
 setpointattrib(0, \"shape_spherizeDirectionAmount\", $_id, $_Spherize_Direction);
-setpointattrib(0, \"shape_randomPositionAmount\", $_id, $_RandomizePosition);
+setpointattrib(0, \"shape_randomizePositionAmount\", $_id, $_RandomizePosition);
 setpointattrib(0, \"shape_angle\", $_id, $_Angle);
 setpointattrib(0, \"shape_arc\", $_id, $_Arc);
 setpointattrib(0, \"shape_arcMode\", $_id, $_ArcMode);

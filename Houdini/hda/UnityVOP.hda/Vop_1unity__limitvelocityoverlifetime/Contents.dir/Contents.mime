@@ -53,7 +53,7 @@ inputs
 stat
 {
   create 1513219848
-  modify 1513658414
+  modify 1513699307
   author Chris@Voyager
   access 0777
 }
@@ -441,7 +441,7 @@ inputs
 stat
 {
   create 1512318106
-  modify 1513224119
+  modify 1513658353
   author Chris@Voyager
   access 0777
 }
@@ -461,7 +461,7 @@ parmaccess	[ 0	locks=0 ]	(	""	)
 parmname	[ 0	locks=0 ]	(	Speed	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	Speed	)
+parmlabel	[ 0	locks=0 ]	(	Limit	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
@@ -1353,7 +1353,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513658311
+  modify 1513659195
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1377,6 +1377,7 @@ setpointattrib(0, \"limitVelocityOverLifetime_speed_x\", $_id, $_X);
 setpointattrib(0, \"limitVelocityOverLifetime_speed_y\", $_id, $_Y);
 setpointattrib(0, \"limitVelocityOverLifetime_speed_z\", $_id, $_Z);
 setpointattrib(0, \"limitVelocityOverLifetime_dampen\", $_id, $_Dampen);
+setpointattrib(0, \"limitVelocityOverLifetime_drag\", $_id, $_Drag);
 setpointattrib(0, \"limitVelocityOverLifetime_multiplyDragBySize\", $_id, $_MultiplyDragBySize);
 setpointattrib(0, \"limitVelocityOverLifetime_multiplyDragByVelocity\", $_id, $_MultiplyDragByVelocity);"	)
 includes	[ 0	locks=0 ]	(	""	)

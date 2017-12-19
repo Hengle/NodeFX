@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 3.59556 12.08
+position 3.59556 12.8313
 connectornextid 22
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault off exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -33,20 +33,20 @@ inputsNamed3
 2 	"" "" 1 "Looping"
 3 	"" "" 1 "Prewarm"
 4 	"" "" 1 "Start_Delay"
-5 	"" "" 1 "Start_Lifetime"
+5 	unity_ramptominmaxcurve1 2 1 "Start_Lifetime"
 6 	FloatToUnityRandomConstant1 2 1 "Start_Speed"
 7 	"" "" 1 "Nonuniform_Start_Size"
-8 	FloatToUnityRandomConstant2 2 1 "Start_Size"
+8 	unity_ramptominmaxcurve1 2 1 "Start_Size"
 9 	"" "" 1 "Start_Size_X"
 10 	"" "" 1 "Start_Size_Y"
 11 	"" "" 1 "Start_Size_Z"
 12 	"" "" 1 "Nonuniform_Start_Rotation"
-13 	"" "" 1 "Start_Rotation"
+13 	FloatToUnityRandomConstant2 2 1 "Start_Rotation"
 14 	"" "" 1 "Start_Rotation_X"
 15 	"" "" 1 "Start_Rotation_Y"
 16 	"" "" 1 "Start_Rotation_Z"
 17 	"" "" 1 "Rotation_Direction_Variance"
-18 	"" "" 1 "Start_Color"
+18 	unity_colorramptogradient1 1 1 "Start_Color"
 19 	"" "" 1 "Gravity_Modifier"
 20 	"" "" 1 "Simulation_Space"
 }
@@ -57,27 +57,27 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	"" 0 1
+5 	unity_ramptominmaxcurve1 0 1
 6 	FloatToUnityRandomConstant1 0 1
 7 	"" 0 1
-8 	FloatToUnityRandomConstant2 0 1
+8 	unity_ramptominmaxcurve1 0 1
 9 	"" 0 1
 10 	"" 0 1
 11 	"" 0 1
 12 	"" 0 1
-13 	"" 0 1
+13 	FloatToUnityRandomConstant2 0 1
 14 	"" 0 1
 15 	"" 0 1
 16 	"" 0 1
 17 	"" 0 1
-18 	"" 0 1
+18 	unity_colorramptogradient1 0 1
 19 	"" 0 1
 20 	"" 0 1
 }
 stat
 {
   create 1512587500
-  modify 1513273992
+  modify 1513699156
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -85,6 +85,192 @@ color UT_Color RGB 0.188 0.529 0.459
 delscript ""
 exprlanguage hscript
 end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+        name    "id"
+        baseparm
+        label   "ID"
+        export  none
+    }
+    parm {
+        name    "Duration"
+        baseparm
+        label   "Duration"
+        export  none
+    }
+    parm {
+        name    "Looping"
+        baseparm
+        label   "Looping"
+        export  none
+    }
+    parm {
+        name    "Prewarm"
+        baseparm
+        label   "Prewarm"
+        export  none
+    }
+    parm {
+        name    "Start_Delay"
+        baseparm
+        label   "Start Delay"
+        export  none
+    }
+    parm {
+        name    "Start_Lifetime"
+        baseparm
+        label   "Start Lifetime"
+        export  none
+    }
+    parm {
+        name    "Start_Speed"
+        baseparm
+        label   "Start Speed"
+        export  none
+    }
+    parm {
+        name    "Nonuniform_Start_Size"
+        baseparm
+        label   "Nonuniform Start Size"
+        export  none
+    }
+    parm {
+        name    "Start_Size"
+        baseparm
+        label   "Start Size"
+        export  none
+    }
+    parm {
+        name    "Start_Size_X"
+        baseparm
+        label   "Start Size X"
+        export  none
+    }
+    parm {
+        name    "Start_Size_Y"
+        baseparm
+        label   "Start Size Y"
+        export  none
+    }
+    parm {
+        name    "Start_Size_Z"
+        baseparm
+        label   "Start Size Z"
+        export  none
+    }
+    parm {
+        name    "Nonuniform_Start_Rotation"
+        baseparm
+        label   "Nonuniform Start Rotation"
+        export  none
+    }
+    parm {
+        name    "Start_Rotation"
+        baseparm
+        label   "Start Rotation"
+        export  none
+    }
+    parm {
+        name    "Start_Rotation_X"
+        baseparm
+        label   "Start Rotation X"
+        export  none
+    }
+    parm {
+        name    "Start_Rotation_Y"
+        baseparm
+        label   "Start Rotation Y"
+        export  none
+    }
+    parm {
+        name    "Start_Rotation_Z"
+        baseparm
+        label   "Start Rotation Z"
+        export  none
+    }
+    parm {
+        name    "Rotation_Direction_Variance"
+        baseparm
+        label   "Rotation Direction Variance"
+        export  none
+    }
+    parm {
+        name    "Start_Color"
+        baseparm
+        label   "Start Color"
+        export  none
+    }
+    parm {
+        name    "Gravity_Modifier"
+        baseparm
+        label   "Gravity Modifier"
+        export  none
+    }
+    parm {
+        name    "Simulation_Space"
+        baseparm
+        label   "Simulation Space"
+        export  none
+    }
+    parm {
+        name    "Simulation_Speed"
+        baseparm
+        label   "Simulation Speed"
+        export  none
+    }
+    parm {
+        name    "Delta_Time"
+        baseparm
+        label   "Delta Time"
+        export  none
+    }
+    parm {
+        name    "Scaling_Mode"
+        baseparm
+        label   "Scaling Mode"
+        export  none
+    }
+    parm {
+        name    "Play_On_Awake"
+        baseparm
+        label   "Play On Awake"
+        export  none
+    }
+    parm {
+        name    "Emitter_Velocity"
+        baseparm
+        label   "Emitter Velocity"
+        export  none
+    }
+    parm {
+        name    "Max_Particles"
+        baseparm
+        label   "Max Particles"
+        export  none
+    }
+    parm {
+        name    "Auto_Random_Seed"
+        baseparm
+        label   "Auto Random Seed"
+        export  none
+    }
+    parm {
+        name    "Stop_Action"
+        label   "Stop Action"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "None"
+            "1" "Disable"
+            "2" "Destroy"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -3674,7 +3860,7 @@ Content-Type: text/plain
 
 comment ""
 position 11.9821 -26.8985
-connectornextid 28
+connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail on highdetail off material off
 outputsNamed3
 {
@@ -3709,6 +3895,7 @@ inputsNamed3
 23 	input11 0 1 "_Emitter_Velocity"
 26 	input5 0 1 "_Max_Particles"
 27 	input6 0 1 "_Auto_Random_Seed"
+28 	input28 0 1 "_Stop_Action"
 }
 inputs
 {
@@ -3740,11 +3927,12 @@ inputs
 25 	input11 0 1
 26 	input5 0 1
 27 	input6 0 1
+28 	input28 0 1
 }
 stat
 {
   create 1513185602
-  modify 1513273661
+  modify 1513652148
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3799,6 +3987,7 @@ setpointattrib(0, \"main_playOnAwake\", $_id, $_Play_On_Awake);
 setpointattrib(0, \"main_emitterVelocity\", $_id, $_Emitter_Velocity);
 setpointattrib(0, \"main_maxParticles\", $_id, $_Max_Particles);
 setpointattrib(0, \"main_autoRandomSeed\", $_id, $_Auto_Random_Seed);
+setpointattrib(0, \"main_stopAction\", $_id, $_Stop_Action);
 "	)
 includes	[ 0	locks=0 ]	(	""	)
 outercode	[ 0	locks=0 ]	(	""	)
@@ -4042,10 +4231,137 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.init"
+Content-Type: text/plain
+
+type = parameter
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.def"
+Content-Type: text/plain
+
+comment ""
+position 9.32619 -52.47
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+0 "_Stop_Action"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1512162788
+  modify 1513652142
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 1 1 0.4 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parmscope	[ 0	locks=0 ]	(	subnet	)
+parmaccess	[ 0	locks=0 ]	(	""	)
+parmname	[ 0	locks=0 ]	(	"Stop Action"	)
+parmprefix	[ 0	locks=0 ]	(	""	)
+parmpostfix	[ 0	locks=0 ]	(	""	)
+parmlabel	[ 0	locks=0 ]	(	"Stop Action"	)
+showlabel	[ 0	locks=0 ]	(	"on"	)
+parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtypename	[ 0	locks=0 ]	(	""	)
+floatdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	0	)
+toggledef	[ 0	locks=0 ]	(	"on"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	0	0	0	0	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+rangeflt	[ 0	locks=0 ]	(	0	1	)
+rangeint	[ 0	locks=0 ]	(	0	2	)
+stringtype	[ 0	locks=0 ]	(	off	)
+opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
+parmcomment	[ 0	locks=0 ]	(	""	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+useownexportcontext	[ 0	locks=0 ]	(	"off"	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+usebound	[ 0	locks=0 ]	(	"off"	)
+hasconnector	[ 0	locks=0 ]	(	"on"	)
+exportparm	[ 0	locks=0 ]	(	"off"	)
+exportcontext	[ 0	locks=0 ]	(	cvex	)
+providemenu	[ 0	locks=0 ]	(	"on"	)
+menuchoices	[ 0	locks=0 ]	(	"0 None 1 Disable 2 Destroy"	)
+menuscript	[ 0	locks=0 ]	(	""	)
+menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
+separator2	[ 0	locks=0 ]	(	)
+invisible	[ 0	locks=0 ]	(	"off"	)
+joinnext	[ 0	locks=0 ]	(	"off"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+tags	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input28.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-29
+30
 input
 input1
 input2
@@ -4075,6 +4391,7 @@ input25
 input26
 input27
 inline2
+input28
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

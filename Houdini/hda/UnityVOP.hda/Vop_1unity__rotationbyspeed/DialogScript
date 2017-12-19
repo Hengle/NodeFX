@@ -17,7 +17,7 @@
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Separate_Axes	2
-    inputflags	Angular_Velocity	2
+    inputflags	Angular_Velocity	0
     inputflags	X	2
     inputflags	Y	2
     inputflags	Z	2
@@ -36,67 +36,67 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Separate_Axes"
-	label	"Separate Axes"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "Separate_Axes"
+        label   "Separate Axes"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Angular_Velocity"
-	label	"Angular Velocity"
-	type	string
-	default	{ "constant;float;0.0" }
-	hidewhen	"{ Separate_Axes == 1 }"
-	parmtag	{ "parmvop" "1" }
+        name    "Angular_Velocity"
+        label   "Angular Velocity"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Separate_Axes == 1 }"
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"X"
-	label	"X"
-	type	string
-	default	{ "constant;float;0.0" }
-	hidewhen	"{ Separate_Axes == 0 }"
-	parmtag	{ "parmvop" "1" }
+        name    "X"
+        label   "X"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Separate_Axes == 0 }"
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Y"
-	label	"Y"
-	type	string
-	default	{ "constant;float;0.0" }
-	hidewhen	"{ Separate_Axes == 0 }"
-	parmtag	{ "parmvop" "1" }
+        name    "Y"
+        label   "Y"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Separate_Axes == 0 }"
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Z"
-	label	"Z"
-	type	string
-	default	{ "constant;float;0.0" }
-	hidewhen	"{ Separate_Axes == 0 }"
-	parmtag	{ "parmvop" "1" }
+        name    "Z"
+        label   "Z"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Separate_Axes == 0 }"
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Range"
-	label	"Range"
-	type	float
-	size	2
-	default	{ "0" "1" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "Range"
+        label   "Range"
+        type    float
+        size    2
+        default { "0" "1" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
 }

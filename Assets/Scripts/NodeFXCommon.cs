@@ -94,21 +94,20 @@ namespace NodeFX {
 
 		public static ParticleSystem.Burst[] InterpretStringToBurst(string parameter)
 		{
-			string[] choppedString = parameter.Split(";".ToCharArray());
+			string[] choppedString = parameter.Split(":".ToCharArray());
 
-			int numBursts = choppedString.Length / 5;
+			int numBursts = choppedString.Length / 4;
+
 			ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[numBursts];
 
 			for (int i = 0; i < numBursts; i++) {
 				ParticleSystem.Burst currentBurst = new ParticleSystem.Burst();
-				currentBurst.time = Convert.ToSingle(choppedString[5 * i]);
-				currentBurst.minCount = Convert.ToInt16(choppedString[5 * i + 1]);
-				currentBurst.maxCount = Convert.ToInt16(choppedString[5 * i + 2]);
-				currentBurst.cycleCount = Convert.ToInt16(choppedString[5 * i + 3]);
-				currentBurst.repeatInterval = Convert.ToSingle(choppedString[5 * i + 4]);
+				currentBurst.time = Convert.ToSingle(choppedString[4 * i]);
+				currentBurst.cycleCount = Convert.ToInt16(choppedString[4 * i + 1]);
+				currentBurst.repeatInterval = Convert.ToSingle(choppedString[4 * i + 2]);
+				currentBurst.count = InterpretStringToCurve(choppedString[4 * i + 3]);
 				bursts[i] = currentBurst;
 			}
-
 			return bursts;
 		}
 

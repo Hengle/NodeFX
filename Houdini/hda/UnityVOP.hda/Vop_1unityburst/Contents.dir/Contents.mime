@@ -19,21 +19,20 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -1.24231 -2.80736
-connectornextid 7
+position 4.54563 6.67235
+connectornextid 6
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 5 "Burst"
-6 "unknown"
 }
 inputsNamed3
 {
 0 	"" "" 1 "Time"
-1 	"" "" 1 "MinParticles"
-2 	"" "" 1 "MaxParticles"
-3 	"" "" 1 "Cycles"
-4 	"" "" 1 "Interval"
+1 	"" "" 1 "Count"
+2 	"" "" 1 "Cycles"
+3 	"" "" 1 "Interval"
+4 	"" "" 1 ""
 }
 inputs
 {
@@ -45,15 +44,57 @@ inputs
 }
 stat
 {
-  create 1512916666
-  modify 1513001792
-  author Chris@Voyager
+  create 1513700187
+  modify 1513700320
+  author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
 delscript ""
 exprlanguage hscript
 end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+        name    "Time"
+        baseparm
+        label   "Time"
+        export  none
+    }
+    parm {
+        name    "Count"
+        label   "Count"
+        type    string
+        default { "constant;float;30.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MinParticles"
+        baseparm
+        label   "Min Particles"
+        export  none
+    }
+    parm {
+        name    "MaxParticles"
+        baseparm
+        label   "Max Particles"
+        export  none
+    }
+    parm {
+        name    "Cycles"
+        baseparm
+        label   "Cycles"
+        export  none
+    }
+    parm {
+        name    "Interval"
+        baseparm
+        label   "Interval"
+        export  none
+    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"
@@ -71,9 +112,8 @@ Content-Disposition: attachment; filename="hdaroot.outputinfos"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-TnVtSW5mb3MgMgpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBCdXJzdApEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwpOb3JtYWxNb2RlIDA=
-CkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAAQmVnaW5JbmZvCk91dHB1dE5hbWUgb3V0cHV0CkRlYnVnQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwpCeXBhc3NDb3JySW5wdXROYW1lIF8=
-X2RlZmF1bHRfXwpOb3JtYWxNb2RlIDAKQnlwYXNzTW9kZSAyClVzZURlZmF1bHRWYWx1ZSAxCkVuZEluZm8KAAAAAAAAAAA=
+TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBCdXJzdApEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwpOb3JtYWxNb2RlIDA=
+CkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/next.init"
@@ -89,7 +129,7 @@ Content-Type: text/plain
 comment ""
 position -3.90387 2.115
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Time"
@@ -103,7 +143,7 @@ inputs
 stat
 {
   create 1512916033
-  modify 1512916608
+  modify 1513700319
   author Chris@Voyager
   access 0777
 }
@@ -198,7 +238,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -214,12 +254,12 @@ Content-Disposition: attachment; filename="hdaroot/next1.def"
 Content-Type: text/plain
 
 comment ""
-position -3.90387 0.268824
+position -3.90387 -0.17
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_MinParticles"
+0 "_Count"
 }
 inputsNamed3
 {
@@ -230,7 +270,7 @@ inputs
 stat
 {
   create 1512916075
-  modify 1512916599
+  modify 1513700240
   author Chris@Voyager
   access 0777
 }
@@ -247,12 +287,12 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	MinParticles	)
+parmname	[ 0	locks=0 ]	(	Count	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Min Particles"	)
+parmlabel	[ 0	locks=0 ]	(	Count	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"string"	)
 parmtypename	[ 0	locks=0 ]	(	""	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
@@ -269,7 +309,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
+stringdef	[ 0	locks=0 ]	(	constant;float;30.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -325,134 +365,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next2.init"
-Content-Type: text/plain
-
-type = parameter
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next2.def"
-Content-Type: text/plain
-
-comment ""
-position -3.90387 -1.13962
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-0 "_MaxParticles"
-}
-inputsNamed3
-{
-}
-inputs
-{
-}
-stat
-{
-  create 1512916089
-  modify 1512916601
-  author Chris@Voyager
-  access 0777
-}
-color UT_Color RGB 1 1 0.4 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next2.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-parmscope	[ 0	locks=0 ]	(	subnet	)
-parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	MaxParticles	)
-parmprefix	[ 0	locks=0 ]	(	""	)
-parmpostfix	[ 0	locks=0 ]	(	""	)
-parmlabel	[ 0	locks=0 ]	(	"Max Particles"	)
-showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
-parmtypename	[ 0	locks=0 ]	(	""	)
-floatdef	[ 0	locks=0 ]	(	0	)
-intdef	[ 0	locks=0 ]	(	30	)
-toggledef	[ 0	locks=0 ]	(	"off"	)
-angledef	[ 0	locks=0 ]	(	0	)
-logfloatdef	[ 0	locks=0 ]	(	0	)
-float2def	[ 0	locks=0 ]	(	0	0	)
-float3def	[ 0	locks=0 ]	(	0	0	0	)
-vectordef	[ 0	locks=0 ]	(	0	0	0	)
-normaldef	[ 0	locks=0 ]	(	0	0	0	)
-pointdef	[ 0	locks=0 ]	(	0	0	0	)
-directiondef	[ 0	locks=0 ]	(	1	0	0	)
-float4def	[ 0	locks=0 ]	(	0	0	0	0	)
-floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
-float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
-float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	""	)
-filedef	[ 0	locks=0 ]	(	""	)
-imagedef	[ 0	locks=0 ]	(	""	)
-geometrydef	[ 0	locks=0 ]	(	""	)
-colordef	[ 0	locks=0 ]	(	0	0	0	)
-color4def	[ 0	locks=0 ]	(	0	0	0	0	)
-bsdfdef	[ 0	locks=0 ]	(	""	)
-coshaderdef	[ 0	locks=0 ]	(	""	)
-floatadef	[ 0	locks=0 ]	(	)
-intadef	[ 0	locks=0 ]	(	)
-vector2adef	[ 0	locks=0 ]	(	)
-vectoradef	[ 0	locks=0 ]	(	)
-pointadef	[ 0	locks=0 ]	(	)
-normaladef	[ 0	locks=0 ]	(	)
-coloradef	[ 0	locks=0 ]	(	)
-float4adef	[ 0	locks=0 ]	(	)
-floatm2adef	[ 0	locks=0 ]	(	)
-float9adef	[ 0	locks=0 ]	(	)
-float16adef	[ 0	locks=0 ]	(	)
-stringadef	[ 0	locks=0 ]	(	)
-coshaderadef	[ 0	locks=0 ]	(	""	)
-structdef	[ 0	locks=0 ]	(	""	)
-rangeflt	[ 0	locks=0 ]	(	0	1	)
-rangeint	[ 0	locks=0 ]	(	0	100	)
-stringtype	[ 0	locks=0 ]	(	off	)
-opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
-parmcomment	[ 0	locks=0 ]	(	""	)
-separator1	[ 0	locks=0 ]	(	)
-useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
-useownexportcontext	[ 0	locks=0 ]	(	"off"	)
-parmuniform	[ 0	locks=0 ]	(	"on"	)
-usebound	[ 0	locks=0 ]	(	"off"	)
-hasconnector	[ 0	locks=0 ]	(	"on"	)
-exportparm	[ 0	locks=0 ]	(	"off"	)
-exportcontext	[ 0	locks=0 ]	(	cvex	)
-providemenu	[ 0	locks=0 ]	(	"off"	)
-menuchoices	[ 0	locks=0 ]	(	""	)
-menuscript	[ 0	locks=0 ]	(	""	)
-menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
-separator2	[ 0	locks=0 ]	(	)
-invisible	[ 0	locks=0 ]	(	"off"	)
-joinnext	[ 0	locks=0 ]	(	"off"	)
-disablewhen	[ 0	locks=0 ]	(	""	)
-hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
-tags	[ 0	locks=0 ]	(	""	)
-help	[ 0	locks=0 ]	(	""	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/next2.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -579,7 +492,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -706,87 +619,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/struct1.init"
-Content-Type: text/plain
-
-type = struct
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/struct1.def"
-Content-Type: text/plain
-
-structvopdata
-{
-	specifiedtypename	"UnityBurst"
-	structtype	"UnityBurst"
-	structmember	"float"	"time"	"Time"
-	structmember	"int"	"minParticles"	"Min Particles"
-	structmember	"int"	"maxParticles"	"Max Particles"
-	structmember	"int"	"cycles"	"Cycles"
-	structmember	"float"	"interval"	"Interval"
-}
-comment ""
-position -0.5 0.13
-connectornextid 7
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-6 "out_struct"
-}
-inputsNamed3
-{
-0 	"" "" 1 "in_struct"
-1 	next 0 1 "in_time"
-2 	next1 0 1 "in_minParticles"
-3 	next2 0 1 "in_maxParticles"
-4 	next3 0 1 "in_cycles"
-5 	next4 0 1 "in_interval"
-}
-inputs
-{
-0 	"" 0 1
-1 	next 0 1
-2 	next1 0 1
-3 	next2 0 1
-4 	next3 0 1
-5 	next4 0 1
-}
-stat
-{
-  create 1512919608
-  modify 1513001721
-  author Chris@Voyager
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/struct1.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-structtype	[ 0	locks=0 ]	(	UnityBurst	)
-editstruct	[ 0	locks=0 ]	(	0	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/struct1.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -811,16 +644,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	struct1 6 1 "input"
+1 	struct2 5 1 "input"
 }
 inputs
 {
-0 	struct1 0 1
+0 	struct2 0 1
 }
 stat
 {
   create 1512928740
-  modify 1513001721
+  modify 1513700317
   author Chris@Voyager
   access 0777
 }
@@ -915,7 +748,84 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct2.init"
+Content-Type: text/plain
+
+type = struct
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct2.def"
+Content-Type: text/plain
+
+structvopdata
+{
+	specifiedtypename	"UnityBurst"
+	structtype	"UnityBurst"
+	structmember	"float"	"time"	"Time"
+	structmember	"string"	"count"	"Count"
+	structmember	"int"	"cycles"	"Cycles"
+	structmember	"float"	"interval"	"Interval"
+}
+comment ""
+position -0.347549 0.13
+connectornextid 6
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+5 "out_struct"
+}
+inputsNamed3
+{
+0 	"" "" 1 "in_struct"
+1 	next 0 1 "in_time"
+2 	next1 0 1 "in_count"
+3 	next3 0 1 "in_cycles"
+4 	next4 0 1 "in_interval"
+}
+inputs
+{
+0 	"" 0 1
+1 	next 0 1
+2 	next1 0 1
+3 	next3 0 1
+4 	next4 0 1
+}
+stat
+{
+  create 1513700298
+  modify 1513700334
+  author chju@CHJU-PC.avalanchestudios.se
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage python
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct2.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+structtype	[ 0	locks=0 ]	(	UnityBurst	)
+editstruct	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct2.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
 	}
 }
 
@@ -923,14 +833,13 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-7
+6
 next
 next1
-next2
 next3
 next4
-struct1
 out_struct
+struct2
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

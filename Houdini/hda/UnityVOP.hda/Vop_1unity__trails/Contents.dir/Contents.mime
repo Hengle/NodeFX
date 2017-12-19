@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 17.4685 10.8004
+position 16.8751 11.7813
 connectornextid 15
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -63,7 +63,7 @@ inputs
 stat
 {
   create 1513218337
-  modify 1513224620
+  modify 1513699068
   author Chris@Voyager
   access 0777
 }
@@ -214,7 +214,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -341,7 +341,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -468,7 +468,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -595,7 +595,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -722,7 +722,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -849,7 +849,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -976,7 +976,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1103,7 +1103,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1230,7 +1230,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1357,7 +1357,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1484,7 +1484,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1611,7 +1611,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1738,7 +1738,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1799,7 +1799,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513221063
+  modify 1513689835
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1820,7 +1820,7 @@ setpointattrib(0, \"trails_colorOverTrail\", $_id, $_ColorOverTrail);
 setpointattrib(0, \"trails_colorOverLifetime\", $_id, $_ColorOverLifetime);
 setpointattrib(0, \"trails_lifetime\", $_id, $_Lifetime);
 setpointattrib(0, \"trails_dieWithParticles\", $_id, $_DieWithParticles);
-setpointattrib(0, \"trails_GenerateLightingData\", $_id, $_GenerateLightingData);
+setpointattrib(0, \"trails_generateLightingData\", $_id, $_GenerateLightingData);
 setpointattrib(0, \"trails_inheritParticleColor\", $_id, $_InheritParticleColor);
 setpointattrib(0, \"trails_minimumVertexDistance\", $_id, $_MinimumVertexDistance);
 setpointattrib(0, \"trails_ratio\", $_id, $_Ratio);
@@ -2066,7 +2066,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2193,7 +2193,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2320,7 +2320,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 

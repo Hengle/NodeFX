@@ -34,60 +34,60 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Space"
-	label	"Space"
-	type	integer
-	default	{ "0" }
-	hidewhen	"{ Separate_Axes == 0 }"
-	menu	{
-	    "0"	"Local"
-	    "1"	"World"
-	}
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Space"
+        label   "Space"
+        type    integer
+        default { "0" }
+        hidewhen "{ Separate_Axes == 0 }"
+        menu {
+            "0" "Local"
+            "1" "World"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Randomized"
-	label	"Randomized"
-	type	toggle
-	default	{ "off" }
-	parmtag	{ "parmvop" "1" }
+        name    "Randomized"
+        label   "Randomized"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"X"
-	label	"X"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "X"
+        label   "X"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Y"
-	label	"Y"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Y"
+        label   "Y"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Z"
-	label	"Z"
-	type	string
-	default	{ "constant;float;1.0" }
-	parmtag	{ "parmvop" "1" }
+        name    "Z"
+        label   "Z"
+        type    string
+        default { "constant;float;1.0" }
+        parmtag { "parmvop" "1" }
     }
 }

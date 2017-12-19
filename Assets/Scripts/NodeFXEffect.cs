@@ -60,29 +60,29 @@ namespace NodeFX {
 
                 pSystem.gameObject.SetActive(false);
 
-				MapMainParameters(pSystem, i);
-				MapEmissionParameters(pSystem, i);
-				MapShapeParameters(pSystem, i);
-				MapVelocityOverLifetimeParameters(pSystem, i);
-				MapLimitVelocityOverLifetimeParameters(pSystem, i);
-				MapInheritVelocityParameters(pSystem, i);
-				MapForceOverLifetimeParameters(pSystem, i);
-				MapColorOverLifetimeParameters(pSystem, i);
-				MapColorBySpeedParameters(pSystem, i);
-				MapSizeOverLifetimeParameters(pSystem, i);
-				MapSizeBySpeedParameters(pSystem, i);
-				MapRotationOverLifetimeParameters(pSystem, i);
-				MapRotationBySpeedParameters(pSystem, i);
-				MapExternalForcesParameters(pSystem, i);
-				MapNoiseParameters(pSystem, i);
-				MapCollisionParameters(pSystem, i);
-				MapTriggerParameters(pSystem, i);
-				MapSubEmitterParameters(pSystem, i);
-				MapTextureSheetAnimationParameters(pSystem, i);
-				MapLightParamters(pSystem, i);
-				MapTrailParameters(pSystem, i);
-				MapCustomDataParameters(pSystem, i);
-				MapRendererParameters(pSystem, i);
+				MapMainParameters                       (pSystem, i);
+				MapEmissionParameters                   (pSystem, i);
+				MapShapeParameters                      (pSystem, i);
+				MapVelocityOverLifetimeParameters       (pSystem, i);
+				MapLimitVelocityOverLifetimeParameters  (pSystem, i);
+				MapInheritVelocityParameters            (pSystem, i);
+				MapForceOverLifetimeParameters          (pSystem, i);
+				MapColorOverLifetimeParameters          (pSystem, i);
+				MapColorBySpeedParameters               (pSystem, i);
+				MapSizeOverLifetimeParameters           (pSystem, i);
+				MapSizeBySpeedParameters                (pSystem, i);
+                MapRotationOverLifetimeParameters       (pSystem, i);
+				MapRotationBySpeedParameters            (pSystem, i);
+				MapExternalForcesParameters             (pSystem, i);
+				MapNoiseParameters                      (pSystem, i);
+				MapCollisionParameters                  (pSystem, i);
+				MapTriggerParameters                    (pSystem, i);
+				MapSubEmitterParameters                 (pSystem, i);
+				MapTextureSheetAnimationParameters      (pSystem, i);
+				MapLightParameters                      (pSystem, i);
+				MapTrailParameters                      (pSystem, i);
+				MapCustomDataParameters                 (pSystem, i);
+				MapRendererParameters                   (pSystem, i);
 
                 pSystem.gameObject.SetActive(true);
 				pSystem.Play();
@@ -92,93 +92,113 @@ namespace NodeFX {
         private void DeleteOldParticleSystems() {
             foreach (ParticleSystem ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
                 if (ps.gameObject != gameObject) {
-                DestroyImmediate(ps.gameObject);
+                    DestroyImmediate(ps.gameObject);
                 }
             }
         }
 
         private void MapMainParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.MainModule mainModule = pSystem.main;
-			mainModule.duration                     = GetFloatParam(i, "main_duration");
+            mainModule.stopAction                   = (ParticleSystemStopAction)            GetIntParam(i, "main_stopAction");
+            mainModule.emitterVelocityMode          = (ParticleSystemEmitterVelocityMode)   GetIntParam(i, "main_emitterVelocity");
+            mainModule.scalingMode                  = (ParticleSystemScalingMode)           GetIntParam(i, "main_scalingMode");
+            mainModule.simulationSpace              = (ParticleSystemSimulationSpace)       GetIntParam(i, "main_simulationSpace");
+            mainModule.maxParticles                 = GetIntParam(i, "main_maxParticles");
             mainModule.loop                         = GetBoolParam(i, "main_looping");
             mainModule.prewarm                      = GetBoolParam(i, "main_prewarm");
+            mainModule.startSize3D                  = GetBoolParam(i, "main_3DStartSize");
+            mainModule.startRotation3D              = GetBoolParam(i, "main_3DStartRotation");
+            mainModule.useUnscaledTime              = GetBoolParam(i, "main_deltaTime");
+            mainModule.playOnAwake                  = GetBoolParam(i, "main_playOnAwake");
+            pSystem.useAutoRandomSeed               = GetBoolParam(i, "main_autoRandomSeed");
+            mainModule.randomizeRotationDirection   = GetFloatParam(i, "main_rotationVariance");
+            mainModule.simulationSpeed              = GetFloatParam(i, "main_simulationSpeed");
+            mainModule.duration                     = GetFloatParam(i, "main_duration");
             mainModule.startDelay                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startDelay"));
             mainModule.startLifetime                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startLifetime"));
             mainModule.startSpeed                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startSpeed"));
-
-            mainModule.startSize3D                  = GetBoolParam(i, "main_3DStartSize");
             mainModule.startSize                    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startSize"));
             mainModule.startSizeX                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startSize_x"));
             mainModule.startSizeY                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startSize_y"));
             mainModule.startSizeZ                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startSize_z"));
-
-            mainModule.startRotation3D              = GetBoolParam(i, "main_3DStartRotation");
             mainModule.startRotation                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startRotation"));
             mainModule.startRotationX               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startRotation_x"));
             mainModule.startRotationY               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startRotation_y"));
             mainModule.startRotationZ               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startRotation_z"));
-            mainModule.randomizeRotationDirection   = GetFloatParam(i, "main_rotationVariance");
-
-            mainModule.startColor                   = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "main_startColor"));
             mainModule.gravityModifier              = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_gravityModifier"));
-
-            mainModule.simulationSpace              = (ParticleSystemSimulationSpace) GetIntParam(i, "main_simulationSpace");
-            mainModule.simulationSpeed              = GetFloatParam(i, "main_simulationSpeed");
-
-            mainModule.useUnscaledTime              = GetBoolParam(i, "main_deltaTime");
-            mainModule.scalingMode                  = (ParticleSystemScalingMode) GetIntParam(i, "main_scalingMode");
-            mainModule.playOnAwake                  = GetBoolParam(i, "main_playOnAwake");
-            mainModule.emitterVelocityMode          = (ParticleSystemEmitterVelocityMode) GetIntParam(i, "main_emitterVelocity");
-            mainModule.maxParticles                 = GetIntParam(i, "main_maxParticles");
-            pSystem.useAutoRandomSeed               = GetBoolParam(i, "main_autoRandomSeed");
-            mainModule.stopAction                   = (ParticleSystemStopAction) GetIntParam(i, "main_stopAction");
+            mainModule.startColor                   = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "main_startColor"));
+            
         }
 
         private void MapEmissionParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.EmissionModule emissionModule = pSystem.emission;
+
+            try {
             emissionModule.enabled                  = GetBoolParam(i, "emission_enabled");
+            }
+            catch (NullReferenceException) {
+                emissionModule.enabled = false;
+                return;
+            }
+
             emissionModule.rateOverTime             = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "emission_rateOverTime"));
             emissionModule.rateOverDistance         = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "emission_rateOverDistance"));
-            emissionModule.SetBursts(NodeFXUtilities.InterpretStringToBurst("emission_bursts"));
+            emissionModule.SetBursts(NodeFXUtilities.InterpretStringToBurst(GetStringParam(i, "emission_bursts")));
         }
 
         private void MapShapeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.ShapeModule shapeModule = pSystem.shape;
-            shapeModule.enabled                     = GetBoolParam(i, "shape_enabled");
-            shapeModule.shapeType                   = (ParticleSystemShapeType) GetIntParam(i, "shape_shape");
+
+            try {
+                shapeModule.enabled                     = GetBoolParam(i, "shape_enabled");
+            }
+            catch (NullReferenceException) {
+                shapeModule.enabled = false;
+                return;
+            }
+
+            shapeModule.meshShapeType               = (ParticleSystemMeshShapeType)         GetIntParam(i, "shape_meshShapeType");
+            shapeModule.shapeType                   = (ParticleSystemShapeType)             GetIntParam(i, "shape_shape");
+            shapeModule.arcMode                     = (ParticleSystemShapeMultiModeValue)   GetIntParam(i, "shape_arcMode");
+            shapeModule.meshMaterialIndex           = GetIntParam(i, "shape_meshMaterialIndex");
+            shapeModule.useMeshMaterialIndex        = GetBoolParam(i, "shape_useMeshMaterialIndex");
+            shapeModule.useMeshColors               = GetBoolParam(i, "shape_useMeshColors");
+            shapeModule.alignToDirection            = GetBoolParam(i, "shape_alignToDirection");
             shapeModule.radius                      = GetFloatParam(i, "shape_radius");
             shapeModule.radiusThickness             = GetFloatParam(i, "shape_radiusThickness");
-            shapeModule.radiusMode                  = 0;
-            shapeModule.radiusSpeed                 = 0;
-            shapeModule.radiusSpread                = 0;
             shapeModule.arc                         = GetFloatParam(i, "shape_arc");
-            shapeModule.arcMode                     = (ParticleSystemShapeMultiModeValue) GetIntParam(i, "shape_arcMode");
-            shapeModule.arcSpeed                    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "shape_arcSpeed"));
             shapeModule.arcSpread                   = GetFloatParam(i, "shape_arcSpread");
-            shapeModule.alignToDirection            = GetBoolParam(i, "shape_alignToDirection");
             shapeModule.randomDirectionAmount       = GetFloatParam(i, "shape_randomizeDirectionAmount");
             shapeModule.randomPositionAmount        = GetFloatParam(i, "shape_randomizePositionAmount");
             shapeModule.sphericalDirectionAmount    = GetFloatParam(i, "shape_spherizeDirectionAmount");
             shapeModule.angle                       = GetFloatParam(i, "shape_angle");
-            shapeModule.boxThickness                = GetVectorParam(i, "shape_boxThickness");
             shapeModule.donutRadius                 = GetFloatParam(i, "shape_donutRadius");
             shapeModule.length                      = GetFloatParam(i, "shape_length");
-            shapeModule.mesh                        = AssetDatabase.LoadAssetAtPath<Mesh>(GetStringParam(i, "shape_mesh"));
-            shapeModule.meshRenderer                = AssetDatabase.LoadAssetAtPath<MeshRenderer>( GetStringParam(i, "shape_meshRenderer"));
-            shapeModule.skinnedMeshRenderer         = AssetDatabase.LoadAssetAtPath<SkinnedMeshRenderer>(GetStringParam(i, "shape_skinnedMeshRenderer"));
-            shapeModule.meshShapeType               = (ParticleSystemMeshShapeType) GetIntParam(i, "shape_meshShapeType");
-            shapeModule.meshMaterialIndex           = GetIntParam(i, "shape_meshMaterialIndex");
             shapeModule.normalOffset                = GetFloatParam(i, "shape_normalOffset");
-            shapeModule.useMeshMaterialIndex        = GetBoolParam(i, "shape_useMeshMaterialIndex");
-            shapeModule.useMeshColors               = GetBoolParam(i, "shape_useMeshColors");
+            shapeModule.boxThickness                = GetVectorParam(i, "shape_boxThickness");
             shapeModule.position                    = GetVectorParam(i, "shape_position");
             shapeModule.rotation                    = GetVectorParam(i, "shape_rotation");
             shapeModule.scale                       = GetVectorParam(i, "shape_scale");
+            shapeModule.mesh                        = AssetDatabase.LoadAssetAtPath<Mesh>(GetStringParam(i, "shape_mesh"));
+            shapeModule.meshRenderer                = AssetDatabase.LoadAssetAtPath<MeshRenderer>( GetStringParam(i, "shape_meshRenderer"));
+            shapeModule.skinnedMeshRenderer         = AssetDatabase.LoadAssetAtPath<SkinnedMeshRenderer>(GetStringParam(i, "shape_skinnedMeshRenderer"));
+            shapeModule.arcSpeed                    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "shape_arcSpeed"));
+            shapeModule.radiusMode                  = 0;
+            shapeModule.radiusSpeed                 = 0;
+            shapeModule.radiusSpread                = 0;
         }
 
         private void MapVelocityOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.VelocityOverLifetimeModule velocityOverLifetimeModule = pSystem.velocityOverLifetime;
-            velocityOverLifetimeModule.enabled      = GetBoolParam(i, "velocityOverLifetime_enabled");
+
+            try {
+                velocityOverLifetimeModule.enabled      = GetBoolParam(i, "velocityOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                velocityOverLifetimeModule.enabled = false;
+                return;
+            }
+
             velocityOverLifetimeModule.space        = (ParticleSystemSimulationSpace) GetIntParam(i, "velocityOverLifetime_space");
             velocityOverLifetimeModule.x            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "velocityOverLifetime_velocity_x"));
             velocityOverLifetimeModule.y            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "velocityOverLifetime_velocity_y"));
@@ -187,27 +207,52 @@ namespace NodeFX {
 
         private void MapLimitVelocityOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.LimitVelocityOverLifetimeModule limitVelocityOverLifetimeModule = pSystem.limitVelocityOverLifetime;
-            limitVelocityOverLifetimeModule.enabled = GetBoolParam(i, "limitVelocityOverLifetime_enabled");
+
+            try {
+                limitVelocityOverLifetimeModule.enabled = GetBoolParam(i, "limitVelocityOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                limitVelocityOverLifetimeModule.enabled = false;
+                return;
+            }
+
             limitVelocityOverLifetimeModule.space   = (ParticleSystemSimulationSpace) GetIntParam(i, "limitVelocityOverLifetime_space");
             limitVelocityOverLifetimeModule.separateAxes = GetBoolParam(i, "limitVelocityOverLifetime_separateAxes");
-            limitVelocityOverLifetimeModule.limit   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_speed"));
-            limitVelocityOverLifetimeModule.dampen  = GetFloatParam(i, "limitVelocityOverLifetime_dampen");
-            limitVelocityOverLifetimeModule.drag    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_drag"));
             limitVelocityOverLifetimeModule.multiplyDragByParticleSize = GetBoolParam(i, "limitVelocityOverLifetime_multiplyDragBySize");
             limitVelocityOverLifetimeModule.multiplyDragByParticleVelocity = GetBoolParam(i, "limitVelocityOverLifetime_multiplyDragByVelocity");
+            limitVelocityOverLifetimeModule.dampen  = GetFloatParam(i, "limitVelocityOverLifetime_dampen");
+            limitVelocityOverLifetimeModule.limit   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_speed"));
+            limitVelocityOverLifetimeModule.drag    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_drag"));
         }
 
         private void MapInheritVelocityParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.InheritVelocityModule inheritVelocityModule = pSystem.inheritVelocity;
-            inheritVelocityModule.enabled           = GetBoolParam(i, "inheritVelocity_enabled");
+
+            try {
+                inheritVelocityModule.enabled           = GetBoolParam(i, "inheritVelocity_enabled");
+            }
+            catch (NullReferenceException) {
+                inheritVelocityModule.enabled = false;
+                return;
+            }
+
             inheritVelocityModule.mode              = (ParticleSystemInheritVelocityMode) GetIntParam(i, "inheritVelocity_mode");
             inheritVelocityModule.curve             = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "inheritVelocity_multiplier"));
         }
 
         private void MapForceOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.ForceOverLifetimeModule forceOverLifetimeModule = pSystem.forceOverLifetime;
-            forceOverLifetimeModule.enabled         = GetBoolParam(i, "forceOverLifetime_enabled");
+
+            try {
+                forceOverLifetimeModule.enabled         = GetBoolParam(i, "forceOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                forceOverLifetimeModule.enabled = false;
+                return;
+            }
+
             forceOverLifetimeModule.space           = (ParticleSystemSimulationSpace) GetIntParam(i, "forceOverLifetime_space");
+            
             forceOverLifetimeModule.randomized      = GetBoolParam(i, "forceOverLifetime_randomized");
             forceOverLifetimeModule.x               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "forceOverLifetime_force_x"));
             forceOverLifetimeModule.y               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "forceOverLifetime_force_y"));
@@ -216,13 +261,29 @@ namespace NodeFX {
 
         private void MapColorOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = pSystem.colorOverLifetime;
-            colorOverLifetimeModule.enabled         = GetBoolParam(i, "colorOverLifetime_enabled");
+
+            try {
+                colorOverLifetimeModule.enabled         = GetBoolParam(i, "colorOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                colorOverLifetimeModule.enabled = false;
+                return;
+            }
+
             colorOverLifetimeModule.color           = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "colorOverLifetime_color"));
         }
 
         private void MapColorBySpeedParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.ColorBySpeedModule colorBySpeedModule = pSystem.colorBySpeed;
-            colorBySpeedModule.enabled              = GetBoolParam(i, "colorBySpeed_enabled");
+
+            try {
+                colorBySpeedModule.enabled              = GetBoolParam(i, "colorBySpeed_enabled");
+            }
+            catch (NullReferenceException) {
+                colorBySpeedModule.enabled = false;
+                return;
+            }
+
             colorBySpeedModule.range                = GetVectorParam(i, "colorBySpeed_range");
             colorBySpeedModule.color                = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "colorBySpeed_color"));
         }
@@ -230,7 +291,15 @@ namespace NodeFX {
         private void MapSizeOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.SizeOverLifetimeModule sizeOverLifetimeModule = pSystem.sizeOverLifetime
             ;
-            sizeOverLifetimeModule.enabled          = GetBoolParam(i, "sizeOverLifetime_enabled");
+
+            try {
+                sizeOverLifetimeModule.enabled          = GetBoolParam(i, "sizeOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                sizeOverLifetimeModule.enabled = false;
+                return;
+            }
+
             sizeOverLifetimeModule.separateAxes     = GetBoolParam(i, "sizeOverLifetime_separateAxes");
             sizeOverLifetimeModule.size             = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size"));
             sizeOverLifetimeModule.x                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size_x"));
@@ -240,7 +309,15 @@ namespace NodeFX {
 
         private void MapSizeBySpeedParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.SizeBySpeedModule sizeBySpeedModule = pSystem.sizeBySpeed;
-            sizeBySpeedModule.enabled               = GetBoolParam(i, "sizeBySpeed_enabled");
+
+            try {
+                sizeBySpeedModule.enabled               = GetBoolParam(i, "sizeBySpeed_enabled");
+            }
+            catch (NullReferenceException) {
+                sizeBySpeedModule.enabled = false;
+                return;
+            }
+
             sizeBySpeedModule.separateAxes          = GetBoolParam(i, "sizeBySpeed_separateAxes");
             sizeBySpeedModule.range                 = GetVectorParam(i, "sizeBySpeed_range");
             sizeBySpeedModule.size                  = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeBySpeed_size"));
@@ -251,7 +328,15 @@ namespace NodeFX {
 
         private void MapRotationOverLifetimeParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.RotationOverLifetimeModule rotationOverLifetimeModule = pSystem.rotationOverLifetime;
-            rotationOverLifetimeModule.enabled      = GetBoolParam(i, "rotationOverLifetime_enabled");
+
+            try {
+                rotationOverLifetimeModule.enabled      = GetBoolParam(i, "rotationOverLifetime_enabled");
+            }
+            catch (NullReferenceException) {
+                rotationOverLifetimeModule.enabled = false;
+                return;
+            }
+
             rotationOverLifetimeModule.separateAxes = GetBoolParam(i, "rotationOverLifetime_separateAxes");
             rotationOverLifetimeModule.x            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "rotationOverLifetime_angularVelocity_x"));
             rotationOverLifetimeModule.y            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "rotationOverLifetime_angularVelocity_y"));
@@ -260,7 +345,15 @@ namespace NodeFX {
 
         private void MapRotationBySpeedParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.RotationBySpeedModule rotationBySpeedModule = pSystem.rotationBySpeed;
-            rotationBySpeedModule.enabled           = GetBoolParam(i, "rotationBySpeed_enabled");
+
+            try {
+                rotationBySpeedModule.enabled           = GetBoolParam(i, "rotationBySpeed_enabled");
+            }
+            catch (NullReferenceException) {
+                rotationBySpeedModule.enabled = false;
+                return;
+            }
+
             rotationBySpeedModule.separateAxes      = GetBoolParam(i, "rotationBySpeed_separateAxes");
             rotationBySpeedModule.range             = GetVectorParam(i, "rotationBySpeed_range");
             rotationBySpeedModule.x                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "rotationBySpeed_angularVelocity_x"));
@@ -270,44 +363,69 @@ namespace NodeFX {
 
         private void MapExternalForcesParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.ExternalForcesModule externalForcesModule = pSystem.externalForces;
-            externalForcesModule.enabled            = GetBoolParam(i, "externalForces_enabled");
-            externalForcesModule.multiplier         = GetFloatParam(i, "externalForces_multiplier");
 
+            try {
+                externalForcesModule.enabled            = GetBoolParam(i, "externalForces_enabled");
+            }
+            catch (NullReferenceException) {
+                externalForcesModule.enabled = false;
+                return;
+            }
+
+            externalForcesModule.multiplier         = GetFloatParam(i, "externalForces_multiplier");
         }
 
         private void MapNoiseParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.NoiseModule noiseModule  = pSystem.noise;
-            noiseModule.enabled                     = GetBoolParam(i, "noise_enabled");
+
+            try {
+                noiseModule.enabled                     = GetBoolParam(i, "noise_enabled");
+            }
+            catch (NullReferenceException) {
+                noiseModule.enabled = false;
+                return;
+            }
+
+            noiseModule.quality                     = (ParticleSystemNoiseQuality) GetIntParam(i, "noise_quality");
+            noiseModule.octaveCount                 = GetIntParam(i, "noise_octaves");
+            
             noiseModule.separateAxes                = GetBoolParam(i, "noise_separateAxes");
+            noiseModule.damping                     = GetBoolParam(i, "noise_damping");
+            noiseModule.remapEnabled                = GetBoolParam(i, "noise_remap");
+            noiseModule.octaveMultiplier            = GetFloatParam(i, "noise_octaveMultiplier");
+            noiseModule.octaveScale                 = GetFloatParam(i, "noise_octaveScale");
+            noiseModule.frequency                   = GetFloatParam(i, "noise_frequency");
+            noiseModule.remap                       = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_remapCurve"));
+            noiseModule.scrollSpeed                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_scrollSpeed"));
+            noiseModule.positionAmount              = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_positionAmount"));
+            noiseModule.rotationAmount              = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_rotationAmount"));
+            noiseModule.sizeAmount                  = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_scaleAmount"));
             noiseModule.strength                    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_strength"));
             noiseModule.strengthX                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_strength_x"));
             noiseModule.strengthY                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_strength_y"));
             noiseModule.strengthZ                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_strength_z"));
-            noiseModule.octaveCount                 = GetIntParam(i, "noise_octaves");
-            noiseModule.octaveMultiplier            = GetFloatParam(i, "noise_octaveMultiplier");
-            noiseModule.octaveScale                 = GetFloatParam(i, "noise_octaveScale");
-            noiseModule.frequency                   = GetFloatParam(i, "noise_frequency");
-            noiseModule.quality                     = (ParticleSystemNoiseQuality) GetIntParam(i, "noise_quality");
-            noiseModule.damping                     = GetBoolParam(i, "noise_damping");
-            noiseModule.remapEnabled                = GetBoolParam(i, "noise_remap");
-            noiseModule.remap                       = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_remapCurve"));
-            noiseModule.scrollSpeed                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_scrollSpeed"));
-            noiseModule.positionAmount                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_positionAmount"));
-            noiseModule.rotationAmount                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_rotationAmount"));
-            noiseModule.sizeAmount                 = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "noise_scaleAmount"));
+            
         }
 
         private void MapCollisionParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.CollisionModule collisionModule = pSystem.collision;
-            collisionModule.enabled                 = GetBoolParam(i, "collision_enabled");
+
+            try {
+                collisionModule.enabled                 = GetBoolParam(i, "collision_enabled");
+            }
+            catch (NullReferenceException) {
+                collisionModule.enabled = false;
+                return;
+            }
+
+            collisionModule.type                    = (ParticleSystemCollisionType)     GetIntParam(i, "collision_type");
+            collisionModule.mode                    = (ParticleSystemCollisionMode)     GetIntParam(i, "collision_mode");
+            collisionModule.quality                 = (ParticleSystemCollisionQuality)  GetIntParam(i, "collision_quality");
             collisionModule.enableDynamicColliders  = GetBoolParam(i, "collision_enableDynamicColliders");
-            collisionModule.multiplyColliderForceByCollisionAngle = GetBoolParam(i, "collision_multiplyByCollisionAngle");
-            collisionModule.multiplyColliderForceByParticleSize = GetBoolParam(i, "collision_multiplyByParticleSize");
-            collisionModule.multiplyColliderForceByParticleSpeed = GetBoolParam(i, "collision_multiplyByParticleSpeed");
+            collisionModule.multiplyColliderForceByCollisionAngle   = GetBoolParam(i, "collision_multiplyByCollisionAngle");
+            collisionModule.multiplyColliderForceByParticleSize     = GetBoolParam(i, "collision_multiplyByParticleSize");
+            collisionModule.multiplyColliderForceByParticleSpeed    = GetBoolParam(i, "collision_multiplyByParticleSpeed");
             collisionModule.sendCollisionMessages   = GetBoolParam(i, "collision_sendCollisionMessages");
-            collisionModule.type                    = (ParticleSystemCollisionType) GetIntParam(i, "collision_type");
-            collisionModule.mode                    = (ParticleSystemCollisionMode) GetIntParam(i, "collision_mode");
-            collisionModule.quality                 = (ParticleSystemCollisionQuality) GetIntParam(i, "collision_quality");
             collisionModule.minKillSpeed            = GetFloatParam(i, "collision_minKillSpeed");
             collisionModule.maxKillSpeed            = GetFloatParam(i, "collision_maxKillSpeed");
             collisionModule.radiusScale             = GetFloatParam(i, "collision_radiusScale");
@@ -327,23 +445,41 @@ namespace NodeFX {
 
         private void MapTextureSheetAnimationParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.TextureSheetAnimationModule textureSheetAnimationModule = pSystem.textureSheetAnimation;
-            textureSheetAnimationModule.enabled         = GetBoolParam(i, "textureSheetAnimation_enabled");
+
+            try {
+                textureSheetAnimationModule.enabled                     = GetBoolParam(i, "textureSheetAnimation_enabled");
+            }
+            catch (NullReferenceException) {
+                textureSheetAnimationModule.enabled = false;
+                return;
+            }
+
             textureSheetAnimationModule.mode            = (ParticleSystemAnimationMode) GetIntParam(i, "textureSheetAnimation_mode");
             textureSheetAnimationModule.animation       = (ParticleSystemAnimationType) GetIntParam(i, "textureSheetAnimation_animation");
-            textureSheetAnimationModule.frameOverTime   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "textureSheetAnimation_frame"));
-            textureSheetAnimationModule.startFrame      = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "textureSheetAnimation_startFrame"));
+            textureSheetAnimationModule.enabled         = GetBoolParam(i, "textureSheetAnimation_enabled");
             textureSheetAnimationModule.cycleCount      = GetIntParam(i, "textureSheetAnimation_cycles");
             textureSheetAnimationModule.flipU           = GetFloatParam(i, "textureSheetAnimation_flipU");
             textureSheetAnimationModule.flipV           = GetFloatParam(i, "textureSheetAnimation_flipV");
+            textureSheetAnimationModule.frameOverTime   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "textureSheetAnimation_frame"));
+            textureSheetAnimationModule.startFrame      = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "textureSheetAnimation_startFrame"));
         }
 
-        private void MapLightParamters(ParticleSystem pSystem, int i) {
+        private void MapLightParameters(ParticleSystem pSystem, int i) {
             
         }
 
         private void MapTrailParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.TrailModule trailModule      = pSystem.trails;
-            trailModule.enabled                         = GetBoolParam(i, "trails_enabled");
+
+            try {
+                trailModule.enabled                     = GetBoolParam(i, "trails_enabled");
+            }
+            catch (NullReferenceException) {
+                trailModule.enabled = false;
+                return;
+            }
+
+            trailModule.textureMode                     = (ParticleSystemTrailTextureMode) GetIntParam(i, "trails_textureMode");
             trailModule.worldSpace                      = GetBoolParam(i, "trails_worldSpace");
             trailModule.dieWithParticles                = GetBoolParam(i, "trails_dieWithParticles");
             trailModule.sizeAffectsWidth                = GetBoolParam(i, "trails_sizeAffectsWidth");
@@ -352,30 +488,63 @@ namespace NodeFX {
             trailModule.generateLightingData            = GetBoolParam(i, "trails_generateLightingData");
             trailModule.minVertexDistance               = GetFloatParam(i, "trails_minimumVertexDistance");
             trailModule.ratio                           = GetFloatParam(i, "trails_ratio");
-            trailModule.textureMode                     = (ParticleSystemTrailTextureMode) GetIntParam(i, "trails_textureMode");
+            trailModule.widthOverTrail                  = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "trails_widthOverTrail"));
+            trailModule.lifetime                        = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "trails_lifetime"));
             trailModule.colorOverLifetime               = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "trails_colorOverLifetime"));
-            trailModule.colorOverTrail               = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "trails_colorOverTrail"));
-            trailModule.widthOverTrail               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "trails_widthOverTrail"));
-            trailModule.lifetime               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "trails_lifetime"));
+            trailModule.colorOverTrail                  = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "trails_colorOverTrail"));
         }
 
         private void MapCustomDataParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.CustomDataModule customDataModule = pSystem.customData;
-            customDataModule.enabled                    = GetBoolParam(i, "customData_enabled");
-            customDataModule.SetMode(ParticleSystemCustomData.Custom1,ParticleSystemCustomDataMode.Vector);
-		    customDataModule.SetMode(ParticleSystemCustomData.Custom2,ParticleSystemCustomDataMode.Vector);
-            customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 0));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 1));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 2));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 3));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 0));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 1));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 2));
-            customDataModule.SetVector (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 3));
+            
+            try {
+                customDataModule.enabled                    = GetBoolParam(i, "customData_enabled");
+            }
+            catch (NullReferenceException) {
+                customDataModule.enabled = false;
+                return;
+            }
+
+            customDataModule.SetMode                    (ParticleSystemCustomData.Custom1,ParticleSystemCustomDataMode.Vector);
+		    customDataModule.SetMode                    (ParticleSystemCustomData.Custom2,ParticleSystemCustomDataMode.Vector);
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 0));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 1));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 2));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom1, 0, GetFloatParam(i, "customData_1", 3));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 0));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 1));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 2));
+            customDataModule.SetVector                  (ParticleSystemCustomData.Custom2, 0, GetFloatParam(i, "customData_1", 3));
         }
 
         private void MapRendererParameters(ParticleSystem pSystem, int i) {
-            
+            ParticleSystemRenderer renderer             = pSystem.GetComponent<ParticleSystemRenderer>();
+
+            try {
+                renderer.enabled                        = GetBoolParam(i, "renderer_enabled");
+            }
+            catch (NullReferenceException) {
+                renderer.enabled = false;
+                return;
+            }
+
+            renderer.alignment                          = (ParticleSystemRenderSpace)                   GetIntParam(i, "renderer_alignment");
+            renderer.shadowCastingMode                  = (UnityEngine.Rendering.ShadowCastingMode)     GetIntParam(i, "renderer_castShadows");
+            renderer.renderMode                         = (ParticleSystemRenderMode)                    GetIntParam(i, "renderer_mode");
+            renderer.lightProbeUsage                    = (UnityEngine.Rendering.LightProbeUsage)       GetIntParam(i, "renderer_lightProbes");
+            renderer.maskInteraction                    = (SpriteMaskInteraction)                       GetIntParam(i, "renderer_masking");
+            renderer.motionVectorGenerationMode         = (MotionVectorGenerationMode)                  GetIntParam(i, "renderer_motionVectors");
+            renderer.reflectionProbeUsage               = (UnityEngine.Rendering.ReflectionProbeUsage)  GetIntParam(i, "renderer_reflectionProbes");
+            renderer.sortMode                           = (ParticleSystemSortMode)                      GetIntParam(i, "renderer_sortMode");
+            renderer.sortingOrder                       = GetIntParam(i, "renderer_orderInLayer");
+            renderer.receiveShadows                     = GetBoolParam(i, "renderer_receiveShadows");
+            renderer.sortingFudge                       = GetFloatParam(i, "renderer_sortingFudge");
+            renderer.normalDirection                    = GetFloatParam(i, "renderer_normalDirection");
+            renderer.maxParticleSize                    = GetFloatParam(i, "renderer_maxParticleSize");
+            renderer.minParticleSize                    = GetFloatParam(i, "renderer_minParticleSize");
+            renderer.pivot                              = GetVectorParam(i, "renderer_pivot");
+            renderer.material                           = AssetDatabase.LoadAssetAtPath<Material>(      GetStringParam(i, "renderer_material") );
+            renderer.trailMaterial                      = AssetDatabase.LoadAssetAtPath<Material>(      GetStringParam(i, "renderer_trailMaterial") );
         }
 
         public int GetIntParam(int emitterIndex, string parameter, int parameterIndex = 0) {

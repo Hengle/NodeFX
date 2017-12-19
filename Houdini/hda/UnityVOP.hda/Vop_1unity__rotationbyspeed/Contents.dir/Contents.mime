@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 30.5781 10.8004
+position 30.1546 11.2563
 connectornextid 9
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -51,7 +51,7 @@ inputs
 stat
 {
   create 1513219762
-  modify 1513224830
+  modify 1513699146
   author Chris@Voyager
   access 0777
 }
@@ -91,7 +91,7 @@ Content-Disposition: attachment; filename="hdaroot/input.def"
 Content-Type: text/plain
 
 comment ""
-position 4.74103 0.344486
+position 4.74103 6.07639
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -107,7 +107,7 @@ inputs
 stat
 {
   create 1512320066
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -202,7 +202,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -218,12 +218,12 @@ Content-Disposition: attachment; filename="hdaroot/input1.def"
 Content-Type: text/plain
 
 comment ""
-position 7.39693 -0.538014
+position 4.74103 4.42279
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass on display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Angular_Velocity"
+0 "Angular_Velocity"
 }
 inputsNamed3
 {
@@ -234,7 +234,7 @@ inputs
 stat
 {
   create 1512320093
-  modify 1513222297
+  modify 1513684016
   author Chris@Voyager
   access 0777
 }
@@ -305,7 +305,7 @@ useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
 useownexportcontext	[ 0	locks=0 ]	(	"off"	)
 parmuniform	[ 0	locks=0 ]	(	"on"	)
 usebound	[ 0	locks=0 ]	(	"off"	)
-hasconnector	[ 0	locks=0 ]	(	"on"	)
+hasconnector	[ 0	locks=0 ]	(	"off"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
 providemenu	[ 0	locks=0 ]	(	"off"	)
@@ -329,9 +329,18 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input1.outputinfos"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+
+TnVtSW5mb3MgMgpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfQW5ndWxhcl9WZWxvY2l0eQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwo=
+Tm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAAQmVnaW5JbmZvCk91dHB1dE5hbWUgYm91bmRfQW5ndWxhcl9WZWxvY2l0eQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWY=
+YXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/input2.init"
@@ -345,7 +354,7 @@ Content-Disposition: attachment; filename="hdaroot/input2.def"
 Content-Type: text/plain
 
 comment ""
-position 4.74103 1.99809
+position 4.74103 7.72999
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -361,7 +370,7 @@ inputs
 stat
 {
   create 1512320159
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -456,7 +465,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -472,7 +481,7 @@ Content-Disposition: attachment; filename="hdaroot/input3.def"
 Content-Type: text/plain
 
 comment ""
-position 4.74103 3.65169
+position 4.74103 9.38359
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -488,7 +497,7 @@ inputs
 stat
 {
   create 1512319755
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -583,7 +592,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -599,7 +608,7 @@ Content-Disposition: attachment; filename="hdaroot/input4.def"
 Content-Type: text/plain
 
 comment ""
-position 4.74103 -0.538014
+position 4.74103 2.76919
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -615,7 +624,7 @@ inputs
 stat
 {
   create 1512320093
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -710,7 +719,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -726,7 +735,7 @@ Content-Disposition: attachment; filename="hdaroot/input5.def"
 Content-Type: text/plain
 
 comment ""
-position 2.08513 -0.538014
+position 4.74103 1.11559
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -742,7 +751,7 @@ inputs
 stat
 {
   create 1512320093
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -837,7 +846,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -853,7 +862,7 @@ Content-Disposition: attachment; filename="hdaroot/input6.def"
 Content-Type: text/plain
 
 comment ""
-position 7.39693 -2.19161
+position 4.74103 -0.53801
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -869,7 +878,7 @@ inputs
 stat
 {
   create 1512320093
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -964,7 +973,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -996,7 +1005,7 @@ inputs
 stat
 {
   create 1512320066
-  modify 1513222297
+  modify 1513683770
   author Chris@Voyager
   access 0777
 }
@@ -1091,7 +1100,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1107,7 +1116,7 @@ Content-Disposition: attachment; filename="hdaroot/inline2.def"
 Content-Type: text/plain
 
 comment ""
-position 9.78517 2.82169
+position 7.39693 4.12099
 connectornextid 8
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1118,7 +1127,7 @@ inputsNamed3
 3 	input3 0 1 "_Range"
 2 	input2 0 1 "_Separate_Axes"
 0 	input 0 1 "_Enabled"
-1 	input1 0 1 "_Angular_Velocity"
+1 	input1 0 1 "Angular_Velocity"
 4 	input4 0 1 "_X"
 5 	input5 0 1 "_Y"
 6 	input6 0 1 "_Z"
@@ -1138,7 +1147,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513222494
+  modify 1513684018
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1157,7 +1166,7 @@ code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"rotationBySpeed_enabled\", $_id, $_Enabled);
 setpointattrib(0, \"rotationBySpeed_separateAxes\", $_id, $_Separate_Axes);
 setpointattrib(0, \"rotationBySpeed_range\", $_id, $_Range);
-setpointattrib(0, \"rotationBySpeed_angularVelocity\", $_id, $_Angular_Velocity);
+// setpointattrib(0, \"rotationBySpeed_angularVelocity\", $_id, $_Angular_Velocity);
 setpointattrib(0, \"rotationBySpeed_angularVelocity_x\", $_id, $_X);
 setpointattrib(0, \"rotationBySpeed_angularVelocity_y\", $_id, $_Y);
 setpointattrib(0, \"rotationBySpeed_angularVelocity_z\", $_id, $_Z);"	)
@@ -1398,7 +1407,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 

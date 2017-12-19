@@ -9,7 +9,7 @@
     input	int	Enabled	Enabled
     input	int	Separate_Axes	"Separate Axes"
     input	int	Space	Space
-    input	string	Speed	Speed
+    input	string	Speed	Limit
     input	float	Dampen	Dampen
     input	string	X	X
     input	string	Y	Y
@@ -73,7 +73,7 @@
     }
     parm {
         name    "Speed"
-        label   "Speed"
+        label   "Limit"
         type    string
         default { "constant;float;1.0" }
         hidewhen "{ Separate_Axes == 1 }"
