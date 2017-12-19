@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 33.2656 10.8004
+position 32.7908 11.2563
 connectornextid 7
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -31,9 +31,9 @@ inputsNamed3
 0 	unity_rotationbyspeed1 8 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "Separate_Axes"
-3 	"" "" 1 "Angular_Velocity"
-4 	"" "" 1 "X"
-5 	"" "" 1 "Y"
+3 	"" "" 1 "X"
+4 	"" "" 1 "Y"
+5 	"" "" 1 "Z"
 }
 inputs
 {
@@ -47,7 +47,7 @@ inputs
 stat
 {
   create 1513219769
-  modify 1513224910
+  modify 1513683524
   author Chris@Voyager
   access 0777
 }
@@ -61,46 +61,46 @@ Content-Disposition: attachment; filename="hdaroot.spareparmdef"
 Content-Type: text/plain
 
     parm {
-	name	"Enabled"
-	baseparm
-	label	"Enabled"
-	export	none
+        name    "Enabled"
+        baseparm
+        label   "Enabled"
+        export  none
     }
     parm {
-	name	"Separate_Axes"
-	baseparm
-	label	"Separate Axes"
-	export	none
+        name    "Separate_Axes"
+        baseparm
+        label   "Separate Axes"
+        export  none
     }
     parm {
-	name	"Angular_Velocity"
-	baseparm
-	label	"Angular Velocity"
-	export	none
+        name    "Angular_Velocity"
+        baseparm
+        label   "Angular Velocity"
+        export  none
     }
     parm {
-	name	"X"
-	baseparm
-	label	"X"
-	export	none
+        name    "X"
+        baseparm
+        label   "X"
+        export  none
     }
     parm {
-	name	"Y"
-	baseparm
-	label	"Y"
-	export	none
+        name    "Y"
+        baseparm
+        label   "Y"
+        export  none
     }
     parm {
-	name	"Z"
-	baseparm
-	label	"Z"
-	export	none
+        name    "Z"
+        baseparm
+        label   "Z"
+        export  none
     }
     parm {
-	name	"id"
-	baseparm
-	label	"ID"
-	export	none
+        name    "id"
+        baseparm
+        label   "ID"
+        export  none
     }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -245,7 +245,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -263,10 +263,10 @@ Content-Type: text/plain
 comment ""
 position 2.41667 3.04072
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass on display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Angular_Velocity"
+0 "Angular_Velocity"
 }
 inputsNamed3
 {
@@ -277,7 +277,7 @@ inputs
 stat
 {
   create 1512320093
-  modify 1513222630
+  modify 1513683518
   author Chris@Voyager
   access 0777
 }
@@ -348,7 +348,7 @@ useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
 useownexportcontext	[ 0	locks=0 ]	(	"off"	)
 parmuniform	[ 0	locks=0 ]	(	"on"	)
 usebound	[ 0	locks=0 ]	(	"off"	)
-hasconnector	[ 0	locks=0 ]	(	"on"	)
+hasconnector	[ 0	locks=0 ]	(	"off"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
 providemenu	[ 0	locks=0 ]	(	"off"	)
@@ -372,9 +372,18 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/input1.outputinfos"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+
+TnVtSW5mb3MgMgpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfQW5ndWxhcl9WZWxvY2l0eQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwo=
+Tm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAAQmVnaW5JbmZvCk91dHB1dE5hbWUgYm91bmRfQW5ndWxhcl9WZWxvY2l0eQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWY=
+YXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/input2.init"
@@ -499,7 +508,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -626,7 +635,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -753,7 +762,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -880,7 +889,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1007,7 +1016,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -1034,7 +1043,7 @@ inputsNamed3
 3 	input3 0 1 "_X"
 2 	input2 0 1 "_Separate_Axes"
 0 	input 0 1 "_Enabled"
-1 	input1 0 1 "_Angular_Velocity"
+1 	input1 0 1 "Angular_Velocity"
 4 	input4 0 1 "_Y"
 5 	input5 0 1 "_Z"
 6 	input6 0 1 "_id"
@@ -1052,7 +1061,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513223222
+  modify 1513683518
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1070,7 +1079,7 @@ version 0.8
 code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"rotationOverLifetime_enabled\", $_id, $_Enabled);
 setpointattrib(0, \"rotationOverLifetime_separateAxes\", $_id, $_Separate_Axes);
-setpointattrib(0, \"rotationOverLifetime_angularVelocity\", $_id, $_Angular_Velocity);
+// setpointattrib(0, \"rotationOverLifetime_angularVelocity\", $_id, $_Angular_Velocity);
 setpointattrib(0, \"rotationOverLifetime_angularVelocity_x\", $_id, $_X);
 setpointattrib(0, \"rotationOverLifetime_angularVelocity_y\", $_id, $_Y);
 setpointattrib(0, \"rotationOverLifetime_angularVelocity_z\", $_id, $_Z);"	)
@@ -1311,7 +1320,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
