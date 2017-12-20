@@ -4,23 +4,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System;
+using System.IO;
 
 namespace NodeFX {
+    [ExecuteInEditMode]
 	public class NodeFXEffect : MonoBehaviour {
 
 		public TextAsset effectDefinition;
 		public string path;
         public string source;
 
-		public bool enableRefresh;
-		public bool refreshOnFocus;
-		public bool refreshOnFileChange;
+		public bool enableAutomaticRefresh  = true;
+        public bool refreshAtInterval       = false;
+		public bool refreshOnFocus          = true;
+        public bool refreshOnFileChange     = true;
+        public float updateInterval         = 1f;
+        private bool _isDirty = false;
+        private FileSystemWatcher _fileSystemWatcher;
 
 		private XmlDocument doc;
 		private ParticleSystem _particleSystem;
 
-        public void Refresh()
-        {
+        void Update() {
+            if (_isDirty == true) {
+                _isDirty = false;
+                Refresh();
+            }
+
+            if (refreshAtInterval == true) {
+			    StartCoroutine(checkForUpdates());
+            }
+
+            if (_fileSystemWatcher == null && effectDefinition != null) {
+                CreateFileWatcher();
+            }
+
+            if (_fileSystemWatcher != null) {
+                _fileSystemWatcher.EnableRaisingEvents = refreshOnFileChange;
+            }
+        }
+
+        public void Refresh() {
 			Debug.Log("Effect: Refreshing");
             path = AssetDatabase.GetAssetOrScenePath(effectDefinition);
 			if(!string.IsNullOrEmpty(path)) {
@@ -90,9 +114,11 @@ namespace NodeFX {
 		}
 
         private void DeleteOldParticleSystems() {
-            GetComponent<ParticleSystem>().Stop();
-            GetComponent<ParticleSystem>().gameObject.SetActive(false);
-            DestroyImmediate(GetComponent<ParticleSystem>());
+            if (GetComponent<ParticleSystem>() != null) {
+                GetComponent<ParticleSystem>().Stop();
+                GetComponent<ParticleSystem>().gameObject.SetActive(false);
+                DestroyImmediate(GetComponent<ParticleSystem>());
+            }
 
             foreach (ParticleSystem ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
                 if (ps.gameObject != gameObject) {
@@ -576,21 +602,18 @@ namespace NodeFX {
 			return node.InnerText;
 		}
 
-		public Vector4 GetVectorParam(int emitterIndex, string parameter, int parameterIndex = 0) {
-            string customizedXpath = String.Format("root/emitter[{0}]/attribute[text() = \'{1}\']/value[{2}]", emitterIndex + 1, parameter, parameterIndex + 1);
+		public Vector4 GetVectorParam(int emitterIndex, string parameter) {
+            string customizedXpath = String.Format("root/emitter[{0}]/attribute[text() = \'{1}\']/value", emitterIndex + 1, parameter);
 			XmlNodeList nodes = doc.SelectNodes(customizedXpath);
 
             Vector4 vector = new Vector4();
 
             int i = 0;
             foreach (XmlNode node in nodes) {
-                if (! String.IsNullOrEmpty(node.InnerText)) {
-                    vector[i] = Convert.ToSingle(node.InnerText);
-                } else {
-                    vector[i] = 0;
-                }
+                vector[i] = Convert.ToSingle(node.InnerText);
                 i++;
             }
+
             return vector;
 		}
 
@@ -599,10 +622,55 @@ namespace NodeFX {
 			return Convert.ToInt32(numEmitters);
 		}
 
-        private string GetSource()
-        {
+        private string GetSource() {
             string source = doc.SelectSingleNode("root").Attributes[1].Value;
 			return source;
+        }
+
+        //  Refreshing
+
+        private void OnApplicationFocus(bool hasFocus) {		
+            if (refreshOnFocus == true) {
+            _isDirty = !hasFocus;
+            }
+        }
+
+        private IEnumerator checkForUpdates() {
+            yield return new WaitForSeconds(updateInterval);
+            _isDirty = true;
+	    }
+
+        private void CreateFileWatcher()
+        {
+            _fileSystemWatcher = new FileSystemWatcher();
+            string folder = path.Replace(effectDefinition.name + ".xml", "");
+            string folderPath = Application.dataPath + folder.Substring(6);
+            Debug.Log(folderPath);
+            _fileSystemWatcher.Path = folderPath;
+
+            /* Watch for changes in LastAccess and LastWrite times, and 
+            the renaming of files or directories. */
+            _fileSystemWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+            
+            // Only watch xml files.
+            _fileSystemWatcher.Filter = "*.xml";
+
+            // Add event handlers.
+            _fileSystemWatcher.Changed += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Created += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Deleted += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Renamed += new RenamedEventHandler(OnRenamed);
+        }
+
+        private void OnRenamed(object sender, RenamedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OnChanged(object sender, FileSystemEventArgs e)
+        {
+            Debug.Log("File changed");
+            _isDirty = true;
         }
     }
 }
