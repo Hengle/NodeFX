@@ -55,7 +55,9 @@ namespace NodeFX {
 				    pSystem = Emitter.AddComponent<ParticleSystem>();
                 }
 
+                pSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
                 pSystem.gameObject.SetActive(false);
+                
 
 				MapMainParameters                       (pSystem, i);
 				MapEmissionParameters                   (pSystem, i);
@@ -82,11 +84,14 @@ namespace NodeFX {
 				MapRendererParameters                   (pSystem, i);
 
                 pSystem.gameObject.SetActive(true);
-				pSystem.Play();
+                
+				pSystem.Play(true);
 			}
 		}
 
         private void DeleteOldParticleSystems() {
+            GetComponent<ParticleSystem>().Stop();
+            GetComponent<ParticleSystem>().gameObject.SetActive(false);
             DestroyImmediate(GetComponent<ParticleSystem>());
 
             foreach (ParticleSystem ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {

@@ -5,19 +5,24 @@
     script	unityparticletemplate
     label	UnitySpriteParticleTemplate
 
-    input	int	Type	""
     input	float	normalDirection	"Normal Direction"
-    input	string	Material	"Normal Direction"
-    output	float	_normalDirection	"Normal Direction"
-    inputflags	Type	0
+    input	string	lifetime	"Start Lifetime"
+    input	string	speed	"Start Speed"
+    input	string	rotation	"Start Rotation"
+    input	string	material	Material
+    input	string	size	"Start Size"
+    input	string	color	"Start Color"
     inputflags	normalDirection	2
-    inputflags	Material	2
-    signature	"Default Inputs"	default	{ int float string float }
+    inputflags	lifetime	2
+    inputflags	speed	2
+    inputflags	rotation	2
+    inputflags	material	2
+    inputflags	size	2
+    inputflags	color	2
+    signature	"Default Inputs"	default	{ float string string string string string string }
 
     outputoverrides	default
     {
-	___begin	auto
-			(0)
     }
 
     help {
@@ -33,10 +38,51 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Material"
-        label   "Normal Direction"
+        name    "material"
+        label   "Material"
         type    string
         default { "" }
         parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "lifetime"
+        label   "Start Lifetime"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "speed"
+        label   "Start Speed"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "rotation"
+        label   "Start Rotation"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "size"
+        label   "Start Size"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "color"
+        label   "Start Color"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
     }
 }

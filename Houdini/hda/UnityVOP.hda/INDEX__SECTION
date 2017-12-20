@@ -441,10 +441,10 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 1
+Inputs:       0 to 7
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Dec 19 23:14:34 2017
+Modified:     Wed Dec 20 08:40:26 2017
 
