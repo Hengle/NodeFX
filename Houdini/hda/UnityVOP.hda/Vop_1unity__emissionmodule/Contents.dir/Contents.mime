@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 6.25146 11.5564
+position -1.31093 -0.678201
 connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -28,13 +28,13 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	Core 21 1 "id"
+0 	unity_shapemodule1 30 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "Rate_Over_Time"
 3 	"" "" 1 "Rate_Over_Distance"
-4 	unityburst1 5 1 "Burst1"
-5 	unityburst1 5 1 "Burst2"
-6 	unityburst1 5 1 "Burst3"
+4 	"" "" 1 "Burst1"
+5 	"" "" 1 "Burst2"
+6 	"" "" 1 "Burst3"
 7 	"" "" 1 "Burst4"
 8 	"" "" 1 "Burst5"
 9 	"" "" 1 "Burst6"
@@ -42,13 +42,13 @@ inputsNamed3
 }
 inputs
 {
-0 	Core 0 1
+0 	unity_shapemodule1 0 1
 1 	"" 0 1
 2 	"" 0 1
 3 	"" 0 1
-4 	unityburst1 0 1
-5 	unityburst1 0 1
-6 	unityburst1 0 1
+4 	"" 0 1
+5 	"" 0 1
+6 	"" 0 1
 7 	"" 0 1
 8 	"" 0 1
 9 	"" 0 1
@@ -57,7 +57,7 @@ inputs
 stat
 {
   create 1513214256
-  modify 1513701185
+  modify 1513741930
   author Chris@Voyager
   access 0777
 }
@@ -510,7 +510,7 @@ inputs
 stat
 {
   create 1512593115
-  modify 1513701026
+  modify 1513741930
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -525,48 +525,48 @@ Content-Type: text/plain
 
 {
 version 0.8
-code	[ 0	locks=0 ]	(	"UnityBurst structs[];
+code	[ 0	locks=0 ]	(	"UnityBurst $structs[];
 string $output[];
-int numBursts = 0;
+int $numBursts = 0;
 
 //  To whoever is reading this, this is honestly the simplest 
 //  way I could figure out how to check if an input was 
 //  connected or not. Don't judge me plz
 
 if ($_Burst1.cycles > 0) {
-    push(structs, $_Burst1);
-    numBursts++;
+    push($structs, $_Burst1);
+    $numBursts++;
     }
 if ($_Burst2.cycles > 0) {
-    push(structs, $_Burst2);
-    numBursts++;
+    push($structs, $_Burst2);
+    $numBursts++;
     }
 if ($_Burst3.cycles > 0) {
-    push(structs, $_Burst3);
-    numBursts++;
+    push($structs, $_Burst3);
+    $numBursts++;
     }
 if ($_Burst4.cycles > 0) {
-    push(structs, $_Burst4);
-    numBursts++;
+    push($structs, $_Burst4);
+    $numBursts++;
     }
 if ($_Burst5.cycles > 0) {
-    push(structs, $_Burst5);
-    numBursts++;
+    push($structs, $_Burst5);
+    $numBursts++;
     }
 if ($_Burst6.cycles > 0) {
-    push(structs, $_Burst6);
-    numBursts++;
+    push($structs, $_Burst6);
+    $numBursts++;
     }
 if ($_Burst7.cycles > 0) {
-    push(structs, $_Burst7);
-    numBursts++;
+    push($structs, $_Burst7);
+    $numBursts++;
     }
 if ($_Burst8.cycles > 0) {
-    push(structs, $_Burst8);
-    numBursts++;
+    push($structs, $_Burst8);
+    $numBursts++;
     }
 
-// append($output, sprintf(\"%g\", numBursts));
+// append($output, sprintf(\"%g\", $numBursts));
 
 foreach (UnityBurst burst; $structs) {
     append($output, sprintf(\"%f\", burst.time));
@@ -1878,7 +1878,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513701026
+  modify 1513741930
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }

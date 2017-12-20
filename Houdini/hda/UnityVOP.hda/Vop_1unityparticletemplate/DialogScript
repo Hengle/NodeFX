@@ -1,0 +1,42 @@
+# Dialog script for unityparticletemplate automatically generated
+
+{
+    name	unityparticletemplate
+    script	unityparticletemplate
+    label	UnitySpriteParticleTemplate
+
+    input	int	Type	""
+    input	float	normalDirection	"Normal Direction"
+    input	string	Material	"Normal Direction"
+    output	float	_normalDirection	"Normal Direction"
+    inputflags	Type	0
+    inputflags	normalDirection	2
+    inputflags	Material	2
+    signature	"Default Inputs"	default	{ int float string float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "normalDirection"
+        label   "Normal Direction"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Material"
+        label   "Normal Direction"
+        type    string
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+}

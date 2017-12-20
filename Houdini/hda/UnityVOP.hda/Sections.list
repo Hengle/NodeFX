@@ -29,3 +29,5 @@ Vop_1unity__customdata	Vop/unity_customdata
 Vop_1unity__noise	Vop/unity_noise
 Vop_1unity__collision	Vop/unity_collision
 Vop_1unityburst	Vop/unityburst
+Vop_1unityMinMaxCurve	Vop/unityMinMaxCurve
+Vop_1unityparticletemplate	Vop/unityparticletemplate
