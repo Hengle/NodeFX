@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 8.90736 12.9063
+position -7.29879 8.4006
 connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -91,7 +91,7 @@ inputs
 stat
 {
   create 1513215289
-  modify 1513699152
+  modify 1513813746
   author Chris@Voyager
   access 0777
 }
@@ -147,7 +147,7 @@ inputs
 stat
 {
   create 1512171384
-  modify 1513215370
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -222,7 +222,7 @@ hasconnector	[ 0	locks=0 ]	(	"on"	)
 exportparm	[ 0	locks=0 ]	(	"off"	)
 exportcontext	[ 0	locks=0 ]	(	cvex	)
 providemenu	[ 0	locks=0 ]	(	"on"	)
-menuchoices	[ 0	locks=0 ]	(	"0 Sphere 1 SphereShell 2 Hemisphere 3 HemisphereShell 4 Cone 7 ConeShell 8 ConeVolume 9 ConeVolumeShell 5 Box 15 BoxShell 16 BoxEdge 17 Donut 6 Mesh 10 Circle 11 CircleEdge 12 SingleSidedEdge 13 MeshRenderer 14 \"Skinned Mesh Renderer\" 15 BoxShell 16 BoxEdge 17 Donut"	)
+menuchoices	[ 0	locks=0 ]	(	"0 Sphere 1 SphereShell 2 Hemisphere 3 HemisphereShell 4 Cone 7 ConeShell 8 ConeVolume 9 ConeVolumeShell 5 Box 15 BoxShell 16 BoxEdge 17 Circle 6 Mesh 10 Circle 11 CircleEdge 12 SingleSidedEdge 13 MeshRenderer 14 \"Skinned Mesh Renderer\" 15 BoxShell 16 BoxEdge 17 Donut"	)
 menuscript	[ 0	locks=0 ]	(	""	)
 menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
 separator2	[ 0	locks=0 ]	(	)
@@ -230,7 +230,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -274,7 +274,7 @@ inputs
 stat
 {
   create 1512177144
-  modify 1513215402
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -357,7 +357,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -401,7 +401,7 @@ inputs
 stat
 {
   create 1512180259
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -484,7 +484,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -528,7 +528,7 @@ inputs
 stat
 {
   create 1512181334
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -611,7 +611,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -655,7 +655,7 @@ inputs
 stat
 {
   create 1512181397
-  modify 1513215402
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -738,7 +738,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -782,7 +782,7 @@ inputs
 stat
 {
   create 1512181452
-  modify 1513215402
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -865,7 +865,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -909,7 +909,7 @@ inputs
 stat
 {
   create 1512181637
-  modify 1513221011
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -992,7 +992,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"on"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1036,7 +1036,7 @@ inputs
 stat
 {
   create 1512657455
-  modify 1513215655
+  modify 1513812803
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1119,7 +1119,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1163,7 +1163,7 @@ inputs
 stat
 {
   create 1512657500
-  modify 1513215655
+  modify 1513812803
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1246,7 +1246,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1290,7 +1290,7 @@ inputs
 stat
 {
   create 1512657500
-  modify 1513215655
+  modify 1513812803
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1373,7 +1373,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1417,7 +1417,7 @@ inputs
 stat
 {
   create 1512657500
-  modify 1513215655
+  modify 1513812803
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1500,7 +1500,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1544,7 +1544,7 @@ inputs
 stat
 {
   create 1512859058
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -1627,7 +1627,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1671,7 +1671,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -1754,7 +1754,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1798,7 +1798,7 @@ inputs
 stat
 {
   create 1512859292
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -1881,7 +1881,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -1925,7 +1925,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2008,7 +2008,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2052,7 +2052,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2135,7 +2135,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2179,7 +2179,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2262,7 +2262,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2306,7 +2306,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2389,7 +2389,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2433,7 +2433,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2516,7 +2516,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2560,7 +2560,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2643,7 +2643,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2687,7 +2687,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2770,7 +2770,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2814,7 +2814,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -2897,7 +2897,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -2941,7 +2941,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -3024,7 +3024,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -3068,7 +3068,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -3151,7 +3151,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -3195,7 +3195,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -3278,7 +3278,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -3322,7 +3322,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -3405,7 +3405,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -3449,7 +3449,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -3532,7 +3532,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -3633,7 +3633,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513657527
+  modify 1513812831
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3946,7 +3946,7 @@ inputs
 stat
 {
   create 1512180259
-  modify 1513215655
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -4029,7 +4029,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }
@@ -4073,7 +4073,7 @@ inputs
 stat
 {
   create 1512859256
-  modify 1513656234
+  modify 1513812803
   author Chris@Voyager
   access 0777
 }
@@ -4156,7 +4156,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\""	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }

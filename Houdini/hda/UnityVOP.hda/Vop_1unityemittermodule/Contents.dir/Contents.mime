@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -8.92163 0.847143
+position -12.1571 11.3306
 connectornextid 22
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault off exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -77,7 +77,7 @@ inputs
 stat
 {
   create 1512587500
-  modify 1513711473
+  modify 1513815873
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3562,7 +3562,7 @@ inputs
 stat
 {
   create 1513183598
-  modify 1513214915
+  modify 1513804488
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3645,7 +3645,7 @@ invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
 hidewhen	[ 0	locks=0 ]	(	""	)
-callback	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	"hou.pwd().hm().my_callback(kwargs, hou.pwd())"	)
 tags	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	"Setting the ID is necessary in order for the various modules to know which emitter they belong to. Be sure not to set this higher than the current amount of emitters"	)
 }
@@ -3748,7 +3748,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513711454
+  modify 1513804488
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }

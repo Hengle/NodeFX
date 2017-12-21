@@ -92,6 +92,7 @@
         help    "Setting the ID is necessary in order for the various modules to know which emitter they belong to. Be sure not to set this higher than the current amount of emitters"
         range   { 0 10 }
         parmtag { "parmvop" "1" }
+        parmtag { "script_callback" "hou.pwd().hm().my_callback(kwargs, hou.pwd())" }
     }
     parm {
         name    "Duration"

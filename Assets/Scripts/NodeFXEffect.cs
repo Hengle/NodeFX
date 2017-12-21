@@ -25,6 +25,10 @@ namespace NodeFX {
 		private XmlDocument doc;
 		private ParticleSystem _particleSystem;
 
+        void OnEnabled() {
+            Application.runInBackground = true;
+        }
+
         void Update() {
             if (_isDirty == true) {
                 _isDirty = false;
@@ -48,7 +52,12 @@ namespace NodeFX {
 			Debug.Log("Effect: Refreshing");
             path = AssetDatabase.GetAssetOrScenePath(effectDefinition);
 			if(!string.IsNullOrEmpty(path)) {
-				LoadXML(path);
+                try {
+                    LoadXML(path);
+                }
+                catch (IOException) {
+                    return;
+                }
 			}
         }
 
@@ -645,7 +654,6 @@ namespace NodeFX {
             _fileSystemWatcher = new FileSystemWatcher();
             string folder = path.Replace(effectDefinition.name + ".xml", "");
             string folderPath = Application.dataPath + folder.Substring(6);
-            Debug.Log(folderPath);
             _fileSystemWatcher.Path = folderPath;
 
             /* Watch for changes in LastAccess and LastWrite times, and 
@@ -669,7 +677,6 @@ namespace NodeFX {
 
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
-            Debug.Log("File changed");
             _isDirty = true;
         }
     }
