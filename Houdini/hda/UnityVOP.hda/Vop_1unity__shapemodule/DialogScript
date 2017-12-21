@@ -86,7 +86,6 @@
         joinnext
         default { "on" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "id"
@@ -95,7 +94,6 @@
         default { "0" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Shape"
@@ -127,7 +125,6 @@
         }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Radius"
@@ -136,7 +133,6 @@
         default { "1" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Radius_Thickness"
@@ -145,7 +141,6 @@
         default { "1" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Position"
@@ -155,7 +150,6 @@
         default { "0" "0" "0" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Rotation"
@@ -165,7 +159,6 @@
         default { "0" "0" "0" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Scale"
@@ -175,7 +168,6 @@
         default { "1" "1" "1" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "AlignToDirection"
@@ -183,7 +175,6 @@
         type    toggle
         default { "off" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "RandomizeDirection"
@@ -192,7 +183,6 @@
         default { "0" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Spherize_Direction"
@@ -201,7 +191,6 @@
         default { "0" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "RandomizePosition"
@@ -210,7 +199,6 @@
         default { "0" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Randomize_Position"
@@ -227,7 +215,6 @@
         default { "25" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "Arc"
@@ -236,7 +223,6 @@
         default { "360" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "ArcMode"
@@ -251,7 +237,6 @@
         }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "ArcSpread"
@@ -260,7 +245,6 @@
         default { "0" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "ArcSpeed"
@@ -268,7 +252,6 @@
         type    string
         default { "constant;float;1.0" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "ConeLength"
@@ -277,7 +260,6 @@
         default { "5" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "DonutRadius"
@@ -286,7 +268,6 @@
         default { "0.2" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "BoxThickness"
@@ -296,7 +277,6 @@
         default { "0" "0" "0" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "MeshPath"
@@ -304,7 +284,6 @@
         type    string
         default { "" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "MeshShapeType"
@@ -318,7 +297,6 @@
         }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "MeshRendererPath"
@@ -326,7 +304,6 @@
         type    string
         default { "" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "SkinnedMeshRendererPath"
@@ -334,7 +311,6 @@
         type    string
         default { "" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "SingleMaterial"
@@ -342,7 +318,6 @@
         type    toggle
         default { "off" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "UseMeshColors"
@@ -350,7 +325,6 @@
         type    toggle
         default { "off" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "shape_normalOffset"
@@ -359,7 +333,6 @@
         default { "0" }
         range   { 0 1 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "MeshMaterialIndex"
@@ -368,7 +341,6 @@
         default { "0" }
         range   { 0 10 }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
     parm {
         name    "UseMeshMaterialIndex"
@@ -376,6 +348,5 @@
         type    toggle
         default { "off" }
         parmtag { "parmvop" "1" }
-        parmtag { "script_callback" "python -c \"hou.node(\\\"../../../write_xml\\\").cook(force=True)\"" }
     }
 }

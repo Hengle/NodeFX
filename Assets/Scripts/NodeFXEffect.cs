@@ -166,6 +166,7 @@ namespace NodeFX {
             mainModule.startRotationZ               = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startRotation_z"));
             mainModule.gravityModifier              = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_gravityModifier"));
             mainModule.startColor                   = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "main_startColor"));
+            pSystem.randomSeed = 0;
             
         }
 
