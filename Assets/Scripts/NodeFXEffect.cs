@@ -25,8 +25,18 @@ namespace NodeFX {
 		private XmlDocument doc;
 		private ParticleSystem _particleSystem;
 
-        void OnEnabled() {
+        void OnEnable() {
             Application.runInBackground = true;
+            //LoadDefaultDefinition();
+        }
+
+        private void LoadDefaultDefinition()
+        {
+            effectDefinition = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Effects/Definitions/default.xml");
+            
+            if (effectDefinition != null) {
+                Refresh();
+            } 
         }
 
         void Update() {
@@ -39,7 +49,7 @@ namespace NodeFX {
 			    StartCoroutine(checkForUpdates());
             }
 
-            if (_fileSystemWatcher == null && effectDefinition != null) {
+            if (_fileSystemWatcher == null && effectDefinition != null && String.IsNullOrEmpty(path) == false) {
                 CreateFileWatcher();
             }
 
@@ -58,15 +68,14 @@ namespace NodeFX {
                 catch (IOException) {
                     return;
                 }
+                InstantiateParticleSystem();
 			}
         }
 
 		private void LoadXML(string path) {
-			Debug.Log("Effect: Loading XML at path " + path);
 			doc = new XmlDocument();
 			doc.Load(path);
             source = GetSource();
-            InstantiateParticleSystem();
 		}
 
         private void InstantiateParticleSystem() {

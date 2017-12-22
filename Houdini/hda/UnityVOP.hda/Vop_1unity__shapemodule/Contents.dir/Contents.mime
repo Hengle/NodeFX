@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -7.29879 8.4006
+position -19.0876 17.7525
 connectornextid 29
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -28,17 +28,17 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	Emission 11 1 "id"
+0 	Core 21 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "Shape"
 3 	"" "" 1 "Radius"
-4 	"" "" 1 "Radius_Thickness"
+4 	"" "" 1 "RadiusThickness"
 5 	"" "" 1 "Position"
 6 	"" "" 1 "Rotation"
 7 	"" "" 1 "Scale"
 8 	"" "" 1 "AlignToDirection"
 9 	"" "" 1 "RandomizeDirection"
-10 	"" "" 1 "Spherize_Direction"
+10 	"" "" 1 "SpherizeDirection"
 11 	"" "" 1 "Randomize_Position"
 12 	"" "" 1 "RandomizePosition"
 13 	"" "" 1 "Arc"
@@ -59,7 +59,7 @@ inputsNamed3
 }
 inputs
 {
-0 	Emission 0 1
+0 	Core 0 1
 1 	"" 0 1
 2 	"" 0 1
 3 	"" 0 1
@@ -91,7 +91,7 @@ inputs
 stat
 {
   create 1513215289
-  modify 1513895599
+  modify 1513974461
   author Chris@Voyager
   access 0777
 }
@@ -242,7 +242,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -369,7 +369,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -390,7 +390,7 @@ connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Radius_Thickness"
+0 "_RadiusThickness"
 }
 inputsNamed3
 {
@@ -401,7 +401,7 @@ inputs
 stat
 {
   create 1512180259
-  modify 1513215655
+  modify 1513974416
   author Chris@Voyager
   access 0777
 }
@@ -418,7 +418,7 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	"Radius Thickness"	)
+parmname	[ 0	locks=0 ]	(	RadiusThickness	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
 parmlabel	[ 0	locks=0 ]	(	"Radius Thickness"	)
@@ -496,7 +496,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -623,7 +623,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -750,7 +750,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -877,7 +877,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1004,7 +1004,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1131,7 +1131,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1258,7 +1258,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1279,7 +1279,7 @@ connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "_Spherize_Direction"
+0 "_SpherizeDirection"
 }
 inputsNamed3
 {
@@ -1290,7 +1290,7 @@ inputs
 stat
 {
   create 1512657500
-  modify 1513215655
+  modify 1513974411
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -1307,7 +1307,7 @@ Content-Type: text/plain
 version 0.8
 parmscope	[ 0	locks=0 ]	(	subnet	)
 parmaccess	[ 0	locks=0 ]	(	""	)
-parmname	[ 0	locks=0 ]	(	"Spherize Direction"	)
+parmname	[ 0	locks=0 ]	(	SpherizeDirection	)
 parmprefix	[ 0	locks=0 ]	(	""	)
 parmpostfix	[ 0	locks=0 ]	(	""	)
 parmlabel	[ 0	locks=0 ]	(	"Spherize Direction"	)
@@ -1385,7 +1385,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1512,7 +1512,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1639,7 +1639,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1766,7 +1766,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -1893,7 +1893,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2020,7 +2020,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2147,7 +2147,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2274,7 +2274,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2401,7 +2401,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2528,7 +2528,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2655,7 +2655,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2782,7 +2782,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -2909,7 +2909,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3036,7 +3036,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3163,7 +3163,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3290,7 +3290,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3417,7 +3417,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3544,7 +3544,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -3572,13 +3572,13 @@ inputsNamed3
 6 	input6 0 1 "_Enabled"
 0 	input 0 1 "_Shape"
 1 	input1 0 1 "_Radius"
-2 	input2 0 1 "_Radius_Thickness"
+2 	input2 0 1 "_RadiusThickness"
 3 	input3 0 1 "_Position"
 4 	input4 0 1 "_Rotation"
 5 	input5 0 1 "_Scale"
 7 	input7 0 1 "_AlignToDirection"
 8 	input8 0 1 "_RandomizeDirection"
-9 	input9 0 1 "_Spherize_Direction"
+9 	input9 0 1 "_SpherizeDirection"
 10 	input10 0 1 "_RandomizePosition"
 11 	input11 0 1 "_Angle"
 12 	input12 0 1 "_Arc"
@@ -3633,7 +3633,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1513775873
+  modify 1513974480
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -3652,10 +3652,10 @@ code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"shape_enabled\", $_id, $_Enabled);
 setpointattrib(0, \"shape_shape\", $_id, $_Shape);
 setpointattrib(0, \"shape_radius\", $_id, $_Radius);
-setpointattrib(0, \"shape_radiusThickness\", $_id, $_Radius_Thickness);
+setpointattrib(0, \"shape_radiusThickness\", $_id, $_RadiusThickness);
 setpointattrib(0, \"shape_alignToDirection\", $_id, $_AlignToDirection);
 setpointattrib(0, \"shape_randomizeDirectionAmount\", $_id, $_RandomizeDirection);
-setpointattrib(0, \"shape_spherizeDirectionAmount\", $_id, $_Spherize_Direction);
+setpointattrib(0, \"shape_spherizeDirectionAmount\", $_id, $_SpherizeDirection);
 setpointattrib(0, \"shape_randomizePositionAmount\", $_id, $_RandomizePosition);
 setpointattrib(0, \"shape_angle\", $_id, $_Angle);
 setpointattrib(0, \"shape_arc\", $_id, $_Arc);
@@ -3914,7 +3914,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -4041,7 +4041,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 
@@ -4168,7 +4168,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.5.323"
+		"value":"16.0.736"
 	}
 }
 

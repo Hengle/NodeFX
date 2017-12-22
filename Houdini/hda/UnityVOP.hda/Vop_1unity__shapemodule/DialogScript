@@ -9,13 +9,13 @@
     input	int	Enabled	Enabled
     input	int	Shape	Shape
     input	float	Radius	Radius
-    input	float	Radius_Thickness	"Radius Thickness"
+    input	float	RadiusThickness	"Radius Thickness"
     input	vector	Position	Position
     input	vector	Rotation	Rotation
     input	vector	Scale	Scale
     input	int	AlignToDirection	"Align To Direction"
     input	float	RandomizeDirection	"Randomize Direction"
-    input	float	Spherize_Direction	"Spherize Direction"
+    input	float	SpherizeDirection	"Spherize Direction"
     input	float	Randomize_Position	"Spherize Direction"
     input	float	RandomizePosition	"Randomize Position"
     input	float	Arc	Arc
@@ -40,13 +40,13 @@
     inputflags	Enabled	2
     inputflags	Shape	2
     inputflags	Radius	2
-    inputflags	Radius_Thickness	2
+    inputflags	RadiusThickness	2
     inputflags	Position	2
     inputflags	Rotation	2
     inputflags	Scale	2
     inputflags	AlignToDirection	2
     inputflags	RandomizeDirection	2
-    inputflags	Spherize_Direction	2
+    inputflags	SpherizeDirection	2
     inputflags	Randomize_Position	0
     inputflags	RandomizePosition	2
     inputflags	Arc	2
@@ -80,273 +80,265 @@
     }
 
     parm {
-        name    "Enabled"
-        label   "Enabled"
-        type    toggle
-        joinnext
-        default { "on" }
-        parmtag { "parmvop" "1" }
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "id"
-        label   "ID"
-        type    integer
-        default { "0" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Shape"
-        label   "Shape"
-        type    integer
-        default { "0" }
-        menu {
-            "0"     "Sphere"
-            "1"     "SphereShell"
-            "2"     "Hemisphere"
-            "3"     "HemisphereShell"
-            "4"     "Cone"
-            "7"     "ConeShell"
-            "8"     "ConeVolume"
-            "9"     "ConeVolumeShell"
-            "5"     "Box"
-            "15"    "BoxShell"
-            "16"    "BoxEdge"
-            "17"    "Circle"
-            "6"     "Mesh"
-            "10"    "Circle"
-            "11"    "CircleEdge"
-            "12"    "SingleSidedEdge"
-            "13"    "MeshRenderer"
-            "14"    "Skinned Mesh Renderer"
-            "15"    "BoxShell"
-            "16"    "BoxEdge"
-            "17"    "Donut"
-        }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"Shape"
+	label	"Shape"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Sphere"
+	    "1"	"SphereShell"
+	    "2"	"Hemisphere"
+	    "3"	"HemisphereShell"
+	    "4"	"Cone"
+	    "7"	"ConeShell"
+	    "8"	"ConeVolume"
+	    "9"	"ConeVolumeShell"
+	    "5"	"Box"
+	    "15"	"BoxShell"
+	    "16"	"BoxEdge"
+	    "17"	"Circle"
+	    "6"	"Mesh"
+	    "10"	"Circle"
+	    "11"	"CircleEdge"
+	    "12"	"SingleSidedEdge"
+	    "13"	"MeshRenderer"
+	    "14"	"Skinned Mesh Renderer"
+	    "15"	"BoxShell"
+	    "16"	"BoxEdge"
+	    "17"	"Donut"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Radius"
-        label   "Radius"
-        type    float
-        default { "1" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"Radius"
+	label	"Radius"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Radius_Thickness"
-        label   "Radius Thickness"
-        type    float
-        default { "1" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"RadiusThickness"
+	label	"Radius Thickness"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Position"
-        label   "Position"
-        type    float
-        size    3
-        default { "0" "0" "0" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"Position"
+	label	"Position"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Rotation"
-        label   "Rotation"
-        type    float
-        size    3
-        default { "0" "0" "0" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"Rotation"
+	label	"Rotation"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Scale"
-        label   "Scale"
-        type    float
-        size    3
-        default { "1" "1" "1" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"Scale"
+	label	"Scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "AlignToDirection"
-        label   "Align To Direction"
-        type    toggle
-        default { "off" }
-        parmtag { "parmvop" "1" }
+	name	"AlignToDirection"
+	label	"Align To Direction"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "RandomizeDirection"
-        label   "Randomize Direction"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"RandomizeDirection"
+	label	"Randomize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Spherize_Direction"
-        label   "Spherize Direction"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"SpherizeDirection"
+	label	"Spherize Direction"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "RandomizePosition"
-        label   "Randomize Position"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"RandomizePosition"
+	label	"Randomize Position"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Randomize_Position"
-        label   "Spherize Direction"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"Angle"
+	label	"Angle"
+	type	float
+	default	{ "25" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Angle"
-        label   "Angle"
-        type    float
-        default { "25" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"Arc"
+	label	"Arc"
+	type	float
+	default	{ "360" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "Arc"
-        label   "Arc"
-        type    float
-        default { "360" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"ArcMode"
+	label	"Arc Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Random"
+	    "1"	"Loop"
+	    "2"	"Ping-Pong"
+	    "3"	"Burst Spread"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "ArcMode"
-        label   "Arc Mode"
-        type    integer
-        default { "0" }
-        menu {
-            "0" "Random"
-            "1" "Loop"
-            "2" "Ping-Pong"
-            "3" "Burst Spread"
-        }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"ArcSpread"
+	label	"Arc Spread"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "ArcSpread"
-        label   "Arc Spread"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"ArcSpeed"
+	label	"Arc Speed"
+	type	string
+	default	{ "constant;float;1.0" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "ArcSpeed"
-        label   "Arc Speed"
-        type    string
-        default { "constant;float;1.0" }
-        parmtag { "parmvop" "1" }
+	name	"ConeLength"
+	label	"Cone Length"
+	type	float
+	default	{ "5" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "ConeLength"
-        label   "Cone Length"
-        type    float
-        default { "5" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"DonutRadius"
+	label	"Donut Radius"
+	type	float
+	default	{ "0.2" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "DonutRadius"
-        label   "Donut Radius"
-        type    float
-        default { "0.2" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"BoxThickness"
+	label	"Box Thickness"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "BoxThickness"
-        label   "Box Thickness"
-        type    float
-        size    3
-        default { "0" "0" "0" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"MeshPath"
+	label	"Mesh Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "MeshPath"
-        label   "Mesh Path"
-        type    string
-        default { "" }
-        parmtag { "parmvop" "1" }
+	name	"MeshShapeType"
+	label	"Mesh Shape Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Vertex"
+	    "1"	"Edge"
+	    "2"	"Triangle"
+	}
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "MeshShapeType"
-        label   "Mesh Shape Type"
-        type    integer
-        default { "0" }
-        menu {
-            "0" "Vertex"
-            "1" "Edge"
-            "2" "Triangle"
-        }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
+	name	"MeshRendererPath"
+	label	"MeshRenderer Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "MeshRendererPath"
-        label   "MeshRenderer Path"
-        type    string
-        default { "" }
-        parmtag { "parmvop" "1" }
+	name	"SkinnedMeshRendererPath"
+	label	"SkinnedMeshRenderer Path"
+	type	string
+	default	{ "" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "SkinnedMeshRendererPath"
-        label   "SkinnedMeshRenderer Path"
-        type    string
-        default { "" }
-        parmtag { "parmvop" "1" }
+	name	"SingleMaterial"
+	label	"Single Material"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "SingleMaterial"
-        label   "Single Material"
-        type    toggle
-        default { "off" }
-        parmtag { "parmvop" "1" }
+	name	"UseMeshColors"
+	label	"Use Mesh Colors"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "UseMeshColors"
-        label   "Use Mesh Colors"
-        type    toggle
-        default { "off" }
-        parmtag { "parmvop" "1" }
+	name	"shape_normalOffset"
+	label	"Normal Offset"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "shape_normalOffset"
-        label   "Normal Offset"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
+	name	"MeshMaterialIndex"
+	label	"Mesh Material Index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
-        name    "MeshMaterialIndex"
-        label   "Mesh Material Index"
-        type    integer
-        default { "0" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "UseMeshMaterialIndex"
-        label   "Mesh Material Index"
-        type    toggle
-        default { "off" }
-        parmtag { "parmvop" "1" }
+	name	"UseMeshMaterialIndex"
+	label	"Mesh Material Index"
+	type	toggle
+	default	{ "off" }
+	parmtag	{ "parmvop" "1" }
     }
 }

@@ -11,7 +11,6 @@ public class NodeFXEditor : Editor {
 
 	NodeFXEffect targetEffect;
 
-	
 	private GUIStyle headerStyle = new GUIStyle();
 
 	void OnEnable() {
@@ -105,3 +104,26 @@ public class NodeFXEditor : Editor {
 		headerStyle.normal.background = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Textures/nodefx_logo.png");
 	}
 } 
+
+public class NodeFXMenu : MonoBehaviour {
+    // Add a menu item named "Do Something" to MyMenu in the menu bar.
+    [MenuItem("GameObject/Effects/NodeFX System")]
+    static void CreateNewEffect(MenuCommand menuCommand)
+    {
+        // Create a custom game object
+        GameObject effect = new GameObject("NodeFXEffect");
+        effect.AddComponent<NodeFXEffect>();
+        // Ensure it gets reparented if this was a context click (otherwise does nothing)
+        GameObjectUtility.SetParentAndAlign(effect, menuCommand.context as GameObject);
+        // Register the creation in the undo system
+        Undo.RegisterCreatedObjectUndo(effect, "Create " + effect.name);
+        Selection.activeObject = effect;
+    }
+
+    [MenuItem("CONTEXT/NodeFXEffect/Refresh")]
+    static void Refresh(MenuCommand command)
+    {
+        NodeFXEffect target = (NodeFXEffect)command.context;
+        target.Refresh();
+    }
+}
