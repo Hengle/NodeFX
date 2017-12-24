@@ -1,0 +1,52 @@
+# Dialog script for UnityExternalForcesModule automatically generated
+
+{
+    name	UnityExternalForcesModule
+    script	UnityExternalForcesModule
+    label	UnityExternalForces
+
+    input	int	id	ID
+    input	int	Enabled	Enabled
+    input	float	Multiplier	Multiplier
+    output	int	_id	ID
+    inputflags	id	2
+    inputflags	Enabled	2
+    inputflags	Multiplier	2
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int float int }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"Enabled"
+	label	"Enabled"
+	type	toggle
+	joinnext
+	default	{ "on" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id"
+	label	"ID"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Multiplier"
+	label	"Multiplier"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	parmtag	{ "parmvop" "1" }
+    }
+}

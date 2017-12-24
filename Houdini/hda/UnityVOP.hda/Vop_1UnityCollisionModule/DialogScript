@@ -1,0 +1,206 @@
+# Dialog script for UnityCollisionModule automatically generated
+
+{
+    name	UnityCollisionModule
+    script	UnityCollisionModule
+    label	UnityCollision
+
+    input	int	id	ID
+    input	int	Enabled	Enabled
+    input	int	Type	Type
+    input	int	Mode	Mode
+    input	string	Dampen	Dampen
+    input	string	Bounce	Bounce
+    input	string	LifetimeLoss	"Lifetime Loss"
+    input	float	MinKillSpeed	"Min Kill Speed"
+    input	float	MaxKillSpeed	"Max Kill Speed"
+    input	float	RadiusScale	RadiusScale
+    input	int	Quality	Quality
+    input	int	EnableDynamicColliders	"Enable Dynamic Colliders"
+    input	float	ColliderForce	"Collider Force"
+    input	int	MultiplyByCollisionAngle	"Multiply By Collision Angle"
+    input	int	MultiplyByParticleSpeed	"Multiply By Particle Speed"
+    input	int	MultiplyByParticleSize	"Multiply By Particle Size"
+    input	int	SendCollisionMessages	"Send Collision Messages"
+    input	int	VisualizeBounds	"Visualize Bounds"
+    output	int	_id	ID
+    inputflags	id	2
+    inputflags	Enabled	2
+    inputflags	Type	2
+    inputflags	Mode	2
+    inputflags	Dampen	2
+    inputflags	Bounce	2
+    inputflags	LifetimeLoss	2
+    inputflags	MinKillSpeed	2
+    inputflags	MaxKillSpeed	2
+    inputflags	RadiusScale	2
+    inputflags	Quality	2
+    inputflags	EnableDynamicColliders	2
+    inputflags	ColliderForce	2
+    inputflags	MultiplyByCollisionAngle	2
+    inputflags	MultiplyByParticleSpeed	2
+    inputflags	MultiplyByParticleSize	2
+    inputflags	SendCollisionMessages	2
+    inputflags	VisualizeBounds	2
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int int int int string string string float float float int int float int int int int int int }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Type"
+        label   "Type"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Planes"
+            "1" "World"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Mode"
+        label   "Mode"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "3D"
+            "1" "2D"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Dampen"
+        label   "Dampen"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Bounce"
+        label   "Bounce"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "LifetimeLoss"
+        label   "Lifetime Loss"
+        type    string
+        default { "randomConstant;float;0.000000;1.000000" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MinKillSpeed"
+        label   "Min Kill Speed"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MaxKillSpeed"
+        label   "Max Kill Speed"
+        type    float
+        default { "10000" }
+        range   { 0 10000 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "RadiusScale"
+        label   "RadiusScale"
+        type    float
+        default { "1" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Quality"
+        label   "Quality"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "High"
+            "1" "Medium"
+            "2" "Low"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "EnableDynamicColliders"
+        label   "Enable Dynamic Colliders"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ColliderForce"
+        label   "Collider Force"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MultiplyByCollisionAngle"
+        label   "Multiply By Collision Angle"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MultiplyByParticleSpeed"
+        label   "Multiply By Particle Speed"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MultiplyByParticleSize"
+        label   "Multiply By Particle Size"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "SendCollisionMessages"
+        label   "Send Collision Messages"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "VisualizeBounds"
+        label   "Visualize Bounds"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+}

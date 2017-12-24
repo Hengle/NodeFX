@@ -1,13 +1,14 @@
-# Dialog script for unityvelocityoverlifetimemodule automatically generated
+# Dialog script for UnityForceOverLifetimeModule automatically generated
 
 {
-    name	unityvelocityoverlifetimemodule
-    script	unityvelocityoverlifetimemodule
-    label	UnityVelocityOverLifetimeModule
+    name	UnityForceOverLifetimeModule
+    script	UnityForceOverLifetimeModule
+    label	UnityForceOverLifetime
 
     input	int	id	ID
     input	int	Enabled	Enabled
     input	int	Space	Space
+    input	int	Randomized	Randomized
     input	string	X	X
     input	string	Y	Y
     input	string	Z	Z
@@ -15,11 +16,12 @@
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Space	2
+    inputflags	Randomized	2
     inputflags	X	2
     inputflags	Y	2
     inputflags	Z	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string int }
+    signature	"Default Inputs"	default	{ int int int int string string string int }
 
     outputoverrides	default
     {
@@ -40,15 +42,31 @@
         parmtag { "parmvop" "1" }
     }
     parm {
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
         name    "Space"
         label   "Space"
         type    integer
         default { "0" }
+        hidewhen "{ Separate_Axes == 0 }"
         menu {
             "0" "Local"
             "1" "World"
         }
         range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Randomized"
+        label   "Randomized"
+        type    toggle
+        default { "off" }
         parmtag { "parmvop" "1" }
     }
     parm {
@@ -70,14 +88,6 @@
         label   "Z"
         type    string
         default { "constant;float;1.0" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "id"
-        label   "ID"
-        type    integer
-        default { "0" }
-        range   { 0 10 }
         parmtag { "parmvop" "1" }
     }
 }
