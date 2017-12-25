@@ -1,8 +1,8 @@
-# Dialog script for unity_colortoconstant automatically generated
+# Dialog script for UnityColorToConstant automatically generated
 
 {
-    name	unity_colortoconstant
-    script	unity_colortoconstant
+    name	UnityColorToConstant
+    script	UnityColorToConstant
     label	ColorToConstant
 
     input	vector4	color	Color

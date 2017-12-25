@@ -6,6 +6,7 @@ using UnityEditor;
 using System;
 using System.IO;
 
+
 namespace NodeFX {
     [ExecuteInEditMode]
 	public class NodeFXEffect : MonoBehaviour {
@@ -27,12 +28,15 @@ namespace NodeFX {
 
         void OnEnable() {
             Application.runInBackground = true;
-            //LoadDefaultDefinition();
+
+            if (effectDefinition == null) {
+                LoadDefaultDefinition();
+            }
         }
 
         private void LoadDefaultDefinition()
         {
-            effectDefinition = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Effects/Definitions/default.xml");
+            effectDefinition = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Effects/Definitions/DefaultEffect.xml");
             
             if (effectDefinition != null) {
                 Refresh();
@@ -50,7 +54,7 @@ namespace NodeFX {
             }
 
             if (_fileSystemWatcher == null && effectDefinition != null && String.IsNullOrEmpty(path) == false) {
-                CreateFileWatcher();
+                _fileSystemWatcher = NodeFXUtilities.CreateFileWatcher(path, effectDefinition.name);
             }
 
             if (_fileSystemWatcher != null) {
@@ -75,14 +79,14 @@ namespace NodeFX {
 		private void LoadXML(string path) {
 			doc = new XmlDocument();
 			doc.Load(path);
-            source = GetSource();
+            source = NodeFXUtilities.GetSource(doc);
 		}
 
         private void InstantiateParticleSystem() {
 
 			DeleteOldParticleSystems();
             
-			for (int i = 0; i < GetEmitterCount(); i++) {
+			for (int i = 0; i < NodeFXUtilities.GetEmitterCount(doc); i++) {
                 
                 ParticleSystem pSystem;
                 string emitterName = effectDefinition.name + "_" + GetStringParam(i, "main_emitterName");
@@ -100,7 +104,6 @@ namespace NodeFX {
                 pSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
                 pSystem.gameObject.SetActive(false);
                 
-
 				MapMainParameters                       (pSystem, i);
 				MapEmissionParameters                   (pSystem, i);
 				MapShapeParameters                      (pSystem, i);
@@ -636,16 +639,6 @@ namespace NodeFX {
             return vector;
 		}
 
-		public int GetEmitterCount() {
-			string numEmitters = doc.SelectSingleNode("root").Attributes[0].Value;
-			return Convert.ToInt32(numEmitters);
-		}
-
-        private string GetSource() {
-            string source = doc.SelectSingleNode("root").Attributes[1].Value;
-			return source;
-        }
-
         //  Refreshing
 
         private void OnApplicationFocus(bool hasFocus) {		
@@ -658,36 +651,5 @@ namespace NodeFX {
             yield return new WaitForSeconds(updateInterval);
             _isDirty = true;
 	    }
-
-        private void CreateFileWatcher()
-        {
-            _fileSystemWatcher = new FileSystemWatcher();
-            string folder = path.Replace(effectDefinition.name + ".xml", "");
-            string folderPath = Application.dataPath + folder.Substring(6);
-            _fileSystemWatcher.Path = folderPath;
-
-            /* Watch for changes in LastAccess and LastWrite times, and 
-            the renaming of files or directories. */
-            _fileSystemWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
-            
-            // Only watch xml files.
-            _fileSystemWatcher.Filter = "*.xml";
-
-            // Add event handlers.
-            _fileSystemWatcher.Changed += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Created += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Deleted += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Renamed += new RenamedEventHandler(OnRenamed);
-        }
-
-        private void OnRenamed(object sender, RenamedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnChanged(object sender, FileSystemEventArgs e)
-        {
-            _isDirty = true;
-        }
     }
 }

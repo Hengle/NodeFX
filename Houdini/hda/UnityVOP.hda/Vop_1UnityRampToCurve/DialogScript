@@ -1,8 +1,8 @@
-# Dialog script for unity_ramptominmaxcurve automatically generated
+# Dialog script for UnityRampToCurve automatically generated
 
 {
-    name	unity_ramptominmaxcurve
-    script	unity_ramptominmaxcurve
+    name	UnityRampToCurve
+    script	UnityRampToCurve
     label	UnityRampToCurve
 
     input	int	samples	samples

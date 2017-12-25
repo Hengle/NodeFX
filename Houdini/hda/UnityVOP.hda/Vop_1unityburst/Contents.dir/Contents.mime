@@ -19,12 +19,11 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 4.54563 6.67235
-connectornextid 6
+position -3.57501 -2.15
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-5 "Burst"
 }
 inputsNamed3
 {
@@ -32,7 +31,6 @@ inputsNamed3
 1 	"" "" 1 "Count"
 2 	"" "" 1 "Cycles"
 3 	"" "" 1 "Interval"
-4 	"" "" 1 ""
 }
 inputs
 {
@@ -40,61 +38,18 @@ inputs
 1 	"" 0 1
 2 	"" 0 1
 3 	"" 0 1
-4 	"" 0 1
 }
 stat
 {
-  create 1513700187
-  modify 1513700320
-  author chju@CHJU-PC.avalanchestudios.se
+  create 1514087958
+  modify 1514088065
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
 delscript ""
 exprlanguage hscript
 end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot.spareparmdef"
-Content-Type: text/plain
-
-    parm {
-        name    "Time"
-        baseparm
-        label   "Time"
-        export  none
-    }
-    parm {
-        name    "Count"
-        label   "Count"
-        type    string
-        default { "constant;float;30.0" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "MinParticles"
-        baseparm
-        label   "Min Particles"
-        export  none
-    }
-    parm {
-        name    "MaxParticles"
-        baseparm
-        label   "Max Particles"
-        export  none
-    }
-    parm {
-        name    "Cycles"
-        baseparm
-        label   "Cycles"
-        export  none
-    }
-    parm {
-        name    "Interval"
-        baseparm
-        label   "Interval"
-        export  none
-    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.userdata"

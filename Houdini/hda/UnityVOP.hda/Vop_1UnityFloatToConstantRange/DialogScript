@@ -1,8 +1,8 @@
-# Dialog script for unity_floattorandomconstant automatically generated
+# Dialog script for UnityFloatToConstantRange automatically generated
 
 {
-    name	unity_floattorandomconstant
-    script	unity_floattorandomconstant
+    name	UnityFloatToConstantRange
+    script	UnityFloatToConstantRange
     label	UnityFloatToRandomConstant
 
     input	float	minValue	Min

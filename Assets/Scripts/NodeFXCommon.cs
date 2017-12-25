@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using System.IO;
+using System.Xml;
 
 namespace NodeFX {
 	public static class NodeFXUtilities {
@@ -158,5 +160,48 @@ namespace NodeFX {
 			gradient.SetKeys(colorKeys,alphaKeys);
 			return gradient;
 		}
+
+		public static int GetEmitterCount(XmlDocument doc) {
+			string numEmitters = doc.SelectSingleNode("root").Attributes[0].Value;
+			return Convert.ToInt32(numEmitters);
+		}
+
+        public static string GetSource(XmlDocument doc) {
+            string source = doc.SelectSingleNode("root").Attributes[1].Value;
+			return source;
+        }
+
+		public static FileSystemWatcher CreateFileWatcher(string effectPath, string effectName)
+        {
+            FileSystemWatcher _fileSystemWatcher = new FileSystemWatcher();
+            string folder = effectPath.Replace(effectName + ".xml", "");
+            string folderPath = Application.dataPath + folder.Substring(6);
+            _fileSystemWatcher.Path = folderPath;
+
+            // Watch for changes in LastAccess and LastWrite times
+            _fileSystemWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+            
+            // Only watch xml files.
+            _fileSystemWatcher.Filter = "*.xml";
+
+            // Add event handlers.
+            _fileSystemWatcher.Changed += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Created += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Deleted += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Renamed += new RenamedEventHandler(OnRenamed);
+            return _fileSystemWatcher;
+        }
+
+        private static void OnRenamed(object sender, RenamedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void OnChanged(object sender, FileSystemEventArgs e)
+        {
+			foreach (NodeFXEffect effect in GameObject.FindObjectsOfType<NodeFXEffect>()) {
+				effect.Refresh();
+			}
+        }
 	}
 }

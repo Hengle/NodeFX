@@ -1,8 +1,8 @@
-# Dialog script for unity_floattoconstant automatically generated
+# Dialog script for UnityFloatToConstant automatically generated
 
 {
-    name	unity_floattoconstant
-    script	unity_floattoconstant
+    name	UnityFloatToConstant
+    script	UnityFloatToConstant
     label	UnityFloatToConstant
 
     input	float	value	value

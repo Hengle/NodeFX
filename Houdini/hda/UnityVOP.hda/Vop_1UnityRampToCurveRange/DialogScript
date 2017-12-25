@@ -1,8 +1,8 @@
-# Dialog script for unity_ramptorandomcurve automatically generated
+# Dialog script for UnityRampToCurveRange automatically generated
 
 {
-    name	unity_ramptorandomcurve
-    script	unity_ramptorandomcurve
+    name	UnityRampToCurveRange
+    script	UnityRampToCurveRange
     label	UnityRampToRandomCurve
 
     input	float	multiplier	Multiplier

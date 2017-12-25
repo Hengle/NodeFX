@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEditor;
 using NodeFX;
-using System;
-
 
 [CustomEditor(typeof(NodeFXEffect))]
 public class NodeFXEditor : Editor {
@@ -21,7 +18,7 @@ public class NodeFXEditor : Editor {
 	public override void OnInspectorGUI() {
 		GUIDrawHeader();
 
-        targetEffect.effectDefinition = (TextAsset)EditorGUILayout.ObjectField("Effect Definition", targetEffect.effectDefinition, typeof(TextAsset),false);
+        targetEffect.effectDefinition = (TextAsset)EditorGUILayout.ObjectField("Effect Definition", targetEffect.effectDefinition, typeof(TextAsset), false);
 		
         if (targetEffect.effectDefinition != null) {
             GUIDrawTopShelfButtons();
@@ -29,13 +26,10 @@ public class NodeFXEditor : Editor {
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
             GUIDrawRefreshToggles();
-
-            //CheckForUpdates();
         }
     }
 
-    private void GUIDrawHeader()
-    {
+    private void GUIDrawHeader() {
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
         GUILayout.Label("", headerStyle, GUILayout.MinHeight(75), GUILayout.MaxWidth(250));
@@ -57,12 +51,10 @@ public class NodeFXEditor : Editor {
         }
 
 		GUILayout.EndVertical();
-		GUILayout.EndHorizontal();
-        
+		GUILayout.EndHorizontal();   
     }
 
-    private void GUIDrawTopShelfButtons()
-    {
+    private void GUIDrawTopShelfButtons() {
         EditorGUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
 
@@ -86,13 +78,10 @@ public class NodeFXEditor : Editor {
         EditorGUILayout.EndHorizontal();
     }
 
-    private void OnButtonOpenEditor()
-    {
-        if (targetEffect.effectDefinition != null) {
-            System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo();
-            start.FileName = targetEffect.source;
-            System.Diagnostics.Process.Start(start);
-        }
+    private void OnButtonOpenEditor() {
+        System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo();
+        start.FileName = targetEffect.source;
+        System.Diagnostics.Process.Start(start);
     }
 
     private void OnButtonRefresh() {
@@ -106,16 +95,16 @@ public class NodeFXEditor : Editor {
 } 
 
 public class NodeFXMenu : MonoBehaviour {
-    // Add a menu item named "Do Something" to MyMenu in the menu bar.
+
     [MenuItem("GameObject/Effects/NodeFX System")]
     static void CreateNewEffect(MenuCommand menuCommand)
     {
-        // Create a custom game object
+        
         GameObject effect = new GameObject("NodeFXEffect");
         effect.AddComponent<NodeFXEffect>();
-        // Ensure it gets reparented if this was a context click (otherwise does nothing)
+        
         GameObjectUtility.SetParentAndAlign(effect, menuCommand.context as GameObject);
-        // Register the creation in the undo system
+        
         Undo.RegisterCreatedObjectUndo(effect, "Create " + effect.name);
         Selection.activeObject = effect;
     }

@@ -1,8 +1,8 @@
-# Dialog script for unity_inttorandomconstant automatically generated
+# Dialog script for UnityIntToConstantRange automatically generated
 
 {
-    name	unity_inttorandomconstant
-    script	unity_inttorandomconstant
+    name	UnityIntToConstantRange
+    script	UnityIntToConstantRange
     label	UnityIntToRandomConstant
 
     input	int	minValue	minValue

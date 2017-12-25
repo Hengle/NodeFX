@@ -5,24 +5,60 @@
     script	unityparticletemplate
     label	UnitySpriteParticleTemplate
 
-    input	float	normalDirection	"Normal Direction"
     input	string	lifetime	"Start Lifetime"
     input	string	speed	"Start Speed"
-    input	string	rotation	"Start Rotation"
-    input	string	material	Material
+    input	int	Nonuniform_Start_Size	"Nonuniform Start Size"
     input	string	size	"Start Size"
+    input	string	Start_Size_X	"Start Size X"
+    input	string	Start_Size_Y	"Start Size Y"
+    input	string	Start_Size_Z	"Start Size Z"
+    input	int	Nonuniform_Start_Rotation	"Nonuniform Start Rotation"
+    input	string	rotation	"Start Rotation"
+    input	string	Start_Rotation_X	"Start Rotation X"
+    input	string	Start_Rotation_Y	"Start Rotation Y"
+    input	string	Start_Rotation_Z	"Start Rotation Z"
+    input	float	Rotation_Direction_Variance	"Rotation Direction Variance"
     input	string	color	"Start Color"
-    inputflags	normalDirection	2
+    input	string	material	Material
+    input	int	Alignment	Alignment
+    input	int	CastShadows	"Cast Shadows"
+    input	int	ReceiveShadows	"Receive Shadows"
+    input	float	normalDirection	"Normal Direction"
+    input	float	MinParticleSize	"Min Particle Size"
+    input	float	MaxParticleSize	"Max Particle Size"
+    input	vector	pivot	Pivot
+    input	float	SortingFudge	"Sorting Fudge"
+    output	struct	Particle_Template	"Particle Template"
     inputflags	lifetime	2
     inputflags	speed	2
-    inputflags	rotation	2
-    inputflags	material	2
+    inputflags	Nonuniform_Start_Size	2
     inputflags	size	2
+    inputflags	Start_Size_X	2
+    inputflags	Start_Size_Y	2
+    inputflags	Start_Size_Z	2
+    inputflags	Nonuniform_Start_Rotation	2
+    inputflags	rotation	2
+    inputflags	Start_Rotation_X	2
+    inputflags	Start_Rotation_Y	2
+    inputflags	Start_Rotation_Z	2
+    inputflags	Rotation_Direction_Variance	2
     inputflags	color	2
-    signature	"Default Inputs"	default	{ float string string string string string string }
+    inputflags	material	2
+    inputflags	Alignment	2
+    inputflags	CastShadows	2
+    inputflags	ReceiveShadows	2
+    inputflags	normalDirection	2
+    inputflags	MinParticleSize	2
+    inputflags	MaxParticleSize	2
+    inputflags	pivot	2
+    inputflags	SortingFudge	0
+    outputflags	Particle_Template	2
+    signature	"Default Inputs"	default	{ string string int string string string string int string string string string float string string int int int float float float vector float struct }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
     }
 
     help {
@@ -30,53 +66,110 @@
     }
 
     parm {
-        name    "normalDirection"
-        label   "Normal Direction"
-        type    float
-        default { "0" }
-        range   { 0 1 }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "material"
-        label   "Material"
-        type    string
-        default { "" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
         name    "lifetime"
         label   "Start Lifetime"
         type    string
-        default { "" }
+        default { "constant;float;5.0" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "speed"
         label   "Start Speed"
         type    string
-        default { "" }
+        default { "constant;float;1.0" }
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "rotation"
-        label   "Start Rotation"
-        type    string
-        default { "" }
+        name    "Nonuniform_Start_Size"
+        label   "Nonuniform Start Size"
+        type    toggle
+        default { "off" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "size"
         label   "Start Size"
         type    string
-        default { "" }
+        default { "constant;float;1.0" }
+        hidewhen "{ Nonuniform_Start_Size == 1 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_X"
+        label   "Start Size X"
+        type    string
+        default { "constant;float;1.0" }
+        hidewhen "{ Nonuniform_Start_Size == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_Y"
+        label   "Start Size Y"
+        type    string
+        default { "constant;float;1.0" }
+        hidewhen "{ Nonuniform_Start_Size == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_Z"
+        label   "Start Size Z"
+        type    string
+        default { "constant;float;1.0" }
+        hidewhen "{ Nonuniform_Start_Size == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Nonuniform_Start_Rotation"
+        label   "Nonuniform Start Rotation"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "rotation"
+        label   "Start Rotation"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Nonuniform_Start_Rotation == 1 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_X"
+        label   "Start Rotation X"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Nonuniform_Start_Rotation == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_Y"
+        label   "Start Rotation Y"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Nonuniform_Start_Rotation == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_Z"
+        label   "Start Rotation Z"
+        type    string
+        default { "constant;float;0.0" }
+        hidewhen "{ Nonuniform_Start_Rotation == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Rotation_Direction_Variance"
+        label   "Rotation Direction Variance"
+        type    float
+        default { "0.5" }
+        range   { 0 1 }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "color"
         label   "Start Color"
         type    string
-        default { "" }
+        default { "constant;vector;{1,1,1,1}" }
         parmtag { "parmvop" "1" }
     }
     parm {
@@ -84,5 +177,89 @@
         label   "Separator"
         type    separator
         default { "" }
+    }
+    parm {
+        name    "material"
+        label   "Material"
+        type    string
+        default { "Assets/Materials/ParticleMaterial.mat" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Alignment"
+        label   "Alignment"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "View"
+            "1" "World"
+            "2" "Local"
+            "3" "Facing"
+            "4" "Velocity"
+        }
+        range   { 0 4 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "CastShadows"
+        label   "Cast Shadows"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Off"
+            "1" "On"
+            "2" "Double-sided"
+            "3" "Shadows Only"
+        }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ReceiveShadows"
+        label   "Receive Shadows"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "normalDirection"
+        label   "Normal Direction"
+        type    float
+        default { "1" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MinParticleSize"
+        label   "Min Particle Size"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "MaxParticleSize"
+        label   "Max Particle Size"
+        type    float
+        default { "0.5" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "pivot"
+        label   "Pivot"
+        type    float
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "SortingFudge"
+        label   "Sorting Fudge"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
     }
 }

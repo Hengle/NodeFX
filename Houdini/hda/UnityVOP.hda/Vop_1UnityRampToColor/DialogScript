@@ -1,8 +1,8 @@
-# Dialog script for unity_colorramptogradient automatically generated
+# Dialog script for UnityRampToColor automatically generated
 
 {
-    name	unity_colorramptogradient
-    script	unity_colorramptogradient
+    name	UnityRampToColor
+    script	UnityRampToColor
     label	UnityColorRampToGradient
 
     input	int	mode	"Interpolation Mode"

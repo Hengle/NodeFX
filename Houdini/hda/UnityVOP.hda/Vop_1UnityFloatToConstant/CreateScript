@@ -1,7 +1,7 @@
 # Automatically generated script
 \set noalias = 1
 #
-#  Creation script for UnityEmitterModule operator
+#  Creation script for UnityFloatToConstant operator
 #
 
 if ( "$arg1" == "" ) then
@@ -9,6 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Vop/UnityEmitterModule)
+# Node $arg1 (Vop/UnityFloatToConstant)
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

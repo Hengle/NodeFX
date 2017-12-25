@@ -1,9 +1,9 @@
-# Dialog script for UnityEmitterModule automatically generated
+# Dialog script for UnityEmitterModule_ParticleTemplate automatically generated
 
 {
-    name	UnityEmitterModule
-    script	UnityEmitterModule
-    label	UnityEmitterModule
+    name	UnityEmitterModule_ParticleTemplate
+    script	UnityEmitterModule_ParticleTemplate
+    label	UnityEmitterModule_ParticleTemplate
 
     input	int	id	ID
     input	float	Duration	Duration
