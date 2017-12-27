@@ -1,7 +1,7 @@
-# Dialog script for unityvelocityoverlifetimemodule automatically generated
+# Dialog script for UnityVelocityOverLifetimeModule automatically generated
 
 {
-    name	unityvelocityoverlifetimemodule
+    name	UnityVelocityOverLifetimeModule
     script	unityvelocityoverlifetimemodule
     label	UnityVelocityOverLifetimeModule
 
@@ -11,6 +11,7 @@
     input	string	X	X
     input	string	Y	Y
     input	string	Z	Z
+    input	string	Multiplier	Multiplier
     output	int	_id	ID
     inputflags	id	2
     inputflags	Enabled	2
@@ -18,8 +19,9 @@
     inputflags	X	2
     inputflags	Y	2
     inputflags	Z	2
+    inputflags	Multiplier	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string int }
+    signature	"Default Inputs"	default	{ int int int string string string string int }
 
     outputoverrides	default
     {
@@ -40,6 +42,35 @@
         parmtag { "parmvop" "1" }
     }
     parm {
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "X"
+        label   "X"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Y"
+        label   "Y"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Z"
+        label   "Z"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
         name    "Space"
         label   "Space"
         type    integer
@@ -52,32 +83,10 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "X"
-        label   "X"
+        name    "Multiplier"
+        label   "Multiplier"
         type    string
-        default { "constant;float;1.0" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "Y"
-        label   "Y"
-        type    string
-        default { "constant;float;1.0" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "Z"
-        label   "Z"
-        type    string
-        default { "constant;float;1.0" }
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "id"
-        label   "ID"
-        type    integer
-        default { "0" }
-        range   { 0 10 }
+        default { "1.0" }
         parmtag { "parmvop" "1" }
     }
 }

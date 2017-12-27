@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_inheritvelocity
+type = UnityInheritVelocityModule
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,29 +19,30 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 48.6007 10.53
+position 5.16145 -9.17
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-3 "_id"
 }
 inputsNamed3
 {
-0 	unity_forceoverlifetime1 6 1 "id"
+0 	"" "" 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "Mode"
+3 	"" "" 1 "Multiplier"
 }
 inputs
 {
-0 	unity_forceoverlifetime1 0 1
+0 	"" 0 1
 1 	"" 0 1
 2 	"" 0 1
+3 	"" 0 1
 }
 stat
 {
-  create 1513219840
-  modify 1513225298
+  create 1514389561
+  modify 1514391398
   author Chris@Voyager
   access 0777
 }
@@ -81,7 +82,7 @@ Content-Disposition: attachment; filename="hdaroot/input.def"
 Content-Type: text/plain
 
 comment ""
-position 2.94705 -1.6072
+position 2.94705 0.0464
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -97,7 +98,7 @@ inputs
 stat
 {
   create 1512319162
-  modify 1513224058
+  modify 1514391366
   author Chris@Voyager
   access 0777
 }
@@ -192,7 +193,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -208,7 +209,7 @@ Content-Disposition: attachment; filename="hdaroot/input1.def"
 Content-Type: text/plain
 
 comment ""
-position 2.94705 -3.2608
+position 2.94705 -1.6072
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -224,7 +225,7 @@ inputs
 stat
 {
   create 1512319258
-  modify 1513224045
+  modify 1514391366
   author Chris@Voyager
   access 0777
 }
@@ -319,7 +320,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -335,7 +336,7 @@ Content-Disposition: attachment; filename="hdaroot/input2.def"
 Content-Type: text/plain
 
 comment ""
-position 2.94705 0.0464
+position 0.29115 -3.4373
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -351,7 +352,7 @@ inputs
 stat
 {
   create 1512319302
-  modify 1513224002
+  modify 1514391389
   author Chris@Voyager
   access 0777
 }
@@ -390,7 +391,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	constant;float;1.0	)
+stringdef	[ 0	locks=0 ]	(	0.0	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -446,7 +447,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -478,7 +479,7 @@ inputs
 stat
 {
   create 1512319162
-  modify 1513224002
+  modify 1514391340
   author Chris@Voyager
   access 0777
 }
@@ -573,7 +574,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -589,7 +590,7 @@ Content-Disposition: attachment; filename="hdaroot/inline2.def"
 Content-Type: text/plain
 
 comment ""
-position 5.60295 -0.5554
+position 5.60295 -0.64365
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -598,21 +599,21 @@ outputsNamed3
 inputsNamed3
 {
 3 	input3 0 1 "_id"
-2 	input2 0 1 "_Multiplier"
 0 	input 0 1 "_Enabled"
 1 	input1 0 1 "_Mode"
+2 	inline1 1 1 "out_Multiplier"
 }
 inputs
 {
 0 	input3 0 1
-1 	input2 0 1
-2 	input 0 1
-3 	input1 0 1
+1 	input 0 1
+2 	input1 0 1
+3 	inline1 0 1
 }
 stat
 {
   create 1513185602
-  modify 1513224058
+  modify 1514391389
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -630,7 +631,7 @@ version 0.8
 code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"inheritVelocity_enabled\", $_id, $_Enabled);
 setpointattrib(0, \"inheritVelocity_mode\", $_id, $_Mode);
-setpointattrib(0, \"inheritVelocity_multiplier\", $_id, $_Multiplier);"	)
+setpointattrib(0, \"inheritVelocity_multiplier\", $_id, $out_Multiplier);"	)
 includes	[ 0	locks=0 ]	(	""	)
 outercode	[ 0	locks=0 ]	(	""	)
 expandcode	[ 0	locks=0 ]	(	"off"	)
@@ -868,7 +869,329 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline1.init"
+Content-Type: text/plain
+
+type = inline
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline1.def"
+Content-Type: text/plain
+
+comment ""
+position 2.94705 -3.4373
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out_Multiplier"
+}
+inputsNamed3
+{
+0 	input2 0 1 "_Multiplier"
+}
+inputs
+{
+0 	input2 0 1
+}
+stat
+{
+  create 1514391329
+  modify 1514391389
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+code	[ 0	locks=0 ]	(	"string $output_string_array[];
+
+//  Check if input is from another node
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $_Multiplier)) {
+    push($output_string_array, $_Multiplier);
+    }
+//  Check if input is from an invalid node
+else if (match(\"gradient*, randomGradient*\", $_Multiplier)) {
+    printf(\"_Multiplier does not support gradient inputs \\n\");
+    warning(\"_Multiplier does not support gradient inputs \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+//  Check if input is a constant value
+else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;-]*\", $_Multiplier)) {
+    $output_string_array = {\"constant\", \"float\"};
+    push($output_string_array, $_Multiplier);
+    } 
+//  Check if input is a range value
+else if (match(\"*[;]*\", $_Multiplier)) {
+    $output_string_array = {\"randomConstant\", \"float\"};
+    push($output_string_array, split($_Multiplier, \";\")[0]);
+    push($output_string_array, split($_Multiplier, \";\")[1]);
+    }
+//  Check if input is a curve value
+else if (match(\"*[-]*\", $_Multiplier)) {
+    $output_string_array = {\"curve\", \"float\", \"2\", \"1\"};
+    push($output_string_array, split($_Multiplier, \"-\")[0]);
+    push($output_string_array, split($_Multiplier, \"-\")[1]);
+    } 
+else {
+    printf(\"Invalid value entered for _Multiplier \\n\");
+    warning(\"Invalid value entered for _Multiplier \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+$out_Multiplier = join($output_string_array, \";\");
+"	)
+includes	[ 0	locks=0 ]	(	""	)
+outercode	[ 0	locks=0 ]	(	""	)
+expandcode	[ 0	locks=0 ]	(	"off"	)
+name1	[ 0	locks=0 ]	(	""	)
+label1	[ 0	locks=0 ]	(	""	)
+name2	[ 0	locks=0 ]	(	""	)
+label2	[ 0	locks=0 ]	(	""	)
+name3	[ 0	locks=0 ]	(	""	)
+label3	[ 0	locks=0 ]	(	""	)
+name4	[ 0	locks=0 ]	(	""	)
+label4	[ 0	locks=0 ]	(	""	)
+name5	[ 0	locks=0 ]	(	""	)
+label5	[ 0	locks=0 ]	(	""	)
+name6	[ 0	locks=0 ]	(	""	)
+label6	[ 0	locks=0 ]	(	""	)
+name7	[ 0	locks=0 ]	(	""	)
+label7	[ 0	locks=0 ]	(	""	)
+name8	[ 0	locks=0 ]	(	""	)
+label8	[ 0	locks=0 ]	(	""	)
+name9	[ 0	locks=0 ]	(	""	)
+label9	[ 0	locks=0 ]	(	""	)
+name10	[ 0	locks=0 ]	(	""	)
+label10	[ 0	locks=0 ]	(	""	)
+name11	[ 0	locks=0 ]	(	""	)
+label11	[ 0	locks=0 ]	(	""	)
+name12	[ 0	locks=0 ]	(	""	)
+label12	[ 0	locks=0 ]	(	""	)
+name13	[ 0	locks=0 ]	(	""	)
+label13	[ 0	locks=0 ]	(	""	)
+name14	[ 0	locks=0 ]	(	""	)
+label14	[ 0	locks=0 ]	(	""	)
+name15	[ 0	locks=0 ]	(	""	)
+label15	[ 0	locks=0 ]	(	""	)
+name16	[ 0	locks=0 ]	(	""	)
+label16	[ 0	locks=0 ]	(	""	)
+name17	[ 0	locks=0 ]	(	""	)
+label17	[ 0	locks=0 ]	(	""	)
+name18	[ 0	locks=0 ]	(	""	)
+label18	[ 0	locks=0 ]	(	""	)
+name19	[ 0	locks=0 ]	(	""	)
+label19	[ 0	locks=0 ]	(	""	)
+name20	[ 0	locks=0 ]	(	""	)
+label20	[ 0	locks=0 ]	(	""	)
+name21	[ 0	locks=0 ]	(	""	)
+label21	[ 0	locks=0 ]	(	""	)
+name22	[ 0	locks=0 ]	(	""	)
+label22	[ 0	locks=0 ]	(	""	)
+name23	[ 0	locks=0 ]	(	""	)
+label23	[ 0	locks=0 ]	(	""	)
+name24	[ 0	locks=0 ]	(	""	)
+label24	[ 0	locks=0 ]	(	""	)
+name25	[ 0	locks=0 ]	(	""	)
+label25	[ 0	locks=0 ]	(	""	)
+name26	[ 0	locks=0 ]	(	""	)
+label26	[ 0	locks=0 ]	(	""	)
+name27	[ 0	locks=0 ]	(	""	)
+label27	[ 0	locks=0 ]	(	""	)
+name28	[ 0	locks=0 ]	(	""	)
+label28	[ 0	locks=0 ]	(	""	)
+name29	[ 0	locks=0 ]	(	""	)
+label29	[ 0	locks=0 ]	(	""	)
+name30	[ 0	locks=0 ]	(	""	)
+label30	[ 0	locks=0 ]	(	""	)
+name31	[ 0	locks=0 ]	(	""	)
+label31	[ 0	locks=0 ]	(	""	)
+name32	[ 0	locks=0 ]	(	""	)
+label32	[ 0	locks=0 ]	(	""	)
+name33	[ 0	locks=0 ]	(	""	)
+label33	[ 0	locks=0 ]	(	""	)
+name34	[ 0	locks=0 ]	(	""	)
+label34	[ 0	locks=0 ]	(	""	)
+name35	[ 0	locks=0 ]	(	""	)
+label35	[ 0	locks=0 ]	(	""	)
+name36	[ 0	locks=0 ]	(	""	)
+label36	[ 0	locks=0 ]	(	""	)
+name37	[ 0	locks=0 ]	(	""	)
+label37	[ 0	locks=0 ]	(	""	)
+name38	[ 0	locks=0 ]	(	""	)
+label38	[ 0	locks=0 ]	(	""	)
+name39	[ 0	locks=0 ]	(	""	)
+label39	[ 0	locks=0 ]	(	""	)
+name40	[ 0	locks=0 ]	(	""	)
+label40	[ 0	locks=0 ]	(	""	)
+name41	[ 0	locks=0 ]	(	""	)
+label41	[ 0	locks=0 ]	(	""	)
+name42	[ 0	locks=0 ]	(	""	)
+label42	[ 0	locks=0 ]	(	""	)
+name43	[ 0	locks=0 ]	(	""	)
+label43	[ 0	locks=0 ]	(	""	)
+name44	[ 0	locks=0 ]	(	""	)
+label44	[ 0	locks=0 ]	(	""	)
+name45	[ 0	locks=0 ]	(	""	)
+label45	[ 0	locks=0 ]	(	""	)
+name46	[ 0	locks=0 ]	(	""	)
+label46	[ 0	locks=0 ]	(	""	)
+name47	[ 0	locks=0 ]	(	""	)
+label47	[ 0	locks=0 ]	(	""	)
+name48	[ 0	locks=0 ]	(	""	)
+label48	[ 0	locks=0 ]	(	""	)
+name49	[ 0	locks=0 ]	(	""	)
+label49	[ 0	locks=0 ]	(	""	)
+name50	[ 0	locks=0 ]	(	""	)
+label50	[ 0	locks=0 ]	(	""	)
+name51	[ 0	locks=0 ]	(	""	)
+label51	[ 0	locks=0 ]	(	""	)
+name52	[ 0	locks=0 ]	(	""	)
+label52	[ 0	locks=0 ]	(	""	)
+name53	[ 0	locks=0 ]	(	""	)
+label53	[ 0	locks=0 ]	(	""	)
+name54	[ 0	locks=0 ]	(	""	)
+label54	[ 0	locks=0 ]	(	""	)
+name55	[ 0	locks=0 ]	(	""	)
+label55	[ 0	locks=0 ]	(	""	)
+name56	[ 0	locks=0 ]	(	""	)
+label56	[ 0	locks=0 ]	(	""	)
+name57	[ 0	locks=0 ]	(	""	)
+label57	[ 0	locks=0 ]	(	""	)
+name58	[ 0	locks=0 ]	(	""	)
+label58	[ 0	locks=0 ]	(	""	)
+name59	[ 0	locks=0 ]	(	""	)
+label59	[ 0	locks=0 ]	(	""	)
+name60	[ 0	locks=0 ]	(	""	)
+label60	[ 0	locks=0 ]	(	""	)
+name61	[ 0	locks=0 ]	(	""	)
+label61	[ 0	locks=0 ]	(	""	)
+name62	[ 0	locks=0 ]	(	""	)
+label62	[ 0	locks=0 ]	(	""	)
+name63	[ 0	locks=0 ]	(	""	)
+label63	[ 0	locks=0 ]	(	""	)
+name64	[ 0	locks=0 ]	(	""	)
+label64	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
+outtype1	[ 0	locks=0 ]	(	string	)
+outname1	[ 0	locks=0 ]	(	out_Multiplier	)
+outlabel1	[ 0	locks=0 ]	(	""	)
+outtype2	[ 0	locks=0 ]	(	undef	)
+outname2	[ 0	locks=0 ]	(	""	)
+outlabel2	[ 0	locks=0 ]	(	""	)
+outtype3	[ 0	locks=0 ]	(	undef	)
+outname3	[ 0	locks=0 ]	(	""	)
+outlabel3	[ 0	locks=0 ]	(	""	)
+outtype4	[ 0	locks=0 ]	(	undef	)
+outname4	[ 0	locks=0 ]	(	""	)
+outlabel4	[ 0	locks=0 ]	(	""	)
+outtype5	[ 0	locks=0 ]	(	undef	)
+outname5	[ 0	locks=0 ]	(	""	)
+outlabel5	[ 0	locks=0 ]	(	""	)
+outtype6	[ 0	locks=0 ]	(	undef	)
+outname6	[ 0	locks=0 ]	(	""	)
+outlabel6	[ 0	locks=0 ]	(	""	)
+outtype7	[ 0	locks=0 ]	(	undef	)
+outname7	[ 0	locks=0 ]	(	""	)
+outlabel7	[ 0	locks=0 ]	(	""	)
+outtype8	[ 0	locks=0 ]	(	undef	)
+outname8	[ 0	locks=0 ]	(	""	)
+outlabel8	[ 0	locks=0 ]	(	""	)
+outtype9	[ 0	locks=0 ]	(	undef	)
+outname9	[ 0	locks=0 ]	(	""	)
+outlabel9	[ 0	locks=0 ]	(	""	)
+outtype10	[ 0	locks=0 ]	(	undef	)
+outname10	[ 0	locks=0 ]	(	""	)
+outlabel10	[ 0	locks=0 ]	(	""	)
+outtype11	[ 0	locks=0 ]	(	undef	)
+outname11	[ 0	locks=0 ]	(	""	)
+outlabel11	[ 0	locks=0 ]	(	""	)
+outtype12	[ 0	locks=0 ]	(	undef	)
+outname12	[ 0	locks=0 ]	(	""	)
+outlabel12	[ 0	locks=0 ]	(	""	)
+outtype13	[ 0	locks=0 ]	(	undef	)
+outname13	[ 0	locks=0 ]	(	""	)
+outlabel13	[ 0	locks=0 ]	(	""	)
+outtype14	[ 0	locks=0 ]	(	undef	)
+outname14	[ 0	locks=0 ]	(	""	)
+outlabel14	[ 0	locks=0 ]	(	""	)
+outtype15	[ 0	locks=0 ]	(	undef	)
+outname15	[ 0	locks=0 ]	(	""	)
+outlabel15	[ 0	locks=0 ]	(	""	)
+outtype16	[ 0	locks=0 ]	(	undef	)
+outname16	[ 0	locks=0 ]	(	""	)
+outlabel16	[ 0	locks=0 ]	(	""	)
+outtype17	[ 0	locks=0 ]	(	undef	)
+outname17	[ 0	locks=0 ]	(	""	)
+outlabel17	[ 0	locks=0 ]	(	""	)
+outtype18	[ 0	locks=0 ]	(	undef	)
+outname18	[ 0	locks=0 ]	(	""	)
+outlabel18	[ 0	locks=0 ]	(	""	)
+outtype19	[ 0	locks=0 ]	(	undef	)
+outname19	[ 0	locks=0 ]	(	""	)
+outlabel19	[ 0	locks=0 ]	(	""	)
+outtype20	[ 0	locks=0 ]	(	undef	)
+outname20	[ 0	locks=0 ]	(	""	)
+outlabel20	[ 0	locks=0 ]	(	""	)
+outtype21	[ 0	locks=0 ]	(	undef	)
+outname21	[ 0	locks=0 ]	(	""	)
+outlabel21	[ 0	locks=0 ]	(	""	)
+outtype22	[ 0	locks=0 ]	(	undef	)
+outname22	[ 0	locks=0 ]	(	""	)
+outlabel22	[ 0	locks=0 ]	(	""	)
+outtype23	[ 0	locks=0 ]	(	undef	)
+outname23	[ 0	locks=0 ]	(	""	)
+outlabel23	[ 0	locks=0 ]	(	""	)
+outtype24	[ 0	locks=0 ]	(	undef	)
+outname24	[ 0	locks=0 ]	(	""	)
+outlabel24	[ 0	locks=0 ]	(	""	)
+outtype25	[ 0	locks=0 ]	(	undef	)
+outname25	[ 0	locks=0 ]	(	""	)
+outlabel25	[ 0	locks=0 ]	(	""	)
+outtype26	[ 0	locks=0 ]	(	undef	)
+outname26	[ 0	locks=0 ]	(	""	)
+outlabel26	[ 0	locks=0 ]	(	""	)
+outtype27	[ 0	locks=0 ]	(	undef	)
+outname27	[ 0	locks=0 ]	(	""	)
+outlabel27	[ 0	locks=0 ]	(	""	)
+outtype28	[ 0	locks=0 ]	(	undef	)
+outname28	[ 0	locks=0 ]	(	""	)
+outlabel28	[ 0	locks=0 ]	(	""	)
+outtype29	[ 0	locks=0 ]	(	undef	)
+outname29	[ 0	locks=0 ]	(	""	)
+outlabel29	[ 0	locks=0 ]	(	""	)
+outtype30	[ 0	locks=0 ]	(	undef	)
+outname30	[ 0	locks=0 ]	(	""	)
+outlabel30	[ 0	locks=0 ]	(	""	)
+outtype31	[ 0	locks=0 ]	(	undef	)
+outname31	[ 0	locks=0 ]	(	""	)
+outlabel31	[ 0	locks=0 ]	(	""	)
+outtype32	[ 0	locks=0 ]	(	undef	)
+outname32	[ 0	locks=0 ]	(	""	)
+outlabel32	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
 	}
 }
 
@@ -876,12 +1199,13 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-5
+6
 input
 input1
 input2
 input3
 inline2
+inline1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

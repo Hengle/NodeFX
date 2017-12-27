@@ -63,14 +63,14 @@
         name    "Rate_Over_Time"
         label   "Rate Over Time"
         type    string
-        default { "constant;float;1.0" }
+        default { "10.0" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "Rate_Over_Distance"
         label   "Rate Over Distance"
         type    string
-        default { "constant;float;1.0" }
+        default { "0.0" }
         parmtag { "parmvop" "1" }
     }
     parm {

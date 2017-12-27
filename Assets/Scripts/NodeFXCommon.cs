@@ -121,7 +121,7 @@ namespace NodeFX {
 			int samples = Convert.ToInt32(parameter[2]);
 
 			for (int i = 0; i < samples; i++) {
-				float position = (float) i / (float) samples;
+				float position = (float) i / (samples - 1.0f);
 				float value = Convert.ToSingle(parameter[i+offset]);
 				curve.AddKey(position, value);
 			}
