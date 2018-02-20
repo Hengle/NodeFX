@@ -26,17 +26,22 @@ namespace NodeFX {
 		private XmlDocument doc;
 		private ParticleSystem _particleSystem;
 
+        private const string DEFAULT_EFFECT_PATH = "Assets/Effects/Definitions/DefaultEffect.xml";
+
         void OnEnable() {
-            Application.runInBackground = true;
+            Application.runInBackground = true;     // Enable this so that the editor updates even when not in focus
 
             if (effectDefinition == null) {
                 LoadDefaultDefinition();
             }
         }
 
+        /// <summary>
+        /// Attempts to load whatever effect is defined by DEFAULT_EFFECT_PATH
+        /// </summary>
         private void LoadDefaultDefinition()
         {
-            effectDefinition = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Effects/Definitions/DefaultEffect.xml");
+            effectDefinition = AssetDatabase.LoadAssetAtPath<TextAsset>(DEFAULT_EFFECT_PATH);
             
             if (effectDefinition != null) {
                 Refresh();
@@ -70,6 +75,7 @@ namespace NodeFX {
                     LoadXML(path);
                 }
                 catch (IOException) {
+                    //  This will occasionally occur when the file is attemping to be read and written to at the same time.
                     return;
                 }
                 InstantiateParticleSystem();
@@ -134,6 +140,9 @@ namespace NodeFX {
 			}
 		}
 
+        /// <summary>
+        /// Since we're only allowed one instance of every component, we must delete the old particlesystem components before adding new ones.
+        /// </summary>
         private void DeleteOldParticleSystems() {
             if (GetComponent<ParticleSystem>() != null) {
                 GetComponent<ParticleSystem>().Stop();
@@ -179,14 +188,13 @@ namespace NodeFX {
             mainModule.gravityModifier              = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_gravityModifier"));
             mainModule.startColor                   = NodeFXUtilities.InterpretStringToGradient(GetStringParam(i, "main_startColor"));
             pSystem.randomSeed = 0;
-            
         }
 
         private void MapEmissionParameters(ParticleSystem pSystem, int i) {
             ParticleSystem.EmissionModule emissionModule = pSystem.emission;
 
             try {
-            emissionModule.enabled                  = GetBoolParam(i, "emission_enabled");
+                emissionModule.enabled              = GetBoolParam(i, "emission_enabled");
             }
             catch (NullReferenceException) {
                 emissionModule.enabled = false;

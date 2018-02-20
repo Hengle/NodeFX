@@ -21,6 +21,7 @@ namespace NodeFX {
 						curve.constant = Convert.ToInt32(choppedString[2]);
 					} else
 					if (choppedString[1] == "vector") {
+						throw new NotImplementedException("Constant vectors have not been implemented yet");
 					}
 					break;
 
@@ -58,7 +59,7 @@ namespace NodeFX {
 			return curve;
 		}
 
-		public static ParticleSystem.MinMaxGradient InterpretStringToGradient(string parameter) {
+        public static ParticleSystem.MinMaxGradient InterpretStringToGradient(string parameter) {
 			ParticleSystem.MinMaxGradient curve = new ParticleSystem.MinMaxGradient();
 
 			string[] choppedString = parameter.Split(";".ToCharArray());
