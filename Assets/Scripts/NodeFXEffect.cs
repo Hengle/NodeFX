@@ -171,7 +171,7 @@ namespace NodeFX {
             mainModule.useUnscaledTime              = GetBoolParam(i, "main_deltaTime");
             mainModule.playOnAwake                  = GetBoolParam(i, "main_playOnAwake");
             pSystem.useAutoRandomSeed               = GetBoolParam(i, "main_autoRandomSeed");
-            mainModule.randomizeRotationDirection   = GetFloatParam(i, "main_rotationVariance");
+            mainModule.flipRotation                 = GetFloatParam(i, "main_rotationVariance");
             mainModule.simulationSpeed              = GetFloatParam(i, "main_simulationSpeed");
             mainModule.duration                     = GetFloatParam(i, "main_duration");
             mainModule.startDelay                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startDelay"));
@@ -204,6 +204,7 @@ namespace NodeFX {
             emissionModule.rateOverTime             = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "emission_rateOverTime"));
             emissionModule.rateOverDistance         = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "emission_rateOverDistance"));
             emissionModule.SetBursts(NodeFXUtilities.InterpretStringToBurst(GetStringParam(i, "emission_bursts")));
+            return;
         }
 
         private void MapShapeParameters(ParticleSystem pSystem, int i) {
@@ -246,6 +247,7 @@ namespace NodeFX {
             shapeModule.radiusMode                  = 0;
             shapeModule.radiusSpeed                 = 0;
             shapeModule.radiusSpread                = 0;
+            return;
         }
 
         private void MapVelocityOverLifetimeParameters(ParticleSystem pSystem, int i) {
@@ -263,6 +265,7 @@ namespace NodeFX {
             velocityOverLifetimeModule.x            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "velocityOverLifetime_velocity_x"));
             velocityOverLifetimeModule.y            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "velocityOverLifetime_velocity_y"));
             velocityOverLifetimeModule.z            = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "velocityOverLifetime_velocity_z"));
+            return;
         }
 
         private void MapLimitVelocityOverLifetimeParameters(ParticleSystem pSystem, int i) {
@@ -283,6 +286,7 @@ namespace NodeFX {
             limitVelocityOverLifetimeModule.dampen  = GetFloatParam(i, "limitVelocityOverLifetime_dampen");
             limitVelocityOverLifetimeModule.limit   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_speed"));
             limitVelocityOverLifetimeModule.drag    = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "limitVelocityOverLifetime_drag"));
+            return;
         }
 
         private void MapInheritVelocityParameters(ParticleSystem pSystem, int i) {
