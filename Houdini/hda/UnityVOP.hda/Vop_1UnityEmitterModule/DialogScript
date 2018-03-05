@@ -1,0 +1,336 @@
+# Dialog script for UnityEmitterModule automatically generated
+
+{
+    name	UnityEmitterModule
+    script	UnityEmitterModule
+    label	UnityEmitterModule
+
+    input	int	id	ID
+    input	float	Duration	Duration
+    input	int	Looping	Looping
+    input	int	Prewarm	Prewarm
+    input	float	Start_Delay	"Start Delay"
+    input	string	Start_Lifetime	"Start Lifetime"
+    input	string	Start_Speed	"Start Speed"
+    input	int	Nonuniform_Start_Size	"Nonuniform Start Size"
+    input	string	Start_Size	"Start Size"
+    input	string	Start_Size_X	"Start Size X"
+    input	string	Start_Size_Y	"Start Size Y"
+    input	string	Start_Size_Z	"Start Size Z"
+    input	int	Nonuniform_Start_Rotation	"Nonuniform Start Rotation"
+    input	string	Start_Rotation	"Start Rotation"
+    input	string	Start_Rotation_X	"Start Rotation X"
+    input	string	Start_Rotation_Y	"Start Rotation Y"
+    input	string	Start_Rotation_Z	"Start Rotation Z"
+    input	float	Rotation_Direction_Variance	"Rotation Direction Variance"
+    input	string	Start_Color	"Start Color"
+    input	string	Gravity_Modifier	"Gravity Modifier"
+    input	int	Simulation_Space	"Simulation Space"
+    input	float	Simulation_Speed	"Simulation Speed"
+    input	int	Delta_Time	"Delta Time"
+    input	int	Scaling_Mode	"Scaling Mode"
+    input	int	Play_On_Awake	"Play On Awake"
+    input	int	Emitter_Velocity	"Emitter Velocity"
+    input	int	Max_Particles	"Max Particles"
+    input	int	Auto_Random_Seed	"Auto Random Seed"
+    input	int	Stop_Action	"Stop Action"
+    input	struct	Particle_Template	"Particle Template"
+    output	int	_id	ID
+    inputflags	id	2
+    inputflags	Duration	2
+    inputflags	Looping	2
+    inputflags	Prewarm	2
+    inputflags	Start_Delay	2
+    inputflags	Start_Lifetime	2
+    inputflags	Start_Speed	2
+    inputflags	Nonuniform_Start_Size	2
+    inputflags	Start_Size	2
+    inputflags	Start_Size_X	2
+    inputflags	Start_Size_Y	2
+    inputflags	Start_Size_Z	2
+    inputflags	Nonuniform_Start_Rotation	2
+    inputflags	Start_Rotation	2
+    inputflags	Start_Rotation_X	2
+    inputflags	Start_Rotation_Y	2
+    inputflags	Start_Rotation_Z	2
+    inputflags	Rotation_Direction_Variance	2
+    inputflags	Start_Color	2
+    inputflags	Gravity_Modifier	2
+    inputflags	Simulation_Space	2
+    inputflags	Simulation_Speed	2
+    inputflags	Delta_Time	2
+    inputflags	Scaling_Mode	2
+    inputflags	Play_On_Awake	2
+    inputflags	Emitter_Velocity	2
+    inputflags	Max_Particles	2
+    inputflags	Auto_Random_Seed	2
+    inputflags	Stop_Action	2
+    inputflags	Particle_Template	2
+    outputflags	_id	2
+    signature	"Default Inputs"	default	{ int float int int float string string int string string string string int string string string string float string string int float int int int int int int int struct int }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "name"
+        label   "Emitter Name"
+        type    string
+        invisible
+        default { [ "$OS" hscript-expr ] }
+    }
+    parm {
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        help    "Setting the ID is necessary in order for the various modules to know which emitter they belong to. Be sure not to set this higher than the current amount of emitters"
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+        parmtag { "script_callback" "hou.pwd().hm().my_callback(kwargs, hou.pwd())" }
+    }
+    parm {
+        name    "Duration"
+        label   "Duration"
+        type    float
+        default { "5" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Looping"
+        label   "Looping"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Prewarm"
+        label   "Prewarm"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Delay"
+        label   "Start Delay"
+        type    float
+        default { "0" }
+        disablewhen "{ Prewarm == 1 }"
+        range   { 0 5 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Lifetime"
+        label   "Start Lifetime"
+        type    string
+        default { "5.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Speed"
+        label   "Start Speed"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Nonuniform_Start_Size"
+        label   "Nonuniform Start Size"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size"
+        label   "Start Size"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_X"
+        label   "Start Size X"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_Y"
+        label   "Start Size Y"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Size_Z"
+        label   "Start Size Z"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Nonuniform_Start_Rotation"
+        label   "Nonuniform Start Rotation"
+        type    toggle
+        default { "off" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation"
+        label   "Start Rotation"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_X"
+        label   "Start Rotation X"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_Y"
+        label   "Start Rotation Y"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Rotation_Z"
+        label   "Start Rotation Z"
+        type    string
+        default { "0.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Rotation_Direction_Variance"
+        label   "Rotation Direction Variance"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Start_Color"
+        label   "Start Color"
+        type    string
+        default { "constant;vector;{1,1,1,1}" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Gravity_Modifier"
+        label   "Gravity Modifier"
+        type    string
+        default { "1.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Simulation_Space"
+        label   "Simulation Space"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Local"
+            "1" "World"
+            "2" "Custom"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Simulation_Speed"
+        label   "Simulation Speed"
+        type    float
+        default { "1" }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Delta_Time"
+        label   "Delta Time"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "Scaled"
+            "1" "Unscaled"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Scaling_Mode"
+        label   "Scaling Mode"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Hierarchy"
+            "1" "Local"
+            "2" "Shape"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Play_On_Awake"
+        label   "Play On Awake"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Emitter_Velocity"
+        label   "Emitter Velocity"
+        type    integer
+        default { "1" }
+        menu {
+            "0" "Transform"
+            "1" "Rigidbody"
+        }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Max_Particles"
+        label   "Max Particles"
+        type    integer
+        default { "1000" }
+        range   { 0 5000 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Auto_Random_Seed"
+        label   "Auto Random Seed"
+        type    toggle
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Stop_Action"
+        label   "Stop Action"
+        type    integer
+        default { "0" }
+        menu {
+            "0" "None"
+            "1" "Disable"
+            "2" "Destroy"
+        }
+        range   { 0 2 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Particle_Template"
+        label   "Particle Template"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+}

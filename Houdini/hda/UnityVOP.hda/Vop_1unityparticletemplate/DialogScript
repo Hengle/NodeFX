@@ -28,7 +28,7 @@
     input	float	MaxParticleSize	"Max Particle Size"
     input	vector	pivot	Pivot
     input	float	SortingFudge	"Sorting Fudge"
-    output	struct	Particle_Template	"Particle Template"
+    output	struct_ParticleTemplate	Particle_Template	"Particle Template"
     inputflags	lifetime	2
     inputflags	speed	2
     inputflags	Nonuniform_Start_Size	2
@@ -53,7 +53,7 @@
     inputflags	pivot	2
     inputflags	SortingFudge	0
     outputflags	Particle_Template	2
-    signature	"Default Inputs"	default	{ string string int string string string string int string string string string float string string int int int float float float vector float struct }
+    signature	"Default Inputs"	default	{ string string int string string string string int string string string string float string string int int int float float float vector float struct_ParticleTemplate }
 
     outputoverrides	default
     {

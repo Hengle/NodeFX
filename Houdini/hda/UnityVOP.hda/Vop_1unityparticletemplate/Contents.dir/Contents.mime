@@ -19,12 +19,12 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -2.85494 -5.865
-connectornextid 8
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail on highdetail off material off
+position -5.53911 -4.3
+connectornextid 24
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-7 "Particle_Template"
+23 "Particle_Template"
 }
 inputsNamed3
 {
@@ -35,6 +35,22 @@ inputsNamed3
 4 	"" "" 1 "Start_Size_X"
 5 	"" "" 1 "Start_Size_Y"
 6 	"" "" 1 "Start_Size_Z"
+7 	"" "" 1 "Nonuniform_Start_Rotation"
+8 	"" "" 1 "rotation"
+9 	"" "" 1 "Start_Rotation_X"
+10 	"" "" 1 "Start_Rotation_Y"
+11 	"" "" 1 "Start_Rotation_Z"
+12 	"" "" 1 "Rotation_Direction_Variance"
+13 	"" "" 1 "color"
+14 	"" "" 1 "material"
+15 	"" "" 1 "Alignment"
+16 	"" "" 1 "CastShadows"
+17 	"" "" 1 "ReceiveShadows"
+18 	"" "" 1 "normalDirection"
+19 	"" "" 1 "MinParticleSize"
+20 	"" "" 1 "MaxParticleSize"
+21 	"" "" 1 "pivot"
+22 	"" "" 1 "SortingFudge"
 }
 inputs
 {
@@ -45,12 +61,28 @@ inputs
 4 	"" 0 1
 5 	"" 0 1
 6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	"" 0 1
+11 	"" 0 1
+12 	"" 0 1
+13 	"" 0 1
+14 	"" 0 1
+15 	"" 0 1
+16 	"" 0 1
+17 	"" 0 1
+18 	"" 0 1
+19 	"" 0 1
+20 	"" 0 1
+21 	"" 0 1
+22 	"" 0 1
 }
 stat
 {
-  create 1514088305
-  modify 1514094356
-  author Chris@Voyager
+  create 1519701019
+  modify 1520290188
+  author cjudkins@localhost
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -74,9 +106,8 @@ Content-Disposition: attachment; filename="hdaroot.outputinfos"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-TnVtSW5mb3MgMgpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBQYXJ0aWNsZV9UZW1wbGF0ZQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwo=
-Tm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAAQmVnaW5JbmZvCk91dHB1dE5hbWUgcGFybQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29yckk=
-bnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
+TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBQYXJ0aWNsZV9UZW1wbGF0ZQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwo=
+Tm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/parm1.init"
@@ -91,11 +122,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -10.3074
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_normalDirection"
+1 "bound_normalDirection"
 }
 inputsNamed3
 {
@@ -106,7 +138,7 @@ inputs
 stat
 {
   create 1513743150
-  modify 1514094342
+  modify 1520290189
   author Chris@Voyager
   access 0777
 }
@@ -218,11 +250,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -8.65377
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_material"
+1 "bound_material"
 }
 inputsNamed3
 {
@@ -345,11 +378,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 14.4966
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_lifetime"
+1 "bound_lifetime"
 }
 inputsNamed3
 {
@@ -460,135 +494,6 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/structpack1.init"
-Content-Type: text/plain
-
-type = structpack
-matchesdef = 0
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/structpack1.def"
-Content-Type: text/plain
-
-comment ""
-position 5.09034 -1.14117
-connectornextid 25
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
-outputsNamed3
-{
-0 "out_struct"
-}
-inputsNamed3
-{
-1 	parm8 0 1 "mode"
-2 	parm3 0 1 "_lifetime"
-3 	parm4 0 1 "_speed"
-11 	input19 0 1 "_Nonuniform_Start_Size"
-4 	parm6 0 1 "_size"
-15 	input24 0 1 "_Start_Size_X"
-16 	input25 0 1 "_Start_Size_Y"
-17 	input26 0 1 "_Start_Size_Z"
-9 	input14 0 1 "_Nonuniform_Start_Rotation"
-5 	parm5 0 1 "_rotation"
-12 	input21 0 1 "_Start_Rotation_X"
-14 	input23 0 1 "_Start_Rotation_Y"
-13 	input22 0 1 "_Start_Rotation_Z"
-10 	input17 0 1 "_Rotation_Direction_Variance"
-6 	parm7 0 1 "_color"
-7 	parm2 0 1 "_material"
-8 	parm1 0 1 "_normalDirection"
-18 	parm10 0 1 "_pivot"
-19 	input12 0 1 "_CastShadows"
-20 	input13 0 1 "_ReceiveShadows"
-21 	input3 0 1 "_Alignment"
-22 	input7 0 1 "SortingFudge"
-23 	input8 0 1 "_MinParticleSize"
-24 	input9 0 1 "_MaxParticleSize"
-}
-inputs
-{
-0 	parm8 0 1
-1 	parm3 0 1
-2 	parm4 0 1
-3 	input19 0 1
-4 	parm6 0 1
-5 	input24 0 1
-6 	input25 0 1
-7 	input26 0 1
-8 	input14 0 1
-9 	parm5 0 1
-10 	input21 0 1
-11 	input23 0 1
-12 	input22 0 1
-13 	input17 0 1
-14 	parm7 0 1
-15 	parm2 0 1
-16 	parm1 0 1
-17 	parm10 0 1
-18 	input12 0 1
-19 	input13 0 1
-20 	input3 0 1
-21 	input7 0 1
-22 	input8 0 1
-23 	input9 0 1
-}
-stat
-{
-  create 1513777002
-  modify 1514094342
-  author Chris@Voyager
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/structpack1.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-membernum	[ 0	locks=0 ]	(	24	)
-membername1	[ 0	locks=0 ]	(	""	)
-membername2	[ 0	locks=0 ]	(	""	)
-membername3	[ 0	locks=0 ]	(	""	)
-membername4	[ 0	locks=0 ]	(	""	)
-membername5	[ 0	locks=0 ]	(	""	)
-membername6	[ 0	locks=0 ]	(	""	)
-membername7	[ 0	locks=0 ]	(	""	)
-membername8	[ 0	locks=0 ]	(	""	)
-membername9	[ 0	locks=0 ]	(	""	)
-membername10	[ 0	locks=0 ]	(	""	)
-membername11	[ 0	locks=0 ]	(	""	)
-membername12	[ 0	locks=0 ]	(	""	)
-membername13	[ 0	locks=0 ]	(	""	)
-membername14	[ 0	locks=0 ]	(	""	)
-membername15	[ 0	locks=0 ]	(	""	)
-membername16	[ 0	locks=0 ]	(	""	)
-membername17	[ 0	locks=0 ]	(	""	)
-membername18	[ 0	locks=0 ]	(	""	)
-membername19	[ 0	locks=0 ]	(	""	)
-membername20	[ 0	locks=0 ]	(	""	)
-membername21	[ 0	locks=0 ]	(	""	)
-membername22	[ 0	locks=0 ]	(	""	)
-membername23	[ 0	locks=0 ]	(	""	)
-membername24	[ 0	locks=0 ]	(	""	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/structpack1.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"16.5.323"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/parm4.init"
 Content-Type: text/plain
 
@@ -601,11 +506,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 12.843
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_speed"
+1 "bound_speed"
 }
 inputsNamed3
 {
@@ -728,11 +634,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 1.26783
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_rotation"
+1 "bound_rotation"
 }
 inputsNamed3
 {
@@ -855,11 +762,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 9.53583
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_size"
+1 "bound_size"
 }
 inputsNamed3
 {
@@ -982,11 +890,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -7.00017
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_color"
+1 "bound_color"
 }
 inputsNamed3
 {
@@ -1109,11 +1018,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 16.1502
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "mode"
+1 "bound_mode"
 }
 inputsNamed3
 {
@@ -1235,7 +1145,7 @@ Content-Disposition: attachment; filename="hdaroot/parm9.def"
 Content-Type: text/plain
 
 comment ""
-position 7.74624 -2.86617
+position 9.32572 1.73804
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1243,16 +1153,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	structpack1 0 1 "input"
+0 	struct1 0 1 "input"
 }
 inputs
 {
-0 	structpack1 0 1
+0 	struct1 0 1
 }
 stat
 {
   create 1514090416
-  modify 1514094371
+  modify 1520290208
   author Chris@Voyager
   access 0777
 }
@@ -1275,7 +1185,7 @@ parmpostfix	[ 0	locks=0 ]	(	""	)
 parmlabel	[ 0	locks=0 ]	(	"Particle Template"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"struct"	)
-parmtypename	[ 0	locks=0 ]	(	""	)
+parmtypename	[ 0	locks=0 ]	(	ParticleTemplate	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
@@ -1364,11 +1274,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 2.92143
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Nonuniform_Start_Rotation"
+1 "bound_Nonuniform_Start_Rotation"
 }
 inputsNamed3
 {
@@ -1491,11 +1402,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -5.34657
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Rotation_Direction_Variance"
+1 "bound_Rotation_Direction_Variance"
 }
 inputsNamed3
 {
@@ -1618,11 +1530,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 11.1894
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Nonuniform_Start_Size"
+1 "bound_Nonuniform_Start_Size"
 }
 inputsNamed3
 {
@@ -1745,11 +1658,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -0.38577
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Rotation_X"
+1 "bound_Start_Rotation_X"
 }
 inputsNamed3
 {
@@ -1872,11 +1786,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -3.69297
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Rotation_Z"
+1 "bound_Start_Rotation_Z"
 }
 inputsNamed3
 {
@@ -1999,11 +1914,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 -2.03937
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Rotation_Y"
+1 "bound_Start_Rotation_Y"
 }
 inputsNamed3
 {
@@ -2126,11 +2042,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 7.88223
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Size_X"
+1 "bound_Start_Size_X"
 }
 inputsNamed3
 {
@@ -2253,11 +2170,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 6.22863
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Size_Y"
+1 "bound_Start_Size_Y"
 }
 inputsNamed3
 {
@@ -2380,11 +2298,12 @@ Content-Type: text/plain
 
 comment ""
 position 2.43444 4.57503
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 0 "_Start_Size_Z"
+1 "bound_Start_Size_Z"
 }
 inputsNamed3
 {
@@ -3384,6 +3303,143 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.init"
+Content-Type: text/plain
+
+type = struct
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.def"
+Content-Type: text/plain
+
+structvopdata
+{
+	specifiedtypename	"ParticleTemplate"
+	structtype	"ParticleTemplate"
+	structmember	"int"	"mode"	"Mode"
+	structmember	"string"	"lifetime"	"Lifetime"
+	structmember	"string"	"speed"	"Speed"
+	structmember	"int"	"nonuniform_start_size"	"Nonuniform Start Size"
+	structmember	"string"	"size"	"Size"
+	structmember	"string"	"size_x"	"Size X"
+	structmember	"string"	"size_y"	"Size Y"
+	structmember	"string"	"size_z"	"Size Z"
+	structmember	"int"	"nonuniform_start_rotation"	"Nonuniform Start Rotation"
+	structmember	"string"	"rotation"	"Rotation"
+	structmember	"string"	"rotation_x"	"Rotation X"
+	structmember	"string"	"rotation_y"	"Rotation Y"
+	structmember	"string"	"rotation_z"	"Rotation Z"
+	structmember	"float"	"rotation_direction_variance"	"Rotation Direction Variance"
+	structmember	"string"	"color"	"Color"
+	structmember	"string"	"material_path"	"Material"
+	structmember	"float"	"normal_direction"	"Normal Direction"
+	structmember	"vector"	"pivot"	"Pivot"
+	structmember	"int"	"cast_shadows"	"Cast Shadows"
+	structmember	"int"	"receive_shadows"	"Receive Shadows"
+	structmember	"int"	"alignment"	"Alignment"
+	structmember	"float"	"sorting_fudge"	"Sorting Fudge"
+	structmember	"float"	"particle_size_min"	"Min Particle Size"
+	structmember	"float"	"particle_size_max"	"Max Particle Size"
+}
+comment ""
+position 6.81089 1.73804
+connectornextid 26
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+0 "out_struct"
+}
+inputsNamed3
+{
+1 	"" "" 1 "in_struct"
+2 	"" "" 1 "in_mode"
+3 	parm3 0 1 "in_lifetime"
+4 	parm4 0 1 "in_speed"
+5 	input19 0 1 "in_nonuniform_start_size"
+6 	parm6 0 1 "in_size"
+7 	input24 0 1 "in_size_x"
+8 	input25 0 1 "in_size_y"
+9 	input26 0 1 "in_size_z"
+10 	input14 0 1 "in_nonuniform_start_rotation"
+11 	parm5 0 1 "in_rotation"
+12 	input21 0 1 "in_rotation_x"
+13 	input23 0 1 "in_rotation_y"
+14 	input22 0 1 "in_rotation_z"
+15 	input17 0 1 "in_rotation_direction_variance"
+16 	parm7 0 1 "in_color"
+17 	parm2 0 1 "in_material_path"
+18 	parm1 0 1 "in_normal_direction"
+19 	parm10 0 1 "in_pivot"
+20 	input12 0 1 "in_cast_shadows"
+21 	input13 0 1 "in_receive_shadows"
+22 	input3 0 1 "in_alignment"
+23 	input7 0 1 "in_sorting_fudge"
+24 	input8 0 1 "in_particle_size_min"
+25 	input9 0 1 "in_particle_size_max"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+2 	parm3 0 1
+3 	parm4 0 1
+4 	input19 0 1
+5 	parm6 0 1
+6 	input24 0 1
+7 	input25 0 1
+8 	input26 0 1
+9 	input14 0 1
+10 	parm5 0 1
+11 	input21 0 1
+12 	input23 0 1
+13 	input22 0 1
+14 	input17 0 1
+15 	parm7 0 1
+16 	parm2 0 1
+17 	parm1 0 1
+18 	parm10 0 1
+19 	input12 0 1
+20 	input13 0 1
+21 	input3 0 1
+22 	input7 0 1
+23 	input8 0 1
+24 	input9 0 1
+}
+stat
+{
+  create 1519736240
+  modify 1520290208
+  author cjudkins@localhost
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage python
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+structtype	[ 0	locks=0 ]	(	ParticleTemplate	)
+editstruct	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
@@ -3391,7 +3447,6 @@ Content-Type: text/plain
 parm1
 parm2
 parm3
-structpack1
 parm4
 parm5
 parm6
@@ -3414,6 +3469,7 @@ input3
 input7
 input8
 input9
+struct1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
