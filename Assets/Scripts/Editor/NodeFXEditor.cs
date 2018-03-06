@@ -9,6 +9,7 @@ public class NodeFXEditor : Editor {
 	NodeFXEffect targetEffect;
 
 	private GUIStyle headerStyle = new GUIStyle();
+    private TextAsset definitionEntry;
 
 	void OnEnable() {
 		targetEffect = (NodeFXEffect)target;
@@ -18,7 +19,13 @@ public class NodeFXEditor : Editor {
 	public override void OnInspectorGUI() {
 		GUIDrawHeader();
 
-        targetEffect.effectDefinition = (TextAsset)EditorGUILayout.ObjectField("Effect Definition", targetEffect.effectDefinition, typeof(TextAsset), false);
+        definitionEntry = (TextAsset)EditorGUILayout.ObjectField("Effect Definition", targetEffect.effectDefinition, typeof(TextAsset), false);
+
+        //  Hacky way to get a "if defintion entry has changed" event
+        if (targetEffect.effectDefinition != definitionEntry) {
+            targetEffect.effectDefinition = definitionEntry;
+            targetEffect.Refresh();
+        }
 		
         if (targetEffect.effectDefinition != null) {
             GUIDrawTopShelfButtons();
@@ -97,9 +104,7 @@ public class NodeFXEditor : Editor {
 public class NodeFXMenu : MonoBehaviour {
 
     [MenuItem("GameObject/Effects/NodeFX System")]
-    static void CreateNewEffect(MenuCommand menuCommand)
-    {
-        
+    static void CreateNewEffect(MenuCommand menuCommand) {
         GameObject effect = new GameObject("NodeFXEffect");
         effect.AddComponent<NodeFXEffect>();
         
@@ -110,8 +115,7 @@ public class NodeFXMenu : MonoBehaviour {
     }
 
     [MenuItem("CONTEXT/NodeFXEffect/Refresh")]
-    static void Refresh(MenuCommand command)
-    {
+    static void Refresh(MenuCommand command) {
         NodeFXEffect target = (NodeFXEffect)command.context;
         target.Refresh();
     }

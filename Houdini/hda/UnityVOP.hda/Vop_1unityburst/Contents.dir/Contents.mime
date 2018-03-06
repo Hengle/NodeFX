@@ -19,11 +19,12 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -3.57501 -2.15
-connectornextid 4
+position -3.00891 -10.6202
+connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
+4 "Burst"
 }
 inputsNamed3
 {
@@ -42,7 +43,7 @@ inputs
 stat
 {
   create 1514087958
-  modify 1514088065
+  modify 1520348950
   author Chris@Voyager
   access 0777
 }
@@ -608,7 +609,7 @@ inputs
 stat
 {
   create 1512928740
-  modify 1513700317
+  modify 1520346210
   author Chris@Voyager
   access 0777
 }
@@ -754,7 +755,7 @@ inputs
 stat
 {
   create 1513700298
-  modify 1513700334
+  modify 1520346210
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -783,6 +784,19 @@ Content-Type: text/plain
 		"value":"16.5.323"
 	}
 }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct2.outputinfos"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+
+TnVtSW5mb3MgNQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBvdXRfY291bnQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW8=
+ZGUgMApCeXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAEJlZ2luSW5mbwpPdXRwdXROYW1lIG91dF9jeWNsZXMKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnA=
+dXROYW1lIF9fZGVmYXVsdF9fCk5vcm1hbE1vZGUgMApCeXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAEJlZ2luSW5mbwpPdXRwdXROYW1lIG91dF9pbnRlcnZhbApEZWJ1Z0NvcnJJbnB1dE4=
+YW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAAQmVnaW5JbmZvCk91dHB1dE5hbWU=
+IG91dF9zdHJ1Y3QKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgA=
+AAAAAAAAAEJlZ2luSW5mbwpPdXRwdXROYW1lIG91dF90aW1lCkRlYnVnQ29ycklucHV0TmFtZSBfX2RlZmF1bHRfXwpCeXBhc3NDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCk5vcm1hbE1vZGUgMApCeXBhc3NNb2RlIDEKVXM=
+ZURlZmF1bHRWYWx1ZSAxCkVuZEluZm8KAAAAAAAAAAA=
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"

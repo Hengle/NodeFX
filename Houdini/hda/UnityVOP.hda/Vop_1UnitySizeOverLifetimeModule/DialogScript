@@ -8,7 +8,6 @@
     input	int	id	ID
     input	int	Enabled	Enabled
     input	int	Separate_Axes	"Separate Axes"
-    input	string	Size	Size
     input	string	X	X
     input	string	Y	Y
     input	string	Z	Z
@@ -16,12 +15,11 @@
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Separate_Axes	2
-    inputflags	Size	2
     inputflags	X	2
     inputflags	Y	2
     inputflags	Z	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string string int }
+    signature	"Default Inputs"	default	{ int int int string string string int }
 
     outputoverrides	default
     {
@@ -57,19 +55,10 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Size"
-        label   "Size"
-        type    string
-        default { "1-0" }
-        hidewhen "{ Separate_Axes == 1 }"
-        parmtag { "parmvop" "1" }
-    }
-    parm {
         name    "X"
         label   "X"
         type    string
         default { "1-0" }
-        hidewhen "{ Separate_Axes == 0 }"
         parmtag { "parmvop" "1" }
     }
     parm {

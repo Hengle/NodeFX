@@ -9,14 +9,14 @@
     input	string	speed	"Start Speed"
     input	int	Nonuniform_Start_Size	"Nonuniform Start Size"
     input	string	size	"Start Size"
-    input	string	Start_Size_X	"Start Size X"
-    input	string	Start_Size_Y	"Start Size Y"
-    input	string	Start_Size_Z	"Start Size Z"
+    input	string	size_x	"Start Size X"
+    input	string	size_y	"Start Size Y"
+    input	string	size_z	"Start Size Z"
     input	int	Nonuniform_Start_Rotation	"Nonuniform Start Rotation"
     input	string	rotation	"Start Rotation"
-    input	string	Start_Rotation_X	"Start Rotation X"
-    input	string	Start_Rotation_Y	"Start Rotation Y"
-    input	string	Start_Rotation_Z	"Start Rotation Z"
+    input	string	rotation_x	"Start Rotation X"
+    input	string	rotation_y	"Start Rotation Y"
+    input	string	rotation_z	"Start Rotation Z"
     input	float	Rotation_Direction_Variance	"Rotation Direction Variance"
     input	string	color	"Start Color"
     input	string	material	Material
@@ -33,14 +33,14 @@
     inputflags	speed	2
     inputflags	Nonuniform_Start_Size	2
     inputflags	size	2
-    inputflags	Start_Size_X	2
-    inputflags	Start_Size_Y	2
-    inputflags	Start_Size_Z	2
+    inputflags	size_x	2
+    inputflags	size_y	2
+    inputflags	size_z	2
     inputflags	Nonuniform_Start_Rotation	2
     inputflags	rotation	2
-    inputflags	Start_Rotation_X	2
-    inputflags	Start_Rotation_Y	2
-    inputflags	Start_Rotation_Z	2
+    inputflags	rotation_x	2
+    inputflags	rotation_y	2
+    inputflags	rotation_z	2
     inputflags	Rotation_Direction_Variance	2
     inputflags	color	2
     inputflags	material	2
@@ -95,7 +95,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Size_X"
+        name    "size_x"
         label   "Start Size X"
         type    string
         default { "constant;float;1.0" }
@@ -103,7 +103,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Size_Y"
+        name    "size_y"
         label   "Start Size Y"
         type    string
         default { "constant;float;1.0" }
@@ -111,7 +111,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Size_Z"
+        name    "size_z"
         label   "Start Size Z"
         type    string
         default { "constant;float;1.0" }
@@ -134,7 +134,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Rotation_X"
+        name    "rotation_x"
         label   "Start Rotation X"
         type    string
         default { "constant;float;0.0" }
@@ -142,7 +142,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Rotation_Y"
+        name    "rotation_y"
         label   "Start Rotation Y"
         type    string
         default { "constant;float;0.0" }
@@ -150,7 +150,7 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Start_Rotation_Z"
+        name    "rotation_z"
         label   "Start Rotation Z"
         type    string
         default { "constant;float;0.0" }

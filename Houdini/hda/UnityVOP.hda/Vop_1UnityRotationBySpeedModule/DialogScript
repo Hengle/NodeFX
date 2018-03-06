@@ -3,7 +3,7 @@
 {
     name	UnityRotationBySpeedModule
     script	UnityRotationBySpeedModule
-    label	UnityRotationBySpeed
+    label	UnityRotationBySpeedModule
 
     input	int	id	ID
     input	int	Enabled	Enabled

@@ -3,7 +3,7 @@
 {
     name	UnityTextureSheetAnimationModule
     script	UnityTextureSheetAnimationModule
-    label	UnityTextureSheetAnimation
+    label	UnityTextureSheetAnimationModule
 
     input	int	id	ID
     input	int	Enabled	Enabled

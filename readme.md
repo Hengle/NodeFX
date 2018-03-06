@@ -7,14 +7,14 @@ Hey everyone, I wanted to share the results of an experiment I had the idea for 
 
 An engineer at work posed me the question "What would your ideal effect editor look look like?", and no matter how I tried to formulate myself, the answer kept just being a variation of "I want it to be like Houdini". But the more I thought about it, the more I realized that getting a realtime VFX particle system running using Houdini might not be that difficult after all!
 
- Despite being both a game developer and a big Houdini enthusiast, I never tinkered too much with Houdini Engine (a plugin that bridges Houdini with other DACs such as Unity and Unreal). Most of the materials you’ll find position it as a level art tool, but I had an idea that involved using it to author particle systems using just nodes in Houdini! This is certainly not the type of situation Engine is built to expect, so I ran in to some awkwardness along the way, but I am very excited by the results none the less!
+ Despite being both a game developer and a big Houdini enthusiast, I never tinkered too much with Houdini Engine (a plugin that bridges Houdini with other DCCs such as Unity and Unreal). Most of the materials you’ll find position it as a level art tool, but I had an idea that involved using it to author particle systems using just nodes in Houdini! This is certainly not the type of situation Engine is built to expect, so I ran in to some awkwardness along the way, but I am very excited by the results none the less!
 
 What it does
 ---
 
-Using the VOPEmitter asset, you can author a VOP network that is parsed into a particle system by a Unity importer script. I've added a number of Unity-specific nodes to create random values, gradients, curves, etc., to retain the roughly same level of features.
+Using the VOPEmitter asset, you can author a VOP network that is parsed into a particle system by a Unity importer script. I've added a number of Unity-specific nodes to create random values, gradients, curves, etc., to retain the roughly same level of features that the Shuriken interface provides.
 
-My goal with this tool was to use the powerful node interface of Houdini, with all its capabilities of grouping nodes, linking properties, and writing expressions, to cut down iteration times when authoring particle systems in Unity. And while I realized that it’d never be as transparent as using the in-editor tools, I figured the more seamless, the better!
+My goal with this tool was to use the powerful node interface of Houdini -- with all its capabilities of grouping nodes, linking properties, and writing expressions -- to cut down iteration times when authoring particle systems in Unity. And while I realized that it’d never be as transparent as using the in-editor tools, having a workflow that was invisible and responsive was a priority.
 
 Please do note that this tool does not introduce any new features or allow Unity to do stuff it couldn’t do before - it is not an extension of the particle system, but rather a creative replacement for its interface. <sub>*Of course, one might argue that artist productivity is the most important feature of all, and I personally feel it does a lot to aid in that department.*</sub>
 
@@ -66,7 +66,7 @@ After downloading from the link above, extract the contents into a folder of you
 
 This tool was created using the following software versions, and compatibility is not guaranteed with newer or older versions:
 
-* `Unity 2017.3.0f1`
+* `Unity 2018.1.0b8`
 * `Houdini 16.5.323`
 
 To explore the Houdini side of the setup, open `Houdini/hip/Main.hip`. I've added notes to the network that will hopefully help explain how it works. To create a working copy of the VOP network, use the **Save As New Effect** button in the asset interface.

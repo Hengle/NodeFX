@@ -30,6 +30,7 @@ namespace NodeFX {
 
         void OnEnable() {
             Application.runInBackground = true;     // Enable this so that the editor updates even when not in focus
+            NodeFXUtilities.definitionChange += Refresh;
 
             if (effectDefinition == null) {
                 LoadDefaultDefinition();
@@ -59,7 +60,7 @@ namespace NodeFX {
             }
 
             if (_fileSystemWatcher == null && effectDefinition != null && String.IsNullOrEmpty(path) == false) {
-                _fileSystemWatcher = NodeFXUtilities.CreateFileWatcher(path, effectDefinition.name);
+                _fileSystemWatcher = CreateFileWatcher(path, effectDefinition.name);
             }
 
             if (_fileSystemWatcher != null) {
@@ -69,6 +70,8 @@ namespace NodeFX {
 
         public void Refresh() {
 			Debug.Log("Effect: Refreshing");
+            DeleteOldParticleSystems();
+            
             path = AssetDatabase.GetAssetOrScenePath(effectDefinition);
 			if(!string.IsNullOrEmpty(path)) {
                 try {
@@ -78,6 +81,7 @@ namespace NodeFX {
                     //  This will occasionally occur when the file is attemping to be read and written to at the same time.
                     return;
                 }
+                
                 InstantiateParticleSystem();
 			}
         }
@@ -89,8 +93,6 @@ namespace NodeFX {
 		}
 
         private void InstantiateParticleSystem() {
-
-			DeleteOldParticleSystems();
             
 			for (int i = 0; i < NodeFXUtilities.GetEmitterCount(doc); i++) {
                 
@@ -144,15 +146,16 @@ namespace NodeFX {
         /// Since we're only allowed one instance of every component, we must delete the old particlesystem components before adding new ones.
         /// </summary>
         private void DeleteOldParticleSystems() {
-            if (GetComponent<ParticleSystem>() != null) {
-                GetComponent<ParticleSystem>().Stop();
-                GetComponent<ParticleSystem>().gameObject.SetActive(false);
+            var ps = GetComponent<ParticleSystem>();
+            if (ps != null) {
+                ps.Stop();
+                ps.gameObject.SetActive(false);
                 DestroyImmediate(GetComponent<ParticleSystem>());
             }
 
-            foreach (ParticleSystem ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
-                if (ps.gameObject != gameObject) {
-                    DestroyImmediate(ps.gameObject);
+            foreach (ParticleSystem sub_ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
+                if (sub_ps.gameObject != gameObject) {
+                    DestroyImmediate(sub_ps.gameObject);
                 }
             }
         }
@@ -365,7 +368,6 @@ namespace NodeFX {
             }
 
             sizeOverLifetimeModule.separateAxes     = GetBoolParam(i, "sizeOverLifetime_separateAxes");
-            sizeOverLifetimeModule.size             = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size"));
             sizeOverLifetimeModule.x                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size_x"));
             sizeOverLifetimeModule.y                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size_y"));
             sizeOverLifetimeModule.z                = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "sizeOverLifetime_size_z"));
@@ -520,6 +522,8 @@ namespace NodeFX {
 
             textureSheetAnimationModule.mode            = (ParticleSystemAnimationMode) GetIntParam(i, "textureSheetAnimation_mode");
             textureSheetAnimationModule.animation       = (ParticleSystemAnimationType) GetIntParam(i, "textureSheetAnimation_animation");
+            textureSheetAnimationModule.numTilesX       = (int)GetVectorParam(i, "textureSheetAnimation_tiles")[0];
+            textureSheetAnimationModule.numTilesY       = (int)GetVectorParam(i, "textureSheetAnimation_tiles")[1];
             textureSheetAnimationModule.enabled         = GetBoolParam(i, "textureSheetAnimation_enabled");
             textureSheetAnimationModule.cycleCount      = GetIntParam(i, "textureSheetAnimation_cycles");
             textureSheetAnimationModule.flipU           = GetFloatParam(i, "textureSheetAnimation_flipU");
@@ -653,7 +657,7 @@ namespace NodeFX {
 
         //  Refreshing
 
-        private void OnApplicationFocus(bool hasFocus) {		
+        private void OnApplicationFocus(bool hasFocus) {
             if (refreshOnFocus == true) {
             _isDirty = !hasFocus;
             }
@@ -663,5 +667,43 @@ namespace NodeFX {
             yield return new WaitForSeconds(updateInterval);
             _isDirty = true;
 	    }
+
+        public FileSystemWatcher CreateFileWatcher(string effectPath, string effectName)
+        {
+            FileSystemWatcher _fileSystemWatcher = new FileSystemWatcher();
+            string folder = effectPath.Replace(effectName + ".xml", "");
+            string folderPath = Application.dataPath + folder.Substring(6);
+            _fileSystemWatcher.Path = folderPath;
+
+            // Watch for changes in LastAccess and LastWrite times
+            _fileSystemWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+            
+            // Only watch xml files.
+            _fileSystemWatcher.Filter = "*.xml";
+
+            // Add event handlers.
+            _fileSystemWatcher.Changed += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Created += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Deleted += new FileSystemEventHandler(OnChanged);
+            _fileSystemWatcher.Renamed += new RenamedEventHandler(OnRenamed);
+            return _fileSystemWatcher;
+        }
+
+        private void OnRenamed(object sender, RenamedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OnChanged(object sender, FileSystemEventArgs e)
+        {
+            Refresh();
+			Debug.Log("OnChanged called");
+			// if (NodeFXdefinitionChange != null) {
+			// 	definitionChange();
+			// }
+			// foreach (NodeFXEffect effect in GameObject.FindObjectsOfType<NodeFXEffect>()) {
+			// 	effect.Refresh();
+			// }
+        }
     }
 }
