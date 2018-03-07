@@ -12,29 +12,30 @@ namespace NodeFX {
 	public class NodeFXEffect : MonoBehaviour {
 
 		public TextAsset effectDefinition;
+        private string cachedDefinition;
 		public string path;
         public string source;
-
 		public bool enableAutomaticRefresh  = true;
         public bool refreshAtInterval       = false;
 		public bool refreshOnFocus          = true;
         public bool refreshOnFileChange     = true;
         public float updateInterval         = 1f;
         private bool _isDirty = false;
-        private FileSystemWatcher _fileSystemWatcher;
 
 		private XmlDocument doc;
-		private ParticleSystem _particleSystem;
 
         private const string DEFAULT_EFFECT_PATH = "Assets/Effects/Definitions/DefaultEffect.xml";
 
+        private List<GameObject> emitters = new List<GameObject>();
+
         void OnEnable() {
             Application.runInBackground = true;     // Enable this so that the editor updates even when not in focus
-            NodeFXUtilities.definitionChange += Refresh;
 
             if (effectDefinition == null) {
                 LoadDefaultDefinition();
             }
+
+            StartCoroutine(checkForUpdates());
         }
 
         /// <summary>
@@ -54,21 +55,10 @@ namespace NodeFX {
                 _isDirty = false;
                 Refresh();
             }
-
-            if (refreshAtInterval == true) {
-			    StartCoroutine(checkForUpdates());
-            }
-
-            if (_fileSystemWatcher == null && effectDefinition != null && String.IsNullOrEmpty(path) == false) {
-                _fileSystemWatcher = CreateFileWatcher(path, effectDefinition.name);
-            }
-
-            if (_fileSystemWatcher != null) {
-                _fileSystemWatcher.EnableRaisingEvents = refreshOnFileChange;
-            }
         }
 
         public void Refresh() {
+            
 			Debug.Log("Effect: Refreshing");
             DeleteOldParticleSystems();
             
@@ -83,12 +73,14 @@ namespace NodeFX {
                 }
                 
                 InstantiateParticleSystem();
+                
 			}
         }
 
 		private void LoadXML(string path) {
 			doc = new XmlDocument();
 			doc.Load(path);
+            cachedDefinition = File.ReadAllText(path);
             source = NodeFXUtilities.GetSource(doc);
 		}
 
@@ -139,6 +131,7 @@ namespace NodeFX {
                 pSystem.gameObject.SetActive(true);
                 
 				pSystem.Play(true);
+                emitters.Add(pSystem.gameObject);
 			}
 		}
 
@@ -153,11 +146,13 @@ namespace NodeFX {
                 DestroyImmediate(GetComponent<ParticleSystem>());
             }
 
-            foreach (ParticleSystem sub_ps in gameObject.GetComponentsInChildren<ParticleSystem>()) {
-                if (sub_ps.gameObject != gameObject) {
-                    DestroyImmediate(sub_ps.gameObject);
+            foreach (GameObject sub_emitter in emitters) {
+                if (sub_emitter != gameObject) {
+                    DestroyImmediate(sub_emitter);
                 }
             }
+
+            emitters.Clear();
         }
 
         private void MapMainParameters(ParticleSystem pSystem, int i) {
@@ -665,45 +660,15 @@ namespace NodeFX {
 
         private IEnumerator checkForUpdates() {
             yield return new WaitForSeconds(updateInterval);
-            _isDirty = true;
+            if (refreshAtInterval) {
+                _isDirty = HasDefinitionChanged();
+            }
+            StartCoroutine(checkForUpdates());
 	    }
 
-        public FileSystemWatcher CreateFileWatcher(string effectPath, string effectName)
-        {
-            FileSystemWatcher _fileSystemWatcher = new FileSystemWatcher();
-            string folder = effectPath.Replace(effectName + ".xml", "");
-            string folderPath = Application.dataPath + folder.Substring(6);
-            _fileSystemWatcher.Path = folderPath;
-
-            // Watch for changes in LastAccess and LastWrite times
-            _fileSystemWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
-            
-            // Only watch xml files.
-            _fileSystemWatcher.Filter = "*.xml";
-
-            // Add event handlers.
-            _fileSystemWatcher.Changed += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Created += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Deleted += new FileSystemEventHandler(OnChanged);
-            _fileSystemWatcher.Renamed += new RenamedEventHandler(OnRenamed);
-            return _fileSystemWatcher;
-        }
-
-        private void OnRenamed(object sender, RenamedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnChanged(object sender, FileSystemEventArgs e)
-        {
-            Refresh();
-			Debug.Log("OnChanged called");
-			// if (NodeFXdefinitionChange != null) {
-			// 	definitionChange();
-			// }
-			// foreach (NodeFXEffect effect in GameObject.FindObjectsOfType<NodeFXEffect>()) {
-			// 	effect.Refresh();
-			// }
+        private bool HasDefinitionChanged() {
+            string onDisk = File.ReadAllText(path);
+            return !onDisk.Equals(cachedDefinition);
         }
     }
 }

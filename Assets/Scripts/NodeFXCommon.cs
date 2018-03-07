@@ -5,9 +5,6 @@ using System.Xml;
 namespace NodeFX {
 	public static class NodeFXUtilities {
 
-		public delegate void DefinitionChange();
-		public static event DefinitionChange definitionChange;
-
 		public static ParticleSystem.MinMaxCurve InterpretStringToCurve(string parameter) {
 			ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve();
 			
