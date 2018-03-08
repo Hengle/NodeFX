@@ -12,7 +12,6 @@
     input	string	size_y	"Start Size Y"
     input	string	size_z	"Start Size Z"
     input	int	Nonuniform_Start_Rotation	"Nonuniform Start Rotation"
-    input	string	rotation	"Start Rotation"
     input	string	rotation_x	"Start Rotation X"
     input	string	rotation_y	"Start Rotation Y"
     input	string	rotation_z	"Start Rotation Z"
@@ -35,7 +34,6 @@
     inputflags	size_y	2
     inputflags	size_z	2
     inputflags	Nonuniform_Start_Rotation	2
-    inputflags	rotation	2
     inputflags	rotation_x	2
     inputflags	rotation_y	2
     inputflags	rotation_z	2
@@ -51,7 +49,7 @@
     inputflags	pivot	2
     inputflags	SortingFudge	0
     outputflags	Particle_Template	2
-    signature	"Default Inputs"	default	{ string string int string string string int string string string string float string string int int int float float float vector float struct_ParticleTemplate }
+    signature	"Default Inputs"	default	{ string string int string string string int string string string float string string int int int float float float vector float struct_ParticleTemplate }
 
     outputoverrides	default
     {
@@ -115,14 +113,6 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "rotation"
-        label   "Start Rotation"
-        type    string
-        default { "0.0" }
-        hidewhen "{ Nonuniform_Start_Rotation == 1 }"
-        parmtag { "parmvop" "1" }
-    }
-    parm {
         name    "rotation_x"
         label   "Start Rotation X"
         type    string
@@ -143,7 +133,6 @@
         label   "Start Rotation Z"
         type    string
         default { "0.0" }
-        hidewhen "{ Nonuniform_Start_Rotation == 0 }"
         parmtag { "parmvop" "1" }
     }
     parm {
