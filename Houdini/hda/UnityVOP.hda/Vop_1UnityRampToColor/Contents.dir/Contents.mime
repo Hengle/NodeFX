@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_colorramptogradient
+type = UnityRampToColor
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,24 +19,26 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -1.13343 4.31482
-connectornextid 1
+position -13.6536 -3.81
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-0 "output"
+1 "output"
 }
 inputsNamed3
 {
+0 	"" "" 1 "mode"
 }
 inputs
 {
+0 	"" 0 1
 }
 stat
 {
-  create 1512536494
-  modify 1512563332
-  author Chris@Voyager
+  create 1520466121
+  modify 1520467081
+  author cjudkins@localhost
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -92,7 +94,7 @@ inputs
 stat
 {
   create 1512404524
-  modify 1512563049
+  modify 1520466812
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -160,7 +162,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -177,7 +179,7 @@ Content-Type: text/plain
 
 comment ""
 position 2.35983 -0.464884
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -186,15 +188,17 @@ outputsNamed3
 inputsNamed3
 {
 0 	InterpolationMode 0 1 "_mode"
+1 	parm1 0 1 "_multiplier"
 }
 inputs
 {
 0 	InterpolationMode 0 1
+1 	parm1 0 1
 }
 stat
 {
   create 1512478750
-  modify 1512563049
+  modify 1520466812
   author chris@Defiant
   access 0777
 }
@@ -208,1585 +212,1585 @@ Content-Disposition: attachment; filename="hdaroot/inline1.spareparmdef"
 Content-Type: text/plain
 
     parm {
-	name	"path"
-	label	"Path"
-	type	string
-	default	{ [ "hou.pwd().path()" python ] }
+        name    "path"
+        label   "Path"
+        type    string
+        default { [ "hou.pwd().path()" python ] }
     }
     parm {
-	name	"code"
-	baseparm
-	label	"Inline VEX Code"
-	export	none
+        name    "code"
+        baseparm
+        label   "Inline VEX Code"
+        export  none
     }
     parm {
-	name	"includes"
-	baseparm
-	label	"Include Files"
-	export	none
+        name    "includes"
+        baseparm
+        label   "Include Files"
+        export  none
     }
     parm {
-	name	"outercode"
-	baseparm
-	label	"Outer Code"
-	export	none
+        name    "outercode"
+        baseparm
+        label   "Outer Code"
+        export  none
     }
     parm {
-	name	"expandcode"
-	baseparm
-	label	"Expand Expressions in Code"
-	export	none
+        name    "expandcode"
+        baseparm
+        label   "Expand Expressions in Code"
+        export  none
     }
     parm {
-	name	"name1"
-	baseparm
-	label	"Variable Input 1"
-	invisible
-	export	none
+        name    "name1"
+        baseparm
+        label   "Variable Input 1"
+        invisible
+        export  none
     }
     parm {
-	name	"label1"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label1"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name2"
-	baseparm
-	label	"Variable Input 2"
-	invisible
-	export	none
+        name    "name2"
+        baseparm
+        label   "Variable Input 2"
+        invisible
+        export  none
     }
     parm {
-	name	"label2"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label2"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name3"
-	baseparm
-	label	"Variable Input 3"
-	invisible
-	export	none
+        name    "name3"
+        baseparm
+        label   "Variable Input 3"
+        invisible
+        export  none
     }
     parm {
-	name	"label3"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label3"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name4"
-	baseparm
-	label	"Variable Input 4"
-	invisible
-	export	none
+        name    "name4"
+        baseparm
+        label   "Variable Input 4"
+        invisible
+        export  none
     }
     parm {
-	name	"label4"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label4"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name5"
-	baseparm
-	label	"Variable Input 5"
-	invisible
-	export	none
+        name    "name5"
+        baseparm
+        label   "Variable Input 5"
+        invisible
+        export  none
     }
     parm {
-	name	"label5"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label5"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name6"
-	baseparm
-	label	"Variable Input 6"
-	invisible
-	export	none
+        name    "name6"
+        baseparm
+        label   "Variable Input 6"
+        invisible
+        export  none
     }
     parm {
-	name	"label6"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label6"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name7"
-	baseparm
-	label	"Variable Input 7"
-	invisible
-	export	none
+        name    "name7"
+        baseparm
+        label   "Variable Input 7"
+        invisible
+        export  none
     }
     parm {
-	name	"label7"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label7"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name8"
-	baseparm
-	label	"Variable Input 8"
-	invisible
-	export	none
+        name    "name8"
+        baseparm
+        label   "Variable Input 8"
+        invisible
+        export  none
     }
     parm {
-	name	"label8"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label8"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name9"
-	baseparm
-	label	"Variable Input 9"
-	invisible
-	export	none
+        name    "name9"
+        baseparm
+        label   "Variable Input 9"
+        invisible
+        export  none
     }
     parm {
-	name	"label9"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label9"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name10"
-	baseparm
-	label	"Variable Input 10"
-	invisible
-	export	none
+        name    "name10"
+        baseparm
+        label   "Variable Input 10"
+        invisible
+        export  none
     }
     parm {
-	name	"label10"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label10"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name11"
-	baseparm
-	label	"Variable Input 11"
-	invisible
-	export	none
+        name    "name11"
+        baseparm
+        label   "Variable Input 11"
+        invisible
+        export  none
     }
     parm {
-	name	"label11"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label11"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name12"
-	baseparm
-	label	"Variable Input 12"
-	invisible
-	export	none
+        name    "name12"
+        baseparm
+        label   "Variable Input 12"
+        invisible
+        export  none
     }
     parm {
-	name	"label12"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label12"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name13"
-	baseparm
-	label	"Variable Input 13"
-	invisible
-	export	none
+        name    "name13"
+        baseparm
+        label   "Variable Input 13"
+        invisible
+        export  none
     }
     parm {
-	name	"label13"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label13"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name14"
-	baseparm
-	label	"Variable Input 14"
-	invisible
-	export	none
+        name    "name14"
+        baseparm
+        label   "Variable Input 14"
+        invisible
+        export  none
     }
     parm {
-	name	"label14"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label14"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name15"
-	baseparm
-	label	"Variable Input 15"
-	invisible
-	export	none
+        name    "name15"
+        baseparm
+        label   "Variable Input 15"
+        invisible
+        export  none
     }
     parm {
-	name	"label15"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label15"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name16"
-	baseparm
-	label	"Variable Input 16"
-	invisible
-	export	none
+        name    "name16"
+        baseparm
+        label   "Variable Input 16"
+        invisible
+        export  none
     }
     parm {
-	name	"label16"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label16"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name17"
-	baseparm
-	label	"Variable Input 17"
-	invisible
-	export	none
+        name    "name17"
+        baseparm
+        label   "Variable Input 17"
+        invisible
+        export  none
     }
     parm {
-	name	"label17"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label17"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name18"
-	baseparm
-	label	"Variable Input 18"
-	invisible
-	export	none
+        name    "name18"
+        baseparm
+        label   "Variable Input 18"
+        invisible
+        export  none
     }
     parm {
-	name	"label18"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label18"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name19"
-	baseparm
-	label	"Variable Input 19"
-	invisible
-	export	none
+        name    "name19"
+        baseparm
+        label   "Variable Input 19"
+        invisible
+        export  none
     }
     parm {
-	name	"label19"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label19"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name20"
-	baseparm
-	label	"Variable Input 20"
-	invisible
-	export	none
+        name    "name20"
+        baseparm
+        label   "Variable Input 20"
+        invisible
+        export  none
     }
     parm {
-	name	"label20"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label20"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name21"
-	baseparm
-	label	"Variable Input 21"
-	invisible
-	export	none
+        name    "name21"
+        baseparm
+        label   "Variable Input 21"
+        invisible
+        export  none
     }
     parm {
-	name	"label21"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label21"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name22"
-	baseparm
-	label	"Variable Input 22"
-	invisible
-	export	none
+        name    "name22"
+        baseparm
+        label   "Variable Input 22"
+        invisible
+        export  none
     }
     parm {
-	name	"label22"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label22"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name23"
-	baseparm
-	label	"Variable Input 23"
-	invisible
-	export	none
+        name    "name23"
+        baseparm
+        label   "Variable Input 23"
+        invisible
+        export  none
     }
     parm {
-	name	"label23"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label23"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name24"
-	baseparm
-	label	"Variable Input 24"
-	invisible
-	export	none
+        name    "name24"
+        baseparm
+        label   "Variable Input 24"
+        invisible
+        export  none
     }
     parm {
-	name	"label24"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label24"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name25"
-	baseparm
-	label	"Variable Input 25"
-	invisible
-	export	none
+        name    "name25"
+        baseparm
+        label   "Variable Input 25"
+        invisible
+        export  none
     }
     parm {
-	name	"label25"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label25"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name26"
-	baseparm
-	label	"Variable Input 26"
-	invisible
-	export	none
+        name    "name26"
+        baseparm
+        label   "Variable Input 26"
+        invisible
+        export  none
     }
     parm {
-	name	"label26"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label26"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name27"
-	baseparm
-	label	"Variable Input 27"
-	invisible
-	export	none
+        name    "name27"
+        baseparm
+        label   "Variable Input 27"
+        invisible
+        export  none
     }
     parm {
-	name	"label27"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label27"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name28"
-	baseparm
-	label	"Variable Input 28"
-	invisible
-	export	none
+        name    "name28"
+        baseparm
+        label   "Variable Input 28"
+        invisible
+        export  none
     }
     parm {
-	name	"label28"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label28"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name29"
-	baseparm
-	label	"Variable Input 29"
-	invisible
-	export	none
+        name    "name29"
+        baseparm
+        label   "Variable Input 29"
+        invisible
+        export  none
     }
     parm {
-	name	"label29"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label29"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name30"
-	baseparm
-	label	"Variable Input 30"
-	invisible
-	export	none
+        name    "name30"
+        baseparm
+        label   "Variable Input 30"
+        invisible
+        export  none
     }
     parm {
-	name	"label30"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label30"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name31"
-	baseparm
-	label	"Variable Input 31"
-	invisible
-	export	none
+        name    "name31"
+        baseparm
+        label   "Variable Input 31"
+        invisible
+        export  none
     }
     parm {
-	name	"label31"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label31"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name32"
-	baseparm
-	label	"Variable Input 32"
-	invisible
-	export	none
+        name    "name32"
+        baseparm
+        label   "Variable Input 32"
+        invisible
+        export  none
     }
     parm {
-	name	"label32"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label32"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name33"
-	baseparm
-	label	"Variable Input 33"
-	invisible
-	export	none
+        name    "name33"
+        baseparm
+        label   "Variable Input 33"
+        invisible
+        export  none
     }
     parm {
-	name	"label33"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label33"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name34"
-	baseparm
-	label	"Variable Input 34"
-	invisible
-	export	none
+        name    "name34"
+        baseparm
+        label   "Variable Input 34"
+        invisible
+        export  none
     }
     parm {
-	name	"label34"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label34"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name35"
-	baseparm
-	label	"Variable Input 35"
-	invisible
-	export	none
+        name    "name35"
+        baseparm
+        label   "Variable Input 35"
+        invisible
+        export  none
     }
     parm {
-	name	"label35"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label35"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name36"
-	baseparm
-	label	"Variable Input 36"
-	invisible
-	export	none
+        name    "name36"
+        baseparm
+        label   "Variable Input 36"
+        invisible
+        export  none
     }
     parm {
-	name	"label36"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label36"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name37"
-	baseparm
-	label	"Variable Input 37"
-	invisible
-	export	none
+        name    "name37"
+        baseparm
+        label   "Variable Input 37"
+        invisible
+        export  none
     }
     parm {
-	name	"label37"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label37"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name38"
-	baseparm
-	label	"Variable Input 38"
-	invisible
-	export	none
+        name    "name38"
+        baseparm
+        label   "Variable Input 38"
+        invisible
+        export  none
     }
     parm {
-	name	"label38"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label38"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name39"
-	baseparm
-	label	"Variable Input 39"
-	invisible
-	export	none
+        name    "name39"
+        baseparm
+        label   "Variable Input 39"
+        invisible
+        export  none
     }
     parm {
-	name	"label39"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label39"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name40"
-	baseparm
-	label	"Variable Input 40"
-	invisible
-	export	none
+        name    "name40"
+        baseparm
+        label   "Variable Input 40"
+        invisible
+        export  none
     }
     parm {
-	name	"label40"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label40"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name41"
-	baseparm
-	label	"Variable Input 41"
-	invisible
-	export	none
+        name    "name41"
+        baseparm
+        label   "Variable Input 41"
+        invisible
+        export  none
     }
     parm {
-	name	"label41"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label41"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name42"
-	baseparm
-	label	"Variable Input 42"
-	invisible
-	export	none
+        name    "name42"
+        baseparm
+        label   "Variable Input 42"
+        invisible
+        export  none
     }
     parm {
-	name	"label42"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label42"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name43"
-	baseparm
-	label	"Variable Input 43"
-	invisible
-	export	none
+        name    "name43"
+        baseparm
+        label   "Variable Input 43"
+        invisible
+        export  none
     }
     parm {
-	name	"label43"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label43"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name44"
-	baseparm
-	label	"Variable Input 44"
-	invisible
-	export	none
+        name    "name44"
+        baseparm
+        label   "Variable Input 44"
+        invisible
+        export  none
     }
     parm {
-	name	"label44"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label44"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name45"
-	baseparm
-	label	"Variable Input 45"
-	invisible
-	export	none
+        name    "name45"
+        baseparm
+        label   "Variable Input 45"
+        invisible
+        export  none
     }
     parm {
-	name	"label45"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label45"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name46"
-	baseparm
-	label	"Variable Input 46"
-	invisible
-	export	none
+        name    "name46"
+        baseparm
+        label   "Variable Input 46"
+        invisible
+        export  none
     }
     parm {
-	name	"label46"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label46"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name47"
-	baseparm
-	label	"Variable Input 47"
-	invisible
-	export	none
+        name    "name47"
+        baseparm
+        label   "Variable Input 47"
+        invisible
+        export  none
     }
     parm {
-	name	"label47"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label47"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name48"
-	baseparm
-	label	"Variable Input 48"
-	invisible
-	export	none
+        name    "name48"
+        baseparm
+        label   "Variable Input 48"
+        invisible
+        export  none
     }
     parm {
-	name	"label48"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label48"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name49"
-	baseparm
-	label	"Variable Input 49"
-	invisible
-	export	none
+        name    "name49"
+        baseparm
+        label   "Variable Input 49"
+        invisible
+        export  none
     }
     parm {
-	name	"label49"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label49"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name50"
-	baseparm
-	label	"Variable Input 50"
-	invisible
-	export	none
+        name    "name50"
+        baseparm
+        label   "Variable Input 50"
+        invisible
+        export  none
     }
     parm {
-	name	"label50"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label50"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name51"
-	baseparm
-	label	"Variable Input 51"
-	invisible
-	export	none
+        name    "name51"
+        baseparm
+        label   "Variable Input 51"
+        invisible
+        export  none
     }
     parm {
-	name	"label51"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label51"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name52"
-	baseparm
-	label	"Variable Input 52"
-	invisible
-	export	none
+        name    "name52"
+        baseparm
+        label   "Variable Input 52"
+        invisible
+        export  none
     }
     parm {
-	name	"label52"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label52"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name53"
-	baseparm
-	label	"Variable Input 53"
-	invisible
-	export	none
+        name    "name53"
+        baseparm
+        label   "Variable Input 53"
+        invisible
+        export  none
     }
     parm {
-	name	"label53"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label53"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name54"
-	baseparm
-	label	"Variable Input 54"
-	invisible
-	export	none
+        name    "name54"
+        baseparm
+        label   "Variable Input 54"
+        invisible
+        export  none
     }
     parm {
-	name	"label54"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label54"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name55"
-	baseparm
-	label	"Variable Input 55"
-	invisible
-	export	none
+        name    "name55"
+        baseparm
+        label   "Variable Input 55"
+        invisible
+        export  none
     }
     parm {
-	name	"label55"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label55"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name56"
-	baseparm
-	label	"Variable Input 56"
-	invisible
-	export	none
+        name    "name56"
+        baseparm
+        label   "Variable Input 56"
+        invisible
+        export  none
     }
     parm {
-	name	"label56"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label56"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name57"
-	baseparm
-	label	"Variable Input 57"
-	invisible
-	export	none
+        name    "name57"
+        baseparm
+        label   "Variable Input 57"
+        invisible
+        export  none
     }
     parm {
-	name	"label57"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label57"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name58"
-	baseparm
-	label	"Variable Input 58"
-	invisible
-	export	none
+        name    "name58"
+        baseparm
+        label   "Variable Input 58"
+        invisible
+        export  none
     }
     parm {
-	name	"label58"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label58"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name59"
-	baseparm
-	label	"Variable Input 59"
-	invisible
-	export	none
+        name    "name59"
+        baseparm
+        label   "Variable Input 59"
+        invisible
+        export  none
     }
     parm {
-	name	"label59"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label59"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name60"
-	baseparm
-	label	"Variable Input 60"
-	invisible
-	export	none
+        name    "name60"
+        baseparm
+        label   "Variable Input 60"
+        invisible
+        export  none
     }
     parm {
-	name	"label60"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label60"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name61"
-	baseparm
-	label	"Variable Input 61"
-	invisible
-	export	none
+        name    "name61"
+        baseparm
+        label   "Variable Input 61"
+        invisible
+        export  none
     }
     parm {
-	name	"label61"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label61"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name62"
-	baseparm
-	label	"Variable Input 62"
-	invisible
-	export	none
+        name    "name62"
+        baseparm
+        label   "Variable Input 62"
+        invisible
+        export  none
     }
     parm {
-	name	"label62"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label62"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name63"
-	baseparm
-	label	"Variable Input 63"
-	invisible
-	export	none
+        name    "name63"
+        baseparm
+        label   "Variable Input 63"
+        invisible
+        export  none
     }
     parm {
-	name	"label63"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label63"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     parm {
-	name	"name64"
-	baseparm
-	label	"Variable Input 64"
-	invisible
-	export	none
+        name    "name64"
+        baseparm
+        label   "Variable Input 64"
+        invisible
+        export  none
     }
     parm {
-	name	"label64"
-	baseparm
-	label	""
-	invisible
-	export	none
+        name    "label64"
+        baseparm
+        label   ""
+        invisible
+        export  none
     }
     group {
-	name	"stdswitcher9"
-	label	"Outputs 1-4"
+        name    "stdswitcher9"
+        label   "Outputs 1-4"
 
-	parm {
-	    name	"outtype1"
-	    baseparm
-	    label	"Output 1 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname1"
-	    baseparm
-	    label	"Output 1 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel1"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype2"
-	    baseparm
-	    label	"Output 2 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname2"
-	    baseparm
-	    label	"Output 2 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel2"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype3"
-	    baseparm
-	    label	"Output 3 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname3"
-	    baseparm
-	    label	"Output 3 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel3"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype4"
-	    baseparm
-	    label	"Output 4 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname4"
-	    baseparm
-	    label	"Output 4 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel4"
-	    baseparm
-	    label	""
-	    export	none
-	}
-    }
-
-    group {
-	name	"stdswitcher9_1"
-	label	"5-8"
-
-	parm {
-	    name	"outtype5"
-	    baseparm
-	    label	"Output 5 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname5"
-	    baseparm
-	    label	"Output 5 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel5"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype6"
-	    baseparm
-	    label	"Output 6 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname6"
-	    baseparm
-	    label	"Output 6 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel6"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype7"
-	    baseparm
-	    label	"Output 7 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname7"
-	    baseparm
-	    label	"Output 7 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel7"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype8"
-	    baseparm
-	    label	"Output 8 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname8"
-	    baseparm
-	    label	"Output 8 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel8"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype1"
+            baseparm
+            label   "Output 1 Type"
+            export  none
+        }
+        parm {
+            name    "outname1"
+            baseparm
+            label   "Output 1 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel1"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype2"
+            baseparm
+            label   "Output 2 Type"
+            export  none
+        }
+        parm {
+            name    "outname2"
+            baseparm
+            label   "Output 2 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel2"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype3"
+            baseparm
+            label   "Output 3 Type"
+            export  none
+        }
+        parm {
+            name    "outname3"
+            baseparm
+            label   "Output 3 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel3"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype4"
+            baseparm
+            label   "Output 4 Type"
+            export  none
+        }
+        parm {
+            name    "outname4"
+            baseparm
+            label   "Output 4 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel4"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_2"
-	label	"9-12"
+        name    "stdswitcher9_1"
+        label   "5-8"
 
-	parm {
-	    name	"outtype9"
-	    baseparm
-	    label	"Output 9 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname9"
-	    baseparm
-	    label	"Output 9 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel9"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype10"
-	    baseparm
-	    label	"Output 10 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname10"
-	    baseparm
-	    label	"Output 10 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel10"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype11"
-	    baseparm
-	    label	"Output 11 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname11"
-	    baseparm
-	    label	"Output 11 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel11"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype12"
-	    baseparm
-	    label	"Output 12 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname12"
-	    baseparm
-	    label	"Output 12 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel12"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype5"
+            baseparm
+            label   "Output 5 Type"
+            export  none
+        }
+        parm {
+            name    "outname5"
+            baseparm
+            label   "Output 5 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel5"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype6"
+            baseparm
+            label   "Output 6 Type"
+            export  none
+        }
+        parm {
+            name    "outname6"
+            baseparm
+            label   "Output 6 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel6"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype7"
+            baseparm
+            label   "Output 7 Type"
+            export  none
+        }
+        parm {
+            name    "outname7"
+            baseparm
+            label   "Output 7 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel7"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype8"
+            baseparm
+            label   "Output 8 Type"
+            export  none
+        }
+        parm {
+            name    "outname8"
+            baseparm
+            label   "Output 8 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel8"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_3"
-	label	"13-16"
+        name    "stdswitcher9_2"
+        label   "9-12"
 
-	parm {
-	    name	"outtype13"
-	    baseparm
-	    label	"Output 13 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname13"
-	    baseparm
-	    label	"Output 13 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel13"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype14"
-	    baseparm
-	    label	"Output 14 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname14"
-	    baseparm
-	    label	"Output 14 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel14"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype15"
-	    baseparm
-	    label	"Output 15 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname15"
-	    baseparm
-	    label	"Output 15 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel15"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype16"
-	    baseparm
-	    label	"Output 16 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname16"
-	    baseparm
-	    label	"Output 16 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel16"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype9"
+            baseparm
+            label   "Output 9 Type"
+            export  none
+        }
+        parm {
+            name    "outname9"
+            baseparm
+            label   "Output 9 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel9"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype10"
+            baseparm
+            label   "Output 10 Type"
+            export  none
+        }
+        parm {
+            name    "outname10"
+            baseparm
+            label   "Output 10 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel10"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype11"
+            baseparm
+            label   "Output 11 Type"
+            export  none
+        }
+        parm {
+            name    "outname11"
+            baseparm
+            label   "Output 11 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel11"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype12"
+            baseparm
+            label   "Output 12 Type"
+            export  none
+        }
+        parm {
+            name    "outname12"
+            baseparm
+            label   "Output 12 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel12"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_4"
-	label	"17-20"
+        name    "stdswitcher9_3"
+        label   "13-16"
 
-	parm {
-	    name	"outtype17"
-	    baseparm
-	    label	"Output 17 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname17"
-	    baseparm
-	    label	"Output 17 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel17"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype18"
-	    baseparm
-	    label	"Output 18 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname18"
-	    baseparm
-	    label	"Output 18 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel18"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype19"
-	    baseparm
-	    label	"Output 19 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname19"
-	    baseparm
-	    label	"Output 19 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel19"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype20"
-	    baseparm
-	    label	"Output 20 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname20"
-	    baseparm
-	    label	"Output 20 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel20"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype13"
+            baseparm
+            label   "Output 13 Type"
+            export  none
+        }
+        parm {
+            name    "outname13"
+            baseparm
+            label   "Output 13 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel13"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype14"
+            baseparm
+            label   "Output 14 Type"
+            export  none
+        }
+        parm {
+            name    "outname14"
+            baseparm
+            label   "Output 14 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel14"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype15"
+            baseparm
+            label   "Output 15 Type"
+            export  none
+        }
+        parm {
+            name    "outname15"
+            baseparm
+            label   "Output 15 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel15"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype16"
+            baseparm
+            label   "Output 16 Type"
+            export  none
+        }
+        parm {
+            name    "outname16"
+            baseparm
+            label   "Output 16 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel16"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_5"
-	label	"21-24"
+        name    "stdswitcher9_4"
+        label   "17-20"
 
-	parm {
-	    name	"outtype21"
-	    baseparm
-	    label	"Output 21 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname21"
-	    baseparm
-	    label	"Output 21 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel21"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype22"
-	    baseparm
-	    label	"Output 22 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname22"
-	    baseparm
-	    label	"Output 22 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel22"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype23"
-	    baseparm
-	    label	"Output 23 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname23"
-	    baseparm
-	    label	"Output 23 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel23"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype24"
-	    baseparm
-	    label	"Output 24 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname24"
-	    baseparm
-	    label	"Output 24 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel24"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype17"
+            baseparm
+            label   "Output 17 Type"
+            export  none
+        }
+        parm {
+            name    "outname17"
+            baseparm
+            label   "Output 17 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel17"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype18"
+            baseparm
+            label   "Output 18 Type"
+            export  none
+        }
+        parm {
+            name    "outname18"
+            baseparm
+            label   "Output 18 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel18"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype19"
+            baseparm
+            label   "Output 19 Type"
+            export  none
+        }
+        parm {
+            name    "outname19"
+            baseparm
+            label   "Output 19 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel19"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype20"
+            baseparm
+            label   "Output 20 Type"
+            export  none
+        }
+        parm {
+            name    "outname20"
+            baseparm
+            label   "Output 20 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel20"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_6"
-	label	"25-28"
+        name    "stdswitcher9_5"
+        label   "21-24"
 
-	parm {
-	    name	"outtype25"
-	    baseparm
-	    label	"Output 25 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname25"
-	    baseparm
-	    label	"Output 25 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel25"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype26"
-	    baseparm
-	    label	"Output 26 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname26"
-	    baseparm
-	    label	"Output 26 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel26"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype27"
-	    baseparm
-	    label	"Output 27 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname27"
-	    baseparm
-	    label	"Output 27 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel27"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype28"
-	    baseparm
-	    label	"Output 28 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname28"
-	    baseparm
-	    label	"Output 28 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel28"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype21"
+            baseparm
+            label   "Output 21 Type"
+            export  none
+        }
+        parm {
+            name    "outname21"
+            baseparm
+            label   "Output 21 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel21"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype22"
+            baseparm
+            label   "Output 22 Type"
+            export  none
+        }
+        parm {
+            name    "outname22"
+            baseparm
+            label   "Output 22 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel22"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype23"
+            baseparm
+            label   "Output 23 Type"
+            export  none
+        }
+        parm {
+            name    "outname23"
+            baseparm
+            label   "Output 23 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel23"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype24"
+            baseparm
+            label   "Output 24 Type"
+            export  none
+        }
+        parm {
+            name    "outname24"
+            baseparm
+            label   "Output 24 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel24"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
     group {
-	name	"stdswitcher9_7"
-	label	"29-32"
+        name    "stdswitcher9_6"
+        label   "25-28"
 
-	parm {
-	    name	"outtype29"
-	    baseparm
-	    label	"Output 29 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname29"
-	    baseparm
-	    label	"Output 29 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel29"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype30"
-	    baseparm
-	    label	"Output 30 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname30"
-	    baseparm
-	    label	"Output 30 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel30"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype31"
-	    baseparm
-	    label	"Output 31 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname31"
-	    baseparm
-	    label	"Output 31 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel31"
-	    baseparm
-	    label	""
-	    export	none
-	}
-	parm {
-	    name	"outtype32"
-	    baseparm
-	    label	"Output 32 Type"
-	    export	none
-	}
-	parm {
-	    name	"outname32"
-	    baseparm
-	    label	"Output 32 Name"
-	    joinnext
-	    export	none
-	}
-	parm {
-	    name	"outlabel32"
-	    baseparm
-	    label	""
-	    export	none
-	}
+        parm {
+            name    "outtype25"
+            baseparm
+            label   "Output 25 Type"
+            export  none
+        }
+        parm {
+            name    "outname25"
+            baseparm
+            label   "Output 25 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel25"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype26"
+            baseparm
+            label   "Output 26 Type"
+            export  none
+        }
+        parm {
+            name    "outname26"
+            baseparm
+            label   "Output 26 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel26"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype27"
+            baseparm
+            label   "Output 27 Type"
+            export  none
+        }
+        parm {
+            name    "outname27"
+            baseparm
+            label   "Output 27 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel27"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype28"
+            baseparm
+            label   "Output 28 Type"
+            export  none
+        }
+        parm {
+            name    "outname28"
+            baseparm
+            label   "Output 28 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel28"
+            baseparm
+            label   ""
+            export  none
+        }
+    }
+
+    group {
+        name    "stdswitcher9_7"
+        label   "29-32"
+
+        parm {
+            name    "outtype29"
+            baseparm
+            label   "Output 29 Type"
+            export  none
+        }
+        parm {
+            name    "outname29"
+            baseparm
+            label   "Output 29 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel29"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype30"
+            baseparm
+            label   "Output 30 Type"
+            export  none
+        }
+        parm {
+            name    "outname30"
+            baseparm
+            label   "Output 30 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel30"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype31"
+            baseparm
+            label   "Output 31 Type"
+            export  none
+        }
+        parm {
+            name    "outname31"
+            baseparm
+            label   "Output 31 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel31"
+            baseparm
+            label   ""
+            export  none
+        }
+        parm {
+            name    "outtype32"
+            baseparm
+            label   "Output 32 Type"
+            export  none
+        }
+        parm {
+            name    "outname32"
+            baseparm
+            label   "Output 32 Name"
+            joinnext
+            export  none
+        }
+        parm {
+            name    "outlabel32"
+            baseparm
+            label   ""
+            export  none
+        }
     }
 
 
@@ -1825,8 +1829,8 @@ for (int $i = 0; $i < $_samples; $i++) {
     vector $color = chramp($colorRampPath, $position);
     float $alpha = chramp($alphaRampPath, $position);
 
-    vector4 $value = $color;
-    $value.a = $alpha;
+    vector4 $value = $color * $_multiplier;
+    $value.a = $alpha * $_multiplier.a;
     append($outputArray, sprintf(\"%f\", $value));
 }
 
@@ -2060,7 +2064,7 @@ outlabel31	[ 0	locks=0 ]	(	""	)
 outtype32	[ 0	locks=0 ]	(	undef	)
 outname32	[ 0	locks=0 ]	(	""	)
 outlabel32	[ 0	locks=0 ]	(	""	)
-path	[ 0	locks=0 ]	(	[ path	/obj/geo1/VOPEmitter1/VFX_VOP/ColorRampToGradient ] 	)
+path	[ 0	locks=0 ]	(	[ path	/obj/geo1/NodeFXEffect1/Definition/UnityRampToColor2 ] 	)
 stdswitcher9	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
 }
 
@@ -2071,7 +2075,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -2198,7 +2202,134 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.init"
+Content-Type: text/plain
+
+type = parameter
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.def"
+Content-Type: text/plain
+
+comment ""
+position 0.0722483 -2.09118
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+0 "_multiplier"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1520466514
+  modify 1520466776
+  author cjudkins@localhost
+  access 0777
+}
+color UT_Color RGB 1 1 0.4 
+delscript ""
+exprlanguage python
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parmscope	[ 0	locks=0 ]	(	subnet	)
+parmaccess	[ 0	locks=0 ]	(	""	)
+parmname	[ 0	locks=0 ]	(	multiplier	)
+parmprefix	[ 0	locks=0 ]	(	""	)
+parmpostfix	[ 0	locks=0 ]	(	""	)
+parmlabel	[ 0	locks=0 ]	(	Multiplier	)
+showlabel	[ 0	locks=0 ]	(	"on"	)
+parmtype	[ 0	locks=0 ]	(	"float4"	)
+parmtypename	[ 0	locks=0 ]	(	""	)
+floatdef	[ 0	locks=0 ]	(	1	)
+intdef	[ 0	locks=0 ]	(	0	)
+toggledef	[ 0	locks=0 ]	(	"off"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	1	1	1	1	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+rangeflt	[ 0	locks=0 ]	(	0	10	)
+rangeint	[ 0	locks=0 ]	(	0	10	)
+stringtype	[ 0	locks=0 ]	(	off	)
+opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
+parmcomment	[ 0	locks=0 ]	(	""	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+useownexportcontext	[ 0	locks=0 ]	(	"off"	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+usebound	[ 0	locks=0 ]	(	"off"	)
+hasconnector	[ 0	locks=0 ]	(	"on"	)
+exportparm	[ 0	locks=0 ]	(	"off"	)
+exportcontext	[ 0	locks=0 ]	(	cvex	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
+menuscript	[ 0	locks=0 ]	(	""	)
+menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
+separator2	[ 0	locks=0 ]	(	)
+invisible	[ 0	locks=0 ]	(	"off"	)
+joinnext	[ 0	locks=0 ]	(	"off"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+tags	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
 	}
 }
 
@@ -2206,10 +2337,11 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-3
+4
 subnetoutput
 inline1
 InterpolationMode
+parm1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

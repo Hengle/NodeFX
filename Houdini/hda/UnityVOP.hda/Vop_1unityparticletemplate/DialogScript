@@ -8,7 +8,6 @@
     input	string	lifetime	"Start Lifetime"
     input	string	speed	"Start Speed"
     input	int	Nonuniform_Start_Size	"Nonuniform Start Size"
-    input	string	size	"Start Size"
     input	string	size_x	"Start Size X"
     input	string	size_y	"Start Size Y"
     input	string	size_z	"Start Size Z"
@@ -32,7 +31,6 @@
     inputflags	lifetime	2
     inputflags	speed	2
     inputflags	Nonuniform_Start_Size	2
-    inputflags	size	2
     inputflags	size_x	2
     inputflags	size_y	2
     inputflags	size_z	2
@@ -53,7 +51,7 @@
     inputflags	pivot	2
     inputflags	SortingFudge	0
     outputflags	Particle_Template	2
-    signature	"Default Inputs"	default	{ string string int string string string string int string string string string float string string int int int float float float vector float struct_ParticleTemplate }
+    signature	"Default Inputs"	default	{ string string int string string string int string string string string float string string int int int float float float vector float struct_ParticleTemplate }
 
     outputoverrides	default
     {
@@ -87,26 +85,17 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "size"
-        label   "Start Size"
-        type    string
-        default { "constant;float;1.0" }
-        hidewhen "{ Nonuniform_Start_Size == 1 }"
-        parmtag { "parmvop" "1" }
-    }
-    parm {
         name    "size_x"
         label   "Start Size X"
         type    string
-        default { "constant;float;1.0" }
-        hidewhen "{ Nonuniform_Start_Size == 0 }"
+        default { "1.0" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "size_y"
         label   "Start Size Y"
         type    string
-        default { "constant;float;1.0" }
+        default { "1.0" }
         hidewhen "{ Nonuniform_Start_Size == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -114,7 +103,7 @@
         name    "size_z"
         label   "Start Size Z"
         type    string
-        default { "constant;float;1.0" }
+        default { "1.0" }
         hidewhen "{ Nonuniform_Start_Size == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -129,7 +118,7 @@
         name    "rotation"
         label   "Start Rotation"
         type    string
-        default { "constant;float;0.0" }
+        default { "0.0" }
         hidewhen "{ Nonuniform_Start_Rotation == 1 }"
         parmtag { "parmvop" "1" }
     }
@@ -137,7 +126,7 @@
         name    "rotation_x"
         label   "Start Rotation X"
         type    string
-        default { "constant;float;0.0" }
+        default { "0.0" }
         hidewhen "{ Nonuniform_Start_Rotation == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -145,7 +134,7 @@
         name    "rotation_y"
         label   "Start Rotation Y"
         type    string
-        default { "constant;float;0.0" }
+        default { "0.0" }
         hidewhen "{ Nonuniform_Start_Rotation == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -153,7 +142,7 @@
         name    "rotation_z"
         label   "Start Rotation Z"
         type    string
-        default { "constant;float;0.0" }
+        default { "0.0" }
         hidewhen "{ Nonuniform_Start_Rotation == 0 }"
         parmtag { "parmvop" "1" }
     }

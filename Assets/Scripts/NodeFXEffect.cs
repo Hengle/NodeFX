@@ -1,10 +1,10 @@
-﻿using System.Xml;
+﻿using System;
+using System.IO;
+using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using System;
-using System.IO;
 
 
 namespace NodeFX {
@@ -146,9 +146,9 @@ namespace NodeFX {
                 DestroyImmediate(GetComponent<ParticleSystem>());
             }
 
-            foreach (GameObject sub_emitter in emitters) {
-                if (sub_emitter != gameObject) {
-                    DestroyImmediate(sub_emitter);
+            foreach (ParticleSystem sub_emitter in gameObject.GetComponentsInChildren<ParticleSystem>()) {
+                if (sub_emitter.gameObject != gameObject) {
+                    DestroyImmediate(sub_emitter.gameObject);
                 }
             }
 
@@ -660,6 +660,7 @@ namespace NodeFX {
 
         private IEnumerator checkForUpdates() {
             yield return new WaitForSeconds(updateInterval);
+            Debug.Log("Checking for updates");
             if (refreshAtInterval) {
                 _isDirty = HasDefinitionChanged();
             }
