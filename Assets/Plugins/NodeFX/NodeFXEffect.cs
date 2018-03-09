@@ -169,7 +169,7 @@ namespace NodeFX {
             mainModule.useUnscaledTime              = GetBoolParam(i, "main_deltaTime");
             mainModule.playOnAwake                  = GetBoolParam(i, "main_playOnAwake");
             pSystem.useAutoRandomSeed               = GetBoolParam(i, "main_autoRandomSeed");
-            mainModule.randomizeRotationDirection   = GetFloatParam(i, "main_rotationVariance");
+            mainModule.flipRotation   = GetFloatParam(i, "main_rotationVariance");
             mainModule.simulationSpeed              = GetFloatParam(i, "main_simulationSpeed");
             mainModule.duration                     = GetFloatParam(i, "main_duration");
             mainModule.startDelay                   = NodeFXUtilities.InterpretStringToCurve(GetStringParam(i, "main_startDelay"));
