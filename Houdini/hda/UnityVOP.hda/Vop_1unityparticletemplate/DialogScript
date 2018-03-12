@@ -65,14 +65,14 @@
         name    "lifetime"
         label   "Start Lifetime"
         type    string
-        default { "constant;float;5.0" }
+        default { "5.0" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "speed"
         label   "Start Speed"
         type    string
-        default { "constant;float;1.0" }
+        default { "1.0" }
         parmtag { "parmvop" "1" }
     }
     parm {

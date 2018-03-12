@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
 namespace NodeFX {
     [ExecuteInEditMode]
 	public class NodeFXEffect : MonoBehaviour {
@@ -15,7 +14,6 @@ namespace NodeFX {
         private string cachedDefinition;
 		public string path;
         public string source;
-		public bool enableAutomaticRefresh  = true;
         public bool refreshAtInterval       = false;
 		public bool refreshOnFocus          = true;
         public bool refreshOnFileChange     = true;
@@ -73,7 +71,6 @@ namespace NodeFX {
                 }
                 
                 InstantiateParticleSystem();
-                
 			}
         }
 
@@ -660,16 +657,11 @@ namespace NodeFX {
 
         private IEnumerator checkForUpdates() {
             yield return new WaitForSeconds(updateInterval);
-            Debug.Log("Checking for updates");
             if (refreshAtInterval) {
-                _isDirty = HasDefinitionChanged();
+                string onDisk = File.ReadAllText(path);
+                _isDirty = !onDisk.Equals(cachedDefinition);
             }
             StartCoroutine(checkForUpdates());
 	    }
-
-        private bool HasDefinitionChanged() {
-            string onDisk = File.ReadAllText(path);
-            return !onDisk.Equals(cachedDefinition);
-        }
     }
 }

@@ -19,22 +19,22 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -7.22982 -1.835
-connectornextid 16
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+position -20.314 6.675
+connectornextid 17
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-29 "_id"
+16 "_id"
 }
 inputsNamed3
 {
 0 	"" "" 1 "id"
-1 	Smoke_Sprite_Template 23 1 "Particle_Template"
+1 	unityparticletemplate1 21 1 "Particle_Template"
 2 	"" "" 1 "Duration"
 3 	"" "" 1 "Looping"
 4 	"" "" 1 "Prewarm"
 5 	"" "" 1 "Start_Delay"
-6 	"" "" 1 "Gravity_Modifier"
+6 	UnityFloatToConstant3 1 1 "Gravity_Modifier"
 7 	"" "" 1 "Simulation_Space"
 8 	"" "" 1 "Simulation_Speed"
 9 	"" "" 1 "Delta_Time"
@@ -48,12 +48,12 @@ inputsNamed3
 inputs
 {
 0 	"" 0 1
-1 	Smoke_Sprite_Template 0 1
+1 	unityparticletemplate1 0 1
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
 5 	"" 0 1
-6 	"" 0 1
+6 	UnityFloatToConstant3 0 1
 7 	"" 0 1
 8 	"" 0 1
 9 	"" 0 1
@@ -66,9 +66,9 @@ inputs
 }
 stat
 {
-  create 1514090735
-  modify 1520472722
-  author Chris@Voyager
+  create 1520702636
+  modify 1520814588
+  author cjudkins@localhost
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -93,7 +93,7 @@ Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
 TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfaWQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkI=
-eXBhc3NNb2RlIDIKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
+eXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/input.init"
@@ -1504,7 +1504,7 @@ Content-Disposition: attachment; filename="hdaroot/input15.def"
 Content-Type: text/plain
 
 comment ""
-position 6.67029 -15.0444
+position 6.67029 -14.5984
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1520,7 +1520,7 @@ inputs
 stat
 {
   create 1512163031
-  modify 1520347509
+  modify 1520814254
   author Chris@Voyager
   access 0777
 }
@@ -1932,7 +1932,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1520472708
+  modify 1520814588
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -4514,7 +4514,7 @@ Content-Disposition: attachment; filename="hdaroot/inline13.def"
 Content-Type: text/plain
 
 comment ""
-position 9.32619 -15.0444
+position 9.32619 -14.5984
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -4532,7 +4532,7 @@ inputs
 stat
 {
   create 1514386795
-  modify 1520347509
+  modify 1520814588
   author Chris@Voyager
   access 0777
 }
@@ -4547,40 +4547,44 @@ Content-Type: text/plain
 
 {
 version 0.8
-code	[ 0	locks=0 ]	(	"string $output_string_array[];
+code	[ 0	locks=0 ]	(	"string $input;
+string $output_string_array[];
+
+$input = $_Gravity_Modifier;
 
 //  Check if input is from another node
-if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $_Gravity_Modifier)) {
-    push($output_string_array, $_Gravity_Modifier);
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $input)) {
+    push($output_string_array, $input);
     }
 //  Check if input is from an invalid node
-else if (match(\"gradient*, randomGradient*\", $_Gravity_Modifier)) {
-    printf(\"_Gravity_Modifier does not support gradient inputs \\n\");
-    warning(\"_Gravity_Modifier does not support gradient inputs \\n\");
+else if (match(\"gradient*, randomGradient*\", $input)) {
+    printf(\"output does not support gradient inputs \\n\");
+    warning(\"output does not support gradient inputs \\n\");
     $output_string_array = {\"constant\",\"float\",\"5.0\"};
     }
 //  Check if input is a constant value
-else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;-]*\", $_Gravity_Modifier)) {
+else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
     $output_string_array = {\"constant\", \"float\"};
-    push($output_string_array, $_Gravity_Modifier);
+    push($output_string_array, $input);
     } 
 //  Check if input is a range value
-else if (match(\"*[;]*\", $_Gravity_Modifier)) {
+else if (match(\"*[;]*\", $input)) {
     $output_string_array = {\"randomConstant\", \"float\"};
-    push($output_string_array, split($_Gravity_Modifier, \";\")[0]);
-    push($output_string_array, split($_Gravity_Modifier, \";\")[1]);
+    push($output_string_array, split($input, \";\")[0]);
+    push($output_string_array, split($input, \";\")[1]);
     }
 //  Check if input is a curve value
-else if (match(\"*[-]*\", $_Gravity_Modifier)) {
+else if (match(\"*[~]*\", $input)) {
     $output_string_array = {\"curve\", \"float\", \"2\", \"1\"};
-    push($output_string_array, split($_Gravity_Modifier, \"-\")[0]);
-    push($output_string_array, split($_Gravity_Modifier, \"-\")[1]);
+    push($output_string_array, split($input, \"~\")[0]);
+    push($output_string_array, split($input, \"~\")[1]);
     } 
 else {
-    printf(\"Invalid value entered for _Gravity_Modifier \\n\");
-    warning(\"Invalid value entered for _Gravity_Modifier \\n\");
+    printf(\"Invalid value entered for output \\n\");
+    warning(\"Invalid value entered for output \\n\");
     $output_string_array = {\"constant\",\"float\",\"5.0\"};
     }
+
 $out_Gravity_Modifier = join($output_string_array, \";\");
 "	)
 includes	[ 0	locks=0 ]	(	""	)
@@ -4823,6 +4827,14 @@ Content-Type: text/plain
 		"value":"16.5.323"
 	}
 }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline13.outputinfos"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+
+TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBvdXRfR3Jhdml0eV9Nb2RpZmllcgpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2RlZmF1bHQ=
+X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMQpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"

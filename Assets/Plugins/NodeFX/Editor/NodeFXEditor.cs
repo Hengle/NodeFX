@@ -50,8 +50,8 @@ public class NodeFXEditor : Editor {
 		GUILayout.BeginHorizontal();
 		GUILayout.BeginVertical();
 
-        targetEffect.refreshOnFileChange = EditorGUILayout.Toggle("Refresh On Definition Update", targetEffect.refreshOnFileChange);
-        targetEffect.refreshOnFocus = EditorGUILayout.Toggle("Refresh On Window Focus", targetEffect.refreshOnFocus);
+        // targetEffect.refreshOnFileChange = EditorGUILayout.Toggle("Refresh On Definition Update", targetEffect.refreshOnFileChange);
+        // targetEffect.refreshOnFocus = EditorGUILayout.Toggle("Refresh On Window Focus", targetEffect.refreshOnFocus);
         targetEffect.refreshAtInterval = EditorGUILayout.Toggle("Refresh At Interval", targetEffect.refreshAtInterval);
 
         if (targetEffect.refreshAtInterval) {
