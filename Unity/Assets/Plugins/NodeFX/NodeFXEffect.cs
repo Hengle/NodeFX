@@ -14,9 +14,9 @@ namespace NodeFX {
         private string cachedDefinition;
 		public string path;
         public string source;
-        public bool refreshAtInterval       = false;
-		public bool refreshOnFocus          = true;
-        public bool refreshOnFileChange     = true;
+        public bool refreshAtInterval       = true;
+		public bool refreshOnFocus          = false;
+        public bool refreshOnFileChange     = false;
         public float updateInterval         = 1f;
         private bool _isDirty = false;
 
