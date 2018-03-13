@@ -19,22 +19,22 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -20.314 6.675
-connectornextid 17
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+position -15.6041 -0.627596
+connectornextid 16
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-16 "_id"
+29 "_id"
 }
 inputsNamed3
 {
 0 	"" "" 1 "id"
-1 	unityparticletemplate1 21 1 "Particle_Template"
+1 	Smoke_Sprite_Template 23 1 "Particle_Template"
 2 	"" "" 1 "Duration"
 3 	"" "" 1 "Looping"
 4 	"" "" 1 "Prewarm"
 5 	"" "" 1 "Start_Delay"
-6 	UnityFloatToConstant3 1 1 "Gravity_Modifier"
+6 	"" "" 1 "Gravity_Modifier"
 7 	"" "" 1 "Simulation_Space"
 8 	"" "" 1 "Simulation_Speed"
 9 	"" "" 1 "Delta_Time"
@@ -48,12 +48,12 @@ inputsNamed3
 inputs
 {
 0 	"" 0 1
-1 	unityparticletemplate1 0 1
+1 	Smoke_Sprite_Template 0 1
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
 5 	"" 0 1
-6 	UnityFloatToConstant3 0 1
+6 	"" 0 1
 7 	"" 0 1
 8 	"" 0 1
 9 	"" 0 1
@@ -66,9 +66,9 @@ inputs
 }
 stat
 {
-  create 1520702636
-  modify 1520814588
-  author cjudkins@localhost
+  create 1514090735
+  modify 1520941810
+  author Chris@Voyager
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -93,7 +93,7 @@ Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
 TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfaWQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkI=
-eXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
+eXBhc3NNb2RlIDIKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/input.init"
@@ -1932,7 +1932,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1520814588
+  modify 1520941785
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -4532,7 +4532,7 @@ inputs
 stat
 {
   create 1514386795
-  modify 1520814588
+  modify 1520941785
   author Chris@Voyager
   access 0777
 }
@@ -4563,7 +4563,7 @@ else if (match(\"gradient*, randomGradient*\", $input)) {
     $output_string_array = {\"constant\",\"float\",\"5.0\"};
     }
 //  Check if input is a constant value
-else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
+else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;-]*\", $input)) {
     $output_string_array = {\"constant\", \"float\"};
     push($output_string_array, $input);
     } 

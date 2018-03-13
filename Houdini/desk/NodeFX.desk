@@ -1,0 +1,46 @@
+fullscreen   -1
+playbarshown 0
+playbar      -1
+shelf        -1
+menubar      -1
+statusbar    -1
+radial menu set main
+root {
+    split 0.118462 H L {
+        tabs 0 1 {
+            pane panetab14 -a 0 -l 10 -H /obj/geo1/NodeFXEffect1/Definition/ -T VOP -m treecontrol
+        }
+        split 0.269187 V R {
+            split 0.707789 H {
+                tabs 0 1 {
+                    pane panetab2 -a 0 -L 1 -l 0 -H /obj/geo1/NodeFXEffect1/Definition/ -T VOP -m neteditor
+                }
+                tabs 0 1 {
+                    pane panetab3 -a 0 -l 10 -H /obj/geo1/NodeFXEffect1/Definition/ -T VOP -m parmeditor
+                }
+            }
+            tabs 0 1 {
+                pane panetab1 -a 0 -l 10 -H /obj/geo1/NodeFXEffect1/Definition/ -T VOP -m details
+            }
+        }
+    }
+}
+shelfdock -o 0 -l icon_and_text -G "0.49 0.50" add shelf_set_1 shelf_set_2
+treecontrol -a 0 -h 0 -i 1 -f 0 -O 0 -S 0 -D 0 -P 0 -H 0 -V 0 -C 0 -I 0 -R 0 panetab14
+networkeditor -p '{\n	"sop:listmode":"0",\n	"obj:listmode":"0",\n	"showchilddep":"1",\n	"showdep":"0",\n	"perfstatname":"Time",\n	"showperfstats":"1",\n	"grouplistsplit":"0.75",\n	"showtree":"0",\n	"showtypesidebar":"0",\n	"showparmdialogmax":"1",\n	"treesplit":"0.25",\n	"palettesize":"150 150",\n	"typesidebarsplit":"0.25",\n	"palettemode":"0",\n	"showgrouplist":"0",\n	"backgroundimagebrightness":"1.0",\n	"backgroundimageediting":"0",\n	"gridystep":"1.0",\n	"gridmode":"1",\n	"showtimedep":"0",\n	"overviewbounds":"0.000000 0.000000 405.600000 249.900000",\n	"overviewmode":"0",\n	"palettecolors":"",\n	"showmenu":"1",\n	"gridxstep":"2.0",\n	"showparmdialog":"0"\n}\n' panetab2
+netcolumns -c display,xray,select,origin,capture,bone -n OBJ panetab2
+netcolumns -c display,render,template,selectabletemplate,highlight,unload,bypass,lock -n SOP panetab2
+netcolumns -c delscript,comment -n PART panetab2
+netcolumns -c display,render,template,bypass -n POP panetab2
+netcolumns -c delscript,comment -n CHOPNET panetab2
+netcolumns -c display,export,audio,bypass,lock -n CHOP panetab2
+netcolumns -c startrender,bypass,lock -n ROP panetab2
+netcolumns -c delscript,comment -n SHOP panetab2
+netcolumns -c display,render,template,bypass -n COP2 panetab2
+netcolumns -c delscript,comment -n IMG panetab2
+netcolumns -c delscript,comment,input -n VOP panetab2
+netcolumns -c delscript,comment -n VOPNET panetab2
+netcolumns -c delscript,comment -n DOP panetab2
+netcolumns -c delscript,comment -n MGR panetab2
+netcolumns -c delscript,comment -n DIR panetab2
+parmeditor -T 0.25 -w 0 panetab3
