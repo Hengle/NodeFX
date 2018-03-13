@@ -1,0 +1,61 @@
+# Dialog script for unityburst automatically generated
+
+{
+    name	unityburst
+    script	unityburst
+    label	UnityBurst
+
+    input	float	Time	Time
+    input	string	Count	Count
+    input	int	Cycles	Cycles
+    input	float	Interval	Interval
+    output	struct_UnityBurst	Burst	Burst
+    inputflags	Time	2
+    inputflags	Count	2
+    inputflags	Cycles	2
+    inputflags	Interval	2
+    outputflags	Burst	2
+    signature	"Default Inputs"	default	{ float string int float struct_UnityBurst }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "Time"
+        label   "Time"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Count"
+        label   "Count"
+        type    string
+        default { "30.0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Cycles"
+        label   "Cycles"
+        type    integer
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Interval"
+        label   "Interval"
+        type    float
+        default { "0.2" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+}

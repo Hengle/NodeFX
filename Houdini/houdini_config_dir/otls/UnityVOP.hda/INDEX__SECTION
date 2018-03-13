@@ -1,0 +1,465 @@
+Operator:     UnityVelocityOverLifetimeModule
+Label:        UnityVelocityOverLifetimeModule
+Path:         oplib:/Vop/UnityVelocityOverLifetimeModule?Vop/UnityVelocityOverLifetimeModule
+Icon:         VOP_UnityVelocityOverLifetimeModule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 7
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Dec 24 15:14:25 2017
+
+Operator:     unityburst
+Label:        UnityBurst
+Path:         oplib:/Vop/unityburst?Vop/unityburst
+Icon:         VOP_unityburst
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 10:54:28 2018
+
+Operator:     unityMinMaxCurve
+Label:        UnityMinMaxCurve
+Path:         oplib:/Vop/unityMinMaxCurve?Vop/unityMinMaxCurve
+Icon:         VOP_unityMinMaxCurve
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:01:00 2017
+
+Operator:     unityparticletemplate
+Label:        UnitySpriteParticleTemplate
+Path:         oplib:/Vop/unityparticletemplate?Vop/unityparticletemplate
+Icon:         VOP_unityparticletemplate
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 21
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 14:04:06 2018
+
+Operator:     UnityCollisionModule
+Label:        UnityCollisionModule
+Path:         oplib:/Vop/UnityCollisionModule?Vop/UnityCollisionModule
+Icon:         VOP_unity_collision
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 18
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:06:24 2017
+
+Operator:     UnityCustomDataModule
+Label:        UnityCustomDataModule
+Path:         oplib:/Vop/UnityCustomDataModule?Vop/UnityCustomDataModule
+Icon:         VOP_unity_customdata
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:06:39 2017
+
+Operator:     UnityEmissionModule
+Label:        UnityEmissionModule
+Path:         oplib:/Vop/UnityEmissionModule?Vop/UnityEmissionModule
+Icon:         VOP_unity_emissionmodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 12
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:23:09 2018
+
+Operator:     UnityExternalForcesModule
+Label:        UnityExternalForcesModule
+Path:         oplib:/Vop/UnityExternalForcesModule?Vop/UnityExternalForcesModule
+Icon:         VOP_unity_externalforces
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 3
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:07:12 2017
+
+Operator:     UnityForceOverLifetimeModule
+Label:        UnityForceOverLifetimeModule
+Path:         oplib:/Vop/UnityForceOverLifetimeModule?Vop/UnityForceOverLifetimeModule
+Icon:         VOP_unity_forceoverlifetime
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 7
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:37:52 2018
+
+Operator:     UnityInheritVelocityModule
+Label:        UnityInheritVelocityModule
+Path:         oplib:/Vop/UnityInheritVelocityModule?Vop/UnityInheritVelocityModule
+Icon:         VOP_unity_inheritvelocity
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Dec 24 15:17:24 2017
+
+Operator:     UnityNoiseModule
+Label:        UnityNoiseModule
+Path:         oplib:/Vop/UnityNoiseModule?Vop/UnityNoiseModule
+Icon:         VOP_unity_noise
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 19
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:33:40 2018
+
+Operator:     UnityRenderModule
+Label:        UnityRenderModule
+Path:         oplib:/Vop/UnityRenderModule?Vop/UnityRenderModule
+Icon:         VOP_unity_rendermodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 11
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 14:04:13 2018
+
+Operator:     UnityRotationBySpeedModule
+Label:        UnityRotationBySpeedModule
+Path:         oplib:/Vop/UnityRotationBySpeedModule?Vop/UnityRotationBySpeedModule
+Icon:         VOP_unity_rotationbyspeed
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 8
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Mar  3 13:23:50 2018
+
+Operator:     UnityRotationOverLifetimeModule
+Label:        UnityRotationOverLifetimeModule
+Path:         oplib:/Vop/UnityRotationOverLifetimeModule?Vop/UnityRotationOverLifetimeModule
+Icon:         VOP_unity_rotationoverlifetime
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 7
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:11:35 2017
+
+Operator:     UnityShapeModule
+Label:        UnityShapeModule
+Path:         oplib:/Vop/UnityShapeModule?Vop/UnityShapeModule
+Icon:         VOP_unity_shapemodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 30
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:25:06 2018
+
+Operator:     UnitySizeBySpeedModule
+Label:        UnitySizeBySpeedModule
+Path:         oplib:/Vop/UnitySizeBySpeedModule?Vop/UnitySizeBySpeedModule
+Icon:         VOP_unity_sizebyspeed
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 8
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Dec 24 15:45:28 2017
+
+Operator:     UnityTextureSheetAnimationModule
+Label:        UnityTextureSheetAnimationModule
+Path:         oplib:/Vop/UnityTextureSheetAnimationModule?Vop/UnityTextureSheetAnimationModule
+Icon:         VOP_unity_texturesheetanimation
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 10
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Mar  5 00:10:22 2018
+
+Operator:     UnityTrailsModule
+Label:        UnityTrailsModule
+Path:         oplib:/Vop/UnityTrailsModule?Vop/UnityTrailsModule
+Icon:         VOP_unity_trails
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 15
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:13:13 2017
+
+Operator:     UnityColorBySpeedModule
+Label:        UnityColorBySpeedModule
+Path:         oplib:/Vop/UnityColorBySpeedModule?Vop/UnityColorBySpeedModule
+Icon:         VOP_unitycolorbyspeed
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:13:40 2017
+
+Operator:     UnityColorOverLifetimeModule
+Label:        UnityColorOverLifetimeModule
+Path:         oplib:/Vop/UnityColorOverLifetimeModule?Vop/UnityColorOverLifetimeModule
+Icon:         VOP_unitycoloroverlifetime
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 3
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 02:14:03 2017
+
+Operator:     UnitySizeOverLifetimeModule
+Label:        UnitySizeOverLifetimeModule
+Path:         oplib:/Vop/UnitySizeOverLifetimeModule?Vop/UnitySizeOverLifetimeModule
+Icon:         VOP_unitysizeoverlifetime
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 6
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:35:00 2018
+
+Operator:     UnityLimitVelocityOverLifetimeModule
+Label:        UnityLimitVelocityOverLifetimeModule
+Path:         oplib:/Vop/UnityLimitVelocityOverLifetimeModule?Vop/UnityLimitVelocityOverLifetimeModule
+Icon:         VOP_unity_limitvelocityoverlifetime
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 12
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:37:01 2018
+
+Operator:     UnityEmitterModule
+Label:        UnityEmitterModule
+Path:         oplib:/Vop/UnityEmitterModule?Vop/UnityEmitterModule
+Icon:         VOP_unityemittermodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 16
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 13:22:07 2018
+
+Operator:     UnityColorToConstant
+Label:        UnityColorToConstant
+Path:         oplib:/Vop/UnityColorToConstant?Vop/UnityColorToConstant
+Icon:         VOP_unity_colortoconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 1
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:28:21 2017
+
+Operator:     UnityRampToCurve
+Label:        UnityRampToCurve
+Path:         oplib:/Vop/UnityRampToCurve?Vop/UnityRampToCurve
+Icon:         VOP_unity_ramptominmaxcurve
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:32:45 2017
+
+Operator:     UnityFloatToConstant
+Label:        UnityFloatToConstant
+Path:         oplib:/Vop/UnityFloatToConstant?Vop/UnityFloatToConstant
+Icon:         VOP_unity_floattoconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 1
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:36:36 2017
+
+Operator:     UnityRampToColor
+Label:        UnityRampToColor
+Path:         oplib:/Vop/UnityRampToColor?Vop/UnityRampToColor
+Icon:         VOP_unity_colorramptogradient
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar  4 22:57:57 2018
+
+Operator:     UnityRampToCurveRange
+Label:        UnityRampToCurveRange
+Path:         oplib:/Vop/UnityRampToCurveRange?Vop/UnityRampToCurveRange
+Icon:         VOP_unity_ramptorandomcurve
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:37:59 2017
+
+Operator:     UnityFloatToConstantRange
+Label:        UnityFloatToConstantRange
+Path:         oplib:/Vop/UnityFloatToConstantRange?Vop/UnityFloatToConstantRange
+Icon:         VOP_unity_floattorandomconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 0
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:38:28 2017
+
+Operator:     UnityIntToConstantRange
+Label:        UnityIntToConstantRange
+Path:         oplib:/Vop/UnityIntToConstantRange?Vop/UnityIntToConstantRange
+Icon:         VOP_unity_inttorandomconstant
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:38:50 2017
+
+Operator:     UnityEmitterModule_ParticleTemplate
+Label:        UnityEmitterModule_ParticleTemplate
+Path:         oplib:/Vop/UnityEmitterModule_ParticleTemplate?Vop/UnityEmitterModule_ParticleTemplate
+Icon:         VOP_unityemittermodule
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 29
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec 21 03:42:01 2017
+
