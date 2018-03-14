@@ -21,7 +21,7 @@ After downloading from the link above, extract the contents into a folder of you
 To explore the Houdini side of the setup, open `Houdini/hip/Campfire_Example.hip`. I've added notes to the network that will hopefully help explain how it works.
 
 To bring an asset into Unity, open the Unity folder using the Unity launcher. Go to the GameObject menu, and under _Effects_ you'll find the _NodeFX System_ entry. Simply assign an effect definition that you've saved out from Houdini, and you should be good to go.
-  
+
 This tool was created using the following software versions, and compatibility is not guaranteed with newer or older versions:
 
 * `Unity 2018.1.0b8`
@@ -30,7 +30,7 @@ This tool was created using the following software versions, and compatibility i
 What it does
 ---
 
-Using the VOPEmitter asset, you can author a VOP network that is parsed into a particle system by a Unity importer script. I've added a number of Unity-specific nodes to create random values, gradients, curves, etc., to retain the roughly same level of features that the Shuriken interface provides.
+Using the NodeFX asset, you can author a VOP network that is parsed into a particle system by a Unity importer script. I've added a number of Unity-specific nodes to create random values, gradients, curves, etc., to retain the roughly same level of features that the Shuriken interface provides.
 
 My goal with this tool was to use the powerful node interface of Houdini -- with all its capabilities of grouping nodes, linking properties, and writing expressions -- to cut down iteration times when authoring particle systems in Unity. And while I realized that it’d never be as transparent as using the in-editor tools, having a workflow that was invisible and responsive was a priority.
 
