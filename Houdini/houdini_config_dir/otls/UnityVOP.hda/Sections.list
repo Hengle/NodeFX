@@ -2,7 +2,6 @@
 INDEX__SECTION	INDEX_SECTION
 houdini.hdalibrary	houdini.hdalibrary
 Vop_1unityburst	Vop/unityburst
-Vop_1unityparticletemplate	Vop/unityparticletemplate
 Vop_1UnityCollisionModule	Vop/UnityCollisionModule
 Vop_1UnityCustomDataModule	Vop/UnityCustomDataModule
 Vop_1UnityEmissionModule	Vop/UnityEmissionModule
@@ -31,3 +30,4 @@ Vop_1UnityRampToCurveRange	Vop/UnityRampToCurveRange
 Vop_1UnityFloatToConstantRange	Vop/UnityFloatToConstantRange
 Vop_1UnityIntToConstantRange	Vop/UnityIntToConstantRange
 Vop_1UnityEmitterModule__ParticleTemplate	Vop/UnityEmitterModule_ParticleTemplate
+Vop_1UnitySpriteParticleTemplate	Vop/UnitySpriteParticleTemplate

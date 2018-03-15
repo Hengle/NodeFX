@@ -1,8 +1,8 @@
-# Dialog script for unityparticletemplate automatically generated
+# Dialog script for UnitySpriteParticleTemplate automatically generated
 
 {
-    name	unityparticletemplate
-    script	unityparticletemplate
+    name	UnitySpriteParticleTemplate
+    script	UnitySpriteParticleTemplate
     label	UnitySpriteParticleTemplate
 
     input	string	lifetime	"Start Lifetime"

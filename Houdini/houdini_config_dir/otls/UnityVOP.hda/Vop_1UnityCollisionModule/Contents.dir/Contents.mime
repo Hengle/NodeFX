@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_collision
+type = UnityCollisionModule
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,16 +19,15 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 22.1869 12.0063
+position -4.5 -4.90412
 connectornextid 18
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-17 "_id"
 }
 inputsNamed3
 {
-0 	unity_texturesheetanimation1 9 1 "id"
+0 	"" "" 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "Type"
 3 	"" "" 1 "Mode"
@@ -45,10 +44,11 @@ inputsNamed3
 14 	"" "" 1 "MultiplyByParticleSpeed"
 15 	"" "" 1 "MultiplyByParticleSize"
 16 	"" "" 1 "SendCollisionMessages"
+17 	"" "" 1 "VisualizeBounds"
 }
 inputs
 {
-0 	unity_texturesheetanimation1 0 1
+0 	"" 0 1
 1 	"" 0 1
 2 	"" 0 1
 3 	"" 0 1
@@ -65,12 +65,13 @@ inputs
 14 	"" 0 1
 15 	"" 0 1
 16 	"" 0 1
+17 	"" 0 1
 }
 stat
 {
-  create 1513219735
-  modify 1513699100
-  author Chris@Voyager
+  create 1521140457
+  modify 1521140731
+  author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -1887,7 +1888,7 @@ Content-Disposition: attachment; filename="hdaroot/input14.def"
 Content-Type: text/plain
 
 comment ""
-position -0.276408 13.4908
+position -2.97402 13.4222
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -1903,7 +1904,7 @@ inputs
 stat
 {
   create 1512606201
-  modify 1513219996
+  modify 1521140687
   author Chris@Voyager
   access 0777
 }
@@ -1942,7 +1943,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	randomConstant;float;0.000000;1.000000	)
+stringdef	[ 0	locks=0 ]	(	0;1	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -2014,7 +2015,7 @@ Content-Disposition: attachment; filename="hdaroot/input15.def"
 Content-Type: text/plain
 
 comment ""
-position -0.276408 11.8372
+position -2.97402 11.7
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2030,7 +2031,7 @@ inputs
 stat
 {
   create 1512606204
-  modify 1513219996
+  modify 1521140700
   author Chris@Voyager
   access 0777
 }
@@ -2069,7 +2070,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	randomConstant;float;0.000000;1.000000	)
+stringdef	[ 0	locks=0 ]	(	0;1	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -2141,7 +2142,7 @@ Content-Disposition: attachment; filename="hdaroot/input16.def"
 Content-Type: text/plain
 
 comment ""
-position -0.276408 10.1836
+position -2.97402 10.115
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -2157,7 +2158,7 @@ inputs
 stat
 {
   create 1512606253
-  modify 1513219996
+  modify 1521140697
   author Chris@Voyager
   access 0777
 }
@@ -2196,7 +2197,7 @@ float4def	[ 0	locks=0 ]	(	0	0	0	0	)
 floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
 float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
 float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-stringdef	[ 0	locks=0 ]	(	randomConstant;float;0.000000;1.000000	)
+stringdef	[ 0	locks=0 ]	(	0;1	)
 filedef	[ 0	locks=0 ]	(	""	)
 imagedef	[ 0	locks=0 ]	(	""	)
 geometrydef	[ 0	locks=0 ]	(	""	)
@@ -2417,9 +2418,9 @@ inputsNamed3
 11 	input11 0 1 "_RadiusScale"
 12 	input12 0 1 "_MaxKillSpeed"
 13 	input13 0 1 "_MinKillSpeed"
-14 	input14 0 1 "_LifetimeLoss"
-15 	input15 0 1 "_Bounce"
-16 	input16 0 1 "_Dampen"
+14 	inline3 1 1 "out_LifetimeLoss"
+15 	inline4 1 1 "out_Bounce"
+16 	inline5 1 1 "out_Dampen"
 17 	input17 0 1 "_id"
 }
 inputs
@@ -2438,15 +2439,15 @@ inputs
 11 	input11 0 1
 12 	input12 0 1
 13 	input13 0 1
-14 	input14 0 1
-15 	input15 0 1
-16 	input16 0 1
+14 	inline3 0 1
+15 	inline4 0 1
+16 	inline5 0 1
 17 	input17 0 1
 }
 stat
 {
   create 1513185602
-  modify 1513221088
+  modify 1521140697
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -2463,11 +2464,11 @@ Content-Type: text/plain
 version 0.8
 code	[ 0	locks=0 ]	(	"//  Set parameters
 setpointattrib(0, \"collision_enabled\", $_id, $_Enabled);
-setpointattrib(0, \"collision_bounce\", $_id, $_Bounce);
-setpointattrib(0, \"collision_dampen\", $_id, $_Dampen);
+setpointattrib(0, \"collision_bounce\", $_id, $out_Bounce);
+setpointattrib(0, \"collision_dampen\", $_id, $out_Dampen);
 setpointattrib(0, \"collision_colliderForce\", $_id, $_ColliderForce);
 setpointattrib(0, \"collision_enableDynamicColliders\", $_id, $_EnableDynamicColliders);
-setpointattrib(0, \"collision_lifetimeLoss\", $_id, $_LifetimeLoss);
+setpointattrib(0, \"collision_lifetimeLoss\", $_id, $out_LifetimeLoss);
 setpointattrib(0, \"collision_maxKillSpeed\", $_id, $_MaxKillSpeed);
 setpointattrib(0, \"collision_minKillSpeed\", $_id, $_MinKillSpeed);
 setpointattrib(0, \"collision_mode\", $_id, $_Mode);
@@ -2720,10 +2721,988 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline3.init"
+Content-Type: text/plain
+
+type = inline
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline3.def"
+Content-Type: text/plain
+
+comment ""
+position -0.276408 13.4222
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out_LifetimeLoss"
+}
+inputsNamed3
+{
+0 	input14 0 1 "_LifetimeLoss"
+}
+inputs
+{
+0 	input14 0 1
+}
+stat
+{
+  create 1514389308
+  modify 1521140606
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline3.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+code	[ 0	locks=0 ]	(	"string $output_string_array[];
+string $input = $_LifetimeLoss;
+
+//  Check if input is preformatted
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $input)) {
+    push($output_string_array, $input);
+    }
+//  Check if input is from an invalid node
+else if (match(\"gradient*, randomGradient*\", $input)) {
+    printf(\"StartLifetime does not support gradient inputs \\n\");
+    warning(\"StartLifetime does not support gradient inputs \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+//  Check if input is a range value
+else if (match(\"*[;]*\", $input)) {
+    $output_string_array = {\"randomConstant\", \"float\"};
+    push($output_string_array, split($input, \";\")[0]);
+    push($output_string_array, split($input, \";\")[1]);
+    }
+//  Check if input is a curve value
+else if (match(\"*[~]*\", $input)) {
+    string $curveElements[];
+    $curveElements = split($input, \"~\");
+    $output_string_array = array(\"curve\", \"float\", sprintf(\"%p\", len($curveElements)), \"1\");
+    for (int $i = 0; $i < len($curveElements); $i++) {
+        push($output_string_array, $curveElements[$i]);
+        }
+    }
+//  Check if input is a constant value
+else if (match(\"[0123456789.-]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
+    $output_string_array = {\"constant\", \"float\"};
+    push($output_string_array, $input);
+    } 
+else {
+    printf(\"Invalid value entered for StartLifetime \\n\");
+    warning(\"Invalid value entered for StartLifetime \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+$out_LifetimeLoss = join($output_string_array, \";\");
+"	)
+includes	[ 0	locks=0 ]	(	""	)
+outercode	[ 0	locks=0 ]	(	""	)
+expandcode	[ 0	locks=0 ]	(	"off"	)
+name1	[ 0	locks=0 ]	(	""	)
+label1	[ 0	locks=0 ]	(	""	)
+name2	[ 0	locks=0 ]	(	""	)
+label2	[ 0	locks=0 ]	(	""	)
+name3	[ 0	locks=0 ]	(	""	)
+label3	[ 0	locks=0 ]	(	""	)
+name4	[ 0	locks=0 ]	(	""	)
+label4	[ 0	locks=0 ]	(	""	)
+name5	[ 0	locks=0 ]	(	""	)
+label5	[ 0	locks=0 ]	(	""	)
+name6	[ 0	locks=0 ]	(	""	)
+label6	[ 0	locks=0 ]	(	""	)
+name7	[ 0	locks=0 ]	(	""	)
+label7	[ 0	locks=0 ]	(	""	)
+name8	[ 0	locks=0 ]	(	""	)
+label8	[ 0	locks=0 ]	(	""	)
+name9	[ 0	locks=0 ]	(	""	)
+label9	[ 0	locks=0 ]	(	""	)
+name10	[ 0	locks=0 ]	(	""	)
+label10	[ 0	locks=0 ]	(	""	)
+name11	[ 0	locks=0 ]	(	""	)
+label11	[ 0	locks=0 ]	(	""	)
+name12	[ 0	locks=0 ]	(	""	)
+label12	[ 0	locks=0 ]	(	""	)
+name13	[ 0	locks=0 ]	(	""	)
+label13	[ 0	locks=0 ]	(	""	)
+name14	[ 0	locks=0 ]	(	""	)
+label14	[ 0	locks=0 ]	(	""	)
+name15	[ 0	locks=0 ]	(	""	)
+label15	[ 0	locks=0 ]	(	""	)
+name16	[ 0	locks=0 ]	(	""	)
+label16	[ 0	locks=0 ]	(	""	)
+name17	[ 0	locks=0 ]	(	""	)
+label17	[ 0	locks=0 ]	(	""	)
+name18	[ 0	locks=0 ]	(	""	)
+label18	[ 0	locks=0 ]	(	""	)
+name19	[ 0	locks=0 ]	(	""	)
+label19	[ 0	locks=0 ]	(	""	)
+name20	[ 0	locks=0 ]	(	""	)
+label20	[ 0	locks=0 ]	(	""	)
+name21	[ 0	locks=0 ]	(	""	)
+label21	[ 0	locks=0 ]	(	""	)
+name22	[ 0	locks=0 ]	(	""	)
+label22	[ 0	locks=0 ]	(	""	)
+name23	[ 0	locks=0 ]	(	""	)
+label23	[ 0	locks=0 ]	(	""	)
+name24	[ 0	locks=0 ]	(	""	)
+label24	[ 0	locks=0 ]	(	""	)
+name25	[ 0	locks=0 ]	(	""	)
+label25	[ 0	locks=0 ]	(	""	)
+name26	[ 0	locks=0 ]	(	""	)
+label26	[ 0	locks=0 ]	(	""	)
+name27	[ 0	locks=0 ]	(	""	)
+label27	[ 0	locks=0 ]	(	""	)
+name28	[ 0	locks=0 ]	(	""	)
+label28	[ 0	locks=0 ]	(	""	)
+name29	[ 0	locks=0 ]	(	""	)
+label29	[ 0	locks=0 ]	(	""	)
+name30	[ 0	locks=0 ]	(	""	)
+label30	[ 0	locks=0 ]	(	""	)
+name31	[ 0	locks=0 ]	(	""	)
+label31	[ 0	locks=0 ]	(	""	)
+name32	[ 0	locks=0 ]	(	""	)
+label32	[ 0	locks=0 ]	(	""	)
+name33	[ 0	locks=0 ]	(	""	)
+label33	[ 0	locks=0 ]	(	""	)
+name34	[ 0	locks=0 ]	(	""	)
+label34	[ 0	locks=0 ]	(	""	)
+name35	[ 0	locks=0 ]	(	""	)
+label35	[ 0	locks=0 ]	(	""	)
+name36	[ 0	locks=0 ]	(	""	)
+label36	[ 0	locks=0 ]	(	""	)
+name37	[ 0	locks=0 ]	(	""	)
+label37	[ 0	locks=0 ]	(	""	)
+name38	[ 0	locks=0 ]	(	""	)
+label38	[ 0	locks=0 ]	(	""	)
+name39	[ 0	locks=0 ]	(	""	)
+label39	[ 0	locks=0 ]	(	""	)
+name40	[ 0	locks=0 ]	(	""	)
+label40	[ 0	locks=0 ]	(	""	)
+name41	[ 0	locks=0 ]	(	""	)
+label41	[ 0	locks=0 ]	(	""	)
+name42	[ 0	locks=0 ]	(	""	)
+label42	[ 0	locks=0 ]	(	""	)
+name43	[ 0	locks=0 ]	(	""	)
+label43	[ 0	locks=0 ]	(	""	)
+name44	[ 0	locks=0 ]	(	""	)
+label44	[ 0	locks=0 ]	(	""	)
+name45	[ 0	locks=0 ]	(	""	)
+label45	[ 0	locks=0 ]	(	""	)
+name46	[ 0	locks=0 ]	(	""	)
+label46	[ 0	locks=0 ]	(	""	)
+name47	[ 0	locks=0 ]	(	""	)
+label47	[ 0	locks=0 ]	(	""	)
+name48	[ 0	locks=0 ]	(	""	)
+label48	[ 0	locks=0 ]	(	""	)
+name49	[ 0	locks=0 ]	(	""	)
+label49	[ 0	locks=0 ]	(	""	)
+name50	[ 0	locks=0 ]	(	""	)
+label50	[ 0	locks=0 ]	(	""	)
+name51	[ 0	locks=0 ]	(	""	)
+label51	[ 0	locks=0 ]	(	""	)
+name52	[ 0	locks=0 ]	(	""	)
+label52	[ 0	locks=0 ]	(	""	)
+name53	[ 0	locks=0 ]	(	""	)
+label53	[ 0	locks=0 ]	(	""	)
+name54	[ 0	locks=0 ]	(	""	)
+label54	[ 0	locks=0 ]	(	""	)
+name55	[ 0	locks=0 ]	(	""	)
+label55	[ 0	locks=0 ]	(	""	)
+name56	[ 0	locks=0 ]	(	""	)
+label56	[ 0	locks=0 ]	(	""	)
+name57	[ 0	locks=0 ]	(	""	)
+label57	[ 0	locks=0 ]	(	""	)
+name58	[ 0	locks=0 ]	(	""	)
+label58	[ 0	locks=0 ]	(	""	)
+name59	[ 0	locks=0 ]	(	""	)
+label59	[ 0	locks=0 ]	(	""	)
+name60	[ 0	locks=0 ]	(	""	)
+label60	[ 0	locks=0 ]	(	""	)
+name61	[ 0	locks=0 ]	(	""	)
+label61	[ 0	locks=0 ]	(	""	)
+name62	[ 0	locks=0 ]	(	""	)
+label62	[ 0	locks=0 ]	(	""	)
+name63	[ 0	locks=0 ]	(	""	)
+label63	[ 0	locks=0 ]	(	""	)
+name64	[ 0	locks=0 ]	(	""	)
+label64	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
+outtype1	[ 0	locks=0 ]	(	string	)
+outname1	[ 0	locks=0 ]	(	out_LifetimeLoss	)
+outlabel1	[ 0	locks=0 ]	(	""	)
+outtype2	[ 0	locks=0 ]	(	undef	)
+outname2	[ 0	locks=0 ]	(	""	)
+outlabel2	[ 0	locks=0 ]	(	""	)
+outtype3	[ 0	locks=0 ]	(	undef	)
+outname3	[ 0	locks=0 ]	(	""	)
+outlabel3	[ 0	locks=0 ]	(	""	)
+outtype4	[ 0	locks=0 ]	(	undef	)
+outname4	[ 0	locks=0 ]	(	""	)
+outlabel4	[ 0	locks=0 ]	(	""	)
+outtype5	[ 0	locks=0 ]	(	undef	)
+outname5	[ 0	locks=0 ]	(	""	)
+outlabel5	[ 0	locks=0 ]	(	""	)
+outtype6	[ 0	locks=0 ]	(	undef	)
+outname6	[ 0	locks=0 ]	(	""	)
+outlabel6	[ 0	locks=0 ]	(	""	)
+outtype7	[ 0	locks=0 ]	(	undef	)
+outname7	[ 0	locks=0 ]	(	""	)
+outlabel7	[ 0	locks=0 ]	(	""	)
+outtype8	[ 0	locks=0 ]	(	undef	)
+outname8	[ 0	locks=0 ]	(	""	)
+outlabel8	[ 0	locks=0 ]	(	""	)
+outtype9	[ 0	locks=0 ]	(	undef	)
+outname9	[ 0	locks=0 ]	(	""	)
+outlabel9	[ 0	locks=0 ]	(	""	)
+outtype10	[ 0	locks=0 ]	(	undef	)
+outname10	[ 0	locks=0 ]	(	""	)
+outlabel10	[ 0	locks=0 ]	(	""	)
+outtype11	[ 0	locks=0 ]	(	undef	)
+outname11	[ 0	locks=0 ]	(	""	)
+outlabel11	[ 0	locks=0 ]	(	""	)
+outtype12	[ 0	locks=0 ]	(	undef	)
+outname12	[ 0	locks=0 ]	(	""	)
+outlabel12	[ 0	locks=0 ]	(	""	)
+outtype13	[ 0	locks=0 ]	(	undef	)
+outname13	[ 0	locks=0 ]	(	""	)
+outlabel13	[ 0	locks=0 ]	(	""	)
+outtype14	[ 0	locks=0 ]	(	undef	)
+outname14	[ 0	locks=0 ]	(	""	)
+outlabel14	[ 0	locks=0 ]	(	""	)
+outtype15	[ 0	locks=0 ]	(	undef	)
+outname15	[ 0	locks=0 ]	(	""	)
+outlabel15	[ 0	locks=0 ]	(	""	)
+outtype16	[ 0	locks=0 ]	(	undef	)
+outname16	[ 0	locks=0 ]	(	""	)
+outlabel16	[ 0	locks=0 ]	(	""	)
+outtype17	[ 0	locks=0 ]	(	undef	)
+outname17	[ 0	locks=0 ]	(	""	)
+outlabel17	[ 0	locks=0 ]	(	""	)
+outtype18	[ 0	locks=0 ]	(	undef	)
+outname18	[ 0	locks=0 ]	(	""	)
+outlabel18	[ 0	locks=0 ]	(	""	)
+outtype19	[ 0	locks=0 ]	(	undef	)
+outname19	[ 0	locks=0 ]	(	""	)
+outlabel19	[ 0	locks=0 ]	(	""	)
+outtype20	[ 0	locks=0 ]	(	undef	)
+outname20	[ 0	locks=0 ]	(	""	)
+outlabel20	[ 0	locks=0 ]	(	""	)
+outtype21	[ 0	locks=0 ]	(	undef	)
+outname21	[ 0	locks=0 ]	(	""	)
+outlabel21	[ 0	locks=0 ]	(	""	)
+outtype22	[ 0	locks=0 ]	(	undef	)
+outname22	[ 0	locks=0 ]	(	""	)
+outlabel22	[ 0	locks=0 ]	(	""	)
+outtype23	[ 0	locks=0 ]	(	undef	)
+outname23	[ 0	locks=0 ]	(	""	)
+outlabel23	[ 0	locks=0 ]	(	""	)
+outtype24	[ 0	locks=0 ]	(	undef	)
+outname24	[ 0	locks=0 ]	(	""	)
+outlabel24	[ 0	locks=0 ]	(	""	)
+outtype25	[ 0	locks=0 ]	(	undef	)
+outname25	[ 0	locks=0 ]	(	""	)
+outlabel25	[ 0	locks=0 ]	(	""	)
+outtype26	[ 0	locks=0 ]	(	undef	)
+outname26	[ 0	locks=0 ]	(	""	)
+outlabel26	[ 0	locks=0 ]	(	""	)
+outtype27	[ 0	locks=0 ]	(	undef	)
+outname27	[ 0	locks=0 ]	(	""	)
+outlabel27	[ 0	locks=0 ]	(	""	)
+outtype28	[ 0	locks=0 ]	(	undef	)
+outname28	[ 0	locks=0 ]	(	""	)
+outlabel28	[ 0	locks=0 ]	(	""	)
+outtype29	[ 0	locks=0 ]	(	undef	)
+outname29	[ 0	locks=0 ]	(	""	)
+outlabel29	[ 0	locks=0 ]	(	""	)
+outtype30	[ 0	locks=0 ]	(	undef	)
+outname30	[ 0	locks=0 ]	(	""	)
+outlabel30	[ 0	locks=0 ]	(	""	)
+outtype31	[ 0	locks=0 ]	(	undef	)
+outname31	[ 0	locks=0 ]	(	""	)
+outlabel31	[ 0	locks=0 ]	(	""	)
+outtype32	[ 0	locks=0 ]	(	undef	)
+outname32	[ 0	locks=0 ]	(	""	)
+outlabel32	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline3.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline4.init"
+Content-Type: text/plain
+
+type = inline
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline4.def"
+Content-Type: text/plain
+
+comment ""
+position -0.276408 11.7
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out_Bounce"
+}
+inputsNamed3
+{
+0 	input15 0 1 "_Bounce"
+}
+inputs
+{
+0 	input15 0 1
+}
+stat
+{
+  create 1514389308
+  modify 1521140693
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline4.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+code	[ 0	locks=0 ]	(	"string $output_string_array[];
+string $input = $_Bounce;
+
+//  Check if input is preformatted
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $input)) {
+    push($output_string_array, $input);
+    }
+//  Check if input is from an invalid node
+else if (match(\"gradient*, randomGradient*\", $input)) {
+    printf(\"StartLifetime does not support gradient inputs \\n\");
+    warning(\"StartLifetime does not support gradient inputs \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+//  Check if input is a range value
+else if (match(\"*[;]*\", $input)) {
+    $output_string_array = {\"randomConstant\", \"float\"};
+    push($output_string_array, split($input, \";\")[0]);
+    push($output_string_array, split($input, \";\")[1]);
+    }
+//  Check if input is a curve value
+else if (match(\"*[~]*\", $input)) {
+    string $curveElements[];
+    $curveElements = split($input, \"~\");
+    $output_string_array = array(\"curve\", \"float\", sprintf(\"%p\", len($curveElements)), \"1\");
+    for (int $i = 0; $i < len($curveElements); $i++) {
+        push($output_string_array, $curveElements[$i]);
+        }
+    }
+//  Check if input is a constant value
+else if (match(\"[0123456789.-]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
+    $output_string_array = {\"constant\", \"float\"};
+    push($output_string_array, $input);
+    } 
+else {
+    printf(\"Invalid value entered for StartLifetime \\n\");
+    warning(\"Invalid value entered for StartLifetime \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+$out_Bounce = join($output_string_array, \";\");
+"	)
+includes	[ 0	locks=0 ]	(	""	)
+outercode	[ 0	locks=0 ]	(	""	)
+expandcode	[ 0	locks=0 ]	(	"off"	)
+name1	[ 0	locks=0 ]	(	""	)
+label1	[ 0	locks=0 ]	(	""	)
+name2	[ 0	locks=0 ]	(	""	)
+label2	[ 0	locks=0 ]	(	""	)
+name3	[ 0	locks=0 ]	(	""	)
+label3	[ 0	locks=0 ]	(	""	)
+name4	[ 0	locks=0 ]	(	""	)
+label4	[ 0	locks=0 ]	(	""	)
+name5	[ 0	locks=0 ]	(	""	)
+label5	[ 0	locks=0 ]	(	""	)
+name6	[ 0	locks=0 ]	(	""	)
+label6	[ 0	locks=0 ]	(	""	)
+name7	[ 0	locks=0 ]	(	""	)
+label7	[ 0	locks=0 ]	(	""	)
+name8	[ 0	locks=0 ]	(	""	)
+label8	[ 0	locks=0 ]	(	""	)
+name9	[ 0	locks=0 ]	(	""	)
+label9	[ 0	locks=0 ]	(	""	)
+name10	[ 0	locks=0 ]	(	""	)
+label10	[ 0	locks=0 ]	(	""	)
+name11	[ 0	locks=0 ]	(	""	)
+label11	[ 0	locks=0 ]	(	""	)
+name12	[ 0	locks=0 ]	(	""	)
+label12	[ 0	locks=0 ]	(	""	)
+name13	[ 0	locks=0 ]	(	""	)
+label13	[ 0	locks=0 ]	(	""	)
+name14	[ 0	locks=0 ]	(	""	)
+label14	[ 0	locks=0 ]	(	""	)
+name15	[ 0	locks=0 ]	(	""	)
+label15	[ 0	locks=0 ]	(	""	)
+name16	[ 0	locks=0 ]	(	""	)
+label16	[ 0	locks=0 ]	(	""	)
+name17	[ 0	locks=0 ]	(	""	)
+label17	[ 0	locks=0 ]	(	""	)
+name18	[ 0	locks=0 ]	(	""	)
+label18	[ 0	locks=0 ]	(	""	)
+name19	[ 0	locks=0 ]	(	""	)
+label19	[ 0	locks=0 ]	(	""	)
+name20	[ 0	locks=0 ]	(	""	)
+label20	[ 0	locks=0 ]	(	""	)
+name21	[ 0	locks=0 ]	(	""	)
+label21	[ 0	locks=0 ]	(	""	)
+name22	[ 0	locks=0 ]	(	""	)
+label22	[ 0	locks=0 ]	(	""	)
+name23	[ 0	locks=0 ]	(	""	)
+label23	[ 0	locks=0 ]	(	""	)
+name24	[ 0	locks=0 ]	(	""	)
+label24	[ 0	locks=0 ]	(	""	)
+name25	[ 0	locks=0 ]	(	""	)
+label25	[ 0	locks=0 ]	(	""	)
+name26	[ 0	locks=0 ]	(	""	)
+label26	[ 0	locks=0 ]	(	""	)
+name27	[ 0	locks=0 ]	(	""	)
+label27	[ 0	locks=0 ]	(	""	)
+name28	[ 0	locks=0 ]	(	""	)
+label28	[ 0	locks=0 ]	(	""	)
+name29	[ 0	locks=0 ]	(	""	)
+label29	[ 0	locks=0 ]	(	""	)
+name30	[ 0	locks=0 ]	(	""	)
+label30	[ 0	locks=0 ]	(	""	)
+name31	[ 0	locks=0 ]	(	""	)
+label31	[ 0	locks=0 ]	(	""	)
+name32	[ 0	locks=0 ]	(	""	)
+label32	[ 0	locks=0 ]	(	""	)
+name33	[ 0	locks=0 ]	(	""	)
+label33	[ 0	locks=0 ]	(	""	)
+name34	[ 0	locks=0 ]	(	""	)
+label34	[ 0	locks=0 ]	(	""	)
+name35	[ 0	locks=0 ]	(	""	)
+label35	[ 0	locks=0 ]	(	""	)
+name36	[ 0	locks=0 ]	(	""	)
+label36	[ 0	locks=0 ]	(	""	)
+name37	[ 0	locks=0 ]	(	""	)
+label37	[ 0	locks=0 ]	(	""	)
+name38	[ 0	locks=0 ]	(	""	)
+label38	[ 0	locks=0 ]	(	""	)
+name39	[ 0	locks=0 ]	(	""	)
+label39	[ 0	locks=0 ]	(	""	)
+name40	[ 0	locks=0 ]	(	""	)
+label40	[ 0	locks=0 ]	(	""	)
+name41	[ 0	locks=0 ]	(	""	)
+label41	[ 0	locks=0 ]	(	""	)
+name42	[ 0	locks=0 ]	(	""	)
+label42	[ 0	locks=0 ]	(	""	)
+name43	[ 0	locks=0 ]	(	""	)
+label43	[ 0	locks=0 ]	(	""	)
+name44	[ 0	locks=0 ]	(	""	)
+label44	[ 0	locks=0 ]	(	""	)
+name45	[ 0	locks=0 ]	(	""	)
+label45	[ 0	locks=0 ]	(	""	)
+name46	[ 0	locks=0 ]	(	""	)
+label46	[ 0	locks=0 ]	(	""	)
+name47	[ 0	locks=0 ]	(	""	)
+label47	[ 0	locks=0 ]	(	""	)
+name48	[ 0	locks=0 ]	(	""	)
+label48	[ 0	locks=0 ]	(	""	)
+name49	[ 0	locks=0 ]	(	""	)
+label49	[ 0	locks=0 ]	(	""	)
+name50	[ 0	locks=0 ]	(	""	)
+label50	[ 0	locks=0 ]	(	""	)
+name51	[ 0	locks=0 ]	(	""	)
+label51	[ 0	locks=0 ]	(	""	)
+name52	[ 0	locks=0 ]	(	""	)
+label52	[ 0	locks=0 ]	(	""	)
+name53	[ 0	locks=0 ]	(	""	)
+label53	[ 0	locks=0 ]	(	""	)
+name54	[ 0	locks=0 ]	(	""	)
+label54	[ 0	locks=0 ]	(	""	)
+name55	[ 0	locks=0 ]	(	""	)
+label55	[ 0	locks=0 ]	(	""	)
+name56	[ 0	locks=0 ]	(	""	)
+label56	[ 0	locks=0 ]	(	""	)
+name57	[ 0	locks=0 ]	(	""	)
+label57	[ 0	locks=0 ]	(	""	)
+name58	[ 0	locks=0 ]	(	""	)
+label58	[ 0	locks=0 ]	(	""	)
+name59	[ 0	locks=0 ]	(	""	)
+label59	[ 0	locks=0 ]	(	""	)
+name60	[ 0	locks=0 ]	(	""	)
+label60	[ 0	locks=0 ]	(	""	)
+name61	[ 0	locks=0 ]	(	""	)
+label61	[ 0	locks=0 ]	(	""	)
+name62	[ 0	locks=0 ]	(	""	)
+label62	[ 0	locks=0 ]	(	""	)
+name63	[ 0	locks=0 ]	(	""	)
+label63	[ 0	locks=0 ]	(	""	)
+name64	[ 0	locks=0 ]	(	""	)
+label64	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
+outtype1	[ 0	locks=0 ]	(	string	)
+outname1	[ 0	locks=0 ]	(	out_Bounce	)
+outlabel1	[ 0	locks=0 ]	(	""	)
+outtype2	[ 0	locks=0 ]	(	undef	)
+outname2	[ 0	locks=0 ]	(	""	)
+outlabel2	[ 0	locks=0 ]	(	""	)
+outtype3	[ 0	locks=0 ]	(	undef	)
+outname3	[ 0	locks=0 ]	(	""	)
+outlabel3	[ 0	locks=0 ]	(	""	)
+outtype4	[ 0	locks=0 ]	(	undef	)
+outname4	[ 0	locks=0 ]	(	""	)
+outlabel4	[ 0	locks=0 ]	(	""	)
+outtype5	[ 0	locks=0 ]	(	undef	)
+outname5	[ 0	locks=0 ]	(	""	)
+outlabel5	[ 0	locks=0 ]	(	""	)
+outtype6	[ 0	locks=0 ]	(	undef	)
+outname6	[ 0	locks=0 ]	(	""	)
+outlabel6	[ 0	locks=0 ]	(	""	)
+outtype7	[ 0	locks=0 ]	(	undef	)
+outname7	[ 0	locks=0 ]	(	""	)
+outlabel7	[ 0	locks=0 ]	(	""	)
+outtype8	[ 0	locks=0 ]	(	undef	)
+outname8	[ 0	locks=0 ]	(	""	)
+outlabel8	[ 0	locks=0 ]	(	""	)
+outtype9	[ 0	locks=0 ]	(	undef	)
+outname9	[ 0	locks=0 ]	(	""	)
+outlabel9	[ 0	locks=0 ]	(	""	)
+outtype10	[ 0	locks=0 ]	(	undef	)
+outname10	[ 0	locks=0 ]	(	""	)
+outlabel10	[ 0	locks=0 ]	(	""	)
+outtype11	[ 0	locks=0 ]	(	undef	)
+outname11	[ 0	locks=0 ]	(	""	)
+outlabel11	[ 0	locks=0 ]	(	""	)
+outtype12	[ 0	locks=0 ]	(	undef	)
+outname12	[ 0	locks=0 ]	(	""	)
+outlabel12	[ 0	locks=0 ]	(	""	)
+outtype13	[ 0	locks=0 ]	(	undef	)
+outname13	[ 0	locks=0 ]	(	""	)
+outlabel13	[ 0	locks=0 ]	(	""	)
+outtype14	[ 0	locks=0 ]	(	undef	)
+outname14	[ 0	locks=0 ]	(	""	)
+outlabel14	[ 0	locks=0 ]	(	""	)
+outtype15	[ 0	locks=0 ]	(	undef	)
+outname15	[ 0	locks=0 ]	(	""	)
+outlabel15	[ 0	locks=0 ]	(	""	)
+outtype16	[ 0	locks=0 ]	(	undef	)
+outname16	[ 0	locks=0 ]	(	""	)
+outlabel16	[ 0	locks=0 ]	(	""	)
+outtype17	[ 0	locks=0 ]	(	undef	)
+outname17	[ 0	locks=0 ]	(	""	)
+outlabel17	[ 0	locks=0 ]	(	""	)
+outtype18	[ 0	locks=0 ]	(	undef	)
+outname18	[ 0	locks=0 ]	(	""	)
+outlabel18	[ 0	locks=0 ]	(	""	)
+outtype19	[ 0	locks=0 ]	(	undef	)
+outname19	[ 0	locks=0 ]	(	""	)
+outlabel19	[ 0	locks=0 ]	(	""	)
+outtype20	[ 0	locks=0 ]	(	undef	)
+outname20	[ 0	locks=0 ]	(	""	)
+outlabel20	[ 0	locks=0 ]	(	""	)
+outtype21	[ 0	locks=0 ]	(	undef	)
+outname21	[ 0	locks=0 ]	(	""	)
+outlabel21	[ 0	locks=0 ]	(	""	)
+outtype22	[ 0	locks=0 ]	(	undef	)
+outname22	[ 0	locks=0 ]	(	""	)
+outlabel22	[ 0	locks=0 ]	(	""	)
+outtype23	[ 0	locks=0 ]	(	undef	)
+outname23	[ 0	locks=0 ]	(	""	)
+outlabel23	[ 0	locks=0 ]	(	""	)
+outtype24	[ 0	locks=0 ]	(	undef	)
+outname24	[ 0	locks=0 ]	(	""	)
+outlabel24	[ 0	locks=0 ]	(	""	)
+outtype25	[ 0	locks=0 ]	(	undef	)
+outname25	[ 0	locks=0 ]	(	""	)
+outlabel25	[ 0	locks=0 ]	(	""	)
+outtype26	[ 0	locks=0 ]	(	undef	)
+outname26	[ 0	locks=0 ]	(	""	)
+outlabel26	[ 0	locks=0 ]	(	""	)
+outtype27	[ 0	locks=0 ]	(	undef	)
+outname27	[ 0	locks=0 ]	(	""	)
+outlabel27	[ 0	locks=0 ]	(	""	)
+outtype28	[ 0	locks=0 ]	(	undef	)
+outname28	[ 0	locks=0 ]	(	""	)
+outlabel28	[ 0	locks=0 ]	(	""	)
+outtype29	[ 0	locks=0 ]	(	undef	)
+outname29	[ 0	locks=0 ]	(	""	)
+outlabel29	[ 0	locks=0 ]	(	""	)
+outtype30	[ 0	locks=0 ]	(	undef	)
+outname30	[ 0	locks=0 ]	(	""	)
+outlabel30	[ 0	locks=0 ]	(	""	)
+outtype31	[ 0	locks=0 ]	(	undef	)
+outname31	[ 0	locks=0 ]	(	""	)
+outlabel31	[ 0	locks=0 ]	(	""	)
+outtype32	[ 0	locks=0 ]	(	undef	)
+outname32	[ 0	locks=0 ]	(	""	)
+outlabel32	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline4.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline5.init"
+Content-Type: text/plain
+
+type = inline
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline5.def"
+Content-Type: text/plain
+
+comment ""
+position -0.276408 10.115
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out_Dampen"
+}
+inputsNamed3
+{
+0 	input16 0 1 "_Dampen"
+}
+inputs
+{
+0 	input16 0 1
+}
+stat
+{
+  create 1514389308
+  modify 1521140697
+  author Chris@Voyager
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline5.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+code	[ 0	locks=0 ]	(	"string $output_string_array[];
+string $input = $_Dampen;
+
+//  Check if input is preformatted
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $input)) {
+    push($output_string_array, $input);
+    }
+//  Check if input is from an invalid node
+else if (match(\"gradient*, randomGradient*\", $input)) {
+    printf(\"StartLifetime does not support gradient inputs \\n\");
+    warning(\"StartLifetime does not support gradient inputs \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+//  Check if input is a range value
+else if (match(\"*[;]*\", $input)) {
+    $output_string_array = {\"randomConstant\", \"float\"};
+    push($output_string_array, split($input, \";\")[0]);
+    push($output_string_array, split($input, \";\")[1]);
+    }
+//  Check if input is a curve value
+else if (match(\"*[~]*\", $input)) {
+    string $curveElements[];
+    $curveElements = split($input, \"~\");
+    $output_string_array = array(\"curve\", \"float\", sprintf(\"%p\", len($curveElements)), \"1\");
+    for (int $i = 0; $i < len($curveElements); $i++) {
+        push($output_string_array, $curveElements[$i]);
+        }
+    }
+//  Check if input is a constant value
+else if (match(\"[0123456789.-]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
+    $output_string_array = {\"constant\", \"float\"};
+    push($output_string_array, $input);
+    } 
+else {
+    printf(\"Invalid value entered for StartLifetime \\n\");
+    warning(\"Invalid value entered for StartLifetime \\n\");
+    $output_string_array = {\"constant\",\"float\",\"5.0\"};
+    }
+$out_Dampen = join($output_string_array, \";\");
+"	)
+includes	[ 0	locks=0 ]	(	""	)
+outercode	[ 0	locks=0 ]	(	""	)
+expandcode	[ 0	locks=0 ]	(	"off"	)
+name1	[ 0	locks=0 ]	(	""	)
+label1	[ 0	locks=0 ]	(	""	)
+name2	[ 0	locks=0 ]	(	""	)
+label2	[ 0	locks=0 ]	(	""	)
+name3	[ 0	locks=0 ]	(	""	)
+label3	[ 0	locks=0 ]	(	""	)
+name4	[ 0	locks=0 ]	(	""	)
+label4	[ 0	locks=0 ]	(	""	)
+name5	[ 0	locks=0 ]	(	""	)
+label5	[ 0	locks=0 ]	(	""	)
+name6	[ 0	locks=0 ]	(	""	)
+label6	[ 0	locks=0 ]	(	""	)
+name7	[ 0	locks=0 ]	(	""	)
+label7	[ 0	locks=0 ]	(	""	)
+name8	[ 0	locks=0 ]	(	""	)
+label8	[ 0	locks=0 ]	(	""	)
+name9	[ 0	locks=0 ]	(	""	)
+label9	[ 0	locks=0 ]	(	""	)
+name10	[ 0	locks=0 ]	(	""	)
+label10	[ 0	locks=0 ]	(	""	)
+name11	[ 0	locks=0 ]	(	""	)
+label11	[ 0	locks=0 ]	(	""	)
+name12	[ 0	locks=0 ]	(	""	)
+label12	[ 0	locks=0 ]	(	""	)
+name13	[ 0	locks=0 ]	(	""	)
+label13	[ 0	locks=0 ]	(	""	)
+name14	[ 0	locks=0 ]	(	""	)
+label14	[ 0	locks=0 ]	(	""	)
+name15	[ 0	locks=0 ]	(	""	)
+label15	[ 0	locks=0 ]	(	""	)
+name16	[ 0	locks=0 ]	(	""	)
+label16	[ 0	locks=0 ]	(	""	)
+name17	[ 0	locks=0 ]	(	""	)
+label17	[ 0	locks=0 ]	(	""	)
+name18	[ 0	locks=0 ]	(	""	)
+label18	[ 0	locks=0 ]	(	""	)
+name19	[ 0	locks=0 ]	(	""	)
+label19	[ 0	locks=0 ]	(	""	)
+name20	[ 0	locks=0 ]	(	""	)
+label20	[ 0	locks=0 ]	(	""	)
+name21	[ 0	locks=0 ]	(	""	)
+label21	[ 0	locks=0 ]	(	""	)
+name22	[ 0	locks=0 ]	(	""	)
+label22	[ 0	locks=0 ]	(	""	)
+name23	[ 0	locks=0 ]	(	""	)
+label23	[ 0	locks=0 ]	(	""	)
+name24	[ 0	locks=0 ]	(	""	)
+label24	[ 0	locks=0 ]	(	""	)
+name25	[ 0	locks=0 ]	(	""	)
+label25	[ 0	locks=0 ]	(	""	)
+name26	[ 0	locks=0 ]	(	""	)
+label26	[ 0	locks=0 ]	(	""	)
+name27	[ 0	locks=0 ]	(	""	)
+label27	[ 0	locks=0 ]	(	""	)
+name28	[ 0	locks=0 ]	(	""	)
+label28	[ 0	locks=0 ]	(	""	)
+name29	[ 0	locks=0 ]	(	""	)
+label29	[ 0	locks=0 ]	(	""	)
+name30	[ 0	locks=0 ]	(	""	)
+label30	[ 0	locks=0 ]	(	""	)
+name31	[ 0	locks=0 ]	(	""	)
+label31	[ 0	locks=0 ]	(	""	)
+name32	[ 0	locks=0 ]	(	""	)
+label32	[ 0	locks=0 ]	(	""	)
+name33	[ 0	locks=0 ]	(	""	)
+label33	[ 0	locks=0 ]	(	""	)
+name34	[ 0	locks=0 ]	(	""	)
+label34	[ 0	locks=0 ]	(	""	)
+name35	[ 0	locks=0 ]	(	""	)
+label35	[ 0	locks=0 ]	(	""	)
+name36	[ 0	locks=0 ]	(	""	)
+label36	[ 0	locks=0 ]	(	""	)
+name37	[ 0	locks=0 ]	(	""	)
+label37	[ 0	locks=0 ]	(	""	)
+name38	[ 0	locks=0 ]	(	""	)
+label38	[ 0	locks=0 ]	(	""	)
+name39	[ 0	locks=0 ]	(	""	)
+label39	[ 0	locks=0 ]	(	""	)
+name40	[ 0	locks=0 ]	(	""	)
+label40	[ 0	locks=0 ]	(	""	)
+name41	[ 0	locks=0 ]	(	""	)
+label41	[ 0	locks=0 ]	(	""	)
+name42	[ 0	locks=0 ]	(	""	)
+label42	[ 0	locks=0 ]	(	""	)
+name43	[ 0	locks=0 ]	(	""	)
+label43	[ 0	locks=0 ]	(	""	)
+name44	[ 0	locks=0 ]	(	""	)
+label44	[ 0	locks=0 ]	(	""	)
+name45	[ 0	locks=0 ]	(	""	)
+label45	[ 0	locks=0 ]	(	""	)
+name46	[ 0	locks=0 ]	(	""	)
+label46	[ 0	locks=0 ]	(	""	)
+name47	[ 0	locks=0 ]	(	""	)
+label47	[ 0	locks=0 ]	(	""	)
+name48	[ 0	locks=0 ]	(	""	)
+label48	[ 0	locks=0 ]	(	""	)
+name49	[ 0	locks=0 ]	(	""	)
+label49	[ 0	locks=0 ]	(	""	)
+name50	[ 0	locks=0 ]	(	""	)
+label50	[ 0	locks=0 ]	(	""	)
+name51	[ 0	locks=0 ]	(	""	)
+label51	[ 0	locks=0 ]	(	""	)
+name52	[ 0	locks=0 ]	(	""	)
+label52	[ 0	locks=0 ]	(	""	)
+name53	[ 0	locks=0 ]	(	""	)
+label53	[ 0	locks=0 ]	(	""	)
+name54	[ 0	locks=0 ]	(	""	)
+label54	[ 0	locks=0 ]	(	""	)
+name55	[ 0	locks=0 ]	(	""	)
+label55	[ 0	locks=0 ]	(	""	)
+name56	[ 0	locks=0 ]	(	""	)
+label56	[ 0	locks=0 ]	(	""	)
+name57	[ 0	locks=0 ]	(	""	)
+label57	[ 0	locks=0 ]	(	""	)
+name58	[ 0	locks=0 ]	(	""	)
+label58	[ 0	locks=0 ]	(	""	)
+name59	[ 0	locks=0 ]	(	""	)
+label59	[ 0	locks=0 ]	(	""	)
+name60	[ 0	locks=0 ]	(	""	)
+label60	[ 0	locks=0 ]	(	""	)
+name61	[ 0	locks=0 ]	(	""	)
+label61	[ 0	locks=0 ]	(	""	)
+name62	[ 0	locks=0 ]	(	""	)
+label62	[ 0	locks=0 ]	(	""	)
+name63	[ 0	locks=0 ]	(	""	)
+label63	[ 0	locks=0 ]	(	""	)
+name64	[ 0	locks=0 ]	(	""	)
+label64	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
+outtype1	[ 0	locks=0 ]	(	string	)
+outname1	[ 0	locks=0 ]	(	out_Dampen	)
+outlabel1	[ 0	locks=0 ]	(	""	)
+outtype2	[ 0	locks=0 ]	(	undef	)
+outname2	[ 0	locks=0 ]	(	""	)
+outlabel2	[ 0	locks=0 ]	(	""	)
+outtype3	[ 0	locks=0 ]	(	undef	)
+outname3	[ 0	locks=0 ]	(	""	)
+outlabel3	[ 0	locks=0 ]	(	""	)
+outtype4	[ 0	locks=0 ]	(	undef	)
+outname4	[ 0	locks=0 ]	(	""	)
+outlabel4	[ 0	locks=0 ]	(	""	)
+outtype5	[ 0	locks=0 ]	(	undef	)
+outname5	[ 0	locks=0 ]	(	""	)
+outlabel5	[ 0	locks=0 ]	(	""	)
+outtype6	[ 0	locks=0 ]	(	undef	)
+outname6	[ 0	locks=0 ]	(	""	)
+outlabel6	[ 0	locks=0 ]	(	""	)
+outtype7	[ 0	locks=0 ]	(	undef	)
+outname7	[ 0	locks=0 ]	(	""	)
+outlabel7	[ 0	locks=0 ]	(	""	)
+outtype8	[ 0	locks=0 ]	(	undef	)
+outname8	[ 0	locks=0 ]	(	""	)
+outlabel8	[ 0	locks=0 ]	(	""	)
+outtype9	[ 0	locks=0 ]	(	undef	)
+outname9	[ 0	locks=0 ]	(	""	)
+outlabel9	[ 0	locks=0 ]	(	""	)
+outtype10	[ 0	locks=0 ]	(	undef	)
+outname10	[ 0	locks=0 ]	(	""	)
+outlabel10	[ 0	locks=0 ]	(	""	)
+outtype11	[ 0	locks=0 ]	(	undef	)
+outname11	[ 0	locks=0 ]	(	""	)
+outlabel11	[ 0	locks=0 ]	(	""	)
+outtype12	[ 0	locks=0 ]	(	undef	)
+outname12	[ 0	locks=0 ]	(	""	)
+outlabel12	[ 0	locks=0 ]	(	""	)
+outtype13	[ 0	locks=0 ]	(	undef	)
+outname13	[ 0	locks=0 ]	(	""	)
+outlabel13	[ 0	locks=0 ]	(	""	)
+outtype14	[ 0	locks=0 ]	(	undef	)
+outname14	[ 0	locks=0 ]	(	""	)
+outlabel14	[ 0	locks=0 ]	(	""	)
+outtype15	[ 0	locks=0 ]	(	undef	)
+outname15	[ 0	locks=0 ]	(	""	)
+outlabel15	[ 0	locks=0 ]	(	""	)
+outtype16	[ 0	locks=0 ]	(	undef	)
+outname16	[ 0	locks=0 ]	(	""	)
+outlabel16	[ 0	locks=0 ]	(	""	)
+outtype17	[ 0	locks=0 ]	(	undef	)
+outname17	[ 0	locks=0 ]	(	""	)
+outlabel17	[ 0	locks=0 ]	(	""	)
+outtype18	[ 0	locks=0 ]	(	undef	)
+outname18	[ 0	locks=0 ]	(	""	)
+outlabel18	[ 0	locks=0 ]	(	""	)
+outtype19	[ 0	locks=0 ]	(	undef	)
+outname19	[ 0	locks=0 ]	(	""	)
+outlabel19	[ 0	locks=0 ]	(	""	)
+outtype20	[ 0	locks=0 ]	(	undef	)
+outname20	[ 0	locks=0 ]	(	""	)
+outlabel20	[ 0	locks=0 ]	(	""	)
+outtype21	[ 0	locks=0 ]	(	undef	)
+outname21	[ 0	locks=0 ]	(	""	)
+outlabel21	[ 0	locks=0 ]	(	""	)
+outtype22	[ 0	locks=0 ]	(	undef	)
+outname22	[ 0	locks=0 ]	(	""	)
+outlabel22	[ 0	locks=0 ]	(	""	)
+outtype23	[ 0	locks=0 ]	(	undef	)
+outname23	[ 0	locks=0 ]	(	""	)
+outlabel23	[ 0	locks=0 ]	(	""	)
+outtype24	[ 0	locks=0 ]	(	undef	)
+outname24	[ 0	locks=0 ]	(	""	)
+outlabel24	[ 0	locks=0 ]	(	""	)
+outtype25	[ 0	locks=0 ]	(	undef	)
+outname25	[ 0	locks=0 ]	(	""	)
+outlabel25	[ 0	locks=0 ]	(	""	)
+outtype26	[ 0	locks=0 ]	(	undef	)
+outname26	[ 0	locks=0 ]	(	""	)
+outlabel26	[ 0	locks=0 ]	(	""	)
+outtype27	[ 0	locks=0 ]	(	undef	)
+outname27	[ 0	locks=0 ]	(	""	)
+outlabel27	[ 0	locks=0 ]	(	""	)
+outtype28	[ 0	locks=0 ]	(	undef	)
+outname28	[ 0	locks=0 ]	(	""	)
+outlabel28	[ 0	locks=0 ]	(	""	)
+outtype29	[ 0	locks=0 ]	(	undef	)
+outname29	[ 0	locks=0 ]	(	""	)
+outlabel29	[ 0	locks=0 ]	(	""	)
+outtype30	[ 0	locks=0 ]	(	undef	)
+outname30	[ 0	locks=0 ]	(	""	)
+outlabel30	[ 0	locks=0 ]	(	""	)
+outtype31	[ 0	locks=0 ]	(	undef	)
+outname31	[ 0	locks=0 ]	(	""	)
+outlabel31	[ 0	locks=0 ]	(	""	)
+outtype32	[ 0	locks=0 ]	(	undef	)
+outname32	[ 0	locks=0 ]	(	""	)
+outlabel32	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline5.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-19
+22
 input
 input1
 input2
@@ -2743,6 +3722,9 @@ input15
 input16
 input17
 inline2
+inline3
+inline4
+inline5
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 5.16145 -9.17
+position -4.66821 -6.07465
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -41,9 +41,9 @@ inputs
 }
 stat
 {
-  create 1514389561
-  modify 1514391398
-  author Chris@Voyager
+  create 1521140487
+  modify 1521140825
+  author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -336,7 +336,7 @@ Content-Disposition: attachment; filename="hdaroot/input2.def"
 Content-Type: text/plain
 
 comment ""
-position 0.29115 -3.4373
+position 0.644091 -2.885
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -352,7 +352,7 @@ inputs
 stat
 {
   create 1512319302
-  modify 1514391389
+  modify 1521140836
   author Chris@Voyager
   access 0777
 }
@@ -601,19 +601,19 @@ inputsNamed3
 3 	input3 0 1 "_id"
 0 	input 0 1 "_Enabled"
 1 	input1 0 1 "_Mode"
-2 	inline1 1 1 "out_Multiplier"
+2 	inline4 1 1 "out_Multiplier"
 }
 inputs
 {
 0 	input3 0 1
 1 	input 0 1
 2 	input1 0 1
-3 	inline1 0 1
+3 	inline4 0 1
 }
 stat
 {
   create 1513185602
-  modify 1514391389
+  modify 1521140825
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -874,18 +874,18 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/inline1.init"
+Content-Disposition: attachment; filename="hdaroot/inline4.init"
 Content-Type: text/plain
 
 type = inline
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/inline1.def"
+Content-Disposition: attachment; filename="hdaroot/inline4.def"
 Content-Type: text/plain
 
 comment ""
-position 2.94705 -3.4373
+position 2.94705 -2.885
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -902,8 +902,8 @@ inputs
 }
 stat
 {
-  create 1514391329
-  modify 1514391389
+  create 1514389308
+  modify 1521140836
   author Chris@Voyager
   access 0777
 }
@@ -913,43 +913,47 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/inline1.parm"
+Content-Disposition: attachment; filename="hdaroot/inline4.parm"
 Content-Type: text/plain
 
 {
 version 0.8
 code	[ 0	locks=0 ]	(	"string $output_string_array[];
+string $input = $_Multiplier;
 
-//  Check if input is from another node
-if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $_Multiplier)) {
-    push($output_string_array, $_Multiplier);
+//  Check if input is preformatted
+if (match(\"constant*, randomConstant*, curve*, randomCurve*\", $input)) {
+    push($output_string_array, $input);
     }
 //  Check if input is from an invalid node
-else if (match(\"gradient*, randomGradient*\", $_Multiplier)) {
-    printf(\"_Multiplier does not support gradient inputs \\n\");
-    warning(\"_Multiplier does not support gradient inputs \\n\");
+else if (match(\"gradient*, randomGradient*\", $input)) {
+    printf(\"StartLifetime does not support gradient inputs \\n\");
+    warning(\"StartLifetime does not support gradient inputs \\n\");
     $output_string_array = {\"constant\",\"float\",\"5.0\"};
     }
-//  Check if input is a constant value
-else if (match(\"[0123456789.]*,^*[abcdefghijklmnopqrstuvwxyz;-]*\", $_Multiplier)) {
-    $output_string_array = {\"constant\", \"float\"};
-    push($output_string_array, $_Multiplier);
-    } 
 //  Check if input is a range value
-else if (match(\"*[;]*\", $_Multiplier)) {
+else if (match(\"*[;]*\", $input)) {
     $output_string_array = {\"randomConstant\", \"float\"};
-    push($output_string_array, split($_Multiplier, \";\")[0]);
-    push($output_string_array, split($_Multiplier, \";\")[1]);
+    push($output_string_array, split($input, \";\")[0]);
+    push($output_string_array, split($input, \";\")[1]);
     }
 //  Check if input is a curve value
-else if (match(\"*[-]*\", $_Multiplier)) {
-    $output_string_array = {\"curve\", \"float\", \"2\", \"1\"};
-    push($output_string_array, split($_Multiplier, \"-\")[0]);
-    push($output_string_array, split($_Multiplier, \"-\")[1]);
+else if (match(\"*[~]*\", $input)) {
+    string $curveElements[];
+    $curveElements = split($input, \"~\");
+    $output_string_array = array(\"curve\", \"float\", sprintf(\"%p\", len($curveElements)), \"1\");
+    for (int $i = 0; $i < len($curveElements); $i++) {
+        push($output_string_array, $curveElements[$i]);
+        }
+    }
+//  Check if input is a constant value
+else if (match(\"[0123456789.-]*,^*[abcdefghijklmnopqrstuvwxyz;]*\", $input)) {
+    $output_string_array = {\"constant\", \"float\"};
+    push($output_string_array, $input);
     } 
 else {
-    printf(\"Invalid value entered for _Multiplier \\n\");
-    warning(\"Invalid value entered for _Multiplier \\n\");
+    printf(\"Invalid value entered for StartLifetime \\n\");
+    warning(\"Invalid value entered for StartLifetime \\n\");
     $output_string_array = {\"constant\",\"float\",\"5.0\"};
     }
 $out_Multiplier = join($output_string_array, \";\");
@@ -1185,7 +1189,7 @@ outlabel32	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/inline1.userdata"
+Content-Disposition: attachment; filename="hdaroot/inline4.userdata"
 Content-Type: text/plain
 
 {
@@ -1205,7 +1209,7 @@ input1
 input2
 input3
 inline2
-inline1
+inline4
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

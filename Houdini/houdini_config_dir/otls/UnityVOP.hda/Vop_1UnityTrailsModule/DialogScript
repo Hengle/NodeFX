@@ -3,7 +3,7 @@
 {
     name	UnityTrailsModule
     script	UnityTrailsModule
-    label	UnityTrails
+    label	UnityTrailsModule
 
     input	int	id	ID
     input	int	Enabled	Enabled
@@ -69,7 +69,7 @@
         name    "Lifetime"
         label   "Lifetime"
         type    string
-        default { "constant;float;1.0" }
+        default { "1" }
         parmtag { "parmvop" "1" }
     }
     parm {
@@ -140,7 +140,7 @@
         name    "WidthOverTrail"
         label   "Width Over Trail"
         type    string
-        default { "constant;float;1.0" }
+        default { "1~0" }
         parmtag { "parmvop" "1" }
     }
     parm {

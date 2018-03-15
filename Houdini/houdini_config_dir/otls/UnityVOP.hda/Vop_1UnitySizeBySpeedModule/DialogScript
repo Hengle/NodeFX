@@ -62,7 +62,7 @@
         name    "Size"
         label   "Size"
         type    string
-        default { "1-0" }
+        default { "1" }
         hidewhen "{ Separate_Axes == 1 }"
         parmtag { "parmvop" "1" }
     }
@@ -70,7 +70,7 @@
         name    "X"
         label   "X"
         type    string
-        default { "1-0" }
+        default { "1" }
         hidewhen "{ Separate_Axes == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -78,7 +78,7 @@
         name    "Y"
         label   "Y"
         type    string
-        default { "1-0" }
+        default { "1" }
         hidewhen "{ Separate_Axes == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -86,7 +86,7 @@
         name    "Z"
         label   "Z"
         type    string
-        default { "1-0" }
+        default { "1" }
         hidewhen "{ Separate_Axes == 0 }"
         parmtag { "parmvop" "1" }
     }

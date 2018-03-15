@@ -3,7 +3,7 @@
 {
     name	UnityRotationOverLifetimeModule
     script	UnityRotationOverLifetimeModule
-    label	UnityRotationOverLifetime
+    label	UnityRotationOverLifetimeModule
 
     input	int	id	ID
     input	int	Enabled	Enabled
@@ -40,6 +40,14 @@
         parmtag { "parmvop" "1" }
     }
     parm {
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
         name    "Separate_Axes"
         label   "Separate Axes"
         type    toggle
@@ -47,26 +55,17 @@
         parmtag { "parmvop" "1" }
     }
     parm {
-        name    "Angular_Velocity"
-        label   "Angular Velocity"
-        type    string
-        default { "constant;float;0.0" }
-        hidewhen "{ Separate_Axes == 1 }"
-        parmtag { "parmvop" "1" }
-    }
-    parm {
         name    "X"
         label   "X"
         type    string
-        default { "constant;float;0.0" }
-        hidewhen "{ Separate_Axes == 0 }"
+        default { "0~1" }
         parmtag { "parmvop" "1" }
     }
     parm {
         name    "Y"
         label   "Y"
         type    string
-        default { "constant;float;0.0" }
+        default { "0~1" }
         hidewhen "{ Separate_Axes == 0 }"
         parmtag { "parmvop" "1" }
     }
@@ -74,16 +73,8 @@
         name    "Z"
         label   "Z"
         type    string
-        default { "constant;float;0.0" }
+        default { "0~1" }
         hidewhen "{ Separate_Axes == 0 }"
-        parmtag { "parmvop" "1" }
-    }
-    parm {
-        name    "id"
-        label   "ID"
-        type    integer
-        default { "0" }
-        range   { 0 1 }
         parmtag { "parmvop" "1" }
     }
 }
