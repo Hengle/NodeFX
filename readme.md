@@ -44,13 +44,11 @@ To bring an effect definition into Unity, open the Unity folder from the Unity l
 * `0;1` will return a random value between 0 and 1
 * `20:-.23` will return a random value between 20 and -0.23.
 
-Misc
-----
+### Misc
 
 * Unity will automatically name the particle system according to what you name your NodeFX node, and each emitter will inherit the name of whatever name its EmitterModule has.
 
-Stuff to come
----
+## Stuff to come
 
 The focus so far has mainly been figuring out the most straight-forward approach for getting this kind of data from Houdini to Unity. For the next revision I’d like to abstract it a bit more, and move the Houdini-side of things closer to what I’d feel would be the most intuitive way to work with particle systems. As long as the output can be interpreted by Unity, it doesn't matter what the input looks like. So I'm looking to get creative!
 

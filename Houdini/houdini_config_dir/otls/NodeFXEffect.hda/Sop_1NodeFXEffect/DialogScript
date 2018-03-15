@@ -1,0 +1,54 @@
+# Dialog script for NodeFXEffect automatically generated
+
+{
+    name	NodeFXEffect
+    script	NodeFXEffect
+    label	"NodeFX Effect"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Mesh Particle Geometry"
+    inputlabel	2	"Mesh Emitter Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+    inputlabel	5	"Sub-Network Input #5"
+    inputlabel	6	"Sub-Network Input #6"
+    inputlabel	7	"Sub-Network Input #7"
+    inputlabel	8	"Sub-Network Input #8"
+    inputlabel	9	"Sub-Network Input #9"
+    inputlabel	10	"Sub-Network Input #10"
+
+    parm {
+        name    "savePath"
+        label   "Save Path"
+        type    file
+        default { "$HIP/Definitions/$OS.xml" }
+        parmtag { "filechooser_mode" "read_and_write" }
+        parmtag { "filechooser_pattern" "*.xml" }
+    }
+    parm {
+        name    "useMeshParticle"
+        label   "Use Mesh Particle"
+        type    toggle
+        invisible
+        default { "0" }
+    }
+    parm {
+        name    "useMeshEmitter"
+        label   "Use Mesh Emitter"
+        type    toggle
+        invisible
+        default { "0" }
+    }
+    parm {
+        name    "save"
+        label   "Save"
+        type    button
+        default { "0" }
+        parmtag { "export_disable" "1" }
+        parmtag { "script_callback" "hou.pwd().hdaModule().WriteXML(hou.pwd())" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

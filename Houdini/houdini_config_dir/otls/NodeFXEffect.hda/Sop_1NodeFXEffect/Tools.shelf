@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="$HDA_NAME" label="$HDA_LABEL" icon="$HDA_ICON">
+    <toolMenuContext name="viewer">
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
+    </toolMenuContext>
+    <toolMenuContext name="network">
+      <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
+    </toolMenuContext>
+    <toolSubmenu>Unity</toolSubmenu>
+    <script scriptType="python"><![CDATA[import soptoolutils
+
+soptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>
+  </tool>
+
+  <tool name="NodeFX_SaveDefinition" label="Save Definition" icon="$HDA_ICON">
+    <helpText><![CDATA[Saves out an effect definition. To set it's destination, modify the 'Save Path' parameter at the root of the NodeFX node.]]></helpText>
+    <script scriptType="python"><![CDATA[node_type = hou.nodeType(hou.sopNodeTypeCategory(), "NodeFXEffect")
+selection = hou.selectedNodes()
+node_type.hdaModule().WriteXML(selection[0].parent().parent())]]></script>
+  </tool>
+</shelfDocument>

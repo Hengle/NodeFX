@@ -1,0 +1,48 @@
+import xml.etree.cElementTree as ET
+import os.path
+
+def WriteXML(node):
+    geo = node.geometry()
+    savePath = node.evalParm("savePath")
+    numEmitters = geo.intAttribValue("numEmitters")
+    
+    if savePath == "":
+        print "No save path set!"
+        return
+    
+    root = ET.Element("root")
+    root.set("emitterCount", str(numEmitters))
+    root.set("sourceFile", hou.hipFile.path())
+    
+    #   Loop over emitters
+    for i in range(0, numEmitters):
+        emitterElement = ET.SubElement(root, "emitter")
+        
+        #   Loop over point attributes in emitter
+        for attribute in geo.pointAttribs():
+            attributeElement = ET.SubElement(emitterElement, "attribute")
+            attributeElement.text = attribute.name()
+    
+            if attribute.dataType() == hou.attribData.Int:
+                values = geo.iterPoints()[i].intListAttribValue(attribute.name())
+    
+            if attribute.dataType() == hou.attribData.Float:
+                values = geo.iterPoints()[i].floatListAttribValue(attribute.name())
+    
+            if attribute.dataType() == hou.attribData.String:
+                values = geo.iterPoints()[i].stringListAttribValue(attribute.name())
+    
+            #   Loop over values in attribute
+            for index, value in enumerate(values):
+                valueElement = ET.SubElement(attributeElement, "value")
+                valueElement.text = str(value)
+    
+    directory = os.path.dirname(savePath)
+    
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    with open(savePath, 'w+'):
+        ET.ElementTree(root).write(savePath)
+    hou.ui.setStatusMessage("Effect Definition saved to " + savePath)
+    return
