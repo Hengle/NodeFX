@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unity_floattoconstant
+type = UnityFloatToConstant
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,12 +19,11 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -1.13343 12.5956
-connectornextid 2
+position -13.2413 -5.62
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-1 "output"
 }
 inputsNamed3
 {
@@ -36,9 +35,9 @@ inputs
 }
 stat
 {
-  create 1512478703
-  modify 1512590266
-  author chris@Defiant
+  create 1521114744
+  modify 1521115221
+  author cjudkins@localhost
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -63,7 +62,7 @@ Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
 TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBvdXRwdXQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSA=
-MApCeXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
+MApCeXBhc3NNb2RlIDIKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/suboutput1.init"
@@ -94,7 +93,7 @@ inputs
 stat
 {
   create 1512416425
-  modify 1512590261
+  modify 1521115217
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -246,7 +245,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -278,7 +277,7 @@ inputs
 stat
 {
   create 1512419237
-  modify 1512478581
+  modify 1521115048
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -298,7 +297,7 @@ parmaccess	[ 0	locks=0 ]	(	""	)
 parmname	[ 0	locks=0 ]	(	value	)
 parmlabel	[ 0	locks=0 ]	(	""	)
 parmtype	[ 0	locks=0 ]	(	"float"	)
-floatdef	[ 0	locks=0 ]	(	0	)
+floatdef	[ 0	locks=0 ]	(	1	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)
 angledef	[ 0	locks=0 ]	(	0	)
@@ -346,7 +345,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 
@@ -380,7 +379,7 @@ inputs
 stat
 {
   create 1512478381
-  modify 1512487286
+  modify 1521115048
   author chris@Defiant
   access 0777
 }
@@ -634,7 +633,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"16.0.736"
+		"value":"16.5.323"
 	}
 }
 

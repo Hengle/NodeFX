@@ -19,25 +19,26 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -13.6536 -3.81
+position -13.2413 -8.60608
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
-1 "output"
 }
 inputsNamed3
 {
 0 	"" "" 1 "mode"
+1 	"" "" 1 "multiplier"
 }
 inputs
 {
 0 	"" 0 1
+1 	"" 0 1
 }
 stat
 {
-  create 1520466121
-  modify 1520467081
+  create 1521114778
+  modify 1521115109
   author cjudkins@localhost
   access 0777
 }
@@ -2064,7 +2065,7 @@ outlabel31	[ 0	locks=0 ]	(	""	)
 outtype32	[ 0	locks=0 ]	(	undef	)
 outname32	[ 0	locks=0 ]	(	""	)
 outlabel32	[ 0	locks=0 ]	(	""	)
-path	[ 0	locks=0 ]	(	[ path	/obj/geo1/NodeFXEffect1/Definition/UnityRampToColor2 ] 	)
+path	[ 0	locks=0 ]	(	[ path	/obj/geo1/NodeFXEffect1/Definition/UnityRampToColor1 ] 	)
 stdswitcher9	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	)
 }
 

@@ -21,10 +21,10 @@
     }
 
     parm {
-	name	"value"
-	label	"Value"
-	type	float
-	default	{ "0" }
-	range	{ 0 10 }
+        name    "value"
+        label   "Value"
+        type    float
+        default { "0" }
+        range   { 0 10 }
     }
 }

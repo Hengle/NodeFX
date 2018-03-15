@@ -24,6 +24,15 @@
     }
 
     parm {
+        name    "multiplier"
+        label   "Multiplier"
+        type    float
+        size    4
+        default { "1" "1" "1" "1" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
         name    "mode"
         label   "Interpolation Mode"
         type    integer
@@ -52,14 +61,5 @@
         range   { 1! 10 }
         parmtag { "rampbasisdefault" "catmull-rom" }
         parmtag { "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 0.5 ) 2value ( 1 ) 2interp ( catmull-rom ) 3pos ( 1 ) 3value ( 0 ) 3interp ( catmull-rom )" }
-    }
-    parm {
-        name    "multiplier"
-        label   "Multiplier"
-        type    float
-        size    4
-        default { "1" "1" "1" "1" }
-        range   { 0 10 }
-        parmtag { "parmvop" "1" }
     }
 }

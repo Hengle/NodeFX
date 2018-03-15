@@ -2,7 +2,6 @@
 INDEX__SECTION	INDEX_SECTION
 houdini.hdalibrary	houdini.hdalibrary
 Vop_1unityburst	Vop/unityburst
-Vop_1unityMinMaxCurve	Vop/unityMinMaxCurve
 Vop_1unityparticletemplate	Vop/unityparticletemplate
 Vop_1UnityCollisionModule	Vop/UnityCollisionModule
 Vop_1UnityCustomDataModule	Vop/UnityCustomDataModule
