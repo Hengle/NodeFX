@@ -32,6 +32,7 @@
         name    "pMeshSavePath"
         label   "Particle Mesh Directory"
         type    directory
+        invisible
         default { "$HIP/Meshes/" }
         parmtag { "filechooser_mode" "read_and_write" }
         parmtag { "filechooser_pattern" "" }
