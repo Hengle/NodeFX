@@ -9,16 +9,16 @@
 	""
     }
 
-    inputlabel	1	"Mesh Particle Geometry"
-    inputlabel	2	"Mesh Emitter Geometry"
-    inputlabel	3	"Sub-Network Input #3"
-    inputlabel	4	"Sub-Network Input #4"
-    inputlabel	5	"Sub-Network Input #5"
-    inputlabel	6	"Sub-Network Input #6"
-    inputlabel	7	"Sub-Network Input #7"
-    inputlabel	8	"Sub-Network Input #8"
-    inputlabel	9	"Sub-Network Input #9"
-    inputlabel	10	"Sub-Network Input #10"
+    inputlabel	1	"Particle Mesh #1"
+    inputlabel	2	"Particle Mesh #2"
+    inputlabel	3	"Particle Mesh #3"
+    inputlabel	4	"Particle Mesh #4"
+    inputlabel	5	"Particle Mesh #5"
+    inputlabel	6	"Particle Mesh #6"
+    inputlabel	7	"Particle Mesh #7"
+    inputlabel	8	"Particle Mesh #8"
+    inputlabel	9	"Particle Mesh #9"
+    inputlabel	10	"Particle Mesh #10"
 
     parm {
         name    "savePath"
@@ -27,6 +27,14 @@
         default { "$HIP/Definitions/$OS.xml" }
         parmtag { "filechooser_mode" "read_and_write" }
         parmtag { "filechooser_pattern" "*.xml" }
+    }
+    parm {
+        name    "pMeshSavePath"
+        label   "Particle Mesh Directory"
+        type    directory
+        default { "$HIP/Meshes/" }
+        parmtag { "filechooser_mode" "read_and_write" }
+        parmtag { "filechooser_pattern" "" }
     }
     parm {
         name    "useMeshParticle"

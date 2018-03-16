@@ -1,6 +1,5 @@
 # Authoring Particle Systems in Unity through Houdini
 
-
 ![nodefx_icon](Unity/Assets/Plugins/NodeFX/Resources/nodefx_logo.png)
 
 An engineer at work posed me the question "What would your ideal effect editor look look like?", and no matter how I tried to formulate myself, the answer kept just being a variation of "I want it to be like Houdini". But the more I thought about it, the more I realized that getting a realtime VFX particle system running using Houdini might not be that difficult after all! After a lot of experimenting back and forth, I managed to create a tool that allows you to author particle systems in Unity through Houdini.

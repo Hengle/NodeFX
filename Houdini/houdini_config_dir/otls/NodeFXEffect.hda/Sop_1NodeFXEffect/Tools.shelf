@@ -12,6 +12,8 @@
     </toolMenuContext>
     <toolMenuContext name="network">
       <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
     </toolMenuContext>
     <toolSubmenu>Unity</toolSubmenu>
     <script scriptType="python"><![CDATA[import soptoolutils

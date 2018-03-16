@@ -11,7 +11,7 @@ Vop
 Content-Disposition: attachment; filename="hdaroot.init"
 Content-Type: text/plain
 
-type = unityparticletemplate
+type = UnitySpriteParticleTemplate
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -19,7 +19,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -12.8612 -3.62
+position -20.6382 -0.62
 connectornextid 22
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -76,8 +76,8 @@ inputs
 }
 stat
 {
-  create 1520964064
-  modify 1520964223
+  create 1521140316
+  modify 1521144343
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -629,7 +629,7 @@ Content-Disposition: attachment; filename="hdaroot/parm7.def"
 Content-Type: text/plain
 
 comment ""
-position -0.22146 -7.0002
+position -2.42577 -7.0002
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
@@ -646,7 +646,7 @@ inputs
 stat
 {
   create 1513776962
-  modify 1520347196
+  modify 1521144322
   author Chris@Voyager
   access 0777
 }
@@ -774,7 +774,7 @@ inputs
 stat
 {
   create 1514090416
-  modify 1520964242
+  modify 1521142868
   author Chris@Voyager
   access 0777
 }
@@ -3021,7 +3021,7 @@ inputs
 stat
 {
   create 1519736240
-  modify 1520964242
+  modify 1521142868
   author cjudkins@localhost
   access 0777
 }
@@ -5981,10 +5981,106 @@ TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBvdXRwdXQKRGVidWdD
 MApCeXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/const1.init"
+Content-Type: text/plain
+
+type = constant
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/const1.def"
+Content-Type: text/plain
+
+comment ""
+position -2.42577 -5.50673
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail on highdetail off material off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1521144343
+  modify 1521144504
+  author chju@CHJU-PC.avalanchestudios.se
+  access 0777
+}
+color UT_Color RGB 0 0 0 
+delscript ""
+exprlanguage python
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/const1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+consttype	[ 0	locks=0 ]	(	"color"	)
+floatdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	0	)
+toggledef	[ 0	locks=0 ]	(	"off"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	0	0	0	0	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+constname	[ 0	locks=0 ]	(	Value	)
+constlabel	[ 0	locks=0 ]	(	Constant	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/const1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-32
+33
 parm1
 parm2
 parm3
@@ -6017,6 +6113,7 @@ inline10
 inline11
 inline12
 inline13
+const1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
