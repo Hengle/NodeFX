@@ -19,19 +19,20 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -11.0643 8.22685
-connectornextid 20
+position -10.5 -8.16397
+connectornextid 21
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail on highdetail off material off
 outputsNamed3
 {
 19 "_id"
+20 "_noise"
 }
 inputsNamed3
 {
-0 	UnityShapeModule3 30 1 "id"
+0 	"" "" 1 "id"
 1 	"" "" 1 "Enabled"
 2 	"" "" 1 "SeparateAxes"
-3 	(__dot2) "" 1 "Strength"
+3 	"" "" 1 "Strength"
 4 	"" "" 1 "X"
 5 	"" "" 1 "Y"
 6 	"" "" 1 "Z"
@@ -50,10 +51,10 @@ inputsNamed3
 }
 inputs
 {
-0 	UnityShapeModule3 0 1
+0 	"" 0 1
 1 	"" 0 1
 2 	"" 0 1
-3 	(__dot2) 0 1
+3 	"" 0 1
 4 	"" 0 1
 5 	"" 0 1
 6 	"" 0 1
@@ -72,8 +73,8 @@ inputs
 }
 stat
 {
-  create 1520703155
-  modify 1520962416
+  create 1531575316
+  modify 1531597511
   author cjudkins@localhost
   access 0777
 }
@@ -98,8 +99,9 @@ Content-Disposition: attachment; filename="hdaroot.outputinfos"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-TnVtSW5mb3MgMQpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfaWQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkI=
-eXBhc3NNb2RlIDEKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAA==
+TnVtSW5mb3MgMgpWYWx1ZXNCaW5hcnkgMQpCZWdpbkluZm8KT3V0cHV0TmFtZSBfaWQKRGVidWdDb3JySW5wdXROYW1lIF9fZGVmYXVsdF9fCkJ5cGFzc0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KTm9ybWFsTW9kZSAwCkI=
+eXBhc3NNb2RlIDIKVXNlRGVmYXVsdFZhbHVlIDEKRW5kSW5mbwoAAAAAAAAAAEJlZ2luSW5mbwpPdXRwdXROYW1lIF9ub2lzZQpEZWJ1Z0NvcnJJbnB1dE5hbWUgX19kZWZhdWx0X18KQnlwYXNzQ29ycklucHV0TmFtZSBfX2Q=
+ZWZhdWx0X18KTm9ybWFsTW9kZSAwCkJ5cGFzc01vZGUgMgpVc2VEZWZhdWx0VmFsdWUgMQpFbmRJbmZvCgAAAAAAAAAA
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/input.init"
@@ -2528,7 +2530,7 @@ Content-Type: text/plain
 comment ""
 position 1.8795 -4.98894
 connectornextid 19
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+flags =  lock off model off template off footprint off xray off bypass on display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
 }
@@ -2579,7 +2581,7 @@ inputs
 stat
 {
   create 1513185602
-  modify 1520962415
+  modify 1531575327
   author chju@CHJU-PC.avalanchestudios.se
   access 0777
 }
@@ -2853,6 +2855,13 @@ Content-Type: text/plain
 		"value":"16.5.323"
 	}
 }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/inline2.outputinfos"
+Content-Type: text/plain
+
+NumInfos 0
+ValuesBinary 1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/inline3.init"
@@ -5789,10 +5798,257 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.init"
+Content-Type: text/plain
+
+type = struct
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.def"
+Content-Type: text/plain
+
+structvopdata
+{
+	specifiedtypename	"UnityNoiseModule"
+	structtype	"UnityNoiseModule"
+	structmember	"int"	"enabled"	""
+	structmember	"int"	"separateaxes"	""
+	structmember	"string"	"strength"	""
+	structmember	"string"	"x"	""
+	structmember	"string"	"y"	""
+	structmember	"string"	"z"	""
+	structmember	"float"	"frequency"	""
+	structmember	"string"	"scrollspeed"	""
+	structmember	"int"	"dampen"	""
+	structmember	"int"	"octaves"	""
+	structmember	"float"	"octavemultiplier"	""
+	structmember	"float"	"octavescale"	""
+	structmember	"int"	"quality"	""
+	structmember	"int"	"remap"	""
+	structmember	"string"	"remapcurve"	""
+	structmember	"string"	"position"	""
+	structmember	"string"	"rotation"	""
+	structmember	"string"	"scale"	""
+}
+comment ""
+position 3.72198 5.7
+connectornextid 20
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+19 "out_struct"
+}
+inputsNamed3
+{
+0 	"" "" 1 "in_struct"
+1 	input 0 1 "in_enabled"
+2 	input1 0 1 "in_separateaxes"
+3 	inline3 1 1 "in_strength"
+4 	inline4 1 1 "in_x"
+5 	inline5 1 1 "in_y"
+6 	inline6 1 1 "in_z"
+7 	input6 0 1 "in_frequency"
+8 	inline7 1 1 "in_scrollspeed"
+9 	input8 0 1 "in_dampen"
+10 	input9 0 1 "in_octaves"
+11 	input10 0 1 "in_octavemultiplier"
+12 	input11 0 1 "in_octavescale"
+13 	input12 0 1 "in_quality"
+14 	input13 0 1 "in_remap"
+15 	inline8 1 1 "in_remapcurve"
+16 	inline9 1 1 "in_position"
+17 	inline10 1 1 "in_rotation"
+18 	inline11 1 1 "in_scale"
+}
+inputs
+{
+0 	"" 0 1
+1 	input 0 1
+2 	input1 0 1
+3 	inline3 0 1
+4 	inline4 0 1
+5 	inline5 0 1
+6 	inline6 0 1
+7 	input6 0 1
+8 	inline7 0 1
+9 	input8 0 1
+10 	input9 0 1
+11 	input10 0 1
+12 	input11 0 1
+13 	input12 0 1
+14 	input13 0 1
+15 	inline8 0 1
+16 	inline9 0 1
+17 	inline10 0 1
+18 	inline11 0 1
+}
+stat
+{
+  create 1531575329
+  modify 1531576446
+  author cjudkins@localhost
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+structtype	[ 0	locks=0 ]	(	UnityNoiseModule	)
+editstruct	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/struct1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.init"
+Content-Type: text/plain
+
+type = parameter
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.def"
+Content-Type: text/plain
+
+comment ""
+position 6.21497 5.7
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	struct1 19 1 "input"
+}
+inputs
+{
+0 	struct1 0 1
+}
+stat
+{
+  create 1531576410
+  modify 1531576446
+  author cjudkins@localhost
+  access 0777
+}
+color UT_Color RGB 1 1 0.4 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parmscope	[ 0	locks=0 ]	(	subnet	)
+parmaccess	[ 0	locks=0 ]	(	""	)
+parmname	[ 0	locks=0 ]	(	noise	)
+parmprefix	[ 0	locks=0 ]	(	""	)
+parmpostfix	[ 0	locks=0 ]	(	""	)
+parmlabel	[ 0	locks=0 ]	(	""	)
+showlabel	[ 0	locks=0 ]	(	"on"	)
+parmtype	[ 0	locks=0 ]	(	"struct"	)
+parmtypename	[ 0	locks=0 ]	(	UnityNoiseModule	)
+floatdef	[ 0	locks=0 ]	(	0	)
+intdef	[ 0	locks=0 ]	(	0	)
+toggledef	[ 0	locks=0 ]	(	"off"	)
+angledef	[ 0	locks=0 ]	(	0	)
+logfloatdef	[ 0	locks=0 ]	(	0	)
+float2def	[ 0	locks=0 ]	(	0	0	)
+float3def	[ 0	locks=0 ]	(	0	0	0	)
+vectordef	[ 0	locks=0 ]	(	0	0	0	)
+normaldef	[ 0	locks=0 ]	(	0	0	0	)
+pointdef	[ 0	locks=0 ]	(	0	0	0	)
+directiondef	[ 0	locks=0 ]	(	1	0	0	)
+float4def	[ 0	locks=0 ]	(	0	0	0	0	)
+floatm2def	[ 0	locks=0 ]	(	1	0	0	1	)
+float9def	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+float16def	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+stringdef	[ 0	locks=0 ]	(	""	)
+filedef	[ 0	locks=0 ]	(	""	)
+imagedef	[ 0	locks=0 ]	(	""	)
+geometrydef	[ 0	locks=0 ]	(	""	)
+colordef	[ 0	locks=0 ]	(	0	0	0	)
+color4def	[ 0	locks=0 ]	(	0	0	0	0	)
+bsdfdef	[ 0	locks=0 ]	(	""	)
+coshaderdef	[ 0	locks=0 ]	(	""	)
+floatadef	[ 0	locks=0 ]	(	)
+intadef	[ 0	locks=0 ]	(	)
+vector2adef	[ 0	locks=0 ]	(	)
+vectoradef	[ 0	locks=0 ]	(	)
+pointadef	[ 0	locks=0 ]	(	)
+normaladef	[ 0	locks=0 ]	(	)
+coloradef	[ 0	locks=0 ]	(	)
+float4adef	[ 0	locks=0 ]	(	)
+floatm2adef	[ 0	locks=0 ]	(	)
+float9adef	[ 0	locks=0 ]	(	)
+float16adef	[ 0	locks=0 ]	(	)
+stringadef	[ 0	locks=0 ]	(	)
+coshaderadef	[ 0	locks=0 ]	(	""	)
+structdef	[ 0	locks=0 ]	(	""	)
+rangeflt	[ 0	locks=0 ]	(	0	1	)
+rangeint	[ 0	locks=0 ]	(	0	10	)
+stringtype	[ 0	locks=0 ]	(	off	)
+opfilter	[ 0	locks=0 ]	(	!!OBJ/LIGHT!!	)
+parmcomment	[ 0	locks=0 ]	(	""	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+useownexportcontext	[ 0	locks=0 ]	(	"off"	)
+parmuniform	[ 0	locks=0 ]	(	"on"	)
+usebound	[ 0	locks=0 ]	(	"off"	)
+hasconnector	[ 0	locks=0 ]	(	"on"	)
+exportparm	[ 0	locks=0 ]	(	"whenconnected"	)
+exportcontext	[ 0	locks=0 ]	(	cvex	)
+providemenu	[ 0	locks=0 ]	(	"off"	)
+menuchoices	[ 0	locks=0 ]	(	""	)
+menuscript	[ 0	locks=0 ]	(	""	)
+menuscriptlanguage	[ 0	locks=0 ]	(	"hscript"	)
+separator2	[ 0	locks=0 ]	(	)
+invisible	[ 0	locks=0 ]	(	"on"	)
+joinnext	[ 0	locks=0 ]	(	"off"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+tags	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/parm1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.5.323"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-29
+31
 input
 input1
 input2
@@ -5822,6 +6078,8 @@ inline8
 inline9
 inline10
 inline11
+struct1
+parm1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"

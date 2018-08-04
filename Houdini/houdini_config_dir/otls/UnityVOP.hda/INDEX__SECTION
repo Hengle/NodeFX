@@ -6,12 +6,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 7
+Inputs:       0 to 8
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:12:23 2018
+Modified:     Sat Jul 14 15:45:20 2018
 
 Operator:     unityburst
 Label:        UnityBurst
@@ -36,12 +36,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 18
+Inputs:       0 to 19
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:05:29 2018
+Modified:     Sat Jul 14 15:45:01 2018
 
 Operator:     UnityCustomDataModule
 Label:        UnityCustomDataModule
@@ -51,12 +51,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 4
+Inputs:       0 to 5
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 02:06:39 2017
+Modified:     Sat Jul 14 15:44:31 2018
 
 Operator:     UnityEmissionModule
 Label:        UnityEmissionModule
@@ -71,7 +71,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:23:09 2018
+Modified:     Sat Jul 14 15:45:25 2018
 
 Operator:     UnityExternalForcesModule
 Label:        UnityExternalForcesModule
@@ -86,7 +86,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 02:07:12 2017
+Modified:     Sat Jul 14 15:45:07 2018
 
 Operator:     UnityForceOverLifetimeModule
 Label:        UnityForceOverLifetimeModule
@@ -101,7 +101,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:37:52 2018
+Modified:     Sat Jul 14 15:45:17 2018
 
 Operator:     UnityInheritVelocityModule
 Label:        UnityInheritVelocityModule
@@ -116,7 +116,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:07:21 2018
+Modified:     Sat Jul 14 15:45:13 2018
 
 Operator:     UnityNoiseModule
 Label:        UnityNoiseModule
@@ -126,12 +126,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 19
+Inputs:       0 to 20
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:33:40 2018
+Modified:     Sat Jul 14 15:45:04 2018
 
 Operator:     UnityRenderModule
 Label:        UnityRenderModule
@@ -146,7 +146,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 14:04:13 2018
+Modified:     Sat Jul 14 15:45:28 2018
 
 Operator:     UnityRotationBySpeedModule
 Label:        UnityRotationBySpeedModule
@@ -156,12 +156,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 8
+Inputs:       0 to 9
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:17:33 2018
+Modified:     Sat Jul 14 15:44:52 2018
 
 Operator:     UnityRotationOverLifetimeModule
 Label:        UnityRotationOverLifetimeModule
@@ -176,7 +176,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:33:00 2018
+Modified:     Sat Jul 14 15:44:49 2018
 
 Operator:     UnityShapeModule
 Label:        UnityShapeModule
@@ -191,7 +191,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:25:06 2018
+Modified:     Sat Jul 14 15:45:23 2018
 
 Operator:     UnitySizeBySpeedModule
 Label:        UnitySizeBySpeedModule
@@ -201,12 +201,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 8
+Inputs:       0 to 9
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:29:28 2018
+Modified:     Sat Jul 14 15:44:45 2018
 
 Operator:     UnityTextureSheetAnimationModule
 Label:        UnityTextureSheetAnimationModule
@@ -216,12 +216,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 10
+Inputs:       0 to 11
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Mar  2 00:10:22 2018
+Modified:     Sat Jul 14 15:44:39 2018
 
 Operator:     UnityTrailsModule
 Label:        UnityTrailsModule
@@ -231,12 +231,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 15
+Inputs:       0 to 16
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 15 15:36:00 2018
+Modified:     Sat Jul 14 15:44:36 2018
 
 Operator:     UnityColorBySpeedModule
 Label:        UnityColorBySpeedModule
@@ -246,12 +246,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 4
+Inputs:       0 to 5
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 02:13:40 2017
+Modified:     Sat Jul 14 15:44:58 2018
 
 Operator:     UnityColorOverLifetimeModule
 Label:        UnityColorOverLifetimeModule
@@ -261,12 +261,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 3
+Inputs:       0 to 4
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 02:14:03 2017
+Modified:     Sat Jul 14 15:44:55 2018
 
 Operator:     UnitySizeOverLifetimeModule
 Label:        UnitySizeOverLifetimeModule
@@ -276,12 +276,12 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 6
+Inputs:       0 to 7
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:35:00 2018
+Modified:     Sat Jul 14 15:44:42 2018
 
 Operator:     UnityLimitVelocityOverLifetimeModule
 Label:        UnityLimitVelocityOverLifetimeModule
@@ -291,15 +291,15 @@ Table:        Vop
 License:      
 Extra:        *
 User:         
-Inputs:       0 to 12
+Inputs:       0 to 13
 Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:37:01 2018
+Modified:     Sat Jul 14 15:45:10 2018
 
 Operator:     UnityEmitterModule
-Label:        UnityEmitterModule
+Label:        UnityCoreModule
 Path:         oplib:/Vop/UnityEmitterModule?Vop/UnityEmitterModule
 Icon:         VOP_unityemittermodule
 Table:        Vop
@@ -311,7 +311,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 13 13:22:07 2018
+Modified:     Sat Jul 14 15:45:38 2018
 
 Operator:     UnityColorToConstant
 Label:        UnityColorToConstant
@@ -326,7 +326,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:28:21 2017
+Modified:     Tue Dec 12 15:28:21 2017
 
 Operator:     UnityRampToCurve
 Label:        UnityRampToCurve
@@ -341,7 +341,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:32:45 2017
+Modified:     Tue Dec 12 15:32:45 2017
 
 Operator:     UnityFloatToConstant
 Label:        UnityFloatToConstant
@@ -386,7 +386,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:37:59 2017
+Modified:     Tue Dec 12 15:37:59 2017
 
 Operator:     UnityFloatToConstantRange
 Label:        UnityFloatToConstantRange
@@ -401,7 +401,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:38:28 2017
+Modified:     Tue Dec 12 15:38:28 2017
 
 Operator:     UnityIntToConstantRange
 Label:        UnityIntToConstantRange
@@ -416,7 +416,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:38:50 2017
+Modified:     Tue Dec 12 15:38:50 2017
 
 Operator:     UnityEmitterModule_ParticleTemplate
 Label:        UnityEmitterModule_ParticleTemplate
@@ -431,7 +431,7 @@ Outputs:      2048
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Dec 18 03:42:01 2017
+Modified:     Tue Dec 12 15:42:01 2017
 
 Operator:     UnitySpriteParticleTemplate
 Label:        UnitySpriteParticleTemplate
@@ -447,4 +447,19 @@ Subnet:       true
 Python:       false
 Empty:        false
 Modified:     Fri Mar 16 15:13:21 2018
+
+Operator:     UnityEmitter
+Label:        UnityEmitter
+Path:         oplib:/Vop/UnityEmitter?Vop/UnityEmitter
+Icon:         VOP_UnityEmitter
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 21
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Jul 14 15:47:18 2018
 

@@ -17,7 +17,9 @@
     input	string	Drag	Drag
     input	int	MultiplyDragBySize	"Multiply Drag By Size"
     input	int	MultiplyDragByVelocity	"Multiply Drag By Velocity"
+    input	struct_UnityLimitVelocityOverLifetimeModule	limit_velocity_over_lifetime	""
     output	int	_id	ID
+    output	struct_UnityLimitVelocityOverLifetimeModule	_limit_velocity_over_lifetime	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Separate_Axes	2
@@ -30,11 +32,15 @@
     inputflags	Drag	2
     inputflags	MultiplyDragBySize	2
     inputflags	MultiplyDragByVelocity	2
+    inputflags	limit_velocity_over_lifetime	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int int string string string string float string int int int }
+    outputflags	_limit_velocity_over_lifetime	2
+    signature	"Default Inputs"	default	{ int int int int string string string string float string int int struct_UnityLimitVelocityOverLifetimeModule int struct_UnityLimitVelocityOverLifetimeModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -138,6 +144,13 @@
         label   "Multiply Drag By Velocity"
         type    toggle
         default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "limit_velocity_over_lifetime"
+        label   "limit_velocity_over_lifetime"
+        type    label
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

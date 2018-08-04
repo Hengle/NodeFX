@@ -24,7 +24,9 @@
     input	string	PositionAmount	"Position Amount"
     input	string	RotationAmount	"Rotation Amount"
     input	string	ScaleAmount	"Scale Amount"
+    input	struct_UnityNoiseModule	noise	""
     output	int	_id	ID
+    output	struct_UnityNoiseModule	_noise	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	SeparateAxes	2
@@ -44,11 +46,15 @@
     inputflags	PositionAmount	2
     inputflags	RotationAmount	2
     inputflags	ScaleAmount	2
+    inputflags	noise	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string string float string int int float float int int string string string string int }
+    outputflags	_noise	2
+    signature	"Default Inputs"	default	{ int int int string string string string float string int int float float int int string string string string struct_UnityNoiseModule int struct_UnityNoiseModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -200,6 +206,14 @@
         label   "Scale Amount"
         type    string
         default { "0" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "noise"
+        label   "noise"
+        type    label
+        invisible
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

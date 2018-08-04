@@ -10,15 +10,19 @@
     input	int	Mode	Mode
     input	string	Multiplier	Multiplier
     output	int	_id	ID
+    output	struct_UnityInheritVelocityModule	inherit_velocity	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Mode	2
     inputflags	Multiplier	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string int }
+    outputflags	inherit_velocity	2
+    signature	"Default Inputs"	default	{ int int int string int struct_UnityInheritVelocityModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }

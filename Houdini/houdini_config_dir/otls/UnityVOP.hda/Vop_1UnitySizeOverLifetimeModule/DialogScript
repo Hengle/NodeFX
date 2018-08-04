@@ -11,18 +11,24 @@
     input	string	X	X
     input	string	Y	Y
     input	string	Z	Z
+    input	struct_UnitySizeOverLifetimeModule	size_over_lifetime	""
     output	int	_id	ID
+    output	struct_UnitySizeOverLifetimeModule	_size_over_lifetime	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Separate_Axes	2
     inputflags	X	2
     inputflags	Y	2
     inputflags	Z	2
+    inputflags	size_over_lifetime	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string int }
+    outputflags	_size_over_lifetime	2
+    signature	"Default Inputs"	default	{ int int int string string string struct_UnitySizeOverLifetimeModule int struct_UnitySizeOverLifetimeModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -75,6 +81,14 @@
         type    string
         default { "0~1" }
         hidewhen "{ Separate_Axes == 0 }"
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "size_over_lifetime"
+        label   "size_over_lifetime"
+        type    label
+        invisible
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

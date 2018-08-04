@@ -13,7 +13,9 @@
     input	string	Y	Y
     input	string	Z	Z
     input	vector2	Range	Range
+    input	struct_UnityRotationBySpeedModule	rotation_by_speed	""
     output	int	_id	ID
+    output	struct_UnityRotationBySpeedModule	_rotation_by_speed	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Separate_Axes	2
@@ -22,11 +24,15 @@
     inputflags	Y	2
     inputflags	Z	2
     inputflags	Range	2
+    inputflags	rotation_by_speed	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string string string string vector2 int }
+    outputflags	_rotation_by_speed	2
+    signature	"Default Inputs"	default	{ int int int string string string string vector2 struct_UnityRotationBySpeedModule int struct_UnityRotationBySpeedModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -97,6 +103,14 @@
         size    2
         default { "0" "1" }
         range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "rotation_by_speed"
+        label   "rotation_by_speed"
+        type    label
+        invisible
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

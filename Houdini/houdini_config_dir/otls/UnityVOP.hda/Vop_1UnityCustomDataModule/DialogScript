@@ -3,22 +3,28 @@
 {
     name	UnityCustomDataModule
     script	UnityCustomDataModule
-    label	UnityCustomData
+    label	UnityCustomDataModule
 
     input	int	id	ID
     input	int	Enabled	Enabled
     input	vector4	_1	"Custom Data 1"
     input	vector4	_2	"Custom Data 2"
+    input	struct_UnityCustomDataModule	custom_data	""
     output	int	_id	ID
+    output	struct_UnityCustomDataModule	_custom_data	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	_1	2
     inputflags	_2	2
+    inputflags	custom_data	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int vector4 vector4 int }
+    outputflags	_custom_data	2
+    signature	"Default Inputs"	default	{ int int vector4 vector4 struct_UnityCustomDataModule int struct_UnityCustomDataModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -28,37 +34,45 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"_1"
-	label	"Custom Data 1"
-	type	float
-	size	4
-	default	{ "0" "0" "0" "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "_1"
+        label   "Custom Data 1"
+        type    float
+        size    4
+        default { "0" "0" "0" "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"_2"
-	label	"Custom Data 2"
-	type	float
-	size	4
-	default	{ "0" "0" "0" "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "_2"
+        label   "Custom Data 2"
+        type    float
+        size    4
+        default { "0" "0" "0" "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "custom_data"
+        label   "custom_data"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
 }

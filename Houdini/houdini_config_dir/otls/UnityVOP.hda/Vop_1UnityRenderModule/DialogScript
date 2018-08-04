@@ -16,7 +16,9 @@
     input	int	OrderInLayer	"Order In Layer"
     input	int	LightProbes	"Light Probes"
     input	int	ReflectionProbes	"Reflection Probes"
+    input	struct_UnityRenderModule	Rendering	""
     output	int	_id	ID
+    output	struct_UnityRenderModule	_Rendering	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Mode	2
@@ -28,11 +30,15 @@
     inputflags	OrderInLayer	2
     inputflags	LightProbes	2
     inputflags	ReflectionProbes	2
+    inputflags	Rendering	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int string int int int int int int int int }
+    outputflags	_Rendering	2
+    signature	"Default Inputs"	default	{ int int int string int int int int int int int struct_UnityRenderModule int struct_UnityRenderModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -160,6 +166,13 @@
             "3" "Simple"
         }
         range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Rendering"
+        label   "Rendering"
+        type    label
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

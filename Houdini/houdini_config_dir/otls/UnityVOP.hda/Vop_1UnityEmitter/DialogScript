@@ -1,0 +1,243 @@
+# Dialog script for UnityEmitter automatically generated
+
+{
+    name	UnityEmitter
+    script	UnityEmitter
+    label	UnityEmitter
+
+    input	int	Enabled	Enabled
+    input	struct_UnityCoreModule	Core	""
+    input	struct_UnityRenderModule	Rendering	""
+    input	struct_UnityEmissionModule	Emission	""
+    input	struct_UnityShapeModule	Shape	""
+    input	struct_UnityVelocityOverLifetimeModule	VelocityOverLifetime	""
+    input	struct_UnityForceOverLifetimeModule	ForceOverLifetime	""
+    input	struct_UnityInheritVelocityModule	InheritVelocity	""
+    input	struct_UnityLimitVelocityOverLifetimeModule	LimitVelocityOverLifetime	""
+    input	struct_UnityExternalForcesModule	ExternalForces	""
+    input	struct_UnityNoiseModule	Noise	""
+    input	struct_UnityCollisionModule	Collision	""
+    input	struct_UnityColorBySpeedModule	ColorBySpeed	""
+    input	struct_UnityColorOverLifetimeModule	ColorOverLifetime	""
+    input	struct_UnityRotationBySpeedModule	RotationBySpeed	""
+    input	struct_UnityRotationOverLifetimeModule	RotationOverLifetime	""
+    input	struct_UnitySizeBySpeedModule	SizeBySpeed	""
+    input	struct_UnitySizeOverLifetimeModule	SizeOverLifetime	""
+    input	struct_UnityTextureSheetAnimationModule	TextureSheetAnimation	""
+    input	struct_UnityTrailsModule	Trails	""
+    input	struct_UnityCustomDataModule	CustomData	""
+    inputflags	Enabled	2
+    inputflags	Core	2
+    inputflags	Rendering	2
+    inputflags	Emission	2
+    inputflags	Shape	2
+    inputflags	VelocityOverLifetime	2
+    inputflags	ForceOverLifetime	2
+    inputflags	InheritVelocity	2
+    inputflags	LimitVelocityOverLifetime	2
+    inputflags	ExternalForces	2
+    inputflags	Noise	2
+    inputflags	Collision	2
+    inputflags	ColorBySpeed	2
+    inputflags	ColorOverLifetime	2
+    inputflags	RotationBySpeed	2
+    inputflags	RotationOverLifetime	2
+    inputflags	SizeBySpeed	2
+    inputflags	SizeOverLifetime	2
+    inputflags	TextureSheetAnimation	2
+    inputflags	Trails	2
+    inputflags	CustomData	2
+    signature	"Default Inputs"	default	{ int struct_UnityCoreModule struct_UnityRenderModule struct_UnityEmissionModule struct_UnityShapeModule struct_UnityVelocityOverLifetimeModule struct_UnityForceOverLifetimeModule struct_UnityInheritVelocityModule struct_UnityLimitVelocityOverLifetimeModule struct_UnityExternalForcesModule struct_UnityNoiseModule struct_UnityCollisionModule struct_UnityColorBySpeedModule struct_UnityColorOverLifetimeModule struct_UnityRotationBySpeedModule struct_UnityRotationOverLifetimeModule struct_UnitySizeBySpeedModule struct_UnitySizeOverLifetimeModule struct_UnityTextureSheetAnimationModule struct_UnityTrailsModule struct_UnityCustomDataModule }
+
+    outputoverrides	default
+    {
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "Core"
+        label   "Core"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Emission"
+        label   "Emission"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Rendering"
+        label   "Rendering"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Collision"
+        label   "Collision"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ColorBySpeed"
+        label   "ColorBySpeed"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ColorOverLifetime"
+        label   "ColorOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "CustomData"
+        label   "CustomData"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ExternalForces"
+        label   "ExternalForces"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "ForceOverLifetime"
+        label   "ForceOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "InheritVelocity"
+        label   "InheritVelocity"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "LimitVelocityOverLifetime"
+        label   "LimitVelocityOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Noise"
+        label   "Noise"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "RotationBySpeed"
+        label   "RotationBySpeed"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "RotationOverLifetime"
+        label   "RotationOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Shape"
+        label   "Shape"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "SizeBySpeed"
+        label   "SizeBySpeed"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "SizeOverLifetime"
+        label   "SizeOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "TextureSheetAnimation"
+        label   "TextureSheetAnimation"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Trails"
+        label   "Trails"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "VelocityOverLifetime"
+        label   "VelocityOverLifetime"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "name"
+        label   "Label"
+        type    string
+        invisible
+        nolabel
+        default { "$OS" }
+    }
+    parm {
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "id"
+        label   "Emitter ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+    }
+}

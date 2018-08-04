@@ -20,7 +20,9 @@
     input	string	ColorOverTrail	"Color Over Trail"
     input	int	GenerateLightingData	"Generate Lighting Data"
     input	float	Ratio	Ratio
+    input	struct_UnityTrailsModule	trail	""
     output	int	_id	ID
+    output	struct_UnityTrailsModule	_trail	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Lifetime	2
@@ -36,11 +38,15 @@
     inputflags	ColorOverTrail	2
     inputflags	GenerateLightingData	2
     inputflags	Ratio	2
+    inputflags	trail	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int string float int int int int int int string string string int float int }
+    outputflags	_trail	2
+    signature	"Default Inputs"	default	{ int int string float int int int int int int string string string int float struct_UnityTrailsModule int struct_UnityTrailsModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -163,6 +169,14 @@
         type    float
         default { "1" }
         range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "trail"
+        label   "trail"
+        type    label
+        invisible
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

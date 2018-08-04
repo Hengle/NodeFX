@@ -17,7 +17,9 @@
     input	struct_UnityBurst	Burst6	"Burst 6"
     input	struct_UnityBurst	Burst7	"Burst 7"
     input	struct_UnityBurst	Burst8	"Burst 8"
+    input	struct_UnityEmissionModule	Emission	""
     output	int	_id	ID
+    output	struct_UnityEmissionModule	_Emission	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Rate_Over_Time	2
@@ -30,11 +32,15 @@
     inputflags	Burst6	2
     inputflags	Burst7	2
     inputflags	Burst8	2
+    inputflags	Emission	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int string string struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst int }
+    outputflags	_Emission	2
+    signature	"Default Inputs"	default	{ int int string string struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityBurst struct_UnityEmissionModule int struct_UnityEmissionModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -133,6 +139,13 @@
     parm {
         name    "Burst1"
         label   "Burst 1"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "Emission"
+        label   "Emission"
         type    label
         default { "" }
         parmtag { "parmvop" "1" }

@@ -36,6 +36,7 @@
     input	float	Angle	Angle
     input	int	UseMeshMaterialIndex	"Mesh Material Index"
     output	int	_id	ID
+    output	struct_UnityShapeModule	shape	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Shape	2
@@ -67,10 +68,13 @@
     inputflags	Angle	2
     inputflags	UseMeshMaterialIndex	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int float float vector vector vector int float float float float float int float string float float vector string int string string int int float int float int int }
+    outputflags	shape	2
+    signature	"Default Inputs"	default	{ int int int float float vector vector vector int float float float float float int float string float float vector string int string string int int float int float int int struct_UnityShapeModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }

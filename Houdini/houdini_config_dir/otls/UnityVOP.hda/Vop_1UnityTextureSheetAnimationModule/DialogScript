@@ -15,7 +15,9 @@
     input	int	Cycles	Cycles
     input	float	Horizontal_Flip_Probability	"Horizontal Flip Probability"
     input	float	Vertical_Flip_Probability	"Vertical Flip Probability"
+    input	struct_UnityTextureSheetAnimationModule	texture_sheet_animation	""
     output	int	_id	ID
+    output	struct_UnityTextureSheetAnimationModule	_texture_sheet_animation	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Mode	2
@@ -26,11 +28,15 @@
     inputflags	Cycles	2
     inputflags	Horizontal_Flip_Probability	2
     inputflags	Vertical_Flip_Probability	2
+    inputflags	texture_sheet_animation	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int int vector2 int string string int float float int }
+    outputflags	_texture_sheet_animation	2
+    signature	"Default Inputs"	default	{ int int int vector2 int string string int float float struct_UnityTextureSheetAnimationModule int struct_UnityTextureSheetAnimationModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -124,6 +130,14 @@
         type    float
         default { "0" }
         range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "texture_sheet_animation"
+        label   "texture_sheet_animation"
+        type    label
+        invisible
+        default { "" }
         parmtag { "parmvop" "1" }
     }
 }

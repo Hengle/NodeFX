@@ -3,22 +3,28 @@
 {
     name	UnityColorBySpeedModule
     script	UnityColorBySpeedModule
-    label	UnityColorBySpeed
+    label	UnityColorBySpeedModule
 
     input	int	id	ID
     input	int	Enabled	Enabled
     input	string	Color	Color
     input	vector2	Range	Range
+    input	struct_UnityColorBySpeedModule	color_by_speed	""
     output	int	_id	ID
+    output	struct_UnityColorBySpeedModule	_color_by_speed	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Color	2
     inputflags	Range	2
+    inputflags	color_by_speed	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int string vector2 int }
+    outputflags	_color_by_speed	2
+    signature	"Default Inputs"	default	{ int int string vector2 struct_UnityColorBySpeedModule int struct_UnityColorBySpeedModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -28,35 +34,43 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Color"
-	label	"Color"
-	type	string
-	default	{ "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
-	parmtag	{ "parmvop" "1" }
+        name    "Color"
+        label   "Color"
+        type    string
+        default { "gradient;vector;8;0;{0.000000,0.900000,0.450000,0.000000};{0.035714,0.771429,0.457143,0.955775};{0.071429,0.642857,0.464286,1.081393};{0.107143,0.514286,0.471429,1.122328};{0.142857,0.385714,0.478571,1.113881};{0.178571,0.257143,0.485714,1.056051};{0.214286,0.128571,0.492857,0.746177};{0.250000,0.000000,0.500000,0.000000}" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Range"
-	label	"Range"
-	type	float
-	size	2
-	default	{ "0" "1" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "Range"
+        label   "Range"
+        type    float
+        size    2
+        default { "0" "1" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "color_by_speed"
+        label   "color_by_speed"
+        type    label
+        invisible
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
 }

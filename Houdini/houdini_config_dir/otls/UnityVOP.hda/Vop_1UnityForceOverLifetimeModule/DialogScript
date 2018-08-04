@@ -13,6 +13,7 @@
     input	int	Space	Space
     input	int	Randomized	Randomized
     output	int	_id	ID
+    output	struct_UnityForceOverLifetimeModule	force_over_lifetime	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	X	2
@@ -21,10 +22,13 @@
     inputflags	Space	2
     inputflags	Randomized	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int string string string int int int }
+    outputflags	force_over_lifetime	2
+    signature	"Default Inputs"	default	{ int int string string string int int int struct_UnityForceOverLifetimeModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }

@@ -3,20 +3,26 @@
 {
     name	UnityExternalForcesModule
     script	UnityExternalForcesModule
-    label	UnityExternalForces
+    label	UnityExternalForcesModule
 
     input	int	id	ID
     input	int	Enabled	Enabled
     input	float	Multiplier	Multiplier
+    input	struct_UnityExternalForcesModule	external_forces	""
     output	int	_id	ID
+    output	struct_UnityExternalForcesModule	_external_forces	""
     inputflags	id	2
     inputflags	Enabled	2
     inputflags	Multiplier	2
+    inputflags	external_forces	2
     outputflags	_id	2
-    signature	"Default Inputs"	default	{ int int float int }
+    outputflags	_external_forces	2
+    signature	"Default Inputs"	default	{ int int float struct_UnityExternalForcesModule int struct_UnityExternalForcesModule }
 
     outputoverrides	default
     {
+	___begin	auto
+			(0)
 	___begin	auto
 			(0)
     }
@@ -26,27 +32,34 @@
     }
 
     parm {
-	name	"Enabled"
-	label	"Enabled"
-	type	toggle
-	joinnext
-	default	{ "on" }
-	parmtag	{ "parmvop" "1" }
+        name    "Enabled"
+        label   "Enabled"
+        type    toggle
+        joinnext
+        default { "on" }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"id"
-	label	"ID"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	parmtag	{ "parmvop" "1" }
+        name    "id"
+        label   "ID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
     }
     parm {
-	name	"Multiplier"
-	label	"Multiplier"
-	type	float
-	default	{ "0" }
-	range	{ 0 1 }
-	parmtag	{ "parmvop" "1" }
+        name    "Multiplier"
+        label   "Multiplier"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "parmvop" "1" }
+    }
+    parm {
+        name    "external_forces"
+        label   "external_forces"
+        type    label
+        default { "" }
+        parmtag { "parmvop" "1" }
     }
 }
